@@ -1,0 +1,29 @@
+## MVP:
+- Text-box PC Character sheet
+- PC Data Structure
+- Dice Rolling
+
+## Full Release
+- Data Models:
+	- Actors:
+		- NPC
+		- PC
+		- Mob
+	- Items:
+		- Weapons
+		- Armour
+		- Equipment
+		- Foil
+		- Pet
+		- Transportation
+		- Structure
+		- Service
+		- Legendary Items
+		- Spells
+		- Aspects
+		- Status
+		- Roles
+- Character Sheet:
+	- PC
+	- NPC
+	- Mob

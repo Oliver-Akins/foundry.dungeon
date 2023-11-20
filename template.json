@@ -1,0 +1,209 @@
+{
+	"Actor": {
+		"types": [
+			"NPC",
+			"PC",
+			"Mob"
+		],
+		"templates": {
+			"common": {
+				"bytes": {
+					"value": 0,
+					"min": 0
+				}
+			},
+			"sync":{
+				"value": 100,
+				"max": 100,
+				"min": 0
+			}
+		},
+		"NPC": {
+			"templates": [
+				"common"
+			]
+		},
+		"PC": {
+			"templates": [
+				"common",
+				"sync"
+			],
+			"stats": {
+				"build": "",
+				"meta": "",
+				"presence": "",
+				"hands": "",
+				"tilt": "",
+				"rng": ""
+			},
+			"skills": {
+				"build": {
+					"defense": "untrained",
+					"magic": "untrained",
+					"melee": "untrained",
+					"platforming": "untrained",
+					"strength": "untrained"
+				},
+				"meta": {
+					"alchemy": "untrained",
+					"arcanum": "untrained",
+					"dreams": "untrained",
+					"lore": "untrained",
+					"navigation": "untrained"
+				},
+				"presence": {
+					"animalHandling": "untrained",
+					"perception": "untrained",
+					"sneak": "untrained",
+					"speech": "untrained",
+					"vibes": "untrained"
+				},
+				"hands": {
+					"accuracy": "untrained",
+					"crafting": "untrained",
+					"engineering": "untrained",
+					"explosives": "untrained",
+					"piloting": "untrained"
+				}
+			},
+			"aspect": {
+				"name": "",
+				"description": ""
+			},
+			"roles": [
+				{
+					"name": "",
+					"description": ""
+				},
+				{
+					"name": "",
+					"description": ""
+				},
+				{
+					"name": "",
+					"description": ""
+				},
+				{
+					"name": "",
+					"description": ""
+				}
+			],
+			"weapon": {
+				"name": "",
+				"damage": "",
+				"quivers": {
+					"value": 0,
+					"min": 0,
+					"max": 5
+				},
+				"mags": {
+					"value": 0,
+					"min": 0,
+					"max": 5
+				},
+				"cells": {
+					"value": 0,
+					"min": 0,
+					"max": 5
+				}
+			},
+			"inventory": {
+				"backpack": [],
+				"bytes": {
+					"value": 0,
+					"min": 0
+				},
+				"supplies": {
+					"value": 0,
+					"min": 0,
+					"max": 5
+				},
+				"materials": {
+					"value": 0,
+					"min": 0,
+					"max": 5
+				},
+				"pet": {},
+				"transport": {},
+				"spells": {}
+			}
+		},
+		"Mob": {
+			"templates": []
+		}
+	},
+	"Item": {
+		"types": [
+			"weapon",
+			"armour",
+			"equipment",
+			"foil",
+			"pet",
+			"transportation",
+			"structure",
+			"service",
+			"legendaryItem",
+			"spell"
+		],
+		"templates": {
+			"common": {
+				"name": "",
+				"rarity": "simple",
+				"cost": {
+					"min": 0,
+					"value": 0
+				}
+			}
+		},
+		"weapon": {
+			"templates": [
+				"common"
+			]
+		},
+		"Armor": {
+			"templates": [
+				"common"
+			]
+		},
+		"Equipment": {
+			"templates": [
+				"common"
+			]
+		},
+		"foil": {
+			"templates": [
+				"common"
+			]
+		},
+		"pet": {
+			"templates": [
+				"common"
+			]
+		},
+		"transportation": {
+			"templates": [
+				"common"
+			]
+		},
+		"structure": {
+			"templates": [
+				"common"
+			]
+		},
+		"service": {
+			"templates": [
+				"common"
+			]
+		},
+		"legendaryItem": {
+			"templates": [
+				"common"
+			]
+		},
+		"spell": {
+			"templates": [
+				"common"
+			]
+		}
+	}
+}
