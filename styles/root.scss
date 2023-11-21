@@ -1,0 +1,9 @@
+@use "./vars/_colours.scss" as *;
+@use "./mixins/sr-only.scss" as *;
+
+.screenreader {
+	background-color: $background;
+	color: $background;
+
+	@include sr-only;
+}
