@@ -1,1 +1,9 @@
-{}
+{
+	"stat.title": "Stats",
+	"stat.build": "Build",
+	"stat.meta": "Meta",
+	"stat.presence": "Presence",
+	"stat.hands": "Hands",
+	"stat.tilt": "Tilt",
+	"stat.rng": "RNG"
+}
