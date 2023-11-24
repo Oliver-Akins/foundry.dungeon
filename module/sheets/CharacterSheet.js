@@ -12,4 +12,14 @@ export class CharacterSheet extends ActorSheet {
 			}
 		);
 	};
+
+	activateListeners(html) {
+		super.activateListeners(html);
+
+		if (!this.isEditable) return;
+		console.debug(`.dungeon | Adding event listeners for Actor${this.id}`)
+
+		// Modal openings
+		html.find(`button.stat-prompt`).on("click", () => {});
+	}
 }
