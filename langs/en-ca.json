@@ -1,9 +1,39 @@
 {
+	"dotdungeon.CharacterSheet": "PC Sheet",
 	"stat.title": "Stats",
 	"stat.build": "Build",
 	"stat.meta": "Meta",
 	"stat.presence": "Presence",
 	"stat.hands": "Hands",
 	"stat.tilt": "Tilt",
-	"stat.rng": "RNG"
+	"stat.rng": "RNG",
+
+	"skills.header": "Skills",
+	"skills.build": "Build",
+	"skill.defense": "Defense",
+	"skill.magic": "Magic",
+	"skill.melee": "Melee",
+	"skill.platforming": "Platforming",
+	"skill.strength": "Strength",
+
+	"skills.meta": "Meta",
+	"skill.alchemy": "Alchemy",
+	"skill.arcanum": "Arcanum",
+	"skill.dreams": "Dreams",
+	"skill.lore": "Lore",
+	"skill.navigation": "Navigation",
+
+	"skills.presence": "Presence",
+	"skill.animal_handling": "Animal Handling",
+	"skill.perception": "Perception",
+	"skill.sneak": "Sneak",
+	"skill.speech": "Speech",
+	"skill.vibes": "Vibes",
+
+	"skills.hands": "Hands",
+	"skill.accuracy": "Accuracy",
+	"skill.crafting": "Crafting",
+	"skill.engineering": "Engineering",
+	"skill.explosives": "Explosives",
+	"skill.piloting": "Piloting"
 }

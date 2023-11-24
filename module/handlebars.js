@@ -10,6 +10,7 @@ export async function preloadHandlebarsTemplates() {
 	const partials = [
 		"actors/char-sheet-mvp/partials/dice_choice.hbs",
 		"actors/char-sheet-mvp/partials/stat.hbs",
+		"actors/char-sheet-mvp/partials/skill.hbs",
 	];
 
 	const paths = {};
