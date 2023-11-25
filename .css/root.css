@@ -1,0 +1,71 @@
+.dotdungeon {
+  container-type: size;
+}
+.dotdungeon.actor--pc {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(12, minmax(0, 1fr));
+}
+.dotdungeon.actor--pc .panel--avatar {
+  grid-row: 1/span 2;
+}
+.dotdungeon.actor--pc .panel--stats {
+  grid-column: 2/span 2;
+}
+.dotdungeon.actor--pc .panel--skills {
+  grid-column: 2/span 2;
+}
+.dotdungeon.actor--pc .panel--backpack {
+  grid-row: 3/span 5;
+}
+.dotdungeon.actor--pc .panel--aspect {
+  grid-row: span 2;
+}
+.dotdungeon.actor--pc .panel--weapons {
+  grid-row: span 2;
+}
+.dotdungeon.actor--pc .panel--roles {
+  grid-row: span 3;
+}
+.dotdungeon.actor--pc .panel--spells {
+  grid-row: span 2;
+}
+.dotdungeon .panel {
+  background: white;
+  border: 2px solid black;
+}
+.dotdungeon .panel__header {
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+.dotdungeon .panel__header h2 {
+  flex-grow: 1;
+}
+.dotdungeon .panel__header .icon {
+  height: 32px;
+  width: 32px;
+  aspect-ratio: 1;
+}
+
+@container (max-width: $breakpoint-medium) {
+  .dotdungeon.actor--pc {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+  }
+}
+@container (max-width: $breakpoint-small) {
+  .dotdungeon.actor--pc {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+  }
+}
+@container (max-width: $breakpoint-extra-small) {
+  .dotdungeon.actor--pc {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+  }
+}
+
+/*# sourceMappingURL=root.css.map */

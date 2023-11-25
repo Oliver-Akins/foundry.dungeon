@@ -11,6 +11,7 @@ export async function preloadHandlebarsTemplates() {
 		"actors/char-sheet-mvp/partials/dice_choice.hbs",
 		"actors/char-sheet-mvp/partials/stat.hbs",
 		"actors/char-sheet-mvp/partials/skill.hbs",
+		"actors/char-sheet-mvp/partials/panel.hbs",
 	];
 
 	const paths = {};

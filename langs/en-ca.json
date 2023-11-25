@@ -1,5 +1,19 @@
 {
 	"dotdungeon.CharacterSheet": "PC Sheet",
+
+	"dotdungeon.panel.avatar": "Avatar",
+	"dotdungeon.panel.statistics": "Statistics",
+	"dotdungeon.panel.skills": "Skills",
+	"dotdungeon.panel.backpack": "Backpack",
+	"dotdungeon.panel.sync": "Sync",
+	"dotdungeon.panel.aspect": "Aspect",
+	"dotdungeon.panel.weapons": "Weapons",
+	"dotdungeon.panel.roles": "Roles",
+	"dotdungeon.panel.spells": "Spells",
+	"dotdungeon.panel.mounts": "Mounts",
+	"dotdungeon.panel.summons": "Summons",
+	"dotdungeon.panel.storage": "Storage",
+
 	"stat.title": "Stats",
 	"stat.build": "Build",
 	"stat.meta": "Meta",
