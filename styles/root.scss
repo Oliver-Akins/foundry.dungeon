@@ -3,21 +3,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
 
-.dotdungeon {
-	--breakpoint-medium: 700px;
-	--breakpoint-small: 550px;
-	--breakpoint-extra-small: 400px;
-
-
-	container-type: size;
-
-	> .window-content {
-		padding: 0;
-		background: $background;
-	}
-
+// Reset the parts of Foundry's styling which gets in the way of what I want
+.dotdungeon > .window-content {
 	h2, h3, h4, h5, h6 {
 		@include fvtt_reset;
+		display: block;
 		font-family: $title-font;
 		margin: 0;
 	}
@@ -33,5 +23,17 @@
 	}
 }
 
+// Styling that doesn't belong to any particular part of my sheet
+.dotdungeon {
+	container-type: size;
+
+	> .window-content {
+		padding: 0;
+		background: $background;
+	}
+}
+
 @import "./sheets/partials/stat.scss";
+@import "./sheets/partials/skill.scss";
+
 @import "./sheets/actor/mvp.scss";

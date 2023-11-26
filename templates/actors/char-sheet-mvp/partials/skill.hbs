@@ -1,9 +1,11 @@
 <div class="skill">
-	<label>{{localize (concat "dotdungeon.skill." name)}}</label>
-	<select>
-		<option value="">Untrained</option>
+	<span>
+		{{localize (concat "dotdungeon.skill." name)}}
+	</span>
+	<select aria-label="{{localize "dotdungeon.aria.skill-dropdown" skill=name}}">
+		<option value="">Novice</option>
 		<option value="locked">Locked</option>
-		<option value="+2">Trained (+2)</option>
-		<option value="+4">Expert (+4)</option>
+		<option value="+2">Trained</option>
+		<option value="+4">Expert</option>
 	</select>
 </div>

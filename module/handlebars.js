@@ -3,6 +3,7 @@ export const partials = [
 	"actors/char-sheet-mvp/partials/stat.hbs",
 	"actors/char-sheet-mvp/partials/skill.hbs",
 	"actors/char-sheet-mvp/partials/panel.hbs",
+	"actors/char-sheet-mvp/partials/panels/skills.hbs",
 ]
 
 export async function registerHandlebarsHelpers() {

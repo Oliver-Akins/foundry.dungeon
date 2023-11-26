@@ -1,26 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+.dotdungeon > .window-content h2, .dotdungeon > .window-content h3, .dotdungeon > .window-content h4, .dotdungeon > .window-content h5, .dotdungeon > .window-content h6 {
+  all: initial;
+  display: block;
+  font-family: "Pixelify Sans", sans-serif;
+  margin: 0;
+}
+.dotdungeon > .window-content button, .dotdungeon > .window-content button:hover {
+  all: initial;
+  font-family: inherit;
+  cursor: pointer;
+}
+.dotdungeon > .window-content select, .dotdungeon > .window-content select:hover {
+  cursor: pointer;
+}
+
 .dotdungeon {
-  --breakpoint-medium: 700px;
-  --breakpoint-small: 550px;
-  --breakpoint-extra-small: 400px;
   container-type: size;
 }
 .dotdungeon > .window-content {
   padding: 0;
   background: #f2f2f2;
-}
-.dotdungeon h2, .dotdungeon h3, .dotdungeon h4, .dotdungeon h5, .dotdungeon h6 {
-  all: initial;
-  font-family: "Pixelify Sans", sans-serif;
-  margin: 0;
-}
-.dotdungeon button, .dotdungeon button:hover {
-  all: initial;
-  font-family: inherit;
-  cursor: pointer;
-}
-.dotdungeon select, .dotdungeon select:hover {
-  cursor: pointer;
 }
 
 .dotdungeon .stat {
@@ -28,6 +27,27 @@
   flex-direction: column;
   align-items: center;
 }
+.dotdungeon .skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+}
+.dotdungeon .skill-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 8px;
+  gap: 4px;
+}
+.dotdungeon .skill-group h3 {
+  margin-top: 8px;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: center;
+}
+
 .dotdungeon .actor--pc {
   display: grid;
   grid-template-areas: "avatar stats stats" "avatar skills skills" "backpack skills skills" "backpack sync aspect" "backpack weapons aspect" "backpack weapons spells" "backpack roles spells" "summons roles mounts" "summons roles storage";
@@ -51,6 +71,11 @@
 }
 .dotdungeon .actor--pc .panel--skills {
   grid-area: skills;
+}
+.dotdungeon .actor--pc .panel--skills .panel__content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, min-content));
 }
 .dotdungeon .actor--pc .panel--backpack {
   grid-area: backpack;
@@ -129,4 +154,4 @@
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/root.scss%22,%22../styles/vars.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGQ;AAER;EACC;EACA;EACA;EAGA;;AAEA;EACC;EACA,YCdW;;ADiBZ;EEjBA;EFmBC,aCpBW;EDqBX;;AAGD;EEvBA;EFyBC;EACA;;AAGD;EACC;;;AG/BF;EACC;EACA;EACA;;ACCA;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aHtFS;EGuFT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;ACvFH;EDgGC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;ACpHJ;ED6HC;IACC;IACA,qBACC;;EAGF;IACC%22,%22file%22:%22root.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/root.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/vars.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGQ;AAIP;ECNA;EDQC;EACA,aEVW;EFWX;;AAGD;ECbA;EDeC;EACA;;AAGD;EACC;;;AAKF;EACC;;AAEA;EACC;EACA,YE9BW;;;ACDb;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdF;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aH5FS;EG6FT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AC7FH;EDsGC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;AC1HJ;EDmIC;IACC;IACA,qBACC;;EAGF;IACC%22,%22file%22:%22root.css%22%7D */

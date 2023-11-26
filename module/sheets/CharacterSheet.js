@@ -4,13 +4,14 @@
  */
 export class CharacterSheet extends ActorSheet {
 	static get defaultOptions() {
-		return mergeObject(
+		let opts = mergeObject(
 			super.defaultOptions,
 			{
-				classes: ["dotdungeon"],
 				template: "systems/dotdungeon/templates/actors/char-sheet-mvp/sheet.hbs"
 			}
 		);
+		opts.classes.push("dotdungeon");
+		return opts;
 	};
 
 	activateListeners(html) {

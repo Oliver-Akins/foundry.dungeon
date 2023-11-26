@@ -1,0 +1,22 @@
+.dotdungeon .skill {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: center;
+
+	&-group {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 8px;
+		gap: 4px;
+
+		h3 {
+			margin-top: 8px;
+			font-size: 1.2em;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
