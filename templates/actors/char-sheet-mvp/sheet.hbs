@@ -1,12 +1,16 @@
-<form autocomplete="off" class="dotdungeon actor--pc">
+<form autocomplete="off" class="actor--pc">
 	{{#> dotdungeon.panel class="avatar" title="dotdungeon.panel.avatar"}}
 		Avatar Content
 	{{/ dotdungeon.panel}}
 	{{#> dotdungeon.panel class="stats" title="dotdungeon.panel.statistics"}}
-		Statistics
+		{{#each (dotdungeon-array "build" "meta" "presence" "hands" "tilt" "rng")}}
+			{{> dotdungeon.stat name=this}}
+		{{/each}}
 	{{/ dotdungeon.panel}}
 	{{#> dotdungeon.panel class="skills" title="dotdungeon.panel.skills"}}
-		Skills
+		<div class="skill-group">
+			<h3>{{localize "dotdungeon.skills.build"}}</h3>
+		</div>
 	{{/ dotdungeon.panel}}
 	{{#> dotdungeon.panel class="backpack" title="dotdungeon.panel.backpack"}}
 		Backpack

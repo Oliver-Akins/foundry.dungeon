@@ -1,4 +1,6 @@
-<div class="stat">
-	<label>{{localize (concat "stat." stat)}}</label>
+<label class="stat stat--{{name}}">
+	<button class="roll-stat" data-stat="{{name}}">
+		{{localize (concat "dotdungeon.stat." name)}}
+	</button>
 	{{> dotdungeon.dice_choice }}
-</div>
+</label>
