@@ -3,7 +3,6 @@
 
 .dotdungeon {
 	.actor--pc {
-		--size: var(--breakpoint-medium);
 		display: grid;
 		grid-template-areas:
 			"avatar stats stats"

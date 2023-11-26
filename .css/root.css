@@ -29,7 +29,6 @@
   align-items: center;
 }
 .dotdungeon .actor--pc {
-  --size: var(--breakpoint-medium);
   display: grid;
   grid-template-areas: "avatar stats stats" "avatar skills skills" "backpack skills skills" "backpack sync aspect" "backpack weapons aspect" "backpack weapons spells" "backpack roles spells" "summons roles mounts" "summons roles storage";
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -130,4 +129,4 @@
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/root.scss%22,%22../styles/vars.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGQ;AAER;EACC;EACA;EACA;EAGA;;AAEA;EACC;EACA,YCdW;;ADiBZ;EEjBA;EFmBC,aCpBW;EDqBX;;AAGD;EEvBA;EFyBC;EACA;;AAGD;EACC;;;AG/BF;EACC;EACA;EACA;;ACCA;EACC;EACA;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aHvFS;EGwFT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;ACxFH;EDiGC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;ACrHJ;ED8HC;IACC;IACA,qBACC;;EAGF;IACC%22,%22file%22:%22root.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/root.scss%22,%22../styles/vars.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGQ;AAER;EACC;EACA;EACA;EAGA;;AAEA;EACC;EACA,YCdW;;ADiBZ;EEjBA;EFmBC,aCpBW;EDqBX;;AAGD;EEvBA;EFyBC;EACA;;AAGD;EACC;;;AG/BF;EACC;EACA;EACA;;ACCA;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aHtFS;EGuFT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;ACvFH;EDgGC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;ACpHJ;ED6HC;IACC;IACA,qBACC;;EAGF;IACC%22,%22file%22:%22root.css%22%7D */
