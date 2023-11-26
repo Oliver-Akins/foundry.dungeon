@@ -16,6 +16,12 @@
 		background: $background;
 	}
 
+	h2, h3, h4, h5, h6 {
+		@include fvtt_reset;
+		font-family: $title-font;
+		margin: 0;
+	}
+
 	button, button:hover {
 		@include fvtt_reset;
 		font-family: inherit;
