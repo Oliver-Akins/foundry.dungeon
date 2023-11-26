@@ -7,7 +7,7 @@ export class CharacterSheet extends ActorSheet {
 		return mergeObject(
 			super.defaultOptions,
 			{
-				classes: ["dotdungeon", "sheet", "actor"],
+				classes: ["dotdungeon"],
 				template: "systems/dotdungeon/templates/actors/char-sheet-mvp/sheet.hbs"
 			}
 		);
