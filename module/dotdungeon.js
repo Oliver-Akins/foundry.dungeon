@@ -1,11 +1,15 @@
+// Class imports
 import { CharacterActor } from "./documents/CharacterActor.js";
 import { CharacterSheet } from "./sheets/CharacterSheet.js";
 
+// Utility imports
 import * as hbs from "./handlebars.js";
 
-// import diceChoice from "../templates/actors/char-sheet-mvp/partials/dice_choice.hbs?raw";
+// Non-Setup hooks
+import "./hooks/hotReload.js";
 
-Hooks.once(`init`, async function () {
+
+Hooks.once(`init`, async () => {
 	game.boilerplate = {
 		CharacterActor,
 	};
@@ -20,6 +24,6 @@ Hooks.once(`init`, async function () {
 });
 
 
-Hooks.once(`ready`, function() {
+Hooks.once(`ready`, () => {
 	console.info(".dungeon | Ready");
 });
