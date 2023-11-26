@@ -1,39 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
-.dotdungeon {
-  container-type: size;
-}
-.dotdungeon.actor--pc {
+.dotdungeon .actor--pc {
+  --size: var(--breakpoint-medium);
   display: grid;
+  grid-template-areas: "avatar stats stats" "avatar skills skills" "backpack skills skills" "backpack sync aspect" "backpack weapons aspect" "backpack weapons spells" "backpack roles spells" "summons roles mounts" "summons roles storage";
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(9, minmax(0, 1fr));
+  padding: 4px;
   gap: 4px;
 }
-.dotdungeon.actor--pc .panel--avatar {
-  grid-row: 1/span 2;
+.dotdungeon .actor--pc .panel--avatar {
+  grid-area: avatar;
 }
-.dotdungeon.actor--pc .panel--stats {
-  grid-column: 2/span 2;
+.dotdungeon .actor--pc .panel--stats {
+  grid-area: stats;
 }
-.dotdungeon.actor--pc .panel--skills {
-  grid-column: 2/span 2;
+.dotdungeon .actor--pc .panel--stats .panel__content {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: space-evenly;
+  padding: 8px;
 }
-.dotdungeon.actor--pc .panel--backpack {
-  grid-row: 3/span 5;
+.dotdungeon .actor--pc .panel--skills {
+  grid-area: skills;
 }
-.dotdungeon.actor--pc .panel--aspect {
-  grid-row: span 2;
+.dotdungeon .actor--pc .panel--backpack {
+  grid-area: backpack;
 }
-.dotdungeon.actor--pc .panel--weapons {
-  grid-row: span 2;
+.dotdungeon .actor--pc .panel--sync {
+  grid-area: sync;
 }
-.dotdungeon.actor--pc .panel--roles {
-  grid-row: span 3;
+.dotdungeon .actor--pc .panel--aspect {
+  grid-area: aspect;
 }
-.dotdungeon.actor--pc .panel--spells {
-  grid-row: span 2;
+.dotdungeon .actor--pc .panel--weapons {
+  grid-area: weapons;
+}
+.dotdungeon .actor--pc .panel--roles {
+  grid-area: roles;
+}
+.dotdungeon .actor--pc .panel--spells {
+  grid-area: spells;
+}
+.dotdungeon .actor--pc .panel--mounts {
+  grid-area: mounts;
+}
+.dotdungeon .actor--pc .panel--summons {
+  grid-area: summons;
+}
+.dotdungeon .actor--pc .panel--storage {
+  grid-area: storage;
 }
 .dotdungeon .panel {
   border: 2px solid black;
+  background: greenyellow;
 }
 .dotdungeon .panel__header {
   background: black;
@@ -55,26 +74,30 @@
 .dotdungeon .panel__header .icon {
   height: 32px;
   width: 32px;
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
 }
 
-@container (max-width: $breakpoint-medium) {
-  .dotdungeon.actor--pc {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(12, minmax(0, 1fr));
+@container (max-width: 550px) {
+  .dotdungeon .actor--pc {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(15, minmax(0, 1fr));
+    grid-template-areas: "avatar sync" "avatar skills" "stats skills" "stats skills" "weapons aspect" "weapons aspect" "backpack aspect" "backpack roles" "backpack roles" "backpack roles" "backpack spells" "summons spells" "summons storage" "mounts storage" "mounts storage";
+  }
+  .dotdungeon .panel {
+    background: yellowgreen;
+  }
+  .dotdungeon .panel--stats .panel__content {
+    flex-wrap: wrap;
   }
 }
-@container (max-width: $breakpoint-small) {
-  .dotdungeon.actor--pc {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(12, minmax(0, 1fr));
+@container (max-width: 400px) {
+  .dotdungeon .actor--pc {
+    grid-template-columns: 1fr;
+    grid-template-areas: "stats" "skills";
   }
-}
-@container (max-width: $breakpoint-extra-small) {
-  .dotdungeon.actor--pc {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(12, minmax(0, 1fr));
+  .dotdungeon .panel {
+    background: blueviolet;
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/vars/fonts.scss%22,%22../../../styles/sheets/actor/mvp.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAQ;ACGR;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAGD;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AASH;EACC;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aD5DS;EC6DT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AAMJ;EACC;IACC;IACA;;;AAIF;EACC;IACC;IACA;;;AAIF;EACC;IACC;IACA%22,%22file%22:%22mvp.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/vars.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIC;EACC;EACA;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aCvFS;EDwFT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AExFH;EFiGC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;AErHJ;EF8HC;IACC;IACA,qBACC;;EAGF;IACC%22,%22file%22:%22mvp.css%22%7D */

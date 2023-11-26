@@ -1,50 +1,75 @@
-@use "../../vars/index" as *;
-@use "../../vars/fonts.scss" as *;
+@use "../../vars.scss" as *;
+@use "../../mixins/breakpoints" as *;
 
 .dotdungeon {
-	container-type: size;
-
-	&.actor--pc {
+	.actor--pc {
+		--size: var(--breakpoint-medium);
 		display: grid;
+		grid-template-areas:
+			"avatar stats stats"
+			"avatar skills skills"
+			"backpack skills skills"
+			"backpack sync aspect"
+			"backpack weapons aspect"
+			"backpack weapons spells"
+			"backpack roles spells"
+			"summons roles mounts"
+			"summons roles storage";
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		grid-template-rows: repeat(8, minmax(0, 1fr));
+		grid-template-rows: repeat(9, minmax(0, 1fr));
+		padding: 4px;
 		gap: 4px;
 
 		.panel {
 			&--avatar {
-				grid-row: 1 / span 2;
+				grid-area: avatar;
 			}
 			&--stats {
-				grid-column: 2 / span 2;
+				grid-area: stats;
+				.panel__content {
+					display: flex;
+					flex-direction: row;
+					gap: 8px;
+					justify-content: space-evenly;
+					padding: 8px;
+				}
 			}
 			&--skills {
-				grid-column: 2 / span 2;
+				grid-area: skills;
 			}
 			&--backpack {
-				grid-row: 3 / span 5;
+				grid-area: backpack;
 			}
-			&--sync {}
+			&--sync {
+				grid-area: sync;
+			}
 			&--aspect {
-				grid-row: span 2;
+				grid-area: aspect;
 			}
 			&--weapons {
-				grid-row: span 2;
+				grid-area: weapons;
 			}
 			&--roles {
-				grid-row: span 3;
+				grid-area: roles;
 			}
 			&--spells {
-				grid-row: span 2;
+				grid-area: spells;
 			}
-			&--mounts {}
-			&--summons {}
-			&--notes {}
-			&--storage {}
+			&--mounts {
+				grid-area: mounts;
+			}
+			&--summons {
+				grid-area: summons;
+			}
+			&--storage {
+				grid-area: storage;
+			}
 		}
 	}
 
 	.panel {
 		border: 2px solid black;
+		background: greenyellow;
 
 		&__header {
 			background: black;
@@ -68,29 +93,58 @@
 				$size: 32px;
 				height: $size;
 				width: $size;
-				aspect-ratio: 1;
+				aspect-ratio: 1/1;
 			}
 		}
 	}
 }
 
-@container (max-width: $breakpoint-medium) {
-	.dotdungeon.actor--pc {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		grid-template-rows: repeat(12, minmax(0, 1fr));
+
+@include bp-s {
+	.dotdungeon {
+		.actor--pc {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-rows: repeat(15, minmax(0, 1fr));
+			grid-template-areas:
+				"avatar sync"
+				"avatar skills"
+				"stats skills"
+				"stats skills"
+				"weapons aspect"
+				"weapons aspect"
+				"backpack aspect"
+				"backpack roles"
+				"backpack roles"
+				"backpack roles"
+				"backpack spells"
+				"summons spells"
+				"summons storage"
+				"mounts storage"
+				"mounts storage";
+		}
+
+		.panel {
+			background: yellowgreen;
+
+			&--stats {
+				.panel__content {
+					flex-wrap: wrap;
+				}
+			}
+		}
 	}
 }
 
-@container (max-width: $breakpoint-small) {
-	.dotdungeon.actor--pc {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		grid-template-rows: repeat(12, minmax(0, 1fr));
-	}
-}
-
-@container (max-width: $breakpoint-extra-small) {
-	.dotdungeon.actor--pc {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		grid-template-rows: repeat(12, minmax(0, 1fr));
+@include bp-xs {
+	.dotdungeon {
+		.actor--pc {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"stats"
+				"skills";
+		}
+		.panel {
+			background: blueviolet;
+		}
 	}
 }

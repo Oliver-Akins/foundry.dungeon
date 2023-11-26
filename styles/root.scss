@@ -1,3 +1,20 @@
-@use "./vars/index" as *;
+@use "./vars.scss" as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+.dotdungeon {
+	--breakpoint-medium: 700px;
+	--breakpoint-small: 550px;
+	--breakpoint-extra-small: 400px;
+
+
+	container-type: size;
+
+	> .window-content {
+		padding: 0;
+		background: $background;
+	}
+}
+
+@import "./sheets/partials/stat.scss";
 @import "./sheets/actor/mvp.scss";

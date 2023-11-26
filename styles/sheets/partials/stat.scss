@@ -1,0 +1,12 @@
+.dotdungeon .stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&--build {}
+	&--meta {}
+	&--presence {}
+	&--hands {}
+	&--tilt {}
+	&--rng {}
+}
