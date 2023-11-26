@@ -1,0 +1,96 @@
+@use "../../vars/index" as *;
+@use "../../vars/fonts.scss" as *;
+
+.dotdungeon {
+	container-type: size;
+
+	&.actor--pc {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-rows: repeat(8, minmax(0, 1fr));
+		gap: 4px;
+
+		.panel {
+			&--avatar {
+				grid-row: 1 / span 2;
+			}
+			&--stats {
+				grid-column: 2 / span 2;
+			}
+			&--skills {
+				grid-column: 2 / span 2;
+			}
+			&--backpack {
+				grid-row: 3 / span 5;
+			}
+			&--sync {}
+			&--aspect {
+				grid-row: span 2;
+			}
+			&--weapons {
+				grid-row: span 2;
+			}
+			&--roles {
+				grid-row: span 3;
+			}
+			&--spells {
+				grid-row: span 2;
+			}
+			&--mounts {}
+			&--summons {}
+			&--notes {}
+			&--storage {}
+		}
+	}
+
+	.panel {
+		border: 2px solid black;
+
+		&__header {
+			background: black;
+			color: white;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			gap: 4px;
+
+			h2 {
+				all: initial;
+				color: inherit;
+				flex-grow: 1;
+				padding-left: 8px;
+				font-family: $title-font;
+				font-size: 20px;
+			}
+
+			.icon {
+				$size: 32px;
+				height: $size;
+				width: $size;
+				aspect-ratio: 1;
+			}
+		}
+	}
+}
+
+@container (max-width: $breakpoint-medium) {
+	.dotdungeon.actor--pc {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-rows: repeat(12, minmax(0, 1fr));
+	}
+}
+
+@container (max-width: $breakpoint-small) {
+	.dotdungeon.actor--pc {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-rows: repeat(12, minmax(0, 1fr));
+	}
+}
+
+@container (max-width: $breakpoint-extra-small) {
+	.dotdungeon.actor--pc {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-rows: repeat(12, minmax(0, 1fr));
+	}
+}

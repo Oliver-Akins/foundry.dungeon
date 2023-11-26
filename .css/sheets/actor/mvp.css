@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
 .dotdungeon {
   container-type: size;
 }
@@ -78,4 +77,4 @@
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/vars/fonts.scss%22,%22../styles/sheets/actor/mvp.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAQ;AAAA;ACGR;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAGD;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AASH;EACC;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aD5DS;EC6DT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AAMJ;EACC;IACC;IACA;;;AAIF;EACC;IACC;IACA;;;AAIF;EACC;IACC;IACA%22,%22file%22:%22root.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/vars/fonts.scss%22,%22../../../styles/sheets/actor/mvp.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAQ;ACGR;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAGD;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AASH;EACC;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aD5DS;EC6DT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AAMJ;EACC;IACC;IACA;;;AAIF;EACC;IACC;IACA;;;AAIF;EACC;IACC;IACA%22,%22file%22:%22mvp.css%22%7D */
