@@ -2,5 +2,5 @@
 	<button class="roll-stat" data-stat="{{name}}">
 		{{localize (concat "dotdungeon.stat." name)}}
 	</button>
-	{{> dotdungeon.dice_choice }}
+	{{> dotdungeon.dice_choice fieldToUpdate=(concat "system.stats." name) selected=value }}
 </label>

@@ -1,6 +1,7 @@
 // Class imports
-import { CharacterActor } from "./documents/CharacterActor.js";
-import { CharacterSheet } from "./sheets/CharacterSheet.js";
+import { PlayerActor } from "./documents/PlayerActor.js";
+import { PlayerSheet } from "./sheets/PlayerSheet.mjs";
+import { PlayerData } from "./models/PlayerData.js";
 
 // Utility imports
 import * as hbs from "./handlebars.js";
@@ -9,17 +10,19 @@ import * as hbs from "./handlebars.js";
 import "./hooks/hotReload.js";
 
 
-Hooks.once(`init`, async () => {
+Hooks.once(`init`, () => {
+	console.log(`.dungeon | Init hook started`)
 	game.boilerplate = {
-		CharacterActor,
+		PlayerActor,
 	};
+	CONFIG.Actor.systemDataModels.player = PlayerData;
 
 	Actors.unregisterSheet("core", ActorSheet);
-	Actors.registerSheet("dotdungeon", CharacterSheet, { makeDefault: true, });
+	// Actors.registerSheet("dotdungeon", CharacterSheet, { makeDefault: true, });
+	Actors.registerSheet("dotdungeon.player", PlayerSheet, { makeDefault: true });
 
-
-	await hbs.registerHandlebarsHelpers();
-	await hbs.preloadHandlebarsTemplates()
+	hbs.registerHandlebarsHelpers();
+	hbs.preloadHandlebarsTemplates();
 	console.info(`.dungeon | Dot Dungeon has been initialized fully`);
 });
 
