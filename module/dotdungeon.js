@@ -1,32 +1,42 @@
-// Class imports
-import { PlayerActor } from "./documents/PlayerActor.js";
+// Data Models
+import { AspectItemData } from "./models/AspectItemData.mjs";
+import { PlayerData } from "./models/PlayerData.mjs";
+
+// Main Documents
+import { PlayerActor } from "./documents/PlayerActor.mjs";
+import { AspectItem } from "./documents/AspectItem.mjs";
+
+// Character Sheets
+import { AspectSheet } from "./sheets/AspectSheet.mjs";
 import { PlayerSheet } from "./sheets/PlayerSheet.mjs";
-import { PlayerData } from "./models/PlayerData.js";
+
 
 // Utility imports
-import * as hbs from "./handlebars.js";
+import * as hbs from "./handlebars.mjs";
 
 // Non-Setup hooks
-import "./hooks/hotReload.js";
+import "./hooks/hotReload.mjs";
 
 
 Hooks.once(`init`, () => {
-	console.log(`.dungeon | Init hook started`)
+	console.debug(`.dungeon | Initializing`);
 	game.boilerplate = {
 		PlayerActor,
+		AspectItem,
 	};
-	CONFIG.Actor.systemDataModels.player = PlayerData;
+	CONFIG.Actor.dataModels.player = PlayerData;
+	CONFIG.Item.dataModels.aspect = AspectItemData;
 
 	Actors.unregisterSheet("core", ActorSheet);
-	// Actors.registerSheet("dotdungeon", CharacterSheet, { makeDefault: true, });
-	Actors.registerSheet("dotdungeon.player", PlayerSheet, { makeDefault: true });
+	Actors.registerSheet("dotdungeon.sheet", PlayerSheet, { makeDefault: true });
+
+	Items.registerSheet("dotdungeon.sheet", AspectSheet, { makeDefault: true });
 
 	hbs.registerHandlebarsHelpers();
 	hbs.preloadHandlebarsTemplates();
-	console.info(`.dungeon | Dot Dungeon has been initialized fully`);
 });
 
 
 Hooks.once(`ready`, () => {
-	console.info(".dungeon | Ready");
+	console.debug(".dungeon | Ready");
 });

@@ -1,10 +1,11 @@
 export const partials = [
-	"actors/char-sheet-mvp/partials/dice_choice.hbs",
-	"actors/char-sheet-mvp/partials/stat.hbs",
-	"actors/char-sheet-mvp/partials/skill.hbs",
-	"actors/char-sheet-mvp/partials/panel.hbs",
-	"actors/char-sheet-mvp/partials/panels/skills.hbs",
-]
+	`actors/char-sheet-mvp/partials/dice_choice.hbs`,
+	`actors/char-sheet-mvp/partials/stat.hbs`,
+	`actors/char-sheet-mvp/partials/skill.hbs`,
+	`actors/char-sheet-mvp/partials/panel.hbs`,
+	`actors/char-sheet-mvp/partials/panels/skills.hbs`,
+	`items/aspect.hbs`,
+];
 
 export async function registerHandlebarsHelpers() {
 	Handlebars.registerHelper({
@@ -21,7 +22,7 @@ export async function preloadHandlebarsTemplates() {
 	for ( const partial of partials ) {
 		console.debug(`Loading partial: ${partial}`);
 		const path = `${pathPrefix}${partial}`;
-		paths[`dotdungeon.${partial.split("/").pop().replace(".hbs", "")}`] = path;
+		paths[`dotdungeon.${partial.split(`/`).pop().replace(`.hbs`, ``)}`] = path;
 	}
 
 	console.debug(`Loaded ${partials.length} partials`);

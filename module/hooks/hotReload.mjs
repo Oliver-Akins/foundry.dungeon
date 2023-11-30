@@ -1,4 +1,4 @@
-import * as hbs from "../handlebars.js";
+import * as hbs from "../handlebars.mjs";
 
 Hooks.on(`hotReload`, async (data) => {
 	if (data.extension !== 'hbs') {

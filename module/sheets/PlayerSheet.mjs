@@ -3,10 +3,10 @@ export class PlayerSheet extends ActorSheet {
 		let opts = mergeObject(
 			super.defaultOptions,
 			{
-				template: "systems/dotdungeon/templates/actors/char-sheet-mvp/sheet.hbs"
+				template: `systems/dotdungeon/templates/actors/char-sheet-mvp/sheet.hbs`
 			}
 		);
-		opts.classes.push("dotdungeon");
+		opts.classes.push(`dotdungeon`);
 		return opts;
 	};
 
@@ -27,7 +27,7 @@ export class PlayerSheet extends ActorSheet {
 		ctx.system = actor.system;
 		ctx.flags = actor.flags;
 
-		console.group(`PlayerSheet.getData`);
+		console.groupCollapsed(`PlayerSheet.getData`);
 		console.log(`ctx`, ctx);
 		console.log(`actor`, actor);
 		console.groupEnd();

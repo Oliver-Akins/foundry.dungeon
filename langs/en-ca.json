@@ -1,5 +1,6 @@
 {
-	"dotdungeon.CharacterSheet": "PC Sheet",
+	"dotdungeon.sheet.PlayerSheet": "PC Sheet",
+	"dotdungeon.sheet.AspectSheet": "Aspect Sheet",
 
 	"dotdungeon.panel.avatar": "Avatar",
 	"dotdungeon.panel.statistics": "Statistics",
