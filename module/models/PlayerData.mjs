@@ -52,7 +52,7 @@ export class PlayerData extends foundry.abstract.DataModel {
 					perception: trainingLevelField(),
 					sneak: trainingLevelField(),
 					speech: trainingLevelField(),
-					vibe: trainingLevelField(),
+					vibes: trainingLevelField(),
 				}),
 				hands: new fields.SchemaField({
 					accuracy: trainingLevelField(),
