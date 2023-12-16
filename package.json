@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "css": "sass --watch --embed-source-map --no-error-css styles/:.css/"
+    "css": "sass --watch --embed-source-map --no-error-css styles/:.styles/"
   },
   "devDependencies": {
     "sass": "^1.69.5"

@@ -19,7 +19,7 @@
 		"module/dotdungeon.js"
 	],
 	"styles": [
-		".css/root.css"
+		".styles/root.css"
 	],
 	"languages": [
 		{
@@ -31,7 +31,7 @@
 	"flags": {
 		"hotReload": {
 			"extensions": ["css", "hbs", "json", "js", "mjs"],
-			"paths": ["templates", "langs", ".css", "module"]
+			"paths": ["templates", "langs", ".styles", "module"]
 		}
 	}
 }

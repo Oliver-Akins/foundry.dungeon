@@ -81,7 +81,7 @@
   aspect-ratio: 1/1;
 }
 
-@container (max-width: 550px) {
+@container (max-width: 620px) {
   .dotdungeon .actor--pc {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(15, minmax(0, 1fr));
@@ -97,11 +97,16 @@
 @container (max-width: 400px) {
   .dotdungeon .actor--pc {
     grid-template-columns: 1fr;
-    grid-template-areas: "stats" "skills";
+    grid-template-rows: repeat(12, min-content);
+    grid-template-areas: "avatar" "stats" "sync" "skills" "aspect" "roles" "backpack" "weapons" "spells" "mounts" "summons" "storage";
   }
   .dotdungeon .panel {
     background: blueviolet;
   }
+  .dotdungeon .panel__header .icon {
+    display: none;
+    visibility: hidden;
+  }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/vars.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIC;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aC5FS;ED6FT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AE7FH;EFsGC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;AE1HJ;EFmIC;IACC;IACA,qBACC;;EAGF;IACC%22,%22file%22:%22mvp.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/vars.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIC;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aC5FS;ED6FT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AEnGH;EF4GC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;AEhIJ;EFyIC;IACC;IACA;IACA,qBACC;;EAaF;IACC;;EAGC;IACC;IACA%22,%22file%22:%22mvp.css%22%7D */
