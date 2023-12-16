@@ -1,11 +1,24 @@
 <div class="skill">
-	<span>
-		{{localize (concat "dotdungeon.skill." name)}}
-	</span>
-	<select aria-label="{{localize "dotdungeon.aria.skill-dropdown" skill=name}}">
-		<option value="">Novice</option>
-		<option value="locked">Locked</option>
-		<option value="+2">Trained</option>
-		<option value="+4">Expert</option>
-	</select>
+	<button class="skill__button" data-stat="{{stat}}" data-skill="{{name}}">
+		{{!--
+		This would be nice to get working at some point, but it's seeming not
+		super plausible at the moment due to context weirdness (probably because
+		of my "with" helper)
+
+		<img src="icons/dice/{{dotdungeon-objectValue system (concat "system.skills." stat "." name)}}black.svg">
+		--}}
+		R
+	</button>
+	<label class="skill__label">
+		{{localize (concat "dotdungeon.actor.pc.skill." name)}}
+		<select
+			class="skill__select"
+			aria-label="{{localize "dotdungeon.aria.skill-dropdown" skill=name}}"
+		>
+			<option value="">Novice (+0)</option>
+			<option value="locked">Locked</option>
+			<option value="+2">Trained (+2)</option>
+			<option value="+4">Expert (+4)</option>
+		</select>
+	</label>
 </div>
