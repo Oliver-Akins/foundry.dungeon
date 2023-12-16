@@ -1,13 +1,13 @@
 .dotdungeon .skill {
 	display: flex;
-	flex-direction: column;
-	justify-content: left;
+	flex-direction: row;
+	justify-content: center;
 	align-items: center;
+	width: 100%;
 
 	&-group {
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
+		flex-direction: column;
 		justify-content: center;
 		margin-bottom: 8px;
 		gap: 4px;

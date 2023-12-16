@@ -2,7 +2,7 @@
   display: grid;
   grid-template-areas: "avatar stats stats" "avatar skills skills" "backpack skills skills" "backpack sync aspect" "backpack weapons aspect" "backpack weapons spells" "backpack roles spells" "summons roles mounts" "summons roles storage";
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(9, minmax(0, 1fr));
+  grid-template-rows: min-content repeat(8, minmax(0, 1fr));
   padding: 4px;
   gap: 4px;
 }
