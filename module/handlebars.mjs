@@ -3,7 +3,6 @@ export const partials = [
 	`actors/char-sheet-mvp/partials/stat.hbs`,
 	`actors/char-sheet-mvp/partials/skill.hbs`,
 	`actors/char-sheet-mvp/partials/panel.hbs`,
-	`actors/char-sheet-mvp/partials/panels/skills.hbs`,
 	`items/aspect.hbs`,
 ];
 
@@ -11,6 +10,7 @@ export async function registerHandlebarsHelpers() {
 	Handlebars.registerHelper({
 		"dotdungeon-array": createArray,
 		"dotdungeon-toFriendlyDuration": toFriendlyDuration,
+		"dotdungeon-objectValue": objectValue
 	});
 };
 
@@ -34,6 +34,19 @@ export async function preloadHandlebarsTemplates() {
 
 function createArray(...args) {
 	return args.slice(0, -1);
+};
+
+function objectValue(obj, keypath) {
+	// console.log(obj, keypath.string)
+	return keypath
+	function helper(o, k) {
+		let v = o[k[0]];
+		if (typeof v === "object") {
+			return helper(v, k.slice(1));
+		};
+		return v;
+	};
+	return helper(obj, keypath.string.split(`.`))
 };
 
 
