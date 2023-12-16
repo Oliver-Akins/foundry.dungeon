@@ -1,41 +1,40 @@
 <form autocomplete="off" class="actor--pc">
-	{{log system}}
-	{{#> dotdungeon.panel class="avatar" title="dotdungeon.panel.avatar"}}
+	{{#> dotdungeon.panel class="avatar" title="dotdungeon.actor.pc.panel.avatar"}}
 		Avatar Content
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="stats" title="dotdungeon.panel.statistics"}}
+	{{#> dotdungeon.panel class="stats" title="dotdungeon.actor.pc.panel.statistics"}}
 		{{#each system.stats }}
 			{{> dotdungeon.stat name=@key value=this}}
 		{{/each}}
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="skills" title="dotdungeon.panel.skills"}}
+	{{#> dotdungeon.panel class="skills" title="dotdungeon.actor.pc.panel.skills"}}
 		Skills
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="backpack" title="dotdungeon.panel.backpack"}}
+	{{#> dotdungeon.panel class="backpack" title="dotdungeon.actor.pc.panel.backpack"}}
 		Backpack
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="sync" title="dotdungeon.panel.sync"}}
+	{{#> dotdungeon.panel class="sync" title="dotdungeon.actor.pc.panel.sync"}}
 		Sync
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="aspect" title="dotdungeon.panel.aspect"}}
+	{{#> dotdungeon.panel class="aspect" title="dotdungeon.actor.pc.panel.aspect"}}
 		Aspect
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="weapons" title="dotdungeon.panel.weapons"}}
+	{{#> dotdungeon.panel class="weapons" title="dotdungeon.actor.pc.panel.weapons"}}
 		Weapons
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="spells" title="dotdungeon.panel.spells"}}
+	{{#> dotdungeon.panel class="spells" title="dotdungeon.actor.pc.panel.spells"}}
 		Spells
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="roles" title="dotdungeon.panel.roles"}}
+	{{#> dotdungeon.panel class="roles" title="dotdungeon.actor.pc.panel.roles"}}
 		Roles
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="mounts" title="dotdungeon.panel.mounts"}}
+	{{#> dotdungeon.panel class="mounts" title="dotdungeon.actor.pc.panel.mounts"}}
 		Mounts
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="summons" title="dotdungeon.panel.summons"}}
+	{{#> dotdungeon.panel class="summons" title="dotdungeon.actor.pc.panel.summons"}}
 		Summons
 	{{/ dotdungeon.panel}}
-	{{#> dotdungeon.panel class="storage" title="dotdungeon.panel.storage"}}
+	{{#> dotdungeon.panel class="storage" title="dotdungeon.actor.pc.panel.storage"}}
 		Storage
 	{{/ dotdungeon.panel}}
 </form>

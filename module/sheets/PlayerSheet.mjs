@@ -13,6 +13,7 @@ export class PlayerSheet extends ActorSheet {
 	activateListeners(html) {
 		super.activateListeners(html);
 
+		if (this.document.isEmbedded) return;
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Actor: ${this.id}`);
 
@@ -33,4 +34,4 @@ export class PlayerSheet extends ActorSheet {
 		console.groupEnd();
 		return ctx;
 	};
-}
+};

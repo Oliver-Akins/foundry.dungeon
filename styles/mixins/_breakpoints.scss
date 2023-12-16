@@ -1,16 +1,10 @@
 @mixin bp-m {
-	@container (max-width: 700px) {
+	@container (max-width: 620px) {
 		@content
 	};
 };
 
 @mixin bp-s {
-	@container (max-width: 550px) {
-		@content
-	};
-};
-
-@mixin bp-xs {
 	@container (max-width: 400px) {
 		@content
 	};

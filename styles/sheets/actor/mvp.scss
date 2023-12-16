@@ -105,7 +105,7 @@
 }
 
 
-@include bp-s {
+@include bp-m {
 	.dotdungeon {
 		.actor--pc {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -140,16 +140,34 @@
 	}
 }
 
-@include bp-xs {
+@include bp-s {
 	.dotdungeon {
 		.actor--pc {
 			grid-template-columns: 1fr;
+			grid-template-rows: repeat(12, min-content);
 			grid-template-areas:
+				"avatar"
 				"stats"
-				"skills";
+				"sync"
+				"skills"
+				"aspect"
+				"roles"
+				"backpack"
+				"weapons"
+				"spells"
+				"mounts"
+				"summons"
+				"storage";
 		}
 		.panel {
 			background: blueviolet;
+
+			&__header {
+				.icon {
+					display: none;
+					visibility: hidden;
+				}
+			}
 		}
 	}
 }

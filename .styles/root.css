@@ -1,14 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+.dotdungeon > .window-content ::-webkit-scrollbar {
+  width: 10px;
+}
+.dotdungeon > .window-content ::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+}
 .dotdungeon > .window-content h2, .dotdungeon > .window-content h3, .dotdungeon > .window-content h4, .dotdungeon > .window-content h5, .dotdungeon > .window-content h6 {
   all: initial;
+  display: block;
+  box-sizing: border-box;
   display: block;
   font-family: "Pixelify Sans", sans-serif;
   margin: 0;
 }
+.dotdungeon > .window-content label {
+  display: block;
+}
 .dotdungeon > .window-content button, .dotdungeon > .window-content button:hover {
   all: initial;
+  display: block;
+  box-sizing: border-box;
   font-family: inherit;
   cursor: pointer;
+}
+.dotdungeon > .window-content input[type=text],
+.dotdungeon > .window-content input[type=number],
+.dotdungeon > .window-content textarea {
+  all: initial;
+  display: block;
+  box-sizing: border-box;
+  padding: 5px 7px;
+  border-width: 2px;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.dotdungeon > .window-content input[type=text]:focus, .dotdungeon > .window-content input[type=text]:active,
+.dotdungeon > .window-content input[type=number]:focus,
+.dotdungeon > .window-content input[type=number]:active,
+.dotdungeon > .window-content textarea:focus,
+.dotdungeon > .window-content textarea:active {
+  border-color: rgb(0, 0, 0);
 }
 .dotdungeon > .window-content select, .dotdungeon > .window-content select:hover {
   cursor: pointer;
@@ -158,5 +191,19 @@
     visibility: hidden;
   }
 }
+.dotdungeon .item--aspect {
+  padding: 4px;
+}
+.dotdungeon .item--aspect input[type=text] {
+  font-family: sans-serif;
+  font-size: 1.5em;
+  height: 1.5em;
+  width: 100%;
+}
+.dotdungeon .item--aspect textarea {
+  font-family: sans-serif;
+  width: 100%;
+  resize: vertical;
+}
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/root.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/vars.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGQ;AAIP;ECNA;EDQC;EACA,aEVW;EFWX;;AAGD;ECbA;EDeC;EACA;;AAGD;EACC;;;AAKF;EACC;;AAEA;EACC;EACA,YE9BW;;;ACDb;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdF;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aH5FS;EG6FT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;ACnGH;ED4GC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;AChIJ;EDyIC;IACC;IACA;IACA,qBACC;;EAaF;IACC;;EAGC;IACC;IACA%22,%22file%22:%22root.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/root.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/mixins/_breakpoints.scss%22,%22../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC;EACA,aEnBW;EFoBX;;AAGD;EACC;;AAGD;EC1BA;EACA;EACA;ED0BC;EACA;;AAGD;AAAA;AAAA;EChCA;EACA;EACA;EDkCC;EGpCD;EACA;EACA;EACA;EACA;;AAEA;AAAA;AAAA;AAAA;AAAA;EAEC;;AHgCD;EACC;;;AAKF;EACC;;AAEA;EACC;EACA,YElDW;;;AEFb;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdF;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aJ5FS;EI6FT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;ACnGH;ED4GC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;AChIJ;EDyIC;IACC;IACA;IACA,qBACC;;EAaF;IACC;;EAGC;IACC;IACA;;;AErKL;EACC;;AAEA;EACC,aNLU;EMMV;EACA;EACA;;AAGD;EACC,aNZU;EMaV;EACA%22,%22file%22:%22root.css%22%7D */

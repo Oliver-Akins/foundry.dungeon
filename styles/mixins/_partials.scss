@@ -1,0 +1,12 @@
+@mixin input-generic {
+	border-width: 2px;
+	border-radius: 4px;
+	border-style: solid;
+	border-color: rgba(0,0,0, 0.4);
+	background-color: rgba(0,0,0, 0.1);
+
+	&:focus,
+	&:active {
+		border-color: rgba(0,0,0, 1);
+	}
+}

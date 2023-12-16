@@ -1,0 +1,18 @@
+@use "../../vars" as *;
+
+.dotdungeon .item--aspect {
+	padding: 4px;
+
+	input[type=text] {
+		font-family: $body-font;
+		font-size: 1.5em;
+		height: 1.5em;
+		width: 100%;
+	}
+
+	textarea {
+		font-family: $body-font;
+		width: 100%;
+		resize: vertical;
+	}
+}

@@ -1,4 +1,27 @@
 <form autocomplete="off" class="item--aspect">
-	{{log system}}
-	<h2>I'm an Item :')</h2>
+	<h2>
+		<input
+			type="text"
+			placeholder="{{localize "dotdungeon.item.aspect.name"}}"
+			name="name"
+			value="{{item.name}}"
+		>
+	</h2>
+	<label>
+		{{localize "dotdungeon.item.aspect.duration"}}
+		<input
+			type="number"
+			class="duration"
+			name="system.deactivateAfter"
+			value="{{system.deactivateAfter}}"
+		>
+		{{dotdungeon-toFriendlyDuration system.deactivateAfter}}
+	</label>
+	<label>
+		{{localize "dotdungeon.item.aspect.description"}}:
+		<textarea
+			name="system.info"
+			aria-description="{{localize "dotdungeon.aria.aspect-description"}}"
+		>{{system.info}}</textarea>
+	</label>
 </form>
