@@ -8,7 +8,16 @@
 		{{/each}}
 	{{/ dotdungeon.panel}}
 	{{#> dotdungeon.panel class="skills" title="dotdungeon.actor.pc.panel.skills"}}
-		Skills
+		{{#each system.skills}}
+			<div class="skill-group">
+				<h3 class="skill-group__label">{{localize (concat "dotdungeon.actor.pc.skills." @key)}}</h3>
+				{{#with @key as | stat |}}
+					{{#each ..}}
+						{{> dotdungeon.skill stat=stat name=@key value=this}}
+					{{/each}}
+				{{/with}}
+			</div>
+		{{/each}}
 	{{/ dotdungeon.panel}}
 	{{#> dotdungeon.panel class="backpack" title="dotdungeon.actor.pc.panel.backpack"}}
 		Backpack
