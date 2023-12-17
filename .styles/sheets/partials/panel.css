@@ -1,0 +1,39 @@
+.dotdungeon .panel {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  border: 2px solid black;
+  background: greenyellow;
+}
+.dotdungeon .panel__header {
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+}
+.dotdungeon .panel__header h2 {
+  all: initial;
+  display: block;
+  box-sizing: border-box;
+  color: inherit;
+  flex-grow: 1;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 20px;
+}
+.dotdungeon .panel__header .icon {
+  height: 20px;
+  width: 20px;
+  aspect-ratio: 1/1;
+}
+
+@container (max-width: 400px) {
+  .dotdungeon .panel__header .icon {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/partials/panel.scss%22,%22../../../styles/mixins/_foundry.scss%22,%22../../../styles/_vars.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIA;EACC;EACA;EAEA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ECpBD;EACA;EACA;EDoBE;EACA;EACA,aEzBU;EF0BV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AG1BF;EHgCA;IACC;IACA%22,%22file%22:%22panel.css%22%7D */

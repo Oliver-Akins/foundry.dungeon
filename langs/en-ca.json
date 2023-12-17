@@ -69,6 +69,8 @@
 	"dotdungeon.item.aspect.description": "Description",
 	"dotdungeon.item.aspect.send-to-chat": "Send Aspect to Chat",
 
-	"dotdungeon.aria.skill-dropdown": "Your expertise level in the {skill} skill",
+
+	"dotdungeon.aria.skill.dropdown": "Your expertise level in the {skill} skill",
+	"dotdungeon.aria.skill.button.roll": "Roll a {skill} check",
 	"dotdungeon.aria.aspect-description": "The information on how the aspect works"
 }

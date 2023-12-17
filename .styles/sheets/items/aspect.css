@@ -2,15 +2,13 @@
   padding: 4px;
 }
 .dotdungeon .item--aspect input[type=text] {
-  font-family: sans-serif;
   font-size: 1.5em;
   height: 1.5em;
   width: 100%;
 }
 .dotdungeon .item--aspect textarea {
-  font-family: sans-serif;
   width: 100%;
   resize: vertical;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/items/aspect.scss%22,%22../../../styles/_vars.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EACC;;AAEA;EACC,aCLU;EDMV;EACA;EACA;;AAGD;EACC,aCZU;EDaV;EACA%22,%22file%22:%22aspect.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22aspect.css%22%7D */

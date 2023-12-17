@@ -22,7 +22,8 @@
 	}
 
 	label {
-		display: block;
+		display: inline-block;
+		cursor: pointer;
 	}
 
 	button, button:hover {
@@ -56,6 +57,7 @@
 
 @import "./sheets/partials/stat.scss";
 @import "./sheets/partials/skill.scss";
+@import "./sheets/partials/panel.scss";
 
 @import "./sheets/actor/mvp.scss";
 @import "./sheets/items/aspect.scss";

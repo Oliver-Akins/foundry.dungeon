@@ -1,24 +1,37 @@
 <div class="skill">
+	<button
+		{{disabled false}}
+		class="skill__label skill__button"
+		aria-label="{{localize "dotdungeon.aria.skill.button.roll" skill=name}}"
+	>
+		{{localize (concat "dotdungeon.actor.pc.skill." name)}}
+		{{#with (dotdungeon-objectValue system (concat "stats." stat)) as | die |}}
+			{{#if die}}
+				({{die}})
+			{{/if}}
+		{{/with}}
+	</button>
+	<select
+		name="{{concat "system.skills." stat "." name}}"
+		class="skill__select"
+		aria-label="{{localize "dotdungeon.aria.skill.dropdown" skill=name}}"
+	>
+		{{#select (dotdungeon-objectValue system (concat "skills." stat "." name))}}
+			<option value="">Novice (+0)</option>
+			<option value="+2">Trained (+2)</option>
+			<option value="+4">Expert (+4)</option>
+			<option value="locked">Locked</option>
+		{{/select}}
+	</select>
+	<!--
 	<button class="skill__button" data-stat="{{stat}}" data-skill="{{name}}">
 		{{!--
-		This would be nice to get working at some point, but it's seeming not
-		super plausible at the moment due to context weirdness (probably because
-		of my "with" helper)
+		This would be nice to get working at some point, but it's not something
+		that is MVP
 
 		<img src="icons/dice/{{dotdungeon-objectValue system (concat "system.skills." stat "." name)}}black.svg">
 		--}}
-		R
+		Roll
 	</button>
-	<label class="skill__label">
-		{{localize (concat "dotdungeon.actor.pc.skill." name)}}
-		<select
-			class="skill__select"
-			aria-label="{{localize "dotdungeon.aria.skill-dropdown" skill=name}}"
-		>
-			<option value="">Novice (+0)</option>
-			<option value="locked">Locked</option>
-			<option value="+2">Trained (+2)</option>
-			<option value="+4">Expert (+4)</option>
-		</select>
-	</label>
+	-->
 </div>

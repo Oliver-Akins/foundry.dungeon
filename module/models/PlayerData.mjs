@@ -62,9 +62,11 @@ export class PlayerData extends foundry.abstract.DataModel {
 					piloting: trainingLevelField(),
 				})
 			}),
-			aspect: new fields.StringField({
-				blank: true,
-				trim: true,
+			aspect: new fields.SchemaField({
+				name: new fields.StringField({ blank: true, trim: true }),
+				description: new fields.StringField({ blank: true, trim: true }),
+				deactivateAfter: new fields.NumberField({ min: 0, integer: true}),
+				used: new fields.BooleanField(),
 			}),
 			roles: new fields.ArrayField(new fields.HTMLField()),
 			weapon: new fields.SchemaField({

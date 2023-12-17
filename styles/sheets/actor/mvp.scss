@@ -1,105 +1,79 @@
 @use "../../vars.scss" as *;
 @use "../../mixins/breakpoints" as *;
 
-.dotdungeon {
-	.actor--pc {
-		display: grid;
-		grid-template-areas:
-			"avatar stats stats"
-			"avatar skills skills"
-			"backpack skills skills"
-			"backpack sync aspect"
-			"backpack weapons aspect"
-			"backpack weapons spells"
-			"backpack roles spells"
-			"summons roles mounts"
-			"summons roles storage";
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		grid-template-rows: min-content repeat(8, minmax(0, 1fr));
-		padding: 4px;
-		gap: 4px;
-
-		.panel {
-			&--avatar {
-				grid-area: avatar;
-			}
-			&--stats {
-				grid-area: stats;
-				.panel__content {
-					display: flex;
-					flex-direction: row;
-					gap: 8px;
-					justify-content: space-evenly;
-					padding: 8px;
-				}
-			}
-			&--skills {
-				grid-area: skills;
-
-				.panel__content {
-					display: grid;
-					grid-template-columns: repeat(2, minmax(0, 1fr));
-					grid-template-rows: repeat(2, minmax(0, min-content));
-				}
-			}
-			&--backpack {
-				grid-area: backpack;
-			}
-			&--sync {
-				grid-area: sync;
-			}
-			&--aspect {
-				grid-area: aspect;
-			}
-			&--weapons {
-				grid-area: weapons;
-			}
-			&--roles {
-				grid-area: roles;
-			}
-			&--spells {
-				grid-area: spells;
-			}
-			&--mounts {
-				grid-area: mounts;
-			}
-			&--summons {
-				grid-area: summons;
-			}
-			&--storage {
-				grid-area: storage;
-			}
-		}
-	}
+.dotdungeon .actor--pc {
+	display: grid;
+	grid-template-areas:
+		"avatar stats stats"
+		"avatar skills skills"
+		"backpack skills skills"
+		"backpack sync aspect"
+		"backpack weapons aspect"
+		"backpack weapons spells"
+		"backpack roles spells"
+		"summons roles mounts"
+		"summons roles storage";
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-rows: min-content repeat(8, minmax(0, 1fr));
+	padding: 4px;
+	gap: 4px;
 
 	.panel {
-		border: 2px solid black;
-		background: greenyellow;
-
-		&__header {
-			background: black;
-			color: white;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			gap: 4px;
-
-			h2 {
-				all: initial;
-				color: inherit;
-				flex-grow: 1;
-				padding-left: 8px;
-				font-family: $title-font;
-				font-size: 20px;
+		&--avatar {
+			grid-area: avatar;
+		}
+		&--stats {
+			grid-area: stats;
+			.panel__content {
+				display: flex;
+				flex-direction: row;
+				gap: 8px;
+				justify-content: space-evenly;
+				padding: 8px;
 			}
+		}
+		&--skills {
+			grid-area: skills;
 
-			.icon {
-				$size: 32px;
-				height: $size;
-				width: $size;
-				aspect-ratio: 1/1;
+			.panel__content {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				grid-template-rows: repeat(2, minmax(0, min-content));
 			}
+		}
+		&--backpack {
+			grid-area: backpack;
+		}
+		&--sync {
+			grid-area: sync;
+		}
+		&--aspect {
+			grid-area: aspect;
+			.panel__content {
+				display: grid;
+				grid-template-rows: min-content min-content min-content 1fr;
+				height: 100%;
+				gap: 4px;
+				padding: 8px;
+			}
+		}
+		&--weapons {
+			grid-area: weapons;
+		}
+		&--roles {
+			grid-area: roles;
+		}
+		&--spells {
+			grid-area: spells;
+		}
+		&--mounts {
+			grid-area: mounts;
+		}
+		&--summons {
+			grid-area: summons;
+		}
+		&--storage {
+			grid-area: storage;
 		}
 	}
 }
@@ -109,14 +83,14 @@
 	.dotdungeon {
 		.actor--pc {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-			grid-template-rows: repeat(15, minmax(0, 1fr));
+			grid-template-rows: repeat(15, min-content);
 			grid-template-areas:
-				"avatar sync"
+				"avatar stats"
 				"avatar skills"
-				"stats skills"
-				"stats skills"
-				"weapons aspect"
-				"weapons aspect"
+				"sync skills"
+				"weapons skills"
+				"weapons skills"
+				"backpack aspect"
 				"backpack aspect"
 				"backpack roles"
 				"backpack roles"
@@ -126,14 +100,21 @@
 				"summons storage"
 				"mounts storage"
 				"mounts storage";
-		}
 
-		.panel {
-			background: yellowgreen;
+			.panel {
+				background: yellowgreen;
 
-			&--stats {
-				.panel__content {
-					flex-wrap: wrap;
+				&--stats {
+					.panel__content {
+						flex-wrap: wrap;
+					}
+				}
+
+				&--skills {
+					.panel__content {
+						display: flex;
+						flex-direction: column;
+					}
 				}
 			}
 		}
@@ -158,14 +139,12 @@
 				"mounts"
 				"summons"
 				"storage";
-		}
-		.panel {
-			background: blueviolet;
 
-			&__header {
-				.icon {
-					display: none;
-					visibility: hidden;
+			.panel {
+				&--skills {
+					.skill {
+						flex-direction: column;
+					}
 				}
 			}
 		}

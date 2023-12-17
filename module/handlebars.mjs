@@ -2,7 +2,7 @@ export const partials = [
 	`actors/char-sheet-mvp/partials/dice_choice.hbs`,
 	`actors/char-sheet-mvp/partials/stat.hbs`,
 	`actors/char-sheet-mvp/partials/skill.hbs`,
-	`actors/char-sheet-mvp/partials/panel.hbs`,
+	`partials/panel.hbs`,
 	`items/aspect.hbs`,
 ];
 
@@ -24,7 +24,7 @@ export async function preloadHandlebarsTemplates() {
 		console.debug(`Loading partial: ${partial}`);
 		const path = `${pathPrefix}${partial}`;
 		paths[`dotdungeon.${partial.split(`/`).pop().replace(`.hbs`, ``)}`] = path;
-	}
+	};
 
 	console.debug(`Loaded ${partials.length} partials`);
 	console.groupEnd();
@@ -37,8 +37,6 @@ function createArray(...args) {
 };
 
 function objectValue(obj, keypath) {
-	// console.log(obj, keypath.string)
-	return keypath
 	function helper(o, k) {
 		let v = o[k[0]];
 		if (typeof v === "object") {
@@ -46,7 +44,8 @@ function objectValue(obj, keypath) {
 		};
 		return v;
 	};
-	return helper(obj, keypath.string.split(`.`))
+	let resp = helper(obj, keypath.string.split(`.`));
+	return resp;
 };
 
 
@@ -73,4 +72,4 @@ function toFriendlyDuration(duration) {
 		friendly += `${duration}s`;
 	};
 	return friendly;
-}
+};

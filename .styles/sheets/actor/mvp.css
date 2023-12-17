@@ -36,6 +36,13 @@
 .dotdungeon .actor--pc .panel--aspect {
   grid-area: aspect;
 }
+.dotdungeon .actor--pc .panel--aspect .panel__content {
+  display: grid;
+  grid-template-rows: min-content min-content min-content 1fr;
+  height: 100%;
+  gap: 4px;
+  padding: 8px;
+}
 .dotdungeon .actor--pc .panel--weapons {
   grid-area: weapons;
 }
@@ -54,44 +61,22 @@
 .dotdungeon .actor--pc .panel--storage {
   grid-area: storage;
 }
-.dotdungeon .panel {
-  border: 2px solid black;
-  background: greenyellow;
-}
-.dotdungeon .panel__header {
-  background: black;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-}
-.dotdungeon .panel__header h2 {
-  all: initial;
-  color: inherit;
-  flex-grow: 1;
-  padding-left: 8px;
-  font-family: "Pixelify Sans", sans-serif;
-  font-size: 20px;
-}
-.dotdungeon .panel__header .icon {
-  height: 32px;
-  width: 32px;
-  aspect-ratio: 1/1;
-}
 
 @container (max-width: 620px) {
   .dotdungeon .actor--pc {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(15, minmax(0, 1fr));
-    grid-template-areas: "avatar sync" "avatar skills" "stats skills" "stats skills" "weapons aspect" "weapons aspect" "backpack aspect" "backpack roles" "backpack roles" "backpack roles" "backpack spells" "summons spells" "summons storage" "mounts storage" "mounts storage";
+    grid-template-rows: repeat(15, min-content);
+    grid-template-areas: "avatar stats" "avatar skills" "sync skills" "weapons skills" "weapons skills" "backpack aspect" "backpack aspect" "backpack roles" "backpack roles" "backpack roles" "backpack spells" "summons spells" "summons storage" "mounts storage" "mounts storage";
   }
-  .dotdungeon .panel {
+  .dotdungeon .actor--pc .panel {
     background: yellowgreen;
   }
-  .dotdungeon .panel--stats .panel__content {
+  .dotdungeon .actor--pc .panel--stats .panel__content {
     flex-wrap: wrap;
+  }
+  .dotdungeon .actor--pc .panel--skills .panel__content {
+    display: flex;
+    flex-direction: column;
   }
 }
 @container (max-width: 400px) {
@@ -100,13 +85,9 @@
     grid-template-rows: repeat(12, min-content);
     grid-template-areas: "avatar" "stats" "sync" "skills" "aspect" "roles" "backpack" "weapons" "spells" "mounts" "summons" "storage";
   }
-  .dotdungeon .panel {
-    background: blueviolet;
-  }
-  .dotdungeon .panel__header .icon {
-    display: none;
-    visibility: hidden;
+  .dotdungeon .actor--pc .panel--skills .skill {
+    flex-direction: column;
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/_vars.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIC;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAKH;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA,aC5FS;ED6FT;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AEnGH;EF4GC;IACC;IACA;IACA,qBACC;;EAiBF;IACC;;EAGC;IACC;;;AEhIJ;EFyIC;IACC;IACA;IACA,qBACC;;EAaF;IACC;;EAGC;IACC;IACA%22,%22file%22:%22mvp.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AC1EF;EDkFC;IACC;IACA;IACA,qBACC;;EAgBD;IACC;;EAGC;IACC;;EAKD;IACC;IACA;;;AC5GL;EDsHC;IACC;IACA;IACA,qBACC;;EAeC;IACC%22,%22file%22:%22mvp.css%22%7D */

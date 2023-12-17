@@ -8,14 +8,12 @@
 		{{/each}}
 	{{/ dotdungeon.panel}}
 	{{#> dotdungeon.panel class="skills" title="dotdungeon.actor.pc.panel.skills"}}
-		{{#each system.skills}}
+		{{#each system.skills as |skills|}}
 			<div class="skill-group">
 				<h3 class="skill-group__label">{{localize (concat "dotdungeon.actor.pc.skills." @key)}}</h3>
-				{{#with @key as | stat |}}
-					{{#each ..}}
-						{{> dotdungeon.skill stat=stat name=@key value=this}}
-					{{/each}}
-				{{/with}}
+				{{#each skills as |skill|}}
+					{{> dotdungeon.skill system=../../system stat=@../key name=@key value=skill}}
+				{{/each}}
 			</div>
 		{{/each}}
 	{{/ dotdungeon.panel}}
@@ -26,7 +24,39 @@
 		Sync
 	{{/ dotdungeon.panel}}
 	{{#> dotdungeon.panel class="aspect" title="dotdungeon.actor.pc.panel.aspect"}}
-		Aspect
+		<input
+			type="text"
+			class="aspect__name--input"
+			name="system.aspect.name"
+			value="{{system.aspect.name}}"
+		>
+		<label class="aspect__used--label">
+			Used
+			<input
+				type="checkbox"
+				class="aspect__used--input"
+				name="system.aspect.used"
+				{{checked system.aspect.used}}
+			>
+		</label>
+		<label class="aspect__duration--label">
+			Duration
+			{{#if system.aspect.deactivateAfter}}
+				<span class="friendly-duration aspect__duration--friendly">
+					({{dotdungeon-toFriendlyDuration system.aspect.deactivateAfter}})
+				</span>
+			{{/if}}
+			<input
+				type="number"
+				class="aspect__duration--input"
+				name="system.aspect.deactivateAfter"
+				value="{{system.aspect.deactivateAfter}}"
+			>
+		</label>
+		<textarea
+			class="aspect__description--input"
+			name="system.aspect.description"
+		>{{system.aspect.description}}</textarea>
 	{{/ dotdungeon.panel}}
 	{{#> dotdungeon.panel class="weapons" title="dotdungeon.actor.pc.panel.weapons"}}
 		Weapons
