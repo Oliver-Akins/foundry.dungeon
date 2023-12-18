@@ -1,12 +1,33 @@
 <form autocomplete="off" class="actor--pc">
 	{{#> dotdungeon.panel class="avatar" title="dotdungeon.actor.pc.panel.avatar"}}
-		Avatar Content
+		<label>
+			Name
+			<input
+				type="text"
+				name="name"
+				value="{{actor.name}}"
+			>
+		</label>
+		<label>
+			Group Name
+			<input
+				type="text"
+				name="system.group"
+				value="{{system.group}}"
+			>
+		</label>
+		{{log system}}
+		{{log actor}}
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="stats" title="dotdungeon.actor.pc.panel.statistics"}}
 		{{#each system.stats }}
 			{{> dotdungeon.stat name=@key value=this}}
 		{{/each}}
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="skills" title="dotdungeon.actor.pc.panel.skills"}}
 		{{#each system.skills as |skills|}}
 			<div class="skill-group">
@@ -17,12 +38,36 @@
 			</div>
 		{{/each}}
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="backpack" title="dotdungeon.actor.pc.panel.backpack"}}
 		Backpack
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="sync" title="dotdungeon.actor.pc.panel.sync"}}
-		Sync
+		<div class="sync">
+			<h3 class="sync__header">Sync</h3>
+			{{!-- <input
+				type="number"
+				class="sync__input"
+				value="{{computed.syncTotal}}"
+			> --}}
+		</div>
+		<div class="respawns">
+			<h3 class="respawns__header">{{localize "dotdungeon.actor.pc.respawns.header"}}</h3>
+			{{#each system.respawns}}
+				<input
+					type="checkbox"
+					class="respawns__input"
+					name="system.respawns.{{@key}}"
+					{{checked this}}
+				>
+			{{/each}}
+		</div>
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="aspect" title="dotdungeon.actor.pc.panel.aspect"}}
 		<input
 			type="text"
@@ -58,21 +103,33 @@
 			name="system.aspect.description"
 		>{{system.aspect.description}}</textarea>
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="weapons" title="dotdungeon.actor.pc.panel.weapons"}}
 		Weapons
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="spells" title="dotdungeon.actor.pc.panel.spells"}}
 		Spells
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="roles" title="dotdungeon.actor.pc.panel.roles"}}
 		Roles
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="mounts" title="dotdungeon.actor.pc.panel.mounts"}}
 		Mounts
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="summons" title="dotdungeon.actor.pc.panel.summons"}}
 		Summons
 	{{/ dotdungeon.panel}}
+
+
 	{{#> dotdungeon.panel class="storage" title="dotdungeon.actor.pc.panel.storage"}}
 		Storage
 	{{/ dotdungeon.panel}}

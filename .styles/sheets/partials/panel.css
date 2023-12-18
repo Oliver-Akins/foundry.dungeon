@@ -28,6 +28,9 @@
   width: 20px;
   aspect-ratio: 1/1;
 }
+.dotdungeon .panel__content {
+  padding: 8px;
+}
 
 @container (max-width: 400px) {
   .dotdungeon .panel__header .icon {
@@ -36,4 +39,4 @@
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/partials/panel.scss%22,%22../../../styles/mixins/_foundry.scss%22,%22../../../styles/_vars.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIA;EACC;EACA;EAEA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ECpBD;EACA;EACA;EDoBE;EACA;EACA,aEzBU;EF0BV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AG1BF;EHgCA;IACC;IACA%22,%22file%22:%22panel.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/partials/panel.scss%22,%22../../../styles/mixins/_foundry.scss%22,%22../../../styles/_vars.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIA;EACC;EACA;EAEA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ECpBD;EACA;EACA;EDoBE;EACA;EACA,aEzBU;EF0BV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AG/BD;EHoCA;IACC;IACA%22,%22file%22:%22panel.css%22%7D */

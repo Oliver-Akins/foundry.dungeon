@@ -17,8 +17,7 @@ export class PlayerSheet extends ActorSheet {
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Actor: ${this.id}`);
 
-		// Modal openings
-		// html.find(`button.stat-prompt`).on("click", () => {});
+		// html.find(`input.sync__input`).on("blur", ($e) => {});
 	};
 
 	getData() {
@@ -27,6 +26,10 @@ export class PlayerSheet extends ActorSheet {
 
 		ctx.system = actor.system;
 		ctx.flags = actor.flags;
+
+		ctx.computed = {
+			syncTotal: 0
+		};
 
 		console.groupCollapsed(`PlayerSheet.getData`);
 		console.log(`ctx`, ctx);

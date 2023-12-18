@@ -63,6 +63,8 @@
 	"dotdungeon.actor.pc.skill.explosives": "Explosives",
 	"dotdungeon.actor.pc.skill.piloting": "Piloting",
 
+	"dotdungeon.actor.pc.respawns.header": "Respawns",
+
 
 	"dotdungeon.item.aspect.name": "Name",
 	"dotdungeon.item.aspect.duration": "Duration (seconds)",

@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 8px;
   gap: 4px;
 }
 .dotdungeon .skill-group h3 {
@@ -20,4 +19,4 @@
   text-align: center;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/partials/skill.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA%22,%22file%22:%22skill.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/partials/skill.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA%22,%22file%22:%22skill.css%22%7D */

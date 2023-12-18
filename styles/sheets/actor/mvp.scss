@@ -14,7 +14,7 @@
 		"summons roles mounts"
 		"summons roles storage";
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	grid-template-rows: min-content repeat(8, minmax(0, 1fr));
+	grid-template-rows: min-content repeat(2, minmax(0, 1fr)) min-content repeat(5, minmax(0, 1fr));
 	padding: 4px;
 	gap: 4px;
 
@@ -37,6 +37,7 @@
 
 			.panel__content {
 				display: grid;
+				row-gap: 8px;
 				grid-template-columns: repeat(2, minmax(0, 1fr));
 				grid-template-rows: repeat(2, minmax(0, min-content));
 			}
@@ -46,6 +47,23 @@
 		}
 		&--sync {
 			grid-area: sync;
+
+			.panel__content {
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+			}
+
+			.respawns,
+			.sync {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				&__header {
+					flex-grow: 1;
+				}
+			}
 		}
 		&--aspect {
 			grid-area: aspect;
@@ -54,7 +72,6 @@
 				grid-template-rows: min-content min-content min-content 1fr;
 				height: 100%;
 				gap: 4px;
-				padding: 8px;
 			}
 		}
 		&--weapons {

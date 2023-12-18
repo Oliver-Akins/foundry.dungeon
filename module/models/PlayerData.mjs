@@ -96,6 +96,11 @@ export class PlayerData extends foundry.abstract.DataModel {
 					info: new fields.HTMLField(),
 				})
 			),
+			respawns: new fields.SchemaField({
+				r1: new fields.BooleanField(),
+				r2: new fields.BooleanField(),
+				r3: new fields.BooleanField(),
+			}),
 		};
 	};
 };

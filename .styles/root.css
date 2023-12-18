@@ -74,7 +74,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 8px;
   gap: 4px;
 }
 .dotdungeon .skill-group h3 {
@@ -114,6 +113,9 @@
   width: 20px;
   aspect-ratio: 1/1;
 }
+.dotdungeon .panel__content {
+  padding: 8px;
+}
 
 @container (max-width: 400px) {
   .dotdungeon .panel__header .icon {
@@ -125,7 +127,7 @@
   display: grid;
   grid-template-areas: "avatar stats stats" "avatar skills skills" "backpack skills skills" "backpack sync aspect" "backpack weapons aspect" "backpack weapons spells" "backpack roles spells" "summons roles mounts" "summons roles storage";
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: min-content repeat(8, minmax(0, 1fr));
+  grid-template-rows: min-content repeat(2, minmax(0, 1fr)) min-content repeat(5, minmax(0, 1fr));
   padding: 4px;
   gap: 4px;
 }
@@ -147,6 +149,7 @@
 }
 .dotdungeon .actor--pc .panel--skills .panel__content {
   display: grid;
+  row-gap: 8px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, min-content));
 }
@@ -156,6 +159,21 @@
 .dotdungeon .actor--pc .panel--sync {
   grid-area: sync;
 }
+.dotdungeon .actor--pc .panel--sync .panel__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.dotdungeon .actor--pc .panel--sync .respawns,
+.dotdungeon .actor--pc .panel--sync .sync {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.dotdungeon .actor--pc .panel--sync .respawns__header,
+.dotdungeon .actor--pc .panel--sync .sync__header {
+  flex-grow: 1;
+}
 .dotdungeon .actor--pc .panel--aspect {
   grid-area: aspect;
 }
@@ -164,7 +182,6 @@
   grid-template-rows: min-content min-content min-content 1fr;
   height: 100%;
   gap: 4px;
-  padding: 8px;
 }
 .dotdungeon .actor--pc .panel--weapons {
   grid-area: weapons;
@@ -225,4 +242,4 @@
   resize: vertical;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/root.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/partials/panel.scss%22,%22../styles/mixins/_breakpoints.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC;EACA,aEnBW;EFoBX;;AAGD;EACC;EACA;;AAGD;EC3BA;EACA;EACA;ED2BC;EACA;;AAGD;AAAA;AAAA;ECjCA;EACA;EACA;EDmCC;EGnCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH8BD;EACC;;;AAKF;EACC;;AAEA;EACC;EACA,YElDW;;;AEHb;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACfH;EACC;EACA;EAEA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ELpBD;EACA;EACA;EKoBE;EACA;EACA,aJzBU;EI0BV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;;AC1BF;EDgCA;IACC;IACA;;;AEtCF;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AD1EF;ECkFC;IACC;IACA;IACA,qBACC;;EAgBD;IACC;;EAGC;IACC;;EAKD;IACC;IACA;;;AD5GL;ECsHC;IACC;IACA;IACA,qBACC;;EAeC;IACC;;;AC/IN;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22root.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/root.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/partials/panel.scss%22,%22../styles/mixins/_breakpoints.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC;EACA,aEnBW;EFoBX;;AAGD;EACC;EACA;;AAGD;EC3BA;EACA;EACA;ED2BC;EACA;;AAGD;AAAA;AAAA;ECjCA;EACA;EACA;EDmCC;EGnCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH8BD;EACC;;;AAKF;EACC;;AAEA;EACC;EACA,YElDW;;;AEHb;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdH;EACC;EACA;EAEA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ELpBD;EACA;EACA;EKoBE;EACA;EACA,aJzBU;EI0BV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AC/BD;EDoCA;IACC;IACA;;;AE1CF;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIH;EACC;;AACA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AD3FF;ECmGC;IACC;IACA;IACA,qBACC;;EAgBD;IACC;;EAGC;IACC;;EAKD;IACC;IACA;;;AD7HL;ECuIC;IACC;IACA;IACA,qBACC;;EAeC;IACC;;;AChKN;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22root.css%22%7D */
