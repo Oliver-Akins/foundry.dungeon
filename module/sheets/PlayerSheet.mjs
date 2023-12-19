@@ -1,4 +1,6 @@
-export class PlayerSheet extends ActorSheet {
+import { GenericSheet } from "./GenericSheet.mjs";
+
+export class PlayerSheet extends GenericSheet {
 	static get defaultOptions() {
 		let opts = mergeObject(
 			super.defaultOptions,
