@@ -101,6 +101,9 @@ export class PlayerData extends foundry.abstract.DataModel {
 				r2: new fields.BooleanField(),
 				r3: new fields.BooleanField(),
 			}),
+			syncDelta: new fields.NumberField({
+				integer: true,
+			}),
 		};
 	};
 };
