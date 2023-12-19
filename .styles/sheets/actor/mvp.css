@@ -1,13 +1,20 @@
 .dotdungeon .actor--pc {
   display: grid;
-  grid-template-areas: "avatar stats stats" "avatar skills skills" "backpack skills skills" "backpack sync aspect" "backpack weapons aspect" "backpack weapons spells" "backpack roles spells" "summons roles mounts" "summons roles storage";
+  grid-template-areas: "profile stats stats" "profile skills skills" "sync skills skills" "spells weapons aspect" "spells weapons aspect" "backpack roles mounts" "backpack roles mounts" "summons storage storage" "summons storage storage";
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: min-content repeat(2, minmax(0, 1fr)) min-content repeat(5, minmax(0, 1fr));
+  grid-template-rows: min-content 1fr repeat(7, min-content);
   padding: 4px;
   gap: 4px;
 }
-.dotdungeon .actor--pc .panel--avatar {
-  grid-area: avatar;
+.dotdungeon .actor--pc .panel--profile {
+  grid-area: profile;
+}
+.dotdungeon .actor--pc .panel--profile .avatar {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.dotdungeon .actor--pc .panel--profile label, .dotdungeon .actor--pc .panel--profile input {
+  width: 100%;
 }
 .dotdungeon .actor--pc .panel--stats {
   grid-area: stats;
@@ -18,6 +25,7 @@
   gap: 8px;
   justify-content: space-evenly;
   padding: 8px;
+  flex-wrap: wrap;
 }
 .dotdungeon .actor--pc .panel--skills {
   grid-area: skills;
@@ -81,7 +89,7 @@
   .dotdungeon .actor--pc {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(15, min-content);
-    grid-template-areas: "avatar stats" "avatar skills" "sync skills" "weapons skills" "weapons skills" "backpack aspect" "backpack aspect" "backpack roles" "backpack roles" "backpack roles" "backpack spells" "summons spells" "summons storage" "mounts storage" "mounts storage";
+    grid-template-areas: "profile stats" "profile skills" "sync skills" "weapons skills" "weapons skills" "backpack aspect" "backpack aspect" "backpack roles" "backpack roles" "backpack roles" "backpack spells" "summons spells" "summons storage" "mounts storage" "mounts storage";
   }
   .dotdungeon .actor--pc .panel {
     background: yellowgreen;
@@ -98,11 +106,11 @@
   .dotdungeon .actor--pc {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(12, min-content);
-    grid-template-areas: "avatar" "stats" "sync" "skills" "aspect" "roles" "backpack" "weapons" "spells" "mounts" "summons" "storage";
+    grid-template-areas: "profile" "stats" "sync" "skills" "aspect" "roles" "backpack" "weapons" "spells" "mounts" "summons" "storage";
   }
   .dotdungeon .actor--pc .panel--skills .skill {
     flex-direction: column;
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA;EACC;EACA,qBACC;EASD;EACA;EACA;EACA;;AAGC;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIH;EACC;;AACA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AC3FF;EDmGC;IACC;IACA;IACA,qBACC;;EAgBD;IACC;;EAGC;IACC;;EAKD;IACC;IACA;;;AC7HL;EDuIC;IACC;IACA;IACA,qBACC;;EAeC;IACC%22,%22file%22:%22mvp.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIH;EACC;;AACA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;ACvGF;ED+GC;IACC;IACA;IACA,qBACC;;EAgBD;IACC;;EAGC;IACC;;EAKD;IACC;IACA;;;ACzIL;EDmJC;IACC;IACA;IACA,qBACC;;EAeC;IACC%22,%22file%22:%22mvp.css%22%7D */

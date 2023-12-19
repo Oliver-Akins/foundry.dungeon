@@ -4,23 +4,34 @@
 .dotdungeon .actor--pc {
 	display: grid;
 	grid-template-areas:
-		"avatar stats stats"
-		"avatar skills skills"
-		"backpack skills skills"
-		"backpack sync aspect"
-		"backpack weapons aspect"
-		"backpack weapons spells"
-		"backpack roles spells"
-		"summons roles mounts"
-		"summons roles storage";
+		"profile stats stats"
+		"profile skills skills"
+		"sync skills skills"
+		"spells weapons aspect"
+		"spells weapons aspect"
+		"backpack roles mounts"
+		"backpack roles mounts"
+		"summons storage storage"
+		"summons storage storage";
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	grid-template-rows: min-content repeat(2, minmax(0, 1fr)) min-content repeat(5, minmax(0, 1fr));
+	grid-template-rows:
+		min-content
+		1fr
+		repeat(7, min-content);
 	padding: 4px;
 	gap: 4px;
 
 	.panel {
-		&--avatar {
-			grid-area: avatar;
+		&--profile {
+			grid-area: profile;
+			.avatar {
+				width: 100%;
+				aspect-ratio: 1/1;
+			}
+
+			label, input {
+				width: 100%;
+			}
 		}
 		&--stats {
 			grid-area: stats;
@@ -30,6 +41,7 @@
 				gap: 8px;
 				justify-content: space-evenly;
 				padding: 8px;
+				flex-wrap: wrap;
 			}
 		}
 		&--skills {
@@ -102,8 +114,8 @@
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 			grid-template-rows: repeat(15, min-content);
 			grid-template-areas:
-				"avatar stats"
-				"avatar skills"
+				"profile stats"
+				"profile skills"
 				"sync skills"
 				"weapons skills"
 				"weapons skills"
@@ -144,7 +156,7 @@
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(12, min-content);
 			grid-template-areas:
-				"avatar"
+				"profile"
 				"stats"
 				"sync"
 				"skills"

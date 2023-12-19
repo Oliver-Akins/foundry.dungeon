@@ -19,7 +19,7 @@
 	"TYPES.Item.legendaryItem": "Legendary Item",
 	"TYPES.Item.spell": "Spell",
 
-	"dotdungeon.actor.pc.panel.avatar": "Avatar",
+	"dotdungeon.actor.pc.panel.profile": "Profile",
 	"dotdungeon.actor.pc.panel.statistics": "Stats",
 	"dotdungeon.actor.pc.panel.skills": "Skills",
 	"dotdungeon.actor.pc.panel.backpack": "Backpack",
@@ -68,6 +68,12 @@
 	"dotdungeon.actor.pc.skill.piloting": "Piloting",
 
 	"dotdungeon.actor.pc.respawns.header": "Respawns",
+
+	"dotdungeon.actor.pc.profile.avatar.label": "Avatar",
+	"dotdungeon.actor.pc.profile.group.label": "Group Name",
+	"dotdungeon.actor.pc.profile.group.placeholder": "Group Name...",
+	"dotdungeon.actor.pc.profile.name.label": "Character Name",
+	"dotdungeon.actor.pc.profile.name.placeholder": "Character Name...",
 
 
 	"dotdungeon.item.aspect.name": "Name",

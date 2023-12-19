@@ -1,23 +1,41 @@
 <form autocomplete="off" class="actor--pc">
-	{{#> dotdungeon.panel class="avatar" title="dotdungeon.actor.pc.panel.avatar"}}
+	{{#> dotdungeon.panel class="profile" title="dotdungeon.actor.pc.panel.profile"}}
+		{{#if settings.showAvatarOnSheet}}
+			<img
+				class="avatar"
+				src="{{actor.img}}"
+				data-edit="img"
+				title="{{actor.name}}"
+			/>
+		{{else}}
+			<label>
+				{{localize "dotdungeon.actor.pc.profile.avatar.label"}}
+				{{filePicker type="avatar" target="img"}}
+			</label>
+		{{/if}}
+		{{#if settings.devMode}}
+			<div class="debug-data">
+				Image URL: {{actor.img}}
+			</div>
+		{{/if}}
 		<label>
-			Name
+			{{localize "dotdungeon.actor.pc.profile.name.label"}}
 			<input
 				type="text"
 				name="name"
 				value="{{actor.name}}"
+				placeholder="{{localize "dotdungeon.actor.pc.profile.name.placeholder"}}"
 			>
 		</label>
 		<label>
-			Group Name
+			{{localize "dotdungeon.actor.pc.profile.group.label"}}
 			<input
 				type="text"
 				name="system.group"
 				value="{{system.group}}"
+				placeholder="{{localize "dotdungeon.actor.pc.profile.group.placeholder"}}"
 			>
 		</label>
-		{{log system}}
-		{{log actor}}
 	{{/ dotdungeon.panel}}
 
 
@@ -41,13 +59,20 @@
 
 
 	{{#> dotdungeon.panel class="backpack" title="dotdungeon.actor.pc.panel.backpack"}}
-		Backpack
+		Backpacks
 	{{/ dotdungeon.panel}}
 
 
 	{{#> dotdungeon.panel class="sync" title="dotdungeon.actor.pc.panel.sync"}}
 		<div class="sync">
-			<h3 class="sync__header">Sync</h3>
+			<h3 class="sync__header">
+				Sync
+				{{#if settings.devMode}}
+					<span class="debug-data">
+						({{system.syncDelta}})
+					</span>
+				{{/if}}
+			</h3>
 			{{!-- <input
 				type="number"
 				class="sync__input"
