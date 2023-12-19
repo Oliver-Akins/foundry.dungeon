@@ -43,6 +43,11 @@
 	select, select:hover {
 		cursor: pointer;
 	}
+
+	.debug-data {
+		opacity: 60%;
+		font-family: $body-font;
+	}
 }
 
 // Styling that doesn't belong to any particular part of my sheet

@@ -1,4 +1,8 @@
 {
+	"dotdungeon.settings.showAvatarOnSheet.name": "Show Avatar On Player Sheet",
+	"dotdungeon.settings.showAvatarOnSheet.description": "Determines whether or not to show the avatar to you on the Player Character sheets, turning this off will replace the image with a file picker so that you can still change the image from the character sheet.",
+
+
 	"dotdungeon.sheet.PlayerSheet": "PC Sheet",
 	"dotdungeon.sheet.AspectSheet": "Aspect Sheet",
 

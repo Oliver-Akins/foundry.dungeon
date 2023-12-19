@@ -18,8 +18,15 @@ import * as hbs from "./handlebars.mjs";
 import "./hooks/hotReload.mjs";
 
 
+// Misc Imports
+import loadSettings from "./settings/index.mjs";
+
+
 Hooks.once(`init`, () => {
 	console.debug(`.dungeon | Initializing`);
+
+	loadSettings();
+
 	game.boilerplate = {
 		PlayerActor,
 		AspectItem,
