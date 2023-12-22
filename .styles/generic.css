@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+.dotdungeon > .window-content ::-webkit-scrollbar {
+  width: 10px;
+}
+.dotdungeon > .window-content ::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+}
+.dotdungeon > .window-content h2, .dotdungeon > .window-content h3, .dotdungeon > .window-content h4, .dotdungeon > .window-content h5, .dotdungeon > .window-content h6 {
+  all: initial;
+  display: block;
+  box-sizing: border-box;
+  font-family: "Pixelify Sans", sans-serif;
+  margin: 0;
+}
+.dotdungeon > .window-content label {
+  cursor: pointer;
+}
+.dotdungeon > .window-content button, .dotdungeon > .window-content button:hover {
+  all: initial;
+  display: block;
+  box-sizing: border-box;
+  font-family: inherit;
+  cursor: pointer;
+}
+.dotdungeon > .window-content input[type=text],
+.dotdungeon > .window-content input[type=number],
+.dotdungeon > .window-content textarea {
+  padding: 5px 7px;
+  border-width: 2px;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+.dotdungeon > .window-content input[type=text]:focus, .dotdungeon > .window-content input[type=text]:active,
+.dotdungeon > .window-content input[type=number]:focus,
+.dotdungeon > .window-content input[type=number]:active,
+.dotdungeon > .window-content textarea:focus,
+.dotdungeon > .window-content textarea:active {
+  border-color: rgb(0, 0, 0);
+}
+.dotdungeon > .window-content select, .dotdungeon > .window-content select:hover {
+  cursor: pointer;
+}
+.dotdungeon > .window-content .debug-data {
+  opacity: 60%;
+  font-family: sans-serif;
+}
+
+.dotdungeon {
+  container-type: size;
+}
+.dotdungeon > .window-content {
+  padding: 0;
+  background: #f2f2f2;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aElBW;EFmBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAGD;AAAA;AAAA;EAGC;EGhCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH2BD;EACC;;AAGD;EACC;EACA,aE5CU;;;AFiDZ;EACC;;AAEA;EACC;EACA,YEpDW%22,%22file%22:%22generic.css%22%7D */

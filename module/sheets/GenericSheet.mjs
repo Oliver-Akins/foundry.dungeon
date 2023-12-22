@@ -1,7 +1,8 @@
 export class GenericSheet extends ActorSheet {
 	#propogatedSettings = [
 		`devMode`,
-		`showAvatarOnSheet`
+		`showAvatarOnSheet`,
+		`playersCanChangeGroup`,
 	];
 
 	getData() {

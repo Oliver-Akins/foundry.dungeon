@@ -1,0 +1,49 @@
+@use "../../../mixins/breakpoints" as *;
+
+.dotdungeon {
+	.actor--circle-sync {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 4px;
+
+		label {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.sync-input {
+			width: 30%;
+			text-align: center;
+		}
+
+		.name-input {
+			width: 60%;
+			text-align: center;
+		}
+	}
+
+	&--sync-sheet {
+		header {
+			.configure-token {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+}
+
+@include bp-xs {
+	.dotdungeon {
+		&--sync-sheet {
+			header {
+				.configure-sheet {
+					display: none;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+}

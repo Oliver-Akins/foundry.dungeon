@@ -78,8 +78,18 @@ export class PlayerData extends foundry.abstract.DataModel {
 					cells: new fields.NumberField({ min: 0, max: 5, integer: true }),
 				}),
 			}),
-			supplies: new fields.NumberField({ min: 0, max: 5, integer: true }),
-			materials: new fields.NumberField({ min: 0, max: 5, integer: true }),
+			supplies: new fields.NumberField({
+				initial: 0,
+				min: 0,
+				max: 5,
+				integer: true
+			}),
+			materials: new fields.NumberField({
+				initial: 0,
+				min: 0,
+				max: 5,
+				integer: true
+			}),
 			pet: new fields.SchemaField({
 				name: new fields.HTMLField(),
 				info: new fields.HTMLField(),
@@ -102,7 +112,9 @@ export class PlayerData extends foundry.abstract.DataModel {
 				r3: new fields.BooleanField(),
 			}),
 			syncDelta: new fields.NumberField({
+				required: true,
 				integer: true,
+				initial: 0,
 			}),
 		};
 	};

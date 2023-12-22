@@ -76,6 +76,11 @@
 					flex-grow: 1;
 				}
 			}
+
+			.sync__input {
+				width: 80px;
+				margin: 3px 5px;
+			}
 		}
 		&--aspect {
 			grid-area: aspect;

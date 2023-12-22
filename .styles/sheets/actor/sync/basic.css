@@ -1,0 +1,33 @@
+.dotdungeon .actor--circle-sync {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.dotdungeon .actor--circle-sync label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dotdungeon .actor--circle-sync .sync-input {
+  width: 30%;
+  text-align: center;
+}
+.dotdungeon .actor--circle-sync .name-input {
+  width: 60%;
+  text-align: center;
+}
+.dotdungeon--sync-sheet header .configure-token {
+  display: none;
+  visibility: hidden;
+}
+
+@container (max-width: 300px) {
+  .dotdungeon--sync-sheet header .configure-sheet {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../../styles/sheets/actor/sync/basic.scss%22,%22../../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGC;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA;;AAGD;EACC;EACA;;AAMA;EACC;EACA;;;AClBH;ED4BG;IACC;IACA%22,%22file%22:%22basic.css%22%7D */

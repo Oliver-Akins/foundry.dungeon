@@ -19,7 +19,35 @@ export class PlayerSheet extends GenericSheet {
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Actor: ${this.id}`);
 
-		// html.find(`input.sync__input`).on("blur", ($e) => {});
+		// html.find(`input.sync__input`).on("blur", ($e) => {
+		// 	console.debug(`.dungeon | input.sync__input blur event`);
+
+		// 	let value = parseInt($e.target.value);
+		// 	if (!value) {
+		// 		ui.notifications.error(
+		// 			`dotdungeon.notification.error.invalid-integer`,
+		// 			{ localize: true }
+		// 		);
+		// 		return;
+		// 	};
+		// 	let delta = value - this.#syncValue();
+		// 	this.actor.system.syncDelta += delta;
+		// 	for (const actor of game.actors) {
+		// 		if (actor._sheet)
+		// 	}
+		// 	game.socket.emit(`system.dotdungeon`, {
+		// 		type: "reload",
+
+		// 	})
+		// });
+	};
+
+	#syncValue() {
+		let delta = 0;
+		for (const actor of game.actors) {
+			delta += actor.system.syncDelta ?? 0;
+		};
+		return 100 + delta;
 	};
 
 	getData() {
@@ -30,7 +58,8 @@ export class PlayerSheet extends GenericSheet {
 		ctx.flags = actor.flags;
 
 		ctx.computed = {
-			syncTotal: 0
+			syncTotal: this.#syncValue(),
+			canChangeGroup: ctx.settings.playersCanChangeGroup,
 		};
 
 		console.groupCollapsed(`PlayerSheet.getData`);

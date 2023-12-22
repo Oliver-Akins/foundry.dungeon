@@ -1,4 +1,3 @@
-import { reloadWindows } from "../utils.mjs";
 import * as hbs from "../handlebars.mjs";
 
 Hooks.on(`hotReload`, async (data) => {
@@ -25,7 +24,9 @@ Hooks.on(`hotReload`, async (data) => {
 	_templateCache[templateName] = template;
 
 	// Re-render open windows
-	reloadWindows();
+	for (const window of ui.windows) {
+		window.render(true);
+	};
 
 	return false;
 });

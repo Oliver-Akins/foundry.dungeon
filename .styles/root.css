@@ -9,12 +9,10 @@
   all: initial;
   display: block;
   box-sizing: border-box;
-  display: block;
   font-family: "Pixelify Sans", sans-serif;
   margin: 0;
 }
 .dotdungeon > .window-content label {
-  display: inline-block;
   cursor: pointer;
 }
 .dotdungeon > .window-content button, .dotdungeon > .window-content button:hover {
@@ -27,9 +25,6 @@
 .dotdungeon > .window-content input[type=text],
 .dotdungeon > .window-content input[type=number],
 .dotdungeon > .window-content textarea {
-  all: initial;
-  display: block;
-  box-sizing: border-box;
   padding: 5px 7px;
   border-width: 2px;
   border-radius: 4px;
@@ -95,7 +90,6 @@
 }
 .dotdungeon .panel__header {
   background: black;
-  color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -107,7 +101,7 @@
   all: initial;
   display: block;
   box-sizing: border-box;
-  color: inherit;
+  color: white;
   flex-grow: 1;
   font-family: "Pixelify Sans", sans-serif;
   font-size: 20px;
@@ -186,6 +180,10 @@
 .dotdungeon .actor--pc .panel--sync .sync__header {
   flex-grow: 1;
 }
+.dotdungeon .actor--pc .panel--sync .sync__input {
+  width: 80px;
+  margin: 3px 5px;
+}
 .dotdungeon .actor--pc .panel--aspect {
   grid-area: aspect;
 }
@@ -241,6 +239,37 @@
     flex-direction: column;
   }
 }
+.dotdungeon .actor--circle-sync {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.dotdungeon .actor--circle-sync label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dotdungeon .actor--circle-sync .sync-input {
+  width: 30%;
+  text-align: center;
+}
+.dotdungeon .actor--circle-sync .name-input {
+  width: 60%;
+  text-align: center;
+}
+.dotdungeon--sync-sheet header .configure-token {
+  display: none;
+  visibility: hidden;
+}
+
+@container (max-width: 300px) {
+  .dotdungeon--sync-sheet header .configure-sheet {
+    display: none;
+    visibility: hidden;
+  }
+}
 .dotdungeon .item--aspect {
   padding: 4px;
 }
@@ -254,4 +283,4 @@
   resize: vertical;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/root.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/partials/panel.scss%22,%22../styles/mixins/_breakpoints.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC;EACA,aEnBW;EFoBX;;AAGD;EACC;EACA;;AAGD;EC3BA;EACA;EACA;ED2BC;EACA;;AAGD;AAAA;AAAA;ECjCA;EACA;EACA;EDmCC;EGnCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH8BD;EACC;;AAGD;EACC;EACA,aE/CU;;;AFoDZ;EACC;;AAEA;EACC;EACA,YEvDW;;;AEHb;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdH;EACC;EACA;EAEA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ELpBD;EACA;EACA;EKoBE;EACA;EACA,aJzBU;EI0BV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AC/BD;EDoCA;IACC;IACA;;;AE1CF;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIH;EACC;;AACA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;ADvGF;EC+GC;IACC;IACA;IACA,qBACC;;EAgBD;IACC;;EAGC;IACC;;EAKD;IACC;IACA;;;ADzIL;ECmJC;IACC;IACA;IACA,qBACC;;EAeC;IACC;;;AC5KN;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22root.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/partials/panel.scss%22,%22../styles/mixins/_breakpoints.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/sheets/actor/sync/basic.scss%22,%22../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aElBW;EFmBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAGD;AAAA;AAAA;EAGC;EGhCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH2BD;EACC;;AAGD;EACC;EACA,aE5CU;;;AFiDZ;EACC;;AAEA;EACC;EACA,YEpDW;;;AEHb;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdH;EACC;EACA;EAEA;EACA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ELnBD;EACA;EACA;EKmBE;EACA;EACA,aJxBU;EIyBV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AC9BD;EDmCA;IACC;IACA;;;AEzCF;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AD5GF;ECoHC;IACC;IACA;IACA,qBACC;;EAgBD;IACC;;EAGC;IACC;;EAKD;IACC;IACA;;;AD9IL;ECwJC;IACC;IACA;IACA,qBACC;;EAeC;IACC;;;AChLL;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA;;AAGD;EACC;EACA;;AAMA;EACC;EACA;;;AFlBH;EE4BG;IACC;IACA;;;ACzCL;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22root.css%22%7D */

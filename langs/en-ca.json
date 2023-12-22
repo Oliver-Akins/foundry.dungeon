@@ -1,12 +1,20 @@
 {
 	"dotdungeon.settings.showAvatarOnSheet.name": "Show Avatar On Player Sheet",
 	"dotdungeon.settings.showAvatarOnSheet.description": "Determines whether or not to show the avatar to you on the Player Character sheets, turning this off will replace the image with a file picker so that you can still change the image from the character sheet.",
+	"dotdungeon.settings.playersCanChangeGroup.name": "Allow Players to Change Group",
+	"dotdungeon.settings.playersCanChangeGroup.description": "Setting this to true allows non-GM players to modify the group that the Actor belongs to. While this is disabled the GM will still be able to modify each player's group by editing the character sheet.",
+	"dotdungeon.settings.resourcesOrSupplies.name": "Use Resources or Supplies",
+	"dotdungeon.settings.resourcesOrSupplies.description": "Determines which term to use for the objects that allow travelling into the next hex tile. This is because of the",
+	"dotdungeon.settings.resourcesOrSupplies.option.supplies": "Resources",
+	"dotdungeon.settings.resourcesOrSupplies.option.resources": "Supplies",
 
 
-	"dotdungeon.sheet.PlayerSheet": "PC Sheet",
+	"dotdungeon.sheet.PlayerSheet": "PC/PUG Sheet",
+	"dotdungeon.sheet.SyncSheet.basic": "Theme: Basic",
 	"dotdungeon.sheet.AspectSheet": "Aspect Sheet",
 
 	"TYPES.Actor.player": "Player",
+	"TYPES.Actor.sync": "Sync",
 	"TYPES.Item.aspect": "Aspect",
 	"TYPES.Item.weapon": "Weapon",
 	"TYPES.Item.armour": "Armour",
@@ -68,18 +76,27 @@
 	"dotdungeon.actor.pc.skill.piloting": "Piloting",
 
 	"dotdungeon.actor.pc.respawns.header": "Respawns",
+	"dotdungeon.actor.pc.sync.header": "Sync",
 
 	"dotdungeon.actor.pc.profile.avatar.label": "Avatar",
 	"dotdungeon.actor.pc.profile.group.label": "Group Name",
+	"dotdungeon.actor.pc.profile.group.gm-edit": "(GM Only)",
 	"dotdungeon.actor.pc.profile.group.placeholder": "Group Name...",
 	"dotdungeon.actor.pc.profile.name.label": "Character Name",
 	"dotdungeon.actor.pc.profile.name.placeholder": "Character Name...",
+
+
+	"dotdungeon.actor.sync.circle.group": "Group Name",
+	"dotdungeon.actor.sync.circle.sync": "Sync",
 
 
 	"dotdungeon.item.aspect.name": "Name",
 	"dotdungeon.item.aspect.duration": "Duration (seconds)",
 	"dotdungeon.item.aspect.description": "Description",
 	"dotdungeon.item.aspect.send-to-chat": "Send Aspect to Chat",
+
+
+	"dotdungeon.notification.error.invalid-integer": "You must enter a valid whole number.",
 
 
 	"dotdungeon.aria.skill.dropdown": "Your expertise level in the {skill} skill",

@@ -1,0 +1,58 @@
+@use "./mixins/partials" as *;
+@use "./mixins/foundry" as *;
+@use "./vars.scss" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+// Reset the parts of Foundry's styling which gets in the way of what I want
+.dotdungeon > .window-content {
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+	::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+	}
+
+	h2, h3, h4, h5, h6 {
+		@include fvtt_reset;
+		font-family: $title-font;
+		margin: 0;
+	}
+
+	label {
+		cursor: pointer;
+	}
+
+	button, button:hover {
+		@include fvtt_reset;
+		font-family: inherit;
+		cursor: pointer;
+	}
+
+	input[type="text"],
+	input[type="number"],
+	textarea {
+		padding: 5px 7px;
+		@include input-generic;
+	}
+
+	select, select:hover {
+		cursor: pointer;
+	}
+
+	.debug-data {
+		opacity: 60%;
+		font-family: $body-font;
+	}
+}
+
+// Styling that doesn't belong to any particular part of my sheet
+.dotdungeon {
+	container-type: size;
+
+	> .window-content {
+		padding: 0;
+		background: $background;
+	}
+}
