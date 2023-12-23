@@ -3,6 +3,7 @@ export class GenericSheet extends ActorSheet {
 		`devMode`,
 		`showAvatarOnSheet`,
 		`playersCanChangeGroup`,
+		`resourcesOrSupplies`,
 	];
 
 	getData() {
