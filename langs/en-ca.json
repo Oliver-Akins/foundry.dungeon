@@ -5,8 +5,8 @@
 	"dotdungeon.settings.playersCanChangeGroup.description": "Setting this to true allows non-GM players to modify the group that the Actor belongs to. While this is disabled the GM will still be able to modify each player's group by editing the character sheet.",
 	"dotdungeon.settings.resourcesOrSupplies.name": "Use Resources or Supplies",
 	"dotdungeon.settings.resourcesOrSupplies.description": "Determines which term to use for the objects that allow travelling into the next hex tile. This is because of the",
-	"dotdungeon.settings.resourcesOrSupplies.option.supplies": "Resources",
-	"dotdungeon.settings.resourcesOrSupplies.option.resources": "Supplies",
+	"dotdungeon.settings.resourcesOrSupplies.option.supplies": "Supplies",
+	"dotdungeon.settings.resourcesOrSupplies.option.resources": "Resources",
 
 
 	"dotdungeon.sheet.PlayerSheet": "PC/PUG Sheet",
