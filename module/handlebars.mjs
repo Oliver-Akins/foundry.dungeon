@@ -10,7 +10,8 @@ export async function registerHandlebarsHelpers() {
 	Handlebars.registerHelper({
 		"dotdungeon-array": createArray,
 		"dotdungeon-toFriendlyDuration": toFriendlyDuration,
-		"dotdungeon-objectValue": objectValue
+		"dotdungeon-objectValue": objectValue,
+		"dotdungeon-stringify": JSON.stringify,
 	});
 };
 
