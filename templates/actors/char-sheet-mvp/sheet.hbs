@@ -64,7 +64,24 @@
 
 
 	{{#> dotdungeon.panel class="backpack" title="dotdungeon.actor.pc.panel.backpack"}}
-		Backpacks
+		<label>
+			{{localize
+				(concat
+					"dotdungeon.settings.resourcesOrSupplies.option."
+					settings.resourcesOrSupplies
+				)
+			}}
+			{{#if settings.devMode}}
+				<div class="debug-data">
+					({{settings.resourcesOrSupplies}})
+				</div>
+			{{/if}}
+			<input
+				type="number"
+				name=""
+				min="0"
+			>
+		</label>
 	{{/ dotdungeon.panel}}
 
 
@@ -170,4 +187,20 @@
 	{{#> dotdungeon.panel class="storage" title="dotdungeon.actor.pc.panel.storage"}}
 		Storage
 	{{/ dotdungeon.panel}}
+
+	{{#if settings.devMode}}
+		<div class="debug-data">
+			<div>
+				{{dotdungeon-stringify settings}}
+			</div>
+			<hr>
+			<div>
+				{{dotdungeon-stringify system}}
+			</div>
+			<hr>
+			<div>
+				{{dotdungeon-stringify actor}}
+			</div>
+		</div>
+	{{/if}}
 </form>
