@@ -108,9 +108,6 @@
     grid-template-rows: repeat(15, min-content);
     grid-template-areas: "profile stats" "profile skills" "sync skills" "weapons skills" "weapons skills" "backpack aspect" "backpack aspect" "backpack roles" "backpack roles" "backpack roles" "backpack spells" "summons spells" "summons storage" "mounts storage" "mounts storage";
   }
-  .dotdungeon .actor--pc .panel {
-    background: yellowgreen;
-  }
   .dotdungeon .actor--pc .panel--stats .panel__content {
     flex-wrap: wrap;
   }
@@ -130,4 +127,4 @@
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAEA;EACC;;AAIF;AAAA;EAEC;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AC5HF;EDoIC;IACC;IACA;IACA,qBACC;;EAgBD;IACC;;EAGC;IACC;;EAKD;IACC;IACA;;;AC9JL;EDwKC;IACC;IACA;IACA,qBACC;;EAeC;IACC%22,%22file%22:%22mvp.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAEA;EACC;;AAIF;AAAA;EAEC;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AC5HF;EDoIC;IACC;IACA;IACA,qBACC;;EAkBC;IACC;;EAKD;IACC;IACA;;;AC5JL;EDsKC;IACC;IACA;IACA,qBACC;;EAeC;IACC%22,%22file%22:%22mvp.css%22%7D */
