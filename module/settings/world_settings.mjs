@@ -19,7 +19,7 @@ export default function() {
 			"supplies": "dotdungeon.settings.resourcesOrSupplies.option.supplies",
 			"resources": "dotdungeon.settings.resourcesOrSupplies.option.resources"
 		},
-		default: "resources",
+		default: "supplies",
 		requiresReload: false,
 	});
 };
