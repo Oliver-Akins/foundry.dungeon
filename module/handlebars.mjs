@@ -11,7 +11,7 @@ export async function registerHandlebarsHelpers() {
 		"dotdungeon-array": createArray,
 		"dotdungeon-toFriendlyDuration": toFriendlyDuration,
 		"dotdungeon-objectValue": objectValue,
-		"dotdungeon-stringify": JSON.stringify,
+		"dotdungeon-stringify": v => JSON.stringify(v, null, `  `),
 	});
 };
 

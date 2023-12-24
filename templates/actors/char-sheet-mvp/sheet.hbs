@@ -211,17 +211,20 @@
 	{{/ dotdungeon.panel}}
 
 	{{#if settings.devMode}}
-		<div class="debug-data">
+		<div class="debug-data" style="grid-column: 1 / span 3">
 			<div>
-				{{dotdungeon-stringify settings}}
+				Settings:
+				<pre><code>{{dotdungeon-stringify settings}}</code></pre>
 			</div>
 			<hr>
 			<div>
-				{{dotdungeon-stringify system}}
+				System:
+				<pre><code>{{dotdungeon-stringify system}}</code></pre>
 			</div>
 			<hr>
 			<div>
-				{{dotdungeon-stringify actor}}
+				Actor:
+				<pre><code>{{dotdungeon-stringify actor}}</code></pre>
 			</div>
 		</div>
 	{{/if}}
