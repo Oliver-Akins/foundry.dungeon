@@ -112,6 +112,16 @@
 		}
 		&--roles {
 			grid-area: roles;
+			.panel__content {
+				display: grid;
+				grid-template-rows: repeat(4, min-content);
+				height: 100%;
+				gap: 4px;
+
+				textarea {
+					resize: vertical;
+				}
+			}
 		}
 		&--spells {
 			grid-area: spells;

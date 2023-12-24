@@ -192,7 +192,11 @@
 
 
 	{{#> dotdungeon.panel class="roles" title="dotdungeon.actor.pc.panel.roles"}}
-		Roles
+		{{#each system.roles}}
+			<textarea
+				name="system.roles.{{@key}}"
+			>{{this}}</textarea>
+		{{/each}}
 	{{/ dotdungeon.panel}}
 
 

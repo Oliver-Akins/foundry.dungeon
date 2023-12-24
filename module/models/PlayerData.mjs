@@ -68,7 +68,12 @@ export class PlayerData extends foundry.abstract.DataModel {
 				deactivateAfter: new fields.NumberField({ min: 0, integer: true}),
 				used: new fields.BooleanField(),
 			}),
-			roles: new fields.ArrayField(new fields.HTMLField()),
+			roles: new fields.SchemaField({
+				r1: new fields.StringField({ initial: ``, blank: true, trim: true }),
+				r2: new fields.StringField({ initial: ``, blank: true, trim: true }),
+				r3: new fields.StringField({ initial: ``, blank: true, trim: true }),
+				r4: new fields.StringField({ initial: ``, blank: true, trim: true }),
+			}),
 			weapon: new fields.SchemaField({
 				name: new fields.HTMLField(),
 				damage: new fields.HTMLField(),
