@@ -15,6 +15,8 @@ export class GenericSheet extends ActorSheet {
 			ctx.settings[setting] = game.settings.get(`dotdungeon`, setting);
 		};
 
+		ctx.isGM = game.users.current.hasRole(CONST.USER_ROLES.ASSISTANT);
+
 		return ctx;
 	}
 }

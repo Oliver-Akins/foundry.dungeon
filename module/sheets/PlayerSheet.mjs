@@ -59,7 +59,7 @@ export class PlayerSheet extends GenericSheet {
 
 		ctx.computed = {
 			syncTotal: this.#syncValue(),
-			canChangeGroup: ctx.settings.playersCanChangeGroup,
+			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
 		};
 
 		console.groupCollapsed(`PlayerSheet.getData`);
