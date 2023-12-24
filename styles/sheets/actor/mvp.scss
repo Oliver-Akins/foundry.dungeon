@@ -105,6 +105,10 @@
 				grid-template-rows: min-content min-content min-content 1fr;
 				height: 100%;
 				gap: 4px;
+
+				textarea {
+					resize: vertical;
+				}
 			}
 		}
 		&--weapons {
