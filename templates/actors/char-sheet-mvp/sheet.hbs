@@ -66,6 +66,21 @@
 	{{#> dotdungeon.panel class="backpack" title="dotdungeon.actor.pc.panel.backpack"}}
 		<label class="row">
 			<span class="grow">
+				{{localize "dotdungeon.actor.pc.backpack.bytes.label"}}
+			</span>
+			<input
+				class="bytes-input"
+				type="number"
+				name="system.bytes"
+				value="{{system.bytes}}"
+				min="0"
+				aria-label="{{localize "dotdungeon.aria.actor.pc.input.bytes"}}"
+				aria-valuemin="0"
+				aria-valuenow="{{system.bytes}}"
+			>
+		</label>
+		<label class="row">
+			<span class="grow">
 				{{localize
 					(concat
 						"dotdungeon.settings.resourcesOrSupplies.option."
@@ -83,6 +98,8 @@
 				type="number"
 				name="system.supplies"
 				value="{{system.supplies}}"
+				min="0"
+				max="5"
 				aria-label="{{localize "dotdungeon.aria.actor.pc.input.supplies"}}"
 				aria-valuemin="0"
 				aria-valuemax="5"
@@ -98,11 +115,17 @@
 				type="number"
 				name="system.materials"
 				value="{{system.materials}}"
+				min="0"
+				max="5"
 				aria-label="{{localize "dotdungeon.aria.actor.pc.input.materials"}}"
 				aria-valuemin="0"
 				aria-valuemax="5"
 				aria-valuenow="{{system.supplies}}"
 			>
+		</label>
+		<label class="grow col">
+			Inventory
+			<textarea class="grow" name="system.inventoryString">{{system.inventoryString}}</textarea>
 		</label>
 	{{/ dotdungeon.panel}}
 

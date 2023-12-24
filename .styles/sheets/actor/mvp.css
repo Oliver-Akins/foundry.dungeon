@@ -44,13 +44,26 @@
   flex-direction: row;
   align-items: center;
 }
-.dotdungeon .actor--pc .panel--backpack .row .grow {
+.dotdungeon .actor--pc .panel--backpack .col {
+  display: flex;
+  flex-direction: column;
+}
+.dotdungeon .actor--pc .panel--backpack .grow {
   flex-grow: 1;
 }
+.dotdungeon .actor--pc .panel--backpack .panel__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.dotdungeon .actor--pc .panel--backpack .bytes-input,
 .dotdungeon .actor--pc .panel--backpack .supplies-count,
 .dotdungeon .actor--pc .panel--backpack .materials-count {
   width: 25%;
   text-align: center;
+}
+.dotdungeon .actor--pc .panel--backpack textarea {
+  resize: vertical;
 }
 .dotdungeon .actor--pc .panel--sync {
   grid-area: sync;
@@ -139,4 +152,4 @@
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAEA;EACC;;AAIF;AAAA;EAEC;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AC1IF;EDkJC;IACC;IACA;IACA,qBACC;;EAkBC;IACC;;EAKD;IACC;IACA;;;AC1KL;EDoLC;IACC;IACA;IACA,qBACC;;EAeC;IACC%22,%22file%22:%22mvp.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAGD;EACC;EACA;EACA;;AAGD;AAAA;AAAA;EAGC;EACA;;AAGD;EACC;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;ACxJF;EDgKC;IACC;IACA;IACA,qBACC;;EAkBC;IACC;;EAKD;IACC;IACA;;;ACxLL;EDkMC;IACC;IACA;IACA,qBACC;;EAeC;IACC%22,%22file%22:%22mvp.css%22%7D */

@@ -61,16 +61,30 @@
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-
-				.grow {
-					flex-grow: 1;
-				}
+			}
+			.col {
+				display: flex;
+				flex-direction: column;
+			}
+			.grow {
+				flex-grow: 1;
 			}
 
+			.panel__content {
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+			}
+
+			.bytes-input,
 			.supplies-count,
 			.materials-count {
 				width: 25%;
 				text-align: center;
+			}
+
+			textarea {
+				resize: vertical;
 			}
 		}
 		&--sync {

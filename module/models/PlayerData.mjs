@@ -1,5 +1,6 @@
 function diceChoiceField() {
 	return new foundry.data.fields.StringField({
+		initial: ``,
 		blank: true,
 		trim: true,
 		options() {
@@ -10,6 +11,7 @@ function diceChoiceField() {
 
 function trainingLevelField() {
 	return new foundry.data.fields.StringField({
+		initial: ``,
 		blank: true,
 		trim: true,
 		options: [ ``, `locked`, `+2`, `+4` ],
@@ -21,8 +23,9 @@ export class PlayerData extends foundry.abstract.DataModel {
 		const fields = foundry.data.fields;
 		return {
 			bytes: new fields.NumberField({
+				initial: 0,
+				min: 0,
 				integer: true,
-				positive: true,
 			}),
 			stats: new fields.SchemaField({
 				build: diceChoiceField(),
@@ -69,14 +72,14 @@ export class PlayerData extends foundry.abstract.DataModel {
 				used: new fields.BooleanField(),
 			}),
 			roles: new fields.SchemaField({
-				r1: new fields.StringField({ initial: ``, blank: true, trim: true }),
-				r2: new fields.StringField({ initial: ``, blank: true, trim: true }),
-				r3: new fields.StringField({ initial: ``, blank: true, trim: true }),
-				r4: new fields.StringField({ initial: ``, blank: true, trim: true }),
+				r1: new fields.StringField({ blank: true, trim: true }),
+				r2: new fields.StringField({ blank: true, trim: true }),
+				r3: new fields.StringField({ blank: true, trim: true }),
+				r4: new fields.StringField({ blank: true, trim: true }),
 			}),
 			weapon: new fields.SchemaField({
-				name: new fields.HTMLField(),
-				damage: new fields.HTMLField(),
+				name: new fields.StringField(),
+				damage: new fields.StringField(),
 				ammo: new fields.SchemaField({
 					quivers: new fields.NumberField({ min: 0, max: 5, integer: true }),
 					mags: new fields.NumberField({ min: 0, max: 5, integer: true }),
@@ -96,19 +99,19 @@ export class PlayerData extends foundry.abstract.DataModel {
 				integer: true
 			}),
 			pet: new fields.SchemaField({
-				name: new fields.HTMLField(),
-				info: new fields.HTMLField(),
+				name: new fields.StringField(),
+				info: new fields.StringField(),
 			}),
 			transport: new fields.SchemaField({
-				name: new fields.HTMLField(),
+				name: new fields.StringField(),
 				upkeep: new fields.NumberField({ min: 0, integer: true }),
-				info: new fields.HTMLField(),
+				info: new fields.StringField(),
 			}),
 			spells: new fields.ArrayField(
 				new fields.SchemaField({
-					name: new fields.HTMLField(),
+					name: new fields.StringField(),
 					cost: new fields.NumberField(),
-					info: new fields.HTMLField(),
+					info: new fields.StringField(),
 				})
 			),
 			respawns: new fields.SchemaField({
@@ -121,6 +124,7 @@ export class PlayerData extends foundry.abstract.DataModel {
 				integer: true,
 				initial: 0,
 			}),
+			inventoryString: new fields.StringField({ blank: true, trim: true }),
 		};
 	};
 };

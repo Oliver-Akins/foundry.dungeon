@@ -86,6 +86,7 @@
 	"dotdungeon.actor.pc.profile.name.placeholder": "Character Name...",
 
 	"dotdungeon.actor.pc.backpack.materials.label": "Materials",
+	"dotdungeon.actor.pc.backpack.bytes.label": "Bytes",
 
 
 	"dotdungeon.actor.sync.circle.group": "Group Name",
@@ -105,5 +106,6 @@
 	"dotdungeon.aria.actor.pc.skill.dropdown": "Your expertise level in the {skill} skill",
 	"dotdungeon.aria.actor.pc.skill.button.roll": "Roll a {skill} check",
 	"dotdungeon.aria.actor.pc.input.materials": "The number of materials you have available",
-	"dotdungeon.aria.actor.pc.input.supplies": "The number of supplies you have available"
+	"dotdungeon.aria.actor.pc.input.supplies": "The number of supplies you have available",
+	"dotdungeon.aria.actor.pc.input.bytes": "The number of bytes you have"
 }
