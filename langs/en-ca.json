@@ -85,6 +85,8 @@
 	"dotdungeon.actor.pc.profile.name.label": "Character Name",
 	"dotdungeon.actor.pc.profile.name.placeholder": "Character Name...",
 
+	"dotdungeon.actor.pc.backpack.materials.label": "Materials",
+
 
 	"dotdungeon.actor.sync.circle.group": "Group Name",
 	"dotdungeon.actor.sync.circle.sync": "Sync",
@@ -99,7 +101,9 @@
 	"dotdungeon.notification.error.invalid-integer": "You must enter a valid whole number.",
 
 
-	"dotdungeon.aria.skill.dropdown": "Your expertise level in the {skill} skill",
-	"dotdungeon.aria.skill.button.roll": "Roll a {skill} check",
-	"dotdungeon.aria.aspect-description": "The information on how the aspect works"
+	"dotdungeon.aria.aspect-description": "The information on how the aspect works",
+	"dotdungeon.aria.actor.pc.skill.dropdown": "Your expertise level in the {skill} skill",
+	"dotdungeon.aria.actor.pc.skill.button.roll": "Roll a {skill} check",
+	"dotdungeon.aria.actor.pc.input.materials": "The number of materials you have available",
+	"dotdungeon.aria.actor.pc.input.supplies": "The number of supplies you have available"
 }

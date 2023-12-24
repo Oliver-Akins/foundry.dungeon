@@ -2,7 +2,7 @@
 	<button
 		{{disabled false}}
 		class="skill__label skill__button"
-		aria-label="{{localize "dotdungeon.aria.skill.button.roll" skill=name}}"
+		aria-label="{{localize "dotdungeon.aria.actor.pc.skill.button.roll" skill=name}}"
 	>
 		{{localize (concat "dotdungeon.actor.pc.skill." name)}}
 		{{#with (dotdungeon-objectValue system (concat "stats." stat)) as | die |}}
@@ -14,7 +14,7 @@
 	<select
 		name="{{concat "system.skills." stat "." name}}"
 		class="skill__select"
-		aria-label="{{localize "dotdungeon.aria.skill.dropdown" skill=name}}"
+		aria-label="{{localize "dotdungeon.aria.actor.pc.skill.dropdown" skill=name}}"
 	>
 		{{#select (dotdungeon-objectValue system (concat "skills." stat "." name))}}
 			<option value="">Novice (+0)</option>

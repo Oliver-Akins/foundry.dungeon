@@ -64,22 +64,44 @@
 
 
 	{{#> dotdungeon.panel class="backpack" title="dotdungeon.actor.pc.panel.backpack"}}
-		<label>
-			{{localize
-				(concat
-					"dotdungeon.settings.resourcesOrSupplies.option."
-					settings.resourcesOrSupplies
-				)
-			}}
-			{{#if settings.devMode}}
-				<div class="debug-data">
-					({{settings.resourcesOrSupplies}})
-				</div>
-			{{/if}}
+		<label class="row">
+			<span class="grow">
+				{{localize
+					(concat
+						"dotdungeon.settings.resourcesOrSupplies.option."
+						settings.resourcesOrSupplies
+					)
+				}}
+				{{#if settings.devMode}}
+					<span class="debug-data">
+						({{settings.resourcesOrSupplies}})
+					</span>
+				{{/if}}
+			</span>
 			<input
+				class="supplies-count"
 				type="number"
-				name=""
-				min="0"
+				name="system.supplies"
+				value="{{system.supplies}}"
+				aria-label="{{localize "dotdungeon.aria.actor.pc.input.supplies"}}"
+				aria-valuemin="0"
+				aria-valuemax="5"
+				aria-valuenow="{{system.supplies}}"
+			>
+		</label>
+		<label class="row">
+			<span class="grow">
+				{{localize "dotdungeon.actor.pc.backpack.materials.label"}}
+			</span>
+			<input
+				class="materials-count"
+				type="number"
+				name="system.materials"
+				value="{{system.materials}}"
+				aria-label="{{localize "dotdungeon.aria.actor.pc.input.materials"}}"
+				aria-valuemin="0"
+				aria-valuemax="5"
+				aria-valuenow="{{system.supplies}}"
 			>
 		</label>
 	{{/ dotdungeon.panel}}

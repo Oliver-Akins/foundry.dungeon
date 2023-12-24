@@ -56,6 +56,22 @@
 		}
 		&--backpack {
 			grid-area: backpack;
+
+			.row {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				.grow {
+					flex-grow: 1;
+				}
+			}
+
+			.supplies-count,
+			.materials-count {
+				width: 25%;
+				text-align: center;
+			}
 		}
 		&--sync {
 			grid-area: sync;
