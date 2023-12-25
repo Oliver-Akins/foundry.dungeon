@@ -1,7 +1,8 @@
 {
 	"Actor": {
 		"types": [
-			"player"
+			"player",
+			"sync"
 		]
 	},
 	"Item": {
