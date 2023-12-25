@@ -77,8 +77,8 @@ function toFriendlyDuration(duration) {
 };
 
 /**
- * If the argument is truthy, it returns HTML data to indicate the collapse is
- * open
+ * Checks if the specified collapseId is currently open, so that during re-renders
+ * it remains open or closed.
  *
  * @param {Set<string>} expanded A set indicating what collapseIds are expanded
  * @param {string} collapseId The collapseId to check for
