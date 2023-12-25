@@ -205,7 +205,82 @@
 
 
 	{{#> dotdungeon.panel class="weapons" title="dotdungeon.actor.pc.panel.weapons"}}
-		Weapons
+		<details class="main-hand" {{dotdungeon-expanded meta.expanded "weapons.main-hand"}}>
+			<summary data-collapse-id="weapons.main-hand">
+				Main-Hand
+			</summary>
+			<label>
+				Name
+				<input
+					type="text"
+					name=""
+				>
+			</label>
+			<label>
+				Damage
+				<select name="system.weapon.mainHand.damage"></select>
+			</label>
+			<label>
+				Ranged
+				<input
+					type="checkbox"
+					name="system.weapon.mainHand.ranged"
+					{{checked system.weapon.mainHand.ranged}}
+				>
+			</label>
+			{{#if system.weapon.mainHand.ranged}}
+				<label>
+					Scope
+					<input
+						type="checkbox"
+						name="system.weapon.mainHand.scope"
+						{{checked system.weapon.mainHand.scope}}
+					>
+				</label>
+				<label>
+					Ammo
+					<select name=""></select>
+				</label>
+			{{/if}}
+		</details>
+		<details {{dotdungeon-expanded meta.expanded "weapons.off-hand"}}>
+			<summary data-collapse-id="weapons.off-hand">
+				Off-Hand
+			</summary>
+			<label>
+				Name
+				<input
+					type="text"
+					name=""
+				>
+			</label>
+			<label>
+				Damage
+				<select name="system.weapon.offHand.damage"></select>
+			</label>
+			<label>
+				Ranged
+				<input
+					type="checkbox"
+					name="system.weapon.offHand.ranged"
+					{{checked system.weapon.offHand.ranged}}
+				>
+			</label>
+			{{#if system.weapon.offHand.ranged}}
+				<label>
+					Scope
+					<input
+						type="checkbox"
+						name="system.weapon.offHand.scope"
+						{{checked system.weapon.offHand.scope}}
+					>
+				</label>
+				<label>
+					Ammo
+					<select name=""></select>
+				</label>
+			{{/if}}
+		</details>
 	{{/ dotdungeon.panel}}
 
 
@@ -242,6 +317,10 @@
 			<div>
 				Settings:
 				<pre><code>{{dotdungeon-stringify settings}}</code></pre>
+			</div>
+			<hr>
+			<div>
+				Expanded: {{dotdungeon-stringify expanded}}
 			</div>
 			<hr>
 			<div>

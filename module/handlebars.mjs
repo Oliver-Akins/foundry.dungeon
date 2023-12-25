@@ -12,6 +12,7 @@ export async function registerHandlebarsHelpers() {
 		"dotdungeon-toFriendlyDuration": toFriendlyDuration,
 		"dotdungeon-objectValue": objectValue,
 		"dotdungeon-stringify": v => JSON.stringify(v, null, `  `),
+		"dotdungeon-expanded": detailsExpanded,
 	});
 };
 
@@ -73,4 +74,16 @@ function toFriendlyDuration(duration) {
 		friendly += `${duration}s`;
 	};
 	return friendly;
+};
+
+/**
+ * If the argument is truthy, it returns HTML data to indicate the collapse is
+ * open
+ *
+ * @param {Set<string>} expanded A set indicating what collapseIds are expanded
+ * @param {string} collapseId The collapseId to check for
+ * @returns {"open"|null} The HTML insertion indicating the details is expanded
+ */
+function detailsExpanded(expanded, collapseId) {
+	return expanded.has(collapseId) ? "open" : null;
 };

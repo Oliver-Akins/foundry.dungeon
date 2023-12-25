@@ -18,6 +18,22 @@ function trainingLevelField() {
 	});
 };
 
+function weaponDamageTypeField() {
+	return new foundry.data.fields.StringField({
+		initial: ``,
+		blank: true,
+		options: [ ``, `slashing`, `piercing`, `smashing`, `gun`, `neon`, `shadow`, `solar` ],
+	});
+};
+
+function ammoTypeField() {
+	return new foundry.data.fields.StringField({
+		initial: ``,
+		blank: true,
+		options: [ ``, `quivers`, `mags`, `cells` ],
+	});
+};
+
 export class PlayerData extends foundry.abstract.DataModel {
 	static defineSchema() {
 		const fields = foundry.data.fields;
@@ -78,12 +94,24 @@ export class PlayerData extends foundry.abstract.DataModel {
 				r4: new fields.StringField({ blank: true, trim: true }),
 			}),
 			weapon: new fields.SchemaField({
-				name: new fields.StringField(),
-				damage: new fields.StringField(),
+				mainHand: new fields.SchemaField({
+					name: new fields.StringField({ blank: true, trim: true }),
+					damage: weaponDamageTypeField(),
+					ranged: new fields.BooleanField({ initial: false }),
+					scope: new fields.BooleanField({ initial: false }),
+					ammo: ammoTypeField(),
+				}),
+				offHand: new fields.SchemaField({
+					name: new fields.StringField({ blank: true, trim: true }),
+					damage: weaponDamageTypeField(),
+					ranged: new fields.BooleanField({ initial: false }),
+					scope: new fields.BooleanField({ initial: false }),
+					ammo: ammoTypeField(),
+				}),
 				ammo: new fields.SchemaField({
-					quivers: new fields.NumberField({ min: 0, max: 5, integer: true }),
-					mags: new fields.NumberField({ min: 0, max: 5, integer: true }),
-					cells: new fields.NumberField({ min: 0, max: 5, integer: true }),
+					quivers: new fields.NumberField({ min: 0, max: 10, integer: true }),
+					mags: new fields.NumberField({ min: 0, max: 10, integer: true }),
+					cells: new fields.NumberField({ min: 0, max: 10, integer: true }),
 				}),
 			}),
 			supplies: new fields.NumberField({

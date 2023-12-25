@@ -19,28 +19,26 @@ export class PlayerSheet extends GenericSheet {
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Actor: ${this.id}`);
 
-		// html.find(`input.sync__input`).on("blur", ($e) => {
-		// 	console.debug(`.dungeon | input.sync__input blur event`);
-
-		// 	let value = parseInt($e.target.value);
-		// 	if (!value) {
-		// 		ui.notifications.error(
-		// 			`dotdungeon.notification.error.invalid-integer`,
-		// 			{ localize: true }
-		// 		);
-		// 		return;
-		// 	};
-		// 	let delta = value - this.#syncValue();
-		// 	this.actor.system.syncDelta += delta;
-		// 	for (const actor of game.actors) {
-		// 		if (actor._sheet)
-		// 	}
-		// 	game.socket.emit(`system.dotdungeon`, {
-		// 		type: "reload",
-
-		// 	})
-		// });
+		/*
+		Toggles the expanded state for the detail elements in the sheet.
+		*/
+		html.find(`summary`).on(`click`, ($e) => {
+			console.debug(`.dungeon | summary[data-collapse-id="${$e.target.dataset.collapseId}"] click event`);
+			/*
+			This seeming inversion of logic is due to the fact that this handler
+			gets called before the element is updated to include/reflect the
+			change, so if the parentNode doesn't actually have it, then we're
+			opening it and vice-versa.
+			*/
+			if (!$e.target.parentNode.open) {
+				this._expanded.add($e.target.dataset.collapseId);
+			} else {
+				this._expanded.delete($e.target.dataset.collapseId);
+			};
+		});
 	};
+
+	_expanded = new Set();
 
 	#syncValue() {
 		let delta = 0;
@@ -60,6 +58,10 @@ export class PlayerSheet extends GenericSheet {
 		ctx.computed = {
 			syncTotal: this.#syncValue(),
 			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
+		};
+
+		ctx.meta = {
+			expanded: this._expanded,
 		};
 
 		console.groupCollapsed(`PlayerSheet.getData`);
