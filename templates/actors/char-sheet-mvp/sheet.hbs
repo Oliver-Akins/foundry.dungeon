@@ -207,21 +207,21 @@
 	{{#> dotdungeon.panel class="weapons" title="dotdungeon.actor.pc.panel.weapons"}}
 		<details class="main-hand" {{dotdungeon-expanded meta.expanded "weapons.main-hand"}}>
 			<summary data-collapse-id="weapons.main-hand">
-				Main-Hand
+				{{localize "dotdungeon.actor.pc.weapon.main-hand"}}
 			</summary>
 			<label>
-				Name
+				{{localize "dotdungeon.actor.pc.weapon.name"}}
 				<input
 					type="text"
 					name=""
 				>
 			</label>
 			<label>
-				Damage
+				{{localize "dotdungeon.actor.pc.weapon.damage-type"}}
 				<select name="system.weapon.mainHand.damage"></select>
 			</label>
 			<label>
-				Ranged
+				{{localize "dotdungeon.actor.pc.weapon.is-ranged"}}
 				<input
 					type="checkbox"
 					name="system.weapon.mainHand.ranged"
@@ -230,7 +230,7 @@
 			</label>
 			{{#if system.weapon.mainHand.ranged}}
 				<label>
-					Scope
+					{{localize "dotdungeon.actor.pc.weapon.is-scoped"}}
 					<input
 						type="checkbox"
 						name="system.weapon.mainHand.scope"
@@ -238,28 +238,28 @@
 					>
 				</label>
 				<label>
-					Ammo
+					{{localize "dotdungeon.actor.pc.weapon.ammo-type"}}
 					<select name=""></select>
 				</label>
 			{{/if}}
 		</details>
 		<details {{dotdungeon-expanded meta.expanded "weapons.off-hand"}}>
 			<summary data-collapse-id="weapons.off-hand">
-				Off-Hand
+				{{localize "dotdungeon.actor.pc.weapon.off-hand"}}
 			</summary>
 			<label>
-				Name
+				{{localize "dotdungeon.actor.pc.weapon.name"}}
 				<input
 					type="text"
 					name=""
 				>
 			</label>
 			<label>
-				Damage
+				{{localize "dotdungeon.actor.pc.weapon.damage-type"}}
 				<select name="system.weapon.offHand.damage"></select>
 			</label>
 			<label>
-				Ranged
+				{{localize "dotdungeon.actor.pc.weapon.is-ranged"}}
 				<input
 					type="checkbox"
 					name="system.weapon.offHand.ranged"
@@ -268,7 +268,7 @@
 			</label>
 			{{#if system.weapon.offHand.ranged}}
 				<label>
-					Scope
+					{{localize "dotdungeon.actor.pc.weapon.is-scoped"}}
 					<input
 						type="checkbox"
 						name="system.weapon.offHand.scope"
@@ -276,7 +276,7 @@
 					>
 				</label>
 				<label>
-					Ammo
+					{{localize "dotdungeon.actor.pc.weapon.ammo-type"}}
 					<select name=""></select>
 				</label>
 			{{/if}}

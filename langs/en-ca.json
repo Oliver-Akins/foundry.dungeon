@@ -88,6 +88,14 @@
 	"dotdungeon.actor.pc.backpack.materials.label": "Materials",
 	"dotdungeon.actor.pc.backpack.bytes.label": "Bytes",
 
+	"dotdungeon.actor.pc.weapon.main-hand": "Main-Hand",
+	"dotdungeon.actor.pc.weapon.off-hand": "Off-Hand",
+	"dotdungeon.actor.pc.weapon.name": "Name",
+	"dotdungeon.actor.pc.weapon.damage-type": "Damage",
+	"dotdungeon.actor.pc.weapon.is-ranged": "Ranged",
+	"dotdungeon.actor.pc.weapon.is-scoped": "Scoped",
+	"dotdungeon.actor.pc.weapon.ammo-type": "Ammo",
+
 
 	"dotdungeon.actor.sync.circle.group": "Group Name",
 	"dotdungeon.actor.sync.circle.sync": "Sync",
