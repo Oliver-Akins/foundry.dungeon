@@ -1,3 +1,5 @@
+import helpers from "./helpers/index.mjs";
+
 export const partials = [
 	`actors/char-sheet-mvp/partials/dice_choice.hbs`,
 	`actors/char-sheet-mvp/partials/stat.hbs`,
@@ -7,13 +9,7 @@ export const partials = [
 ];
 
 export async function registerHandlebarsHelpers() {
-	Handlebars.registerHelper({
-		"dotdungeon-array": createArray,
-		"dotdungeon-toFriendlyDuration": toFriendlyDuration,
-		"dotdungeon-objectValue": objectValue,
-		"dotdungeon-stringify": v => JSON.stringify(v, null, `  `),
-		"dotdungeon-expanded": detailsExpanded,
-	});
+	Handlebars.registerHelper(helpers);
 };
 
 export async function preloadHandlebarsTemplates() {
@@ -31,59 +27,4 @@ export async function preloadHandlebarsTemplates() {
 	console.debug(`Loaded ${partials.length} partials`);
 	console.groupEnd();
 	return loadTemplates(paths);
-};
-
-
-function createArray(...args) {
-	return args.slice(0, -1);
-};
-
-function objectValue(obj, keypath) {
-	function helper(o, k) {
-		let v = o[k[0]];
-		if (typeof v === "object") {
-			return helper(v, k.slice(1));
-		};
-		return v;
-	};
-	let resp = helper(obj, keypath.string.split(`.`));
-	return resp;
-};
-
-
-const secondsInAMinute = 60;
-const secondsInAnHour = 60 * secondsInAMinute;
-/**
- * Converts a duration into a more human-friendly format
- * @param {number} duration The length of time in seconds
- * @returns The human-friendly time string
- */
-function toFriendlyDuration(duration) {
-	let friendly = ``;
-	if (duration >= secondsInAnHour) {
-		let hours = Math.floor(duration / secondsInAnHour);
-		friendly += `${hours}h`;
-		duration -= hours * secondsInAnHour;
-	};
-	if (duration >= secondsInAMinute) {
-		let minutes = Math.floor(duration / secondsInAMinute);
-		friendly += `${minutes}m`;
-		duration -= minutes * secondsInAMinute;
-	};
-	if (duration > 0) {
-		friendly += `${duration}s`;
-	};
-	return friendly;
-};
-
-/**
- * Checks if the specified collapseId is currently open, so that during re-renders
- * it remains open or closed.
- *
- * @param {Set<string>} expanded A set indicating what collapseIds are expanded
- * @param {string} collapseId The collapseId to check for
- * @returns {"open"|null} The HTML insertion indicating the details is expanded
- */
-function detailsExpanded(expanded, collapseId) {
-	return expanded.has(collapseId) ? "open" : null;
 };
