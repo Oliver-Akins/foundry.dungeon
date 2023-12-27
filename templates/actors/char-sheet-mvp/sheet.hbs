@@ -219,16 +219,16 @@
 				</label>
 				<label>
 					{{localize "dotdungeon.actor.pc.weapon.damage-type.label"}}
-				<select name="system.weapon.mainHand.damage">
-					{{#select system.weapon.mainHand.damage}}
-						<option value="">Select...</option>
-						{{#each (dotdungeon-array "slashing" "piercing" "smashing" "gun" "neon" "shadow" "solar")}}
-							<option value="{{this}}">
-								{{localize (concat "dotdungeon.actor.pc.weapon.damage-type." this)}}
-							</option>
-						{{/each}}
-					{{/select}}
-				</select>
+					<select name="system.weapon.mainHand.damage">
+						{{#select system.weapon.mainHand.damage}}
+							<option value="">Select...</option>
+							{{#each (dotdungeon-array "slashing" "piercing" "smashing" "gun" "neon" "shadow" "solar")}}
+								<option value="{{this}}">
+									{{localize (concat "dotdungeon.actor.pc.weapon.damage-type." this)}}
+								</option>
+							{{/each}}
+						{{/select}}
+					</select>
 				</label>
 				<label>
 					{{localize "dotdungeon.actor.pc.weapon.is-ranged"}}
