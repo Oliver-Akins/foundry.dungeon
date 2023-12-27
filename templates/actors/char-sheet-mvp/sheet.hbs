@@ -209,38 +209,56 @@
 			<summary data-collapse-id="weapons.main-hand">
 				{{localize "dotdungeon.actor.pc.weapon.main-hand"}}
 			</summary>
-			<label>
-				{{localize "dotdungeon.actor.pc.weapon.name"}}
-				<input
-					type="text"
-					name=""
-				>
-			</label>
-			<label>
-				{{localize "dotdungeon.actor.pc.weapon.damage-type"}}
-				<select name="system.weapon.mainHand.damage"></select>
-			</label>
-			<label>
-				{{localize "dotdungeon.actor.pc.weapon.is-ranged"}}
-				<input
-					type="checkbox"
-					name="system.weapon.mainHand.ranged"
-					{{checked system.weapon.mainHand.ranged}}
-				>
-			</label>
-			{{#if system.weapon.mainHand.ranged}}
+			<div class="weapon-container">
 				<label>
-					{{localize "dotdungeon.actor.pc.weapon.is-scoped"}}
+					{{localize "dotdungeon.actor.pc.weapon.name"}}
 					<input
-						type="checkbox"
-						name="system.weapon.mainHand.scope"
-						{{checked system.weapon.mainHand.scope}}
+						type="text"
+						name="system.weapon.mainHand.name"
 					>
 				</label>
 				<label>
-					{{localize "dotdungeon.actor.pc.weapon.ammo-type"}}
-					<select name=""></select>
+					{{localize "dotdungeon.actor.pc.weapon.damage-type.label"}}
+				<select name="system.weapon.mainHand.damage">
+					{{#select system.weapon.mainHand.damage}}
+						<option value="">Select...</option>
+						{{#each (dotdungeon-array "slashing" "piercing" "smashing" "gun" "neon" "shadow" "solar")}}
+							<option value="{{this}}">
+								{{localize (concat "dotdungeon.actor.pc.weapon.damage-type." this)}}
+							</option>
+						{{/each}}
+					{{/select}}
+				</select>
 				</label>
+				<label>
+					{{localize "dotdungeon.actor.pc.weapon.is-ranged"}}
+					<input
+						type="checkbox"
+						name="system.weapon.mainHand.ranged"
+						{{checked system.weapon.mainHand.ranged}}
+					>
+				</label>
+				{{#if system.weapon.mainHand.ranged}}
+					<label>
+						{{localize "dotdungeon.actor.pc.weapon.is-scoped"}}
+						<input
+							type="checkbox"
+							name="system.weapon.mainHand.scope"
+							{{checked system.weapon.mainHand.scope}}
+						>
+					</label>
+					<label>
+						{{localize "dotdungeon.actor.pc.weapon.ammo-type.label"}}
+						<select name="system.weapon.mainHand.ammo">
+							{{#select system.weapon.mainHand.ammo}}
+								<option value="">{{localize "dotdungeon.actor.pc.weapon.ammo-type.ammoless"}}</option>
+								<option value="quivers">{{localize "dotdungeon.actor.pc.weapon.ammo-type.quiver"}}</option>
+								<option value="mags">{{localize "dotdungeon.actor.pc.weapon.ammo-type.mag"}}</option>
+								<option value="cells">{{localize "dotdungeon.actor.pc.weapon.ammo-type.cell"}}</option>
+							{{/select}}
+						</select>
+					</label>
+				</div>
 			{{/if}}
 		</details>
 		<details {{dotdungeon-expanded meta.expanded "weapons.off-hand"}}>
@@ -251,12 +269,21 @@
 				{{localize "dotdungeon.actor.pc.weapon.name"}}
 				<input
 					type="text"
-					name=""
+					name="system.weapon.offHand.name"
 				>
 			</label>
 			<label>
-				{{localize "dotdungeon.actor.pc.weapon.damage-type"}}
-				<select name="system.weapon.offHand.damage"></select>
+				{{localize "dotdungeon.actor.pc.weapon.damage-type.label"}}
+				<select name="system.weapon.offHand.damage">
+					{{#select system.weapon.offHand.damage}}
+						<option value="">Select...</option>
+						{{#each (dotdungeon-array "slashing" "piercing" "smashing" "gun" "neon" "shadow" "solar")}}
+							<option value="{{this}}">
+								{{localize (concat "dotdungeon.actor.pc.weapon.damage-type." this)}}
+							</option>
+						{{/each}}
+					{{/select}}
+				</select>
 			</label>
 			<label>
 				{{localize "dotdungeon.actor.pc.weapon.is-ranged"}}
@@ -276,8 +303,15 @@
 					>
 				</label>
 				<label>
-					{{localize "dotdungeon.actor.pc.weapon.ammo-type"}}
-					<select name=""></select>
+					{{localize "dotdungeon.actor.pc.weapon.ammo-type.label"}}
+					<select name="system.weapon.offHand.ammo">
+						{{#select system.weapon.offHand.ammo}}
+							<option value="">{{localize "dotdungeon.actor.pc.weapon.ammo-type.ammoless"}}</option>
+							<option value="quivers">{{localize "dotdungeon.actor.pc.weapon.ammo-type.quiver"}}</option>
+							<option value="mags">{{localize "dotdungeon.actor.pc.weapon.ammo-type.mag"}}</option>
+							<option value="cells">{{localize "dotdungeon.actor.pc.weapon.ammo-type.cell"}}</option>
+						{{/select}}
+					</select>
 				</label>
 			{{/if}}
 		</details>
