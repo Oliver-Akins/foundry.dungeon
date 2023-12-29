@@ -1,0 +1,43 @@
+{{#> dotdungeon.panel class="profile" title="dotdungeon.actor.pc.panel.profile"}}
+	{{#if settings.showAvatarOnSheet}}
+		<img
+			class="avatar"
+			src="{{actor.img}}"
+			data-edit="img"
+			title="{{actor.name}}"
+		/>
+	{{else}}
+		<label>
+			{{localize "dotdungeon.actor.pc.profile.avatar.label"}}
+			{{filePicker type="avatar" target="img"}}
+		</label>
+	{{/if}}
+	{{#if settings.devMode}}
+		<div class="debug-data">
+			Image URL: {{actor.img}}
+		</div>
+	{{/if}}
+	<label>
+		{{localize "dotdungeon.actor.pc.profile.name.label"}}
+		<input
+			type="text"
+			name="name"
+			value="{{actor.name}}"
+			placeholder="{{localize "dotdungeon.actor.pc.profile.name.placeholder"}}"
+		>
+	</label>
+	{{#if computed.canChangeGroup}}
+		<label>
+			{{localize "dotdungeon.actor.pc.profile.group.label"}}
+			{{#unless settings.playersCanChangeGroup}}
+				<span>{{localize "dotdungeon.actor.pc.profile.group.gm-edit"}}</span>
+			{{/unless}}
+			<input
+				type="text"
+				name="system.group"
+				value="{{system.group}}"
+				placeholder="{{localize "dotdungeon.actor.pc.profile.group.placeholder"}}"
+			>
+		</label>
+	{{/if}}
+{{/ dotdungeon.panel}}

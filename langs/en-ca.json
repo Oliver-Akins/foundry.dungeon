@@ -75,6 +75,11 @@
 	"dotdungeon.actor.pc.skill.explosives": "Explosives",
 	"dotdungeon.actor.pc.skill.piloting": "Piloting",
 
+	"dotdungeon.actor.pc.aspect.name.placeholder": "Name...",
+	"dotdungeon.actor.pc.aspect.used": "Used",
+	"dotdungeon.actor.pc.aspect.duration": "Duration",
+	"dotdungeon.actor.pc.aspect.description.placeholder": "Description...",
+
 	"dotdungeon.actor.pc.respawns.header": "Respawns",
 	"dotdungeon.actor.pc.sync.header": "Sync",
 

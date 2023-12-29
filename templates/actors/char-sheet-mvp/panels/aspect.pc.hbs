@@ -1,0 +1,37 @@
+{{#> dotdungeon.panel class="aspect" title="dotdungeon.actor.pc.panel.aspect"}}
+	<input
+		type="text"
+		class="aspect__name--input"
+		name="system.aspect.name"
+		placeholder="{{localize "dotdungeon.actor.pc.aspect.name.placeholder"}}"
+		value="{{system.aspect.name}}"
+	>
+	<label class="aspect__used--label">
+		{{localize "dotdungeon.actor.pc.aspect.used"}}
+		<input
+			type="checkbox"
+			class="aspect__used--input"
+			name="system.aspect.used"
+			{{checked system.aspect.used}}
+		>
+	</label>
+	<label class="aspect__duration--label">
+		{{localize "dotdungeon.actor.pc.aspect.duration"}}
+		{{#if system.aspect.deactivateAfter}}
+			<span class="friendly-duration aspect__duration--friendly">
+				({{dotdungeon-toFriendlyDuration system.aspect.deactivateAfter}})
+			</span>
+		{{/if}}
+		<input
+			type="number"
+			class="aspect__duration--input"
+			name="system.aspect.deactivateAfter"
+			value="{{system.aspect.deactivateAfter}}"
+		>
+	</label>
+	<textarea
+		class="aspect__description--input"
+		name="system.aspect.description"
+		placeholder="{{localize "dotdungeon.actor.pc.aspect.description.placeholder"}}"
+	>{{system.aspect.description}}</textarea>
+	{{/ dotdungeon.panel}}

@@ -1,0 +1,35 @@
+{{#> dotdungeon.panel class="sync" title="dotdungeon.actor.pc.panel.health"}}
+	{{!--
+	NOTE: This would be neat to get working at some point, but isn't my highest
+	priority to do.
+
+	<div class="sync">
+		<h3 class="sync__header">
+			{{localize "dotdungeon.actor.pc.sync.header"}}
+			{{#if settings.devMode}}
+				<span class="debug-data">
+					({{system.syncDelta}})
+				</span>
+			{{/if}}
+		</h3>
+		<input
+			type="number"
+			class="sync__input sync"
+			value="{{computed.syncTotal}}"
+		>
+	</div>
+	--}}
+	<div class="respawns">
+		<h3 class="respawns__header">
+			{{localize "dotdungeon.actor.pc.respawns.header"}}
+		</h3>
+		{{#each system.respawns}}
+			<input
+				type="checkbox"
+				class="respawns__input"
+				name="system.respawns.{{@key}}"
+				{{checked this}}
+			>
+		{{/each}}
+	</div>
+{{/ dotdungeon.panel}}
