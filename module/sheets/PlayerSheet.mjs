@@ -23,7 +23,7 @@ export class PlayerSheet extends GenericSheet {
 		Toggles the expanded state for the detail elements in the sheet.
 		*/
 		html.find(`summary`).on(`click`, ($e) => {
-			console.debug(`.dungeon | summary[data-collapse-id="${$e.target.dataset.collapseId}"] click event`);
+			console.debug(`.dungeon | summary[data-collapse-id="${$e.target.dataset.collapseId}"] click event (open=${$e.target.parentNode.open})`);
 			/*
 			This seeming inversion of logic is due to the fact that this handler
 			gets called before the element is updated to include/reflect the
@@ -61,6 +61,7 @@ export class PlayerSheet extends GenericSheet {
 		};
 
 		ctx.meta = {
+			idp: this.actor.uuid,
 			expanded: this._expanded,
 		};
 

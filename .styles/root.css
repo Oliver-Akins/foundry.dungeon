@@ -224,6 +224,37 @@
 .dotdungeon .actor--pc .panel--weapons {
   grid-area: weapons;
 }
+.dotdungeon .actor--pc .panel--weapons .weapon {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__name input {
+  width: 50%;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__ammo-type, .dotdungeon .actor--pc .panel--weapons .weapon__damage-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__is-scoped, .dotdungeon .actor--pc .panel--weapons .weapon__is-ranged {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .dotdungeon .actor--pc .panel--roles {
   grid-area: roles;
 }
@@ -317,4 +348,4 @@
   resize: vertical;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/partials/panel.scss%22,%22../styles/mixins/_breakpoints.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/sheets/actor/sync/basic.scss%22,%22../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aElBW;EFmBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAGD;AAAA;AAAA;EAGC;EGhCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH2BD;EACC;;AAGD;EACC;EACA,aE5CU;;;AFiDZ;EACC;;AAEA;EACC;EACA,YEpDW;;;AEHb;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdH;EACC;EACA;EAEA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ELlBD;EACA;EACA;EKkBE;EACA;EACA,aJvBU;EIwBV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AC7BD;EDkCA;IACC;IACA;;;AExCF;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAGD;EACC;EACA;EACA;;AAGD;AAAA;AAAA;EAGC;EACA;;AAGD;EACC;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;ADxJF;ECgKC;IACC;IACA;IACA,qBACC;;EAkBC;IACC;;EAKD;IACC;IACA;;;ADxLL;ECkMC;IACC;IACA;IACA,qBACC;;EAeC;IACC;;;AC1NL;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA;;AAGD;EACC;EACA;;AAMA;EACC;EACA;;;AFlBH;EE4BG;IACC;IACA;;;ACzCL;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22root.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/partials/panel.scss%22,%22../styles/mixins/_breakpoints.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/sheets/actor/sync/basic.scss%22,%22../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aElBW;EFmBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAGD;AAAA;AAAA;EAGC;EGhCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH2BD;EACC;;AAGD;EACC;EACA,aE5CU;;;AFiDZ;EACC;;AAEA;EACC;EACA,YEpDW;;;AEHb;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdH;EACC;EACA;EAEA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ELlBD;EACA;EACA;EKkBE;EACA;EACA,aJvBU;EIwBV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AC7BD;EDkCA;IACC;IACA;;;AExCF;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAGD;EACC;EACA;EACA;;AAGD;AAAA;AAAA;EAGC;EACA;;AAGD;EACC;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAGF;EACC;EACA;EACA;;AAED;EACC;EACA;EACA;;AAED;EACC;EACA;EACA;EACA;;AAIH;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AD1LF;ECkMC;IACC;IACA;IACA,qBACC;;EAkBC;IACC;;EAKD;IACC;IACA;;;AD1NL;ECoOC;IACC;IACA;IACA,qBACC;;EAeC;IACC;;;AC5PL;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA;;AAGD;EACC;EACA;;AAMA;EACC;EACA;;;AFlBH;EE4BG;IACC;IACA;;;ACzCL;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22root.css%22%7D */

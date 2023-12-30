@@ -102,6 +102,37 @@
 .dotdungeon .actor--pc .panel--weapons {
   grid-area: weapons;
 }
+.dotdungeon .actor--pc .panel--weapons .weapon {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__name input {
+  width: 50%;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__ammo-type, .dotdungeon .actor--pc .panel--weapons .weapon__damage-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dotdungeon .actor--pc .panel--weapons .weapon__is-scoped, .dotdungeon .actor--pc .panel--weapons .weapon__is-ranged {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .dotdungeon .actor--pc .panel--roles {
   grid-area: roles;
 }
@@ -152,4 +183,4 @@
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAGD;EACC;EACA;EACA;;AAGD;AAAA;AAAA;EAGC;EACA;;AAGD;EACC;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;ACxJF;EDgKC;IACC;IACA;IACA,qBACC;;EAkBC;IACC;;EAKD;IACC;IACA;;;ACxLL;EDkMC;IACC;IACA;IACA,qBACC;;EAeC;IACC%22,%22file%22:%22mvp.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/actor/mvp.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGA;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAGC;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAGD;EACC;EACA;EACA;;AAGD;AAAA;AAAA;EAGC;EACA;;AAGD;EACC;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAGF;EACC;EACA;EACA;;AAED;EACC;EACA;EACA;;AAED;EACC;EACA;EACA;EACA;;AAIH;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AC1LF;EDkMC;IACC;IACA;IACA,qBACC;;EAkBC;IACC;;EAKD;IACC;IACA;;;AC1NL;EDoOC;IACC;IACA;IACA,qBACC;;EAeC;IACC%22,%22file%22:%22mvp.css%22%7D */

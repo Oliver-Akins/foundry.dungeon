@@ -19,7 +19,14 @@ Hooks.on(`hotReload`, async (data) => {
 	};
 
 	// Re-register our new partial template & cache it.
-	const templateName = `dotdungeon.${data.path.split("/").pop().replace(".hbs", "")}`;
+	const alias = data.path
+		.split(`/`)
+		.pop()
+		.split(`.`)
+		.slice(0, -1)
+		.reverse()
+		.join(`.`);
+	const templateName = `dotdungeon.${alias}`;
 	Handlebars.registerPartial(templateName, template);
 	_templateCache[templateName] = template;
 
