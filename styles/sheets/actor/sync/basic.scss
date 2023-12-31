@@ -1,7 +1,7 @@
 @use "../../../mixins/breakpoints" as *;
 
 .dotdungeon {
-	.actor--circle-sync {
+	.actor--basic-sync {
 		display: flex;
 		justify-content: center;
 		align-items: center;

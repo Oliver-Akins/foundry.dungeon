@@ -310,23 +310,23 @@
     flex-direction: column;
   }
 }
-.dotdungeon .actor--circle-sync {
+.dotdungeon .actor--basic-sync {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 4px;
 }
-.dotdungeon .actor--circle-sync label {
+.dotdungeon .actor--basic-sync label {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.dotdungeon .actor--circle-sync .sync-input {
+.dotdungeon .actor--basic-sync .sync-input {
   width: 30%;
   text-align: center;
 }
-.dotdungeon .actor--circle-sync .name-input {
+.dotdungeon .actor--basic-sync .name-input {
   width: 60%;
   text-align: center;
 }

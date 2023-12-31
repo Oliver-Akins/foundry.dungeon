@@ -119,45 +119,57 @@
 						"label": "Account Name",
 						"placeholder": "Account Name..."
 					}
+				},
+				"backpack": {
+					"materials.label": "Materials",
+					"bytes.label": "Bytes"
+				},
+				"weapon": {
+					"mainHand": "Main-Hand",
+					"offHand": "Off-Hand",
+					"name": "Name",
+					"damage-type": {
+						"label": "Damage Type",
+						"slashing": "Slashing",
+						"piercing": "Piercing",
+						"smashing": "Smashing",
+						"gun": "Gun",
+						"neon": "Neon",
+						"shadow": "Shadow",
+						"solar": "Solar"
+					},
+					"is-ranged": "Is Ranged",
+					"is-scoped": "Has Scope",
+					"ammo-type": {
+						"label": "Ammo",
+						"ammoless": "No Ammo",
+						"quiver": "Quivers",
+						"mag": "Mags",
+						"cell": "Cells"
+					}
 				}
+			},
+			"sync": {
+				"common": {
+					"group": "Group Name",
+					"sync": "Sync"
+				}
+			}
+		},
+		"item": {
+			"aspect": {
+				"name": "Name",
+				"duration": "Duration (seconds)",
+				"description": "Description",
+				"send-to-chat": "Send Aspect to Chat"
+			}
+		},
+		"notification": {
+			"error": {
+				"invalid-integer": "You must enter a valid whole number"
 			}
 		}
 	},
-
-	"dotdungeon.actor.pc.backpack.materials.label": "Materials",
-	"dotdungeon.actor.pc.backpack.bytes.label": "Bytes",
-
-	"dotdungeon.actor.pc.weapon.mainHand": "Main-Hand",
-	"dotdungeon.actor.pc.weapon.offHand": "Off-Hand",
-	"dotdungeon.actor.pc.weapon.name": "Name",
-	"dotdungeon.actor.pc.weapon.damage-type.label": "Damage Type",
-	"dotdungeon.actor.pc.weapon.damage-type.slashing": "Slashing",
-	"dotdungeon.actor.pc.weapon.damage-type.piercing": "Piercing",
-	"dotdungeon.actor.pc.weapon.damage-type.smashing": "Smashing",
-	"dotdungeon.actor.pc.weapon.damage-type.gun": "Gun",
-	"dotdungeon.actor.pc.weapon.damage-type.neon": "Neon",
-	"dotdungeon.actor.pc.weapon.damage-type.shadow": "Shadow",
-	"dotdungeon.actor.pc.weapon.damage-type.solar": "Solar",
-	"dotdungeon.actor.pc.weapon.is-ranged": "Is Ranged",
-	"dotdungeon.actor.pc.weapon.is-scoped": "Has Scope",
-	"dotdungeon.actor.pc.weapon.ammo-type.label": "Ammo",
-	"dotdungeon.actor.pc.weapon.ammo-type.ammoless": "No Ammo",
-	"dotdungeon.actor.pc.weapon.ammo-type.quiver": "Quivers",
-	"dotdungeon.actor.pc.weapon.ammo-type.mag": "Mags",
-	"dotdungeon.actor.pc.weapon.ammo-type.cell": "Cells",
-
-
-	"dotdungeon.actor.sync.circle.group": "Group Name",
-	"dotdungeon.actor.sync.circle.sync": "Sync",
-
-
-	"dotdungeon.item.aspect.name": "Name",
-	"dotdungeon.item.aspect.duration": "Duration (seconds)",
-	"dotdungeon.item.aspect.description": "Description",
-	"dotdungeon.item.aspect.send-to-chat": "Send Aspect to Chat",
-
-
-	"dotdungeon.notification.error.invalid-integer": "You must enter a valid whole number.",
 
 
 	"dotdungeon.aria.aspect-description": "The information on how the aspect works",
