@@ -20,7 +20,14 @@
 	},
 	"dotdungeon": {
 		"rolls": {
-			"stats": "@actor.name: @stat"
+			"stats": {
+				"build": "Stat Check : Build",
+				"meta": "Stat Check : Meta",
+				"presence": "Stat Check : Presence",
+				"hands": "Stat Check : Hands",
+				"tilt": "Stat Check : Tilt",
+				"rng": "Stat Check : RNG"
+			}
 		},
 		"settings": {
 			"showAvatarOnSheet": {

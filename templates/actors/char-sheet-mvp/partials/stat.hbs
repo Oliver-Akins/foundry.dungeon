@@ -3,6 +3,7 @@
 		class="roll"
 		data-stat="{{name}}"
 		data-roll-formula="1{{value}}"
+		data-roll-label="dotdungeon.rolls.stats.{{name}}"
 		{{disabled (dd-negate (dd-objectValue system (concat "stats." name)))}}
 	>
 		{{localize (concat "dotdungeon.actor.pc.stat." name)}}

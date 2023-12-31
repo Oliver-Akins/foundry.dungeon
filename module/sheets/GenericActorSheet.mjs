@@ -40,15 +40,22 @@ export class GenericActorSheet extends ActorSheet {
 
 	async _handleRoll($e) {
 		let data = $e.target.dataset;
-		if (!data.roll) return;
-		console.debug(`.dungeon | Attempting to roll with formula "${data.roll}"`);
+		if (!data.rollFormula) {
+			console.warn(`.dungeon | Element has .roll class with no roll formula`, $e.target);
+			return;
+		};
+		console.debug(`.dungeon | Attempting to roll with formula "${data.rollFormula}"`);
 
-		game.i18n
+		let flavor;
+		if (data.rollLabel) {
+			flavor = game.i18n.localize(data.rollLabel);
+		};
 
-		let roll = new Roll(data.roll);
+		let roll = new Roll(data.rollFormula);
 		await roll.evaluate();
 		await roll.toMessage({
 			speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+			flavor,
 		});
 	};
 
