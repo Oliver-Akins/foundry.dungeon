@@ -47,7 +47,7 @@
 				}
 			}
 		},
-		"sheet": {
+		"sheet-names": {
 			"PlayerSheet": "PC/PUG Sheet",
 			"SyncSheet": {
 				"basic": "Theme: Basic"

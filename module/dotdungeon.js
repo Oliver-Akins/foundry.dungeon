@@ -39,18 +39,18 @@ Hooks.once(`init`, () => {
 	Actors.registerSheet("dotdungeon", PlayerSheet, {
 		makeDefault: true,
 		types: ["player"],
-		label: "dotdungeon.sheet.PlayerSheet"
+		label: "dotdungeon.sheet-names.PlayerSheet"
 	});
 	Actors.registerSheet("dotdungeon", BasicSyncSheet, {
 		makeDefault: true,
 		types: ["sync"],
-		label: "dotdungeon.sheet.SyncSheet.basic"
+		label: "dotdungeon.sheet-names.SyncSheet.basic"
 	});
 
 	Items.registerSheet("dotdungeon", AspectSheet, {
 		makeDefault: true,
 		types: ["aspect"],
-		label: "dotdungeon.sheet.AspectSheet"
+		label: "dotdungeon.sheet-names.AspectSheet"
 	});
 
 	hbs.registerHandlebarsHelpers();
