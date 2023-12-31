@@ -1,4 +1,4 @@
-import { GenericActorSheet } from "./GenericSheet.mjs";
+import { GenericActorSheet } from "./GenericActorSheet.mjs";
 
 export class PlayerSheet extends GenericActorSheet {
 	static get defaultOptions() {
