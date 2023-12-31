@@ -28,6 +28,10 @@
 		@include fvtt_reset;
 		font-family: inherit;
 		cursor: pointer;
+
+		&:disabled {
+			cursor: default;
+		}
 	}
 
 	input[type="text"],
@@ -39,6 +43,10 @@
 
 	select, select:hover {
 		cursor: pointer;
+
+		:disabled {
+			cursor: default;
+		}
 	}
 
 	.debug-data {

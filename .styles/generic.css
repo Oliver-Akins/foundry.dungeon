@@ -22,6 +22,9 @@
   font-family: inherit;
   cursor: pointer;
 }
+.dotdungeon > .window-content button:disabled, .dotdungeon > .window-content button:hover:disabled {
+  cursor: default;
+}
 .dotdungeon > .window-content input[type=text],
 .dotdungeon > .window-content input[type=number],
 .dotdungeon > .window-content textarea {
@@ -43,6 +46,9 @@
 .dotdungeon > .window-content select, .dotdungeon > .window-content select:hover {
   cursor: pointer;
 }
+.dotdungeon > .window-content select :disabled, .dotdungeon > .window-content select:hover :disabled {
+  cursor: default;
+}
 .dotdungeon > .window-content .debug-data {
   opacity: 60%;
   font-family: sans-serif;
@@ -56,4 +62,4 @@
   background: #f2f2f2;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aElBW;EFmBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAGD;AAAA;AAAA;EAGC;EGhCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH2BD;EACC;;AAGD;EACC;EACA,aE5CU;;;AFiDZ;EACC;;AAEA;EACC;EACA,YEpDW%22,%22file%22:%22generic.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aElBW;EFmBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;AAIF;EACC;EACA,aEpDU;;;AFyDZ;EACC;;AAEA;EACC;EACA,YE5DW%22,%22file%22:%22generic.css%22%7D */
