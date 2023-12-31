@@ -35,5 +35,5 @@ Hooks.on(`hotReload`, async (data) => {
 		window.render(true);
 	};
 
-	return false;
+	return true;
 });
