@@ -1,5 +1,5 @@
 {{#> dotdungeon.panel class="weapons" title="dotdungeon.actor.pc.panel.weapons"}}
-	<details class="mainHand" {{dotdungeon-expanded meta.expanded "weapons.mainHand"}}>
+	<details class="mainHand" {{dd-expanded meta.expanded "weapons.mainHand"}}>
 		<summary data-collapse-id="weapons.mainHand">
 			{{localize "dotdungeon.actor.pc.weapon.mainHand"}}
 		</summary>
@@ -24,7 +24,7 @@
 					<select name="system.weapon.mainHand.damage">
 						{{#select system.weapon.mainHand.damage}}
 							<option value="">Select...</option>
-							{{#each (dotdungeon-array "slashing" "piercing" "smashing" "gun" "neon" "shadow" "solar")}}
+							{{#each (dd-array "slashing" "piercing" "smashing" "gun" "neon" "shadow" "solar")}}
 								<option value="{{this}}">
 									{{localize (concat "dotdungeon.actor.pc.weapon.damage-type." this)}}
 								</option>
@@ -69,7 +69,7 @@
 			{{/if}}
 		</div>
 	</details>
-	<details {{dotdungeon-expanded meta.expanded "weapons.offHand"}}>
+	<details {{dd-expanded meta.expanded "weapons.offHand"}}>
 		<summary data-collapse-id="weapons.offHand">
 			{{localize "dotdungeon.actor.pc.weapon.offHand"}}
 		</summary>
@@ -93,7 +93,7 @@
 					<select name="system.weapon.offHand.damage">
 						{{#select system.weapon.offHand.damage}}
 							<option value="">Select...</option>
-							{{#each (dotdungeon-array "slashing" "piercing" "smashing" "gun" "neon" "shadow" "solar")}}
+							{{#each (dd-array "slashing" "piercing" "smashing" "gun" "neon" "shadow" "solar")}}
 								<option value="{{this}}">
 									{{localize (concat "dotdungeon.actor.pc.weapon.damage-type." this)}}
 								</option>

@@ -1,5 +1,10 @@
 <label class="stat stat--{{name}}">
-	<button class="roll-stat" data-stat="{{name}}">
+	<button
+		class="roll"
+		data-stat="{{name}}"
+		data-roll-formula="1{{value}}"
+		{{disabled (dd-negate (dd-objectValue system (concat "stats." name)))}}
+	>
 		{{localize (concat "dotdungeon.actor.pc.stat." name)}}
 	</button>
 	{{> dotdungeon.dice_choice fieldToUpdate=(concat "system.stats." name) selected=value }}

@@ -5,10 +5,11 @@ import { objectValue } from "./objectValue.mjs";
 import { toFriendlyDuration } from "./toFriendlyDuration.mjs";
 
 export default {
-	"dotdungeon-schemaOptions": schemaOptions,
-	"dotdungeon-array": createArray,
-	"dotdungeon-toFriendlyDuration": toFriendlyDuration,
-	"dotdungeon-objectValue": objectValue,
-	"dotdungeon-stringify": v => JSON.stringify(v, null, `  `),
-	"dotdungeon-expanded": detailsExpanded,
+	"dd-schemaOptions": schemaOptions,
+	"dd-array": createArray,
+	"dd-toFriendlyDuration": toFriendlyDuration,
+	"dd-objectValue": objectValue,
+	"dd-expanded": detailsExpanded,
+	"dd-stringify": v => JSON.stringify(v, null, `  `),
+	"dd-negate": v => !v,
 };

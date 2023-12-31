@@ -1,6 +1,6 @@
-import { GenericSheet } from "../GenericSheet.mjs";
+import { GenericActorSheet } from "../GenericActorSheet.mjs";
 
-export class AbstractSyncSheet extends GenericSheet {
+export class AbstractSyncSheet extends GenericActorSheet {
 	static get defaultOptions() {
 		let opts = mergeObject(
 			super.defaultOptions,

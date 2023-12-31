@@ -4,7 +4,7 @@
 
 	{{#> dotdungeon.panel class="stats" title="dotdungeon.actor.pc.panel.statistics"}}
 		{{#each system.stats }}
-			{{> dotdungeon.stat name=@key value=this}}
+			{{> dotdungeon.stat system=../system name=@key value=this}}
 		{{/each}}
 	{{/ dotdungeon.panel}}
 
@@ -43,21 +43,21 @@
 		<div class="debug-data" style="grid-column: 1 / span 3">
 			<div>
 				Settings:
-				<pre><code>{{dotdungeon-stringify settings}}</code></pre>
+				<pre><code>{{dd-stringify settings}}</code></pre>
 			</div>
 			<div>
 				Meta:
-				<pre><code>{{dotdungeon-stringify meta}}</code></pre>
+				<pre><code>{{dd-stringify meta}}</code></pre>
 			</div>
 			<hr>
 			<div>
 				System:
-				<pre><code>{{dotdungeon-stringify system}}</code></pre>
+				<pre><code>{{dd-stringify system}}</code></pre>
 			</div>
 			<hr>
 			<div>
 				Actor:
-				<pre><code>{{dotdungeon-stringify actor}}</code></pre>
+				<pre><code>{{dd-stringify actor}}</code></pre>
 			</div>
 		</div>
 	{{/if}}

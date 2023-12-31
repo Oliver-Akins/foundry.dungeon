@@ -1,7 +1,7 @@
 <select name="{{fieldToUpdate}}">
 	{{#select selected}}
 		<option value="">---</option>
-		{{#each (dotdungeon-array "d4" "d6" "d8" "d10" "d12" "d20")}}
+		{{#each (dd-array "d4" "d6" "d8" "d10" "d12" "d20")}}
 			<option value="{{this}}">{{this}}</option>
 		{{/each}}
 	{{/select}}

@@ -22,9 +22,6 @@ export class PlayerSheet extends GenericActorSheet {
 		/*
 		Toggles the expanded state for the detail elements in the sheet.
 		*/
-		html.find(`summary`).on(`click`, ($e) => {
-
-		});
 	};
 
 	#syncValue() {
@@ -47,12 +44,12 @@ export class PlayerSheet extends GenericActorSheet {
 			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
 		};
 
-		ctx.meta.idp = this.actor.uuid;
-
 		console.groupCollapsed(`PlayerSheet.getData`);
 		console.log(`ctx`, ctx);
 		console.log(`actor`, actor);
 		console.groupEnd();
 		return ctx;
 	};
+
+
 };

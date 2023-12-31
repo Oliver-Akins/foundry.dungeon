@@ -21,25 +21,42 @@ export class GenericActorSheet extends ActorSheet {
 
 		ctx.meta = {
 			expanded: this._expanded,
+			idp: this.actor.uuid,
 		};
 
 		return ctx;
 	};
 
 	activateListeners(html) {
+		super.activateListeners(html);
+
 		if (this.document.isEmbedded) return;
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Generic sheet adding listeners`);
 
-		html.find(`.roll`).on(`click`, this._handleRoll);
-		html.find(`summary`).on(`click`, this._handleSummaryToggle);
+		html.find(`summary`).on(`click`, this._handleSummaryToggle.bind(this));
+		html.find(`.roll`).on(`click`, this._handleRoll.bind(this));
 	};
 
+	async _handleRoll($e) {
+		let data = $e.target.dataset;
+		if (!data.roll) return;
+		console.debug(`.dungeon | Attempting to roll with formula "${data.roll}"`);
+
+		game.i18n
+
+		let roll = new Roll(data.roll);
+		await roll.evaluate();
+		await roll.toMessage({
+			speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+		});
+	};
 
 	_handleSummaryToggle($e) {
 		let data = $e.target.dataset;
 		let open = $e.target.parentNode.open;
 		console.debug(`.dungeon | Collapse ID: ${data.collapseId} (open: ${open})`);
+
 		/*
 		This seeming inversion of logic is due to the fact that this handler
 		gets called before the element is updated to include/reflect the
@@ -51,12 +68,5 @@ export class GenericActorSheet extends ActorSheet {
 		} else {
 			this._expanded.delete(data.collapseId);
 		};
-	}
-
-
-	_handleRoll($e) {
-		let data = $e.target.dataset;
-		if (!data.roll) return;
-		console.debug(`.dungeon | Attempting to roll ${data.roll}`);
 	};
-}
+};

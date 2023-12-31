@@ -5,7 +5,7 @@
 		aria-label="{{localize "dotdungeon.aria.actor.pc.skill.button.roll" skill=name}}"
 	>
 		{{localize (concat "dotdungeon.actor.pc.skill." name)}}
-		{{#with (dotdungeon-objectValue system (concat "stats." stat)) as | die |}}
+		{{#with (dd-objectValue system (concat "stats." stat)) as | die |}}
 			{{#if die}}
 				({{die}})
 			{{/if}}
@@ -16,7 +16,7 @@
 		class="skill__select"
 		aria-label="{{localize "dotdungeon.aria.actor.pc.skill.dropdown" skill=name}}"
 	>
-		{{#select (dotdungeon-objectValue system (concat "skills." stat "." name))}}
+		{{#select (dd-objectValue system (concat "skills." stat "." name))}}
 			<option value="">Novice (+0)</option>
 			<option value="+2">Trained (+2)</option>
 			<option value="+4">Expert (+4)</option>
@@ -29,7 +29,7 @@
 		This would be nice to get working at some point, but it's not something
 		that is MVP
 
-		<img src="icons/dice/{{dotdungeon-objectValue system (concat "system.skills." stat "." name)}}black.svg">
+		<img src="icons/dice/{{dd-objectValue system (concat "system.skills." stat "." name)}}black.svg">
 		--}}
 		Roll
 	</button>
