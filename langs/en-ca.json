@@ -27,6 +27,28 @@
 				"hands": "Stat Check : Hands",
 				"tilt": "Stat Check : Tilt",
 				"rng": "Stat Check : RNG"
+			},
+			"skills": {
+				"defense": "Skill : Defense",
+				"magic": "Skill : Magic",
+				"melee": "Skill : Melee",
+				"platforming": "Skill : Platforming",
+				"strength": "Skill : Strength",
+				"alchemy": "Skill : Alchemy",
+				"arcanum": "Skill : Arcanum",
+				"dreams": "Skill : Dreams",
+				"lore": "Skill : Lore",
+				"navigation": "Skill : Navigation",
+				"animal_handling": "Skill : Animal Handling",
+				"perception": "Skill : Perception",
+				"sneak": "Skill : Sneak",
+				"speech": "Skill : Speech",
+				"vibes": "Skill : Vibes",
+				"accuracy": "Skill : Accuracy",
+				"crafting": "Skill : Crafting",
+				"engineering": "Skill : Engineering",
+				"explosives": "Skill : Explosives",
+				"piloting": "Skill : Piloting"
 			}
 		},
 		"settings": {

@@ -1,8 +1,24 @@
 <div class="skill">
 	<button
-		{{disabled false}}
-		class="skill__label skill__button"
+		class="skill__label skill__button roll"
 		aria-label="{{localize "dotdungeon.aria.actor.pc.skill.button.roll" skill=name}}"
+		data-roll-formula="1{{dd-objectValue system (concat "stats." stat)}} {{dd-objectValue system.skills (concat stat "." name)}}"
+		data-roll-label="dotdungeon.rolls.skills.{{name}}"
+		{{disabled
+			(or
+				(eq
+					(dd-objectValue system (concat "stats." stat))
+					""
+				)
+				(eq
+					(dd-objectValue
+						system
+						(concat "skills." stat "." name)
+					)
+					"locked"
+				)
+			)
+		}}
 	>
 		{{localize (concat "dotdungeon.actor.pc.skill." name)}}
 		{{#with (dd-objectValue system (concat "stats." stat)) as | die |}}
