@@ -12,7 +12,7 @@
 	{{#> dotdungeon.panel class="skills" title="dotdungeon.actor.pc.panel.skills"}}
 		{{#each system.skills as |skills|}}
 			<div class="skill-group">
-				<h3 class="skill-group__label">{{localize (concat "dotdungeon.actor.pc.skills." @key)}}</h3>
+				<h3 class="skill-group__label">{{localize (concat "dotdungeon.actor.pc.stat." @key)}}</h3>
 				{{#each skills as |skill|}}
 					{{> dotdungeon.skill system=../../system stat=@../key name=@key value=skill}}
 				{{/each}}

@@ -1,94 +1,121 @@
 {
-	"dotdungeon.settings.showAvatarOnSheet.name": "Show Avatar On Player Sheet",
-	"dotdungeon.settings.showAvatarOnSheet.description": "Determines whether or not to show the avatar to you on the Player Character sheets, turning this off will replace the image with a file picker so that you can still change the image from the character sheet.",
-	"dotdungeon.settings.playersCanChangeGroup.name": "Allow Players to Change Group",
-	"dotdungeon.settings.playersCanChangeGroup.description": "Setting this to true allows non-GM players to modify the group that the Actor belongs to. While this is disabled the GM will still be able to modify each player's group by editing the character sheet.",
-	"dotdungeon.settings.resourcesOrSupplies.name": "Use Resources or Supplies",
-	"dotdungeon.settings.resourcesOrSupplies.description": "Determines which term to use for the objects that allow travelling into the next hex tile. This is because of the",
-	"dotdungeon.settings.resourcesOrSupplies.option.supplies": "Supplies",
-	"dotdungeon.settings.resourcesOrSupplies.option.resources": "Resources",
-
-
-	"dotdungeon.sheet.PlayerSheet": "PC/PUG Sheet",
-	"dotdungeon.sheet.SyncSheet.basic": "Theme: Basic",
-	"dotdungeon.sheet.AspectSheet": "Aspect Sheet",
-
-	"TYPES.Actor.player": "Player",
-	"TYPES.Actor.sync": "Sync",
-	"TYPES.Item.aspect": "Aspect",
-	"TYPES.Item.weapon": "Weapon",
-	"TYPES.Item.armour": "Armour",
-	"TYPES.Item.equipment": "Equipment",
-	"TYPES.Item.foil": "Foil",
-	"TYPES.Item.pet": "Pet",
-	"TYPES.Item.transportation": "Transportation",
-	"TYPES.Item.structure": "Structure",
-	"TYPES.Item.service": "Service",
-	"TYPES.Item.legendaryItem": "Legendary Item",
-	"TYPES.Item.spell": "Spell",
-
-	"dotdungeon.actor.pc.panel.profile": "Profile",
-	"dotdungeon.actor.pc.panel.statistics": "Stats",
-	"dotdungeon.actor.pc.panel.skills": "Skills",
-	"dotdungeon.actor.pc.panel.backpack": "Backpack",
-	"dotdungeon.actor.pc.panel.health": "Sync",
-	"dotdungeon.actor.pc.panel.aspect": "Aspect",
-	"dotdungeon.actor.pc.panel.weapons": "Weapons",
-	"dotdungeon.actor.pc.panel.roles": "Roles",
-	"dotdungeon.actor.pc.panel.spells": "Spells",
-	"dotdungeon.actor.pc.panel.mounts": "Mounts",
-	"dotdungeon.actor.pc.panel.summons": "Summons",
-	"dotdungeon.actor.pc.panel.storage": "Storage",
-
-	"dotdungeon.actor.pc.stat.build": "Build",
-	"dotdungeon.actor.pc.stat.meta": "Meta",
-	"dotdungeon.actor.pc.stat.presence": "Presence",
-	"dotdungeon.actor.pc.stat.hands": "Hands",
-	"dotdungeon.actor.pc.stat.tilt": "Tilt",
-	"dotdungeon.actor.pc.stat.rng": "RNG",
-
-	"dotdungeon.actor.pc.skills.build": "Build",
-	"dotdungeon.actor.pc.skill.defense": "Defense",
-	"dotdungeon.actor.pc.skill.magic": "Magic",
-	"dotdungeon.actor.pc.skill.melee": "Melee",
-	"dotdungeon.actor.pc.skill.platforming": "Platforming",
-	"dotdungeon.actor.pc.skill.strength": "Strength",
-
-	"dotdungeon.actor.pc.skills.meta": "Meta",
-	"dotdungeon.actor.pc.skill.alchemy": "Alchemy",
-	"dotdungeon.actor.pc.skill.arcanum": "Arcanum",
-	"dotdungeon.actor.pc.skill.dreams": "Dreams",
-	"dotdungeon.actor.pc.skill.lore": "Lore",
-	"dotdungeon.actor.pc.skill.navigation": "Navigation",
-
-	"dotdungeon.actor.pc.skills.presence": "Presence",
-	"dotdungeon.actor.pc.skill.animal_handling": "Animal Handling",
-	"dotdungeon.actor.pc.skill.perception": "Perception",
-	"dotdungeon.actor.pc.skill.sneak": "Sneak",
-	"dotdungeon.actor.pc.skill.speech": "Speech",
-	"dotdungeon.actor.pc.skill.vibes": "Vibes",
-
-	"dotdungeon.actor.pc.skills.hands": "Hands",
-	"dotdungeon.actor.pc.skill.accuracy": "Accuracy",
-	"dotdungeon.actor.pc.skill.crafting": "Crafting",
-	"dotdungeon.actor.pc.skill.engineering": "Engineering",
-	"dotdungeon.actor.pc.skill.explosives": "Explosives",
-	"dotdungeon.actor.pc.skill.piloting": "Piloting",
-
-	"dotdungeon.actor.pc.aspect.name.placeholder": "Name...",
-	"dotdungeon.actor.pc.aspect.used": "Used",
-	"dotdungeon.actor.pc.aspect.duration": "Duration",
-	"dotdungeon.actor.pc.aspect.description.placeholder": "Description...",
-
-	"dotdungeon.actor.pc.respawns.header": "Respawns",
-	"dotdungeon.actor.pc.sync.header": "Sync",
-
-	"dotdungeon.actor.pc.profile.avatar.label": "Avatar",
-	"dotdungeon.actor.pc.profile.group.label": "Group Name",
-	"dotdungeon.actor.pc.profile.group.gm-edit": "(GM Only)",
-	"dotdungeon.actor.pc.profile.group.placeholder": "Group Name...",
-	"dotdungeon.actor.pc.profile.name.label": "Character Name",
-	"dotdungeon.actor.pc.profile.name.placeholder": "Character Name...",
+	"TYPES": {
+		"Actor": {
+			"player": "Player",
+			"sync": "Sync"
+		},
+		"Item": {
+			"aspect": "Aspect",
+			"weapon": "Weapon",
+			"armour": "Armour",
+			"equipment": "Equipment",
+			"foil": "Foil",
+			"pet": "Pet",
+			"transportation": "Transportation",
+			"structure": "Structure",
+			"service": "Service",
+			"legendaryItem": "Legendary Item",
+			"spell": "Spell"
+		}
+	},
+	"dotdungeon": {
+		"rolls": {
+			"stats": "@actor.name: @stat"
+		},
+		"settings": {
+			"showAvatarOnSheet": {
+				"name": "Show Avatar On Player Sheet",
+				"description": "Determines whether or not to show the avatar to you on the Player Character sheets, turning this off will replace the image with a file picker so that you can still change the image from the character sheet."
+			},
+			"playersCanChangeGroup": {
+				"name": "Allow Players to Change Group",
+				"description": "Setting this to true allows non-GM players to modify the group that the Actor belongs to. While this is disabled the GM will still be able to modify each player's group by editing the character sheet."
+			},
+			"resourcesOrSupplies": {
+				"name": "Use Resources or Supplies",
+				"description": "Determines which term to use for the objects that allow travelling into the next hex tile. This is because of the",
+				"option": {
+					"supplies": "Supplies",
+					"resources": "Resources"
+				}
+			}
+		},
+		"sheet": {
+			"PlayerSheet": "PC/PUG Sheet",
+			"SyncSheet": {
+				"basic": "Theme: Basic"
+			},
+			"AspectSheet": "Aspect Sheet"
+		},
+		"actor": {
+			"pc": {
+				"panel": {
+					"profile": "Profile",
+					"statistics": "Stats",
+					"skills": "Skills",
+					"backpack": "Backpack",
+					"health": "Sync",
+					"aspect": "Aspect",
+					"weapons": "Weapons",
+					"roles": "Roles",
+					"spells": "Spells",
+					"mounts": "Mounts",
+					"summons": "Summons",
+					"storage": "Storage"
+				},
+				"stat": {
+					"build": "Build",
+					"meta": "Meta",
+					"presence": "Presence",
+					"hands": "Hands",
+					"tilt": "Tilt",
+					"rng": "RNG"
+				},
+				"skill": {
+					"defense": "Defense",
+					"magic": "Magic",
+					"melee": "Melee",
+					"platforming": "Platforming",
+					"strength": "Strength",
+					"alchemy": "Alchemy",
+					"arcanum": "Arcanum",
+					"dreams": "Dreams",
+					"lore": "Lore",
+					"navigation": "Navigation",
+					"animal_handling": "Animal Handling",
+					"perception": "Perception",
+					"sneak": "Sneak",
+					"speech": "Speech",
+					"vibes": "Vibes",
+					"accuracy": "Accuracy",
+					"crafting": "Crafting",
+					"engineering": "Engineering",
+					"explosives": "Explosives",
+					"piloting": "Piloting"
+				},
+				"aspect": {
+					"name.placeholder": "Name...",
+					"used": "Used",
+					"duration": "Duration",
+					"description.placeholder": "Description..."
+				},
+				"respawns.header": "Respawns",
+				"sync.header": "Sync",
+				"profile": {
+					"avatar.label": "Avatar",
+					"group": {
+						"label": "Group Name",
+						"gm-edit": "(GM Only)",
+						"placeholder": "Group Name..."
+					},
+					"name": {
+						"label": "Account Name",
+						"placeholder": "Account Name..."
+					}
+				}
+			}
+		}
+	},
 
 	"dotdungeon.actor.pc.backpack.materials.label": "Materials",
 	"dotdungeon.actor.pc.backpack.bytes.label": "Bytes",
