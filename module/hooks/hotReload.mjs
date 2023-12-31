@@ -30,10 +30,5 @@ Hooks.on(`hotReload`, async (data) => {
 	Handlebars.registerPartial(templateName, template);
 	_templateCache[templateName] = template;
 
-	// Re-render open windows
-	for (const window of ui.windows) {
-		window.render(true);
-	};
-
-	return true;
+	return false;
 });
