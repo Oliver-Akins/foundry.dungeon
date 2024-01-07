@@ -6,4 +6,11 @@ export default function() {
 		default: false,
 		requiresReload: false,
 	});
+
+	game.settings.register(`dotdungeon`, `defaultTab`, {
+		scope: `client`,
+		type: String,
+		config: false,
+		requiresReload: false,
+	});
 };
