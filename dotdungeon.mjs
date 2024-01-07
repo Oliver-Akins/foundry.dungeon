@@ -19,6 +19,7 @@ import "./module/hooks/hotReload.mjs";
 
 // Misc Imports
 import loadSettings from "./module/settings/index.mjs";
+import { DOTDUNGEON } from "./module/config.mjs";
 
 
 Hooks.once(`init`, () => {
@@ -30,6 +31,8 @@ Hooks.once(`init`, () => {
 	CONFIG.Actor.dataModels.sync = SyncData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
 	CONFIG.Actor.documentClass = ActorHandler;
+
+	CONFIG.DOTDUNGEON = DOTDUNGEON;
 
 	Actors.unregisterSheet("core", ActorSheet);
 	Actors.registerSheet("dotdungeon", PlayerSheet, {

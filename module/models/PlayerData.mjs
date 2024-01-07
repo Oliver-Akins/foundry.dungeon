@@ -4,7 +4,7 @@ function diceChoiceField() {
 		blank: true,
 		trim: true,
 		options() {
-			return [ `d4`, `d6`, `d8`, `d10`, `d12`, `d20` ];
+			return CONFIG.DOTDUNGEON.statDice;
 		},
 	});
 };
@@ -14,7 +14,7 @@ function trainingLevelField() {
 		initial: ``,
 		blank: true,
 		trim: true,
-		options: [ ``, `locked`, `+2`, `+4` ],
+		options: CONFIG.DOTDUNGEON.trainingLevels,
 	});
 };
 
@@ -22,7 +22,7 @@ function weaponDamageTypeField() {
 	return new foundry.data.fields.StringField({
 		initial: ``,
 		blank: true,
-		options: [ ``, `slashing`, `piercing`, `smashing`, `gun`, `neon`, `shadow`, `solar` ],
+		options: [ ``, ...CONFIG.DOTDUNGEON.damageTypes ],
 	});
 };
 
@@ -30,7 +30,7 @@ function ammoTypeField() {
 	return new foundry.data.fields.StringField({
 		initial: ``,
 		blank: true,
-		options: [ ``, `quivers`, `mags`, `cells` ],
+		options: [ ``, ...CONFIG.DOTDUNGEON.ammoTypes ],
 	});
 };
 
