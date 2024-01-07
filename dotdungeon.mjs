@@ -1,5 +1,5 @@
 // Data Models
-import { DescribedItemData } from "./module/models/DescribedItemData.mjs";
+import { DescribedItemData } from "./module/models/Item/DescribedItemData.mjs";
 import { AspectItemData } from "./module/models/AspectItemData.mjs";
 import { PlayerData } from "./module/models/PlayerData.mjs";
 import { SyncData } from "./module/models/SyncData.mjs";
