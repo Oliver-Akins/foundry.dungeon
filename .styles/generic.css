@@ -54,12 +54,24 @@
   font-family: sans-serif;
 }
 
-.dotdungeon {
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon {
   container-type: size;
 }
-.dotdungeon > .window-content {
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content {
   padding: 0;
   background: #f2f2f2;
 }
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon button {
+  border-radius: 4px;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon button.primary {
+  background: #00aa00;
+  color: black;
+  padding: 5px 7px;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon button.primary:hover {
+  background: #008800;
+  color: white;
+}
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aElBW;EFmBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDPW;;ACSX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;AAIF;EACC;EACA,aEpDU;;;AFyDZ;EACC;;AAEA;EACC;EACA,YE5DW%22,%22file%22:%22generic.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aEhBW;EFiBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDLW;;ACOX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;AAIF;EACC;EACA,aElDU;;;AFuDZ;EACC;;AAEA;EACC;EACA,YE1DW;;AF6DZ;EACC;;AAEA;EACC,YE9Dc;EF+Dd,OErDe;EFsDf;;AACA;EACC,YE7DiB;EF8DjB,OEpDkB%22,%22file%22:%22generic.css%22%7D */

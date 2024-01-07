@@ -48,19 +48,33 @@
 			cursor: default;
 		}
 	}
-
-	.debug-data {
-		opacity: 60%;
-		font-family: $body-font;
-	}
 }
 
 // Styling that doesn't belong to any particular part of my sheet
-.dotdungeon {
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon {
 	container-type: size;
 
 	> .window-content {
 		padding: 0;
 		background: $background;
+
+		.debug-data {
+			opacity: 60%;
+			font-family: $body-font;
+		}
+
+		button {
+			border-radius: 4px;
+
+			&.primary {
+				background: $colour-primary;
+				color: $text-on-primary;
+				padding: 5px 7px;
+				&:hover {
+					background: $colour-primary-d20;
+					color: $text-on-primary-d20;
+				}
+			}
+		}
 	}
 }
