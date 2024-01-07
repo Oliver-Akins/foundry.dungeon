@@ -2,12 +2,12 @@ export class CommonItemData extends foundry.abstract.DataModel {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		return {
-			name: fields.StringField({
+			name: new fields.StringField({
 				initial: ``,
 				blank: true,
 				trim: true,
 			}),
-			cost: fields.NumberField({
+			cost: new fields.NumberField({
 				initial: null,
 				nullable: true,
 			}),
