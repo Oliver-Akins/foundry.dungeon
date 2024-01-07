@@ -4,8 +4,7 @@ import { PlayerData } from "./module/models/PlayerData.mjs";
 import { SyncData } from "./module/models/SyncData.mjs";
 
 // Main Documents
-import { PlayerActor } from "./module/documents/PlayerActor.mjs";
-import { AspectItem } from "./module/documents/AspectItem.mjs";
+import { ActorHandler } from "./module/documents/Actor/Handler.mjs";
 
 // Character Sheets
 import { AspectSheet } from "./module/sheets/AspectSheet.mjs";
@@ -27,13 +26,10 @@ Hooks.once(`init`, () => {
 
 	loadSettings();
 
-	game.boilerplate = {
-		PlayerActor,
-		AspectItem,
-	};
 	CONFIG.Actor.dataModels.player = PlayerData;
 	CONFIG.Actor.dataModels.sync = SyncData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
+	CONFIG.Actor.documentClass = ActorHandler;
 
 	Actors.unregisterSheet("core", ActorSheet);
 	Actors.registerSheet("dotdungeon", PlayerSheet, {

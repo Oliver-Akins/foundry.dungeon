@@ -135,11 +135,11 @@ export class PlayerData extends foundry.abstract.DataModel {
 				upkeep: new fields.NumberField({ min: 0, integer: true }),
 				info: new fields.StringField(),
 			}),
-			spells: new fields.ArrayField(
+			spells: new MappingField(
 				new fields.SchemaField({
-					name: new fields.StringField(),
-					cost: new fields.NumberField(),
-					info: new fields.StringField(),
+					name: new fields.StringField({ initial: ``, blank: true, trim: true }),
+					cost: new fields.NumberField({ initial: 0, min: 0 }),
+					info: new fields.StringField({ initial: ``, blank: true, trim: true }),
 				})
 			),
 			respawns: new fields.SchemaField({

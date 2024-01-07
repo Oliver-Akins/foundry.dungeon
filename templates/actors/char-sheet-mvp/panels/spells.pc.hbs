@@ -1,3 +1,51 @@
 {{#> dotdungeon.panel class="spells" title="dotdungeon.actor.pc.panel.spells"}}
-	Spells
+	{{#each system.spells as | spell |}}
+		<details {{dd-expanded ../meta.expanded @key}}>
+			<summary data-collapse-id="{{@key}}">
+				{{spell.name}} (Cost: {{spell.cost}})
+			</summary>
+			<div class="spell">
+				<div class="spell__name">
+					<label for="{{meta.idp}}-{{@key}}-name">Name</label>
+					<input
+						type="text"
+						id="{{meta.idp}}-{{@key}}-name"
+						name="system.spells.{{@key}}.name"
+						value="{{spell.name}}"
+					>
+				</div>
+				<div class="spell__cost">
+					<label for="{{meta.idp}}-{{@key}}-cost"></label>
+					<input
+						type="text"
+						id="{{meta.idp}}-{{@key}}-cost"
+						name="system.spells.{{@key}}.cost"
+						value="{{spell.cost}}"
+					>
+				</div>
+				<div class="spell__description">
+					{{spell.description}}
+				</div>
+				<div class="flex-row flex-end">
+					<button>
+						Delete
+					</button>
+				</div>
+			</div>
+		</details>
+	{{else}}
+		<p>
+			You have no spells yet!
+		</p>
+		<div class="debug-data">
+			{{dd-stringify system.spells}}
+		</div>
+	{{/each}}
+	<div class="flex-row">
+		<button
+			class="primary add-spell"
+		>
+			Add New Spell
+		</button>
+	</div>
 {{/ dotdungeon.panel}}

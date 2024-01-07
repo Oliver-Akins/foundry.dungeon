@@ -19,17 +19,7 @@ export class PlayerSheet extends GenericActorSheet {
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Actor: ${this.id}`);
 
-		/*
-		Toggles the expanded state for the detail elements in the sheet.
-		*/
-	};
-
-	#syncValue() {
-		let delta = 0;
-		for (const actor of game.actors) {
-			delta += actor.system.syncDelta ?? 0;
-		};
-		return 100 + delta;
+		html.find(`.add-spell`).on(`click`, this.actor.createCustomSpell.bind(this.actor));
 	};
 
 	getData() {
@@ -40,7 +30,6 @@ export class PlayerSheet extends GenericActorSheet {
 		ctx.flags = actor.flags;
 
 		ctx.computed = {
-			syncTotal: this.#syncValue(),
 			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
 		};
 
@@ -50,6 +39,4 @@ export class PlayerSheet extends GenericActorSheet {
 		console.groupEnd();
 		return ctx;
 	};
-
-
 };
