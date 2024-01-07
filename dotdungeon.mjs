@@ -1,4 +1,5 @@
 // Data Models
+import { DescribedItemData } from "./module/models/DescribedItemData.mjs";
 import { AspectItemData } from "./module/models/AspectItemData.mjs";
 import { PlayerData } from "./module/models/PlayerData.mjs";
 import { SyncData } from "./module/models/SyncData.mjs";
@@ -30,6 +31,7 @@ Hooks.once(`init`, () => {
 	CONFIG.Actor.dataModels.player = PlayerData;
 	CONFIG.Actor.dataModels.sync = SyncData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
+	CONFIG.Item.dataModels.spell = DescribedItemData;
 	CONFIG.Actor.documentClass = ActorHandler;
 
 	CONFIG.DOTDUNGEON = DOTDUNGEON;
