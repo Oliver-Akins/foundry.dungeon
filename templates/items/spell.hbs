@@ -1,0 +1,27 @@
+<form autocomplete="off" class="item--spell">
+	<h2>
+		<input
+			type="text"
+			placeholder="{{localize "dotdungeon.item.spell.name.placeholder"}}"
+			name="name"
+			value="{{item.name}}"
+			aria-label="{{localize "dotdungeon.item.spell.aria.name"}}"
+		>
+	</h2>
+	<label>
+		{{localize "dotdungeon.item.spell.cost.label"}}
+		<input
+			type="number"
+			name="system.cost"
+			value="{{system.cost}}"
+			aria-label="{{localize "dotdungeon.item.spell.aria.cost"}}"
+		>
+	</label>
+	<label>
+		{{localize "dotdungeon.item.spell.description.label"}}:
+		<textarea
+			name="system.description"
+			aria-description="{{localize "dotdungeon.item.spell.aria.description"}}"
+		>{{system.description}}</textarea>
+	</label>
+</form>

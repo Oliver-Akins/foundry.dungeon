@@ -1,9 +1,11 @@
-export class AspectSheet extends ItemSheet {
+import { GenericItemSheet } from "./GenericItemSheet.mjs";
+
+export class SpellSheet extends GenericItemSheet {
 	static get defaultOptions() {
 		let opts = mergeObject(
 			super.defaultOptions,
 			{
-				template: `systems/dotdungeon/templates/items/aspect.hbs`,
+				template: `systems/dotdungeon/templates/items/spell.hbs`,
 				width: 280,
 				height: 340,
 			}
@@ -17,7 +19,7 @@ export class AspectSheet extends ItemSheet {
 
 		if (this.document.isEmbedded) return;
 		if (!this.isEditable) return;
-		console.debug(`.dungeon | Adding event listeners for Item: ${this.id}`);
+		console.debug(`.dungeon | Adding event listeners for Generic Item: ${this.id}`);
 	};
 
 	async getData() {

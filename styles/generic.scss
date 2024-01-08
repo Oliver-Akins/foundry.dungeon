@@ -61,6 +61,7 @@
 		.debug-data {
 			opacity: 60%;
 			font-family: $body-font;
+			word-break: break-all;
 		}
 
 		button {
@@ -69,12 +70,35 @@
 			&.primary {
 				background: $colour-primary;
 				color: $text-on-primary;
-				padding: 5px 7px;
+				padding: 4px 8px;
 				&:hover {
 					background: $colour-primary-d20;
 					color: $text-on-primary-d20;
 				}
 			}
+
+			&.danger {
+				background: $colour-danger;
+				color: $text-on-danger;
+				padding: 4px 8px;
+				&:hover {
+					background: $colour-danger-d20;
+					color: $text-on-danger-d20;
+				}
+			}
+
+			&.reduced-padding {
+				padding: 2px 4px;
+			}
+
+
+			&.equal-padding {
+				padding: 4px 4px;
+				&.reduced-padding {
+					padding: 2px 2px;
+				}
+			}
+
 		}
 	}
 }

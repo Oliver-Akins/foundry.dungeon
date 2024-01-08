@@ -1,0 +1,14 @@
+$iconSizes: 12, 16, 20, 24, 28, 32, 36;
+
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon {
+	.icon {
+
+		// The various icon sizes
+		@each $size in $iconSizes {
+			&--#{$size} {
+				height: #{$size}px;
+				width: #{$size}px;
+			};
+		}
+	}
+}

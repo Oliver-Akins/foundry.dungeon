@@ -16,8 +16,8 @@ export class AbstractSyncSheet extends GenericActorSheet {
 		return opts;
 	};
 
-	getData() {
-		const ctx = super.getData();
+	async getData() {
+		const ctx = await super.getData();
 		const actor = this.actor.toObject(false);
 
 		ctx.system = actor.system;

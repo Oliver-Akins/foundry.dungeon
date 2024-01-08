@@ -21,6 +21,23 @@
 	padding: 4px;
 	gap: 4px;
 
+	details {
+		border-radius: 4px;
+		background-color: rgba(0,0,0, 0.2);
+		padding: 4px;
+		margin-bottom: 8px;
+
+		summary {
+			cursor: pointer;
+		}
+
+		&[open] {
+			.expanded-rotate {
+				transform: rotate(90deg);
+			}
+		}
+	}
+
 	.panel {
 		&--profile {
 			grid-area: profile;

@@ -74,7 +74,8 @@
 			"SyncSheet": {
 				"basic": "Theme: Basic"
 			},
-			"AspectSheet": "Aspect Sheet"
+			"AspectSheet": "Aspect Sheet",
+			"SpellSheet": "Spell Sheet"
 		},
 		"actor": {
 			"pc": {
@@ -184,6 +185,16 @@
 				"duration": "Duration (seconds)",
 				"description": "Description",
 				"send-to-chat": "Send Aspect to Chat"
+			},
+			"spell": {
+				"name.placeholder": "Name...",
+				"cost.label": "Cost",
+				"description.label": "Description",
+				"aria": {
+					"name": "The spell's name",
+					"cost": "The amount of bytes it takes to cast the spell",
+					"description": "The details of the spell"
+				}
 			}
 		},
 		"notification": {

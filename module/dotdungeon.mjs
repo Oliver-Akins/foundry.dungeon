@@ -1,26 +1,27 @@
 // Data Models
-import { DescribedItemData } from "./module/models/Item/DescribedItemData.mjs";
-import { AspectItemData } from "./module/models/AspectItemData.mjs";
-import { PlayerData } from "./module/models/PlayerData.mjs";
-import { SyncData } from "./module/models/SyncData.mjs";
+import { AspectItemData } from "./models/AspectItemData.mjs";
+import { SpellItemData } from "./models/Item/Spell.mjs";
+import { PlayerData } from "./models/PlayerData.mjs";
+import { SyncData } from "./models/SyncData.mjs";
 
 // Main Documents
-import { ActorHandler } from "./module/documents/Actor/Handler.mjs";
+import { ActorHandler } from "./documents/Actor/Handler.mjs";
 
 // Character Sheets
-import { AspectSheet } from "./module/sheets/AspectSheet.mjs";
-import { PlayerSheet } from "./module/sheets/PlayerSheet.mjs";
-import { BasicSyncSheet } from "./module/sheets/SyncVariations/BasicSyncSheet.mjs";
+import { SpellSheet } from "./sheets/SpellSheet.mjs";
+import { AspectSheet } from "./sheets/AspectSheet.mjs";
+import { PlayerSheet } from "./sheets/PlayerSheet.mjs";
+import { BasicSyncSheet } from "./sheets/SyncVariations/BasicSyncSheet.mjs";
 
 // Utility imports
-import * as hbs from "./module/handlebars.mjs";
+import * as hbs from "./handlebars.mjs";
 
 // Non-Setup hooks
-import "./module/hooks/hotReload.mjs";
+import "./hooks/hotReload.mjs";
 
 // Misc Imports
-import loadSettings from "./module/settings/index.mjs";
-import { DOTDUNGEON } from "./module/config.mjs";
+import loadSettings from "./settings/index.mjs";
+import DOTDUNGEON from "./config.mjs";
 
 
 Hooks.once(`init`, () => {
@@ -31,7 +32,7 @@ Hooks.once(`init`, () => {
 	CONFIG.Actor.dataModels.player = PlayerData;
 	CONFIG.Actor.dataModels.sync = SyncData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
-	CONFIG.Item.dataModels.spell = DescribedItemData;
+	CONFIG.Item.dataModels.spell = SpellItemData;
 	CONFIG.Actor.documentClass = ActorHandler;
 
 	CONFIG.DOTDUNGEON = DOTDUNGEON;
@@ -52,6 +53,11 @@ Hooks.once(`init`, () => {
 		makeDefault: true,
 		types: ["aspect"],
 		label: "dotdungeon.sheet-names.AspectSheet"
+	});
+	Items.registerSheet("dotdungeon", SpellSheet, {
+		makeDefault: true,
+		types: ["spell"],
+		label: "dotdungeon.sheet-names.SpellSheet"
 	});
 
 	hbs.registerHandlebarsHelpers();

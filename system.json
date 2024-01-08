@@ -16,7 +16,7 @@
 	],
 	"url": "https://github.com/Oliver-Akins/foundry.dungeon",
 	"esmodules": [
-		"dotdungeon.mjs"
+		"module/dotdungeon.mjs"
 	],
 	"styles": [
 		".styles/root.css"

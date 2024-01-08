@@ -1,35 +1,44 @@
 {{#> dotdungeon.panel class="spells" title="dotdungeon.actor.pc.panel.spells"}}
-	{{#each system.spells as | spell |}}
-		<details {{dd-expanded ../meta.expanded @key}}>
-			<summary data-collapse-id="{{@key}}">
-				{{spell.name}} (Cost: {{spell.cost}})
+	{{#each items.spell as | spell |}}
+		<details {{dd-expanded ../meta.expanded spell.uuid}}>
+			<summary data-collapse-id="{{spell.uuid}}">
+				<span class="flex-grow" style="flex-grow: 1">
+					{{spell.name}}
+					{{#if spell.system.cost }}
+						(Cost: {{spell.system.cost}})
+					{{/if}}
+				</span>
 			</summary>
+
+
 			<div class="spell">
 				<div class="spell__name">
-					<label for="{{meta.idp}}-{{@key}}-name">Name</label>
+					<label for="{{spell.uuid}}-name">Name</label>
 					<input
 						type="text"
-						id="{{meta.idp}}-{{@key}}-name"
-						name="system.spells.{{@key}}.name"
+						id="{{spell.uuid}}-name"
 						value="{{spell.name}}"
+						data-embedded-update="name"
+						data-embedded-id="{{spell.uuid}}"
 					>
 				</div>
 				<div class="spell__cost">
-					<label for="{{meta.idp}}-{{@key}}-cost"></label>
+					<label for="{{spell.uuid}}-cost">Cost</label>
 					<input
 						type="text"
-						id="{{meta.idp}}-{{@key}}-cost"
-						name="system.spells.{{@key}}.cost"
-						value="{{spell.cost}}"
+						id="{{spell.uuid}}-cost"
+						value="{{spell.system.cost}}"
+						data-embedded-update="system.cost"
+						data-embedded-id="{{spell.uuid}}"
 					>
 				</div>
 				<div class="spell__description">
-					{{spell.description}}
-				</div>
-				<div class="flex-row flex-end">
-					<button>
-						Delete
-					</button>
+					<label for="{{spell.uuid}}-description"></label>
+					<textarea
+						id="{{spell.uuid}}-description"
+						data-embedded-update="system.description"
+						data-embedded-id="{{spell.uuid}}"
+					>{{spell.system.description}}</textarea>
 				</div>
 			</div>
 		</details>
@@ -37,10 +46,9 @@
 		<p>
 			You have no spells yet!
 		</p>
-		<div class="debug-data">
-			{{dd-stringify system.spells}}
-		</div>
 	{{/each}}
+
+
 	<div class="flex-row">
 		<button
 			class="primary add-spell"

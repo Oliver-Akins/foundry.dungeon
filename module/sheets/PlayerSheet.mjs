@@ -20,23 +20,23 @@ export class PlayerSheet extends GenericActorSheet {
 		console.debug(`.dungeon | Adding event listeners for Actor: ${this.id}`);
 
 		html.find(`.add-spell`).on(`click`, this.actor.createCustomSpell.bind(this.actor));
+		html.find(`[data-embedded-update]`)
+			.on(`change`, this.actor.updateEmbeddedDocument.bind(this.actor));
 	};
 
-	getData() {
-		const ctx = super.getData();
+	async getData() {
+		const ctx = await super.getData();
 		const actor = this.actor.toObject(false);
 
 		ctx.system = actor.system;
 		ctx.flags = actor.flags;
+		ctx.items = this.actor.itemTypes;
 
 		ctx.computed = {
 			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
 		};
 
-		console.groupCollapsed(`PlayerSheet.getData`);
-		console.log(`ctx`, ctx);
-		console.log(`actor`, actor);
-		console.groupEnd();
+		console.log(ctx)
 		return ctx;
 	};
 };

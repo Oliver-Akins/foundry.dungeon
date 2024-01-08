@@ -25,3 +25,9 @@ $text-on-primary-d20: white;
 $text-on-primary-d40: white;
 $text-on-primary-d60: white;
 $text-on-primary-d80: white;
+
+$colour-danger: red;
+$colour-danger-d20: color.scale($colour-danger, $lightness: -20%);
+
+$text-on-danger: white;
+$text-on-danger-d20: white;

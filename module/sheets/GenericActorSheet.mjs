@@ -1,3 +1,6 @@
+import DOTDUNGEON from "../config.mjs";
+import { preloadIcons } from "../handlebars.mjs";
+
 export class GenericActorSheet extends ActorSheet {
 	_expanded = new Set();
 
@@ -8,8 +11,8 @@ export class GenericActorSheet extends ActorSheet {
 		`resourcesOrSupplies`,
 	];
 
-	getData() {
-		const ctx = super.getData();
+	async getData() {
+		const ctx = {};
 
 		// Send all of the settings that sheets need into their context
 		ctx.settings = {};
@@ -23,6 +26,10 @@ export class GenericActorSheet extends ActorSheet {
 			expanded: this._expanded,
 			idp: this.actor.uuid,
 		};
+
+		ctx.actor = this.actor;
+		ctx.config = DOTDUNGEON;
+		ctx.icons = await preloadIcons();
 
 		return ctx;
 	};
