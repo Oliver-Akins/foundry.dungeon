@@ -7,6 +7,5 @@
  * @returns {"open"|null} The HTML insertion indicating the details is expanded
  */
 export function detailsExpanded(expanded, collapseId) {
-	console.log(`.dungeon |`, collapseId, expanded)
 	return expanded.has(collapseId) ? "open" : null;
 };
