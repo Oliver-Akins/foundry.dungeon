@@ -20,7 +20,14 @@ export const partials = [
 	`actors/char-sheet-mvp/panels/weapons.pc.hbs`,
 ];
 
+export const icons = [
+	`caret-right.svg`,
+	`garbage-bin.svg`,
+];
+
+
 export async function registerHandlebarsHelpers() {
+	console.log(Handlebars)
 	Handlebars.registerHelper(helpers);
 };
 
@@ -50,4 +57,43 @@ export async function preloadHandlebarsTemplates() {
 	console.debug(`Loaded ${partials.length} partials`);
 	console.groupEnd();
 	return loadTemplates(paths);
+};
+
+/**
+ * Loads all of the icons that are needed in the handlebars templating to make
+ * the sheet look nicer.
+ *
+ * @returns An object containing icon names to the corresponding HTML data for
+ *   displaying the icon
+ */
+export async function preloadIcons() {
+	console.groupCollapsed(`.dungeon | Loading icons for handlebars`);
+	const pathPrefix = `systems/dotdungeon/assets/`
+	const parsedIcons = {};
+
+	for (const icon of icons) {
+		const iconName = icon.slice(0, -4);
+		if (icon.endsWith(`.svg`)) {
+			try {
+				const response = await fetchWithTimeout(`${pathPrefix}${icon}`);
+				if (response.status !== 200) { continue };
+				const svgData = await response.text();
+				parsedIcons[iconName] = svgData;
+				console.debug(`Loaded icon: ${icon}`);
+			} catch {
+				console.error(`Failed to fetch/parse icon: ${icon}`);
+				continue;
+			};
+		}
+		else if (icon.endsWith(`.png`)) {
+			parsedIcons[iconName] = `<img alt="" src="${pathPrefix}${icon}">`;
+			console.debug(`Loaded icon: ${icon}`);
+		}
+		else {
+			console.warn(`Icon "${icon}" failed to be handled by a loader`)
+		};
+	};
+
+	console.groupEnd();
+	return parsedIcons;
 };
