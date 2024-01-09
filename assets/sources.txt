@@ -7,5 +7,13 @@ Alice Design:
 zapesicon:
 	chat-bubble.svg (https://thenounproject.com/icon/chat-6423186/)
 
+Fritz Duggan:
+	dice/d4.svg (https://thenounproject.com/icon/d4-4570604/)
+	dice/d6.svg (https://thenounproject.com/icon/d6-4570605/)
+	dice/d8.svg (https://thenounproject.com/icon/d8-4570603/)
+	dice/d10.svg (https://thenounproject.com/icon/d10-4570608/)
+	dice/d12.svg (https://thenounproject.com/icon/d12-4570606/)
+	dice/d20.svg (https://thenounproject.com/icon/d20-4570607/)
+
 Oliver Akins:
 	chat-bubble.svg : Edits only (scaled)
