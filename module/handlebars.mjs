@@ -79,7 +79,7 @@ export async function preloadIcons() {
 	const parsedIcons = {};
 
 	for (const icon of icons) {
-		const iconName = icon.slice(0, -4);
+		const iconName = icon.split(`/`).slice(-1)[0].slice(0, -4);
 		if (icon.endsWith(`.svg`)) {
 			try {
 				const response = await fetchWithTimeout(`${pathPrefix}${icon}`);
