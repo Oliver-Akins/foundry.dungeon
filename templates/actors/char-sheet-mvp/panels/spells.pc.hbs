@@ -4,9 +4,7 @@
 			<summary data-collapse-id="{{spell.uuid}}">
 				<span class="flex-grow" style="flex-grow: 1">
 					{{spell.name}}
-					{{#if spell.system.cost }}
-						(Cost: {{spell.system.cost}})
-					{{/if}}
+					(Cost: {{spell.system.cost}})
 				</span>
 			</summary>
 
@@ -33,12 +31,28 @@
 					>
 				</div>
 				<div class="spell__description">
-					<label for="{{spell.uuid}}-description"></label>
+					<label for="{{spell.uuid}}-description">Description</label>
 					<textarea
 						id="{{spell.uuid}}-description"
 						data-embedded-update="system.description"
 						data-embedded-id="{{spell.uuid}}"
 					>{{spell.system.description}}</textarea>
+				</div>
+				<div class="spell__actions">
+					<button
+						class="neutral reduced-padding equal-padding"
+					>
+						<div class="icon icon--20">
+							{{{ ../icons.chat-bubble }}}
+						</div>
+					</button>
+					<button
+						class="danger reduced-padding equal-padding"
+					>
+						<div class="icon icon--20">
+							{{{ ../icons.garbage-bin }}}
+						</div>
+					</button>
 				</div>
 			</div>
 		</details>
@@ -51,7 +65,7 @@
 
 	<div class="flex-row">
 		<button
-			class="primary add-spell"
+			class="confirm add-spell"
 		>
 			Add New Spell
 		</button>

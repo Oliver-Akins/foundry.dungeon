@@ -194,6 +194,19 @@
 		}
 		&--spells {
 			grid-area: spells;
+
+			.spell {
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+
+				&__actions {
+					display: flex;
+					flex-direction: row;
+					justify-content: end;
+					gap: 4px;
+				}
+			}
 		}
 		&--mounts {
 			grid-area: mounts;
