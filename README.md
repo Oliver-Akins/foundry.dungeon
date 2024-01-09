@@ -8,3 +8,8 @@ A Foundry VTT game system for the .dungeon TTRPG
 > (Example: To edit a file in `/.langs`, edit the correct file in `/langs`).
 > The **ONLY** exception to this is the `.vscode` folder which editing anything
 > in it will almost definitely get your PR rejected until the changes are undone.
+
+
+### Contributing:
+This repository currently is not accepting pull requests. This section will be
+updated once code contributions are accepted.
