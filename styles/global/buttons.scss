@@ -1,0 +1,56 @@
+@use "../vars.scss" as *;
+
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content {
+	button {
+		border-radius: 4px;
+		box-sizing: border-box;
+		border-style: solid;
+		border-color: transparent;
+		border-width: 2px;
+		border-radius: 4px;
+		transition: 400ms;
+		padding: 4px 8px;
+
+		&.confirm {
+			background: $colour-confirm;
+			color: $text-on-confirm;
+			&:hover, &:focus {
+				background: transparent;
+				color: $colour-confirm;
+				border-color: $colour-confirm;
+			}
+		}
+
+		&.neutral {
+			background: $colour-neutral;
+			color: $text-on-neutral;
+			&:hover, &:focus {
+				background: transparent;
+				color: $colour-neutral;
+				border-color: $colour-neutral;
+			}
+		}
+
+		&.danger {
+			background: $colour-danger;
+			color: $text-on-danger;
+			&:hover, &:focus {
+				background: transparent;
+				color: $colour-danger;
+				border-color: $colour-danger;
+			}
+		}
+
+		&.reduced-padding {
+			padding: 2px 4px;
+		}
+
+
+		&.equal-padding {
+			padding: 4px 4px;
+			&.reduced-padding {
+				padding: 2px 2px;
+			}
+		}
+	}
+}

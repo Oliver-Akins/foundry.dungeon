@@ -5,6 +5,8 @@
 @use "./generic.scss";
 @use "./icons.scss";
 
+@use "./global/buttons.scss";
+
 @use "./sheets/partials/stat.scss";
 @use "./sheets/partials/skill.scss";
 @use "./sheets/partials/panel.scss";
