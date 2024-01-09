@@ -62,35 +62,5 @@
   font-family: sans-serif;
   word-break: break-all;
 }
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button {
-  border-radius: 4px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.primary {
-  background: #00aa00;
-  color: black;
-  padding: 4px 8px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.primary:hover {
-  background: #008800;
-  color: white;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger {
-  background: red;
-  color: white;
-  padding: 4px 8px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger:hover {
-  background: #cc0000;
-  color: white;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.reduced-padding {
-  padding: 2px 4px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.equal-padding {
-  padding: 4px 4px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.equal-padding.reduced-padding {
-  padding: 2px 2px;
-}
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aEhBW;EFiBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDLW;;ACOX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;;AAMH;EACC;;AAEA;EACC;EACA,YErDW;;AFuDX;EACC;EACA,aE3DS;EF4DT;;AAGD;EACC;;AAEA;EACC,YE9Da;EF+Db,OErDc;EFsDd;;AACA;EACC,YE7DgB;EF8DhB,OEpDiB;;AFwDnB;EACC,YEpDY;EFqDZ,OElDa;EFmDb;;AACA;EACC,YEvDe;EFwDf,OErDgB;;AFyDlB;EACC;;AAID;EACC;;AACA;EACC%22,%22file%22:%22generic.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aEhBW;EFiBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDLW;;ACOX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;;AAMH;EACC;;AAEA;EACC;EACA,YErDW;;AFuDX;EACC;EACA,aE3DS;EF4DT%22,%22file%22:%22generic.css%22%7D */

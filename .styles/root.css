@@ -62,26 +62,72 @@
   font-family: sans-serif;
   word-break: break-all;
 }
+
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--12 {
+  height: 12px;
+  width: 12px;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--14 {
+  height: 14px;
+  width: 14px;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--16 {
+  height: 16px;
+  width: 16px;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--18 {
+  height: 18px;
+  width: 18px;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--20 {
+  height: 20px;
+  width: 20px;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--22 {
+  height: 22px;
+  width: 22px;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--24 {
+  height: 24px;
+  width: 24px;
+}
+
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button {
   border-radius: 4px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.primary {
-  background: #00aa00;
-  color: black;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 2px;
+  border-radius: 4px;
+  transition: 400ms;
   padding: 4px 8px;
 }
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.primary:hover {
-  background: #008800;
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm {
+  background: #00aa00;
+  color: black;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm:focus {
+  background: transparent;
+  color: #00aa00;
+  border-color: #00aa00;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.neutral {
+  background: #007ACC;
   color: white;
+}
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.neutral:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.neutral:focus {
+  background: transparent;
+  color: #007ACC;
+  border-color: #007ACC;
 }
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger {
   background: red;
   color: white;
-  padding: 4px 8px;
 }
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger:hover {
-  background: #cc0000;
-  color: white;
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger:focus {
+  background: transparent;
+  color: red;
+  border-color: red;
 }
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.reduced-padding {
   padding: 2px 4px;
@@ -91,35 +137,6 @@
 }
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.equal-padding.reduced-padding {
   padding: 2px 2px;
-}
-
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--12 {
-  height: 12px;
-  width: 12px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--16 {
-  height: 16px;
-  width: 16px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--20 {
-  height: 20px;
-  width: 20px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--24 {
-  height: 24px;
-  width: 24px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--28 {
-  height: 28px;
-  width: 28px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--32 {
-  height: 32px;
-  width: 32px;
-}
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--36 {
-  height: 36px;
-  width: 36px;
 }
 
 .dotdungeon .stat {
@@ -348,6 +365,17 @@
 .dotdungeon .actor--pc .panel--spells {
   grid-area: spells;
 }
+.dotdungeon .actor--pc .panel--spells .spell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.dotdungeon .actor--pc .panel--spells .spell__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 4px;
+}
 .dotdungeon .actor--pc .panel--mounts {
   grid-area: mounts;
 }
@@ -439,4 +467,4 @@
   resize: vertical;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22,%22../styles/icons.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/partials/panel.scss%22,%22../styles/mixins/_breakpoints.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/sheets/actor/sync/basic.scss%22,%22../styles/sheets/items/aspect.scss%22,%22../styles/sheets/items/spell.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aEhBW;EFiBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDLW;;ACOX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;;AAMH;EACC;;AAEA;EACC;EACA,YErDW;;AFuDX;EACC;EACA,aE3DS;EF4DT;;AAGD;EACC;;AAEA;EACC,YE9Da;EF+Db,OErDc;EFsDd;;AACA;EACC,YE7DgB;EF8DhB,OEpDiB;;AFwDnB;EACC,YEpDY;EFqDZ,OElDa;EFmDb;;AACA;EACC,YEvDe;EFwDf,OErDgB;;AFyDlB;EACC;;AAID;EACC;;AACA;EACC;;;AI1FF;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;;ACTJ;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdH;EACC;EACA;EAEA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;ENlBD;EACA;EACA;EMkBE;EACA;EACA,aLrBU;EKsBV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AC7BD;EDkCA;IACC;IACA;;;AExCF;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIA;EACC;;AAMF;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAGD;EACC;EACA;EACA;;AAGD;AAAA;AAAA;EAGC;EACA;;AAGD;EACC;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAGF;EACC;EACA;EACA;;AAED;EACC;EACA;EACA;;AAED;EACC;EACA;EACA;EACA;;AAIH;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AD3MF;ECmNC;IACC;IACA;IACA,qBACC;;EAkBC;IACC;;EAKD;IACC;IACA;;;AD3OL;ECqPC;IACC;IACA;IACA,qBACC;;EAeC;IACC;;;AC7QL;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA;;AAGD;EACC;EACA;;AAMA;EACC;EACA;;;AFlBH;EE4BG;IACC;IACA;;;ACzCL;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA;;;ACXF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22root.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22,%22../styles/global/icons.scss%22,%22../styles/global/buttons.scss%22,%22../styles/sheets/partials/stat.scss%22,%22../styles/sheets/partials/skill.scss%22,%22../styles/sheets/partials/panel.scss%22,%22../styles/mixins/_breakpoints.scss%22,%22../styles/sheets/actor/mvp.scss%22,%22../styles/sheets/actor/sync/basic.scss%22,%22../styles/sheets/items/aspect.scss%22,%22../styles/sheets/items/spell.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aEhBW;EFiBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDLW;;ACOX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;;AAMH;EACC;;AAEA;EACC;EACA,YErDW;;AFuDX;EACC;EACA,aE3DS;EF4DT;;;AIxDA;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;;ACNH;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC,YHNc;EGOd,OHNe;;AGOf;EACC;EACA,OHVa;EGWb,cHXa;;AGef;EACC,YHbc;EGcd,OHbe;;AGcf;EACC;EACA,OHjBa;EGkBb,cHlBa;;AGsBf;EACC,YHpBa;EGqBb,OHlBc;;AGmBd;EACC;EACA,OHxBY;EGyBZ,cHzBY;;AG6Bd;EACC;;AAID;EACC;;AACA;EACC;;;ACnDJ;EACC;EACA;EACA;;ACHD;EACC;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;;ACdH;EACC;EACA;EAEA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EPlBD;EACA;EACA;EOkBE;EACA;EACA,aNrBU;EMsBV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AC7BD;EDkCA;IACC;IACA;;;AExCF;EACC;EACA,qBACC;EASD;EACA,oBACC;EAGD;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIA;EACC;;AAMF;EACC;;AACA;EACC;EACA;;AAGD;EACC;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAGD;EACC;EACA;EACA;;AAGD;AAAA;AAAA;EAGC;EACA;;AAGD;EACC;;AAGF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;AAAA;EAEC;EACA;EACA;;AAEA;AAAA;EACC;;AAIF;EACC;EACA;;AAGF;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAGF;EACC;EACA;EACA;;AAED;EACC;EACA;EACA;;AAED;EACC;EACA;EACA;EACA;;AAIH;EACC;;AACA;EACC;EACA;EACA;EACA;;AAEA;EACC;;AAIH;EACC;;AAEA;EACC;EACA;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAIH;EACC;;AAED;EACC;;AAED;EACC;;;ADxNF;ECgOC;IACC;IACA;IACA,qBACC;;EAkBC;IACC;;EAKD;IACC;IACA;;;ADxPL;ECkQC;IACC;IACA;IACA,qBACC;;EAeC;IACC;;;AC1RL;EACC;EACA;EACA;EACA;EACA;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA;;AAGD;EACC;EACA;;AAMA;EACC;EACA;;;AFlBH;EE4BG;IACC;IACA;;;ACzCL;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA;;;ACXF;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22root.css%22%7D */
