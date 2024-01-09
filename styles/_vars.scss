@@ -6,25 +6,11 @@ $input-font: $body-font;
 $background: #f2f2f2;
 
 
-$colour-primary: #00aa00;
-$colour-primary-l80: color.scale($colour-primary, $lightness: 80%);
-$colour-primary-l60: color.scale($colour-primary, $lightness: 60%);
-$colour-primary-l40: color.scale($colour-primary, $lightness: 40%);
-$colour-primary-l20: color.scale($colour-primary, $lightness: 20%);
-$colour-primary-d20: color.scale($colour-primary, $lightness: -20%);
-$colour-primary-d40: color.scale($colour-primary, $lightness: -40%);
-$colour-primary-d60: color.scale($colour-primary, $lightness: -60%);
-$colour-primary-d80: color.scale($colour-primary, $lightness: -80%);
+$colour-confirm: #00aa00;
+$text-on-confirm: black;
 
-$text-on-primary: black;
-$text-on-primary-l80: black;
-$text-on-primary-l60: black;
-$text-on-primary-l40: black;
-$text-on-primary-l20: black;
-$text-on-primary-d20: white;
-$text-on-primary-d40: white;
-$text-on-primary-d60: white;
-$text-on-primary-d80: white;
+$colour-neutral: #007ACC;
+$text-on-neutral: white;
 
 $colour-danger: red;
 $colour-danger-d20: color.scale($colour-danger, $lightness: -20%);
