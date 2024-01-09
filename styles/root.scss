@@ -3,8 +3,8 @@
 @use "./vars.scss" as *;
 
 @use "./generic.scss";
-@use "./icons.scss";
 
+@use "./global/icons.scss";
 @use "./global/buttons.scss";
 
 @use "./sheets/partials/stat.scss";
