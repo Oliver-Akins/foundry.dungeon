@@ -45,15 +45,6 @@
 
 			{{#if system.weapon.mainHand.ranged}}
 				<div class="weapon__group">
-					<label class="weapon__is-scoped">
-						{{localize "dotdungeon.actor.pc.weapon.is-scoped"}}
-						<input
-							type="checkbox"
-							name="system.weapon.mainHand.scope"
-							{{checked system.weapon.mainHand.scope}}
-						>
-					</label>
-
 					<label class="weapon__ammo-type">
 						{{localize "dotdungeon.actor.pc.weapon.ammo-type.label"}}
 						<select name="system.weapon.mainHand.ammo">
@@ -64,6 +55,15 @@
 								<option value="cells">{{localize "dotdungeon.actor.pc.weapon.ammo-type.cell"}}</option>
 							{{/select}}
 						</select>
+					</label>
+
+					<label class="weapon__is-scoped">
+						{{localize "dotdungeon.actor.pc.weapon.is-scoped"}}
+						<input
+							type="checkbox"
+							name="system.weapon.mainHand.scope"
+							{{checked system.weapon.mainHand.scope}}
+						>
 					</label>
 				</div>
 			{{/if}}
@@ -113,14 +113,6 @@
 
 			{{#if system.weapon.offHand.ranged}}
 				<div class="weapon__group">
-					<label class="weapon__is-scoped">
-						{{localize "dotdungeon.actor.pc.weapon.is-scoped"}}
-						<input
-							type="checkbox"
-							name="system.weapon.offHand.scope"
-							{{checked system.weapon.offHand.scope}}
-						>
-					</label>
 					<label class="weapon__ammo-type">
 						{{localize "dotdungeon.actor.pc.weapon.ammo-type.label"}}
 						<select name="system.weapon.offHand.ammo">
@@ -131,6 +123,15 @@
 								<option value="cells">{{localize "dotdungeon.actor.pc.weapon.ammo-type.cell"}}</option>
 							{{/select}}
 						</select>
+					</label>
+
+					<label class="weapon__is-scoped">
+						{{localize "dotdungeon.actor.pc.weapon.is-scoped"}}
+						<input
+							type="checkbox"
+							name="system.weapon.offHand.scope"
+							{{checked system.weapon.offHand.scope}}
+						>
 					</label>
 				</div>
 			{{/if}}
