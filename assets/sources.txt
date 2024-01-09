@@ -3,3 +3,9 @@ Amer Alamer
 
 Alice Design:
 	garbage-bin.svg (https://thenounproject.com/icon/garbage-2025492/)
+
+zapesicon:
+	chat-bubble.svg (https://thenounproject.com/icon/chat-6423186/)
+
+Oliver Akins:
+	chat-bubble.svg : Edits only (scaled)

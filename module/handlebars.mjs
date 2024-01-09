@@ -23,6 +23,7 @@ export const partials = [
 export const icons = [
 	`caret-right.svg`,
 	`garbage-bin.svg`,
+	`chat-bubble.svg`,
 ];
 
 
