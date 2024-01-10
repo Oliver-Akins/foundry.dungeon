@@ -15,5 +15,9 @@ Fritz Duggan:
 	dice/d12.svg (https://thenounproject.com/icon/d12-4570606/)
 	dice/d20.svg (https://thenounproject.com/icon/d20-4570607/)
 
+Landan Lloyd:
+	create.svg (https://thenounproject.com/icon/create-1447560/)
+
 Oliver Akins:
-	chat-bubble.svg : Edits only (scaled)
+	chat-bubble.svg : Scaling
+	create.svg : Scaling, Optimization

@@ -30,6 +30,7 @@ export const icons = [
 	`dice/d10.svg`,
 	`dice/d12.svg`,
 	`dice/d20.svg`,
+	`create.svg`,
 ];
 
 
