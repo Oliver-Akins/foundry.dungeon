@@ -1,16 +1,3 @@
-/*
-Greens:
-	Dark Cyan: #32908F, #048A81
-	Verdigris: #48A9A6
-	Cambridge Blue: #72BDA3
-	Carribean Current: #28666E
-
-Reds:
-	Indian Red: #C1666B
-	Persian Red: #C3423F
-	Wine: #7C3238
-	Penn Red: #960200
-*/
 .dotdungeon .item--aspect {
   padding: 4px;
 }
@@ -24,4 +11,4 @@ Reds:
   resize: vertical;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/_vars.scss%22,%22../../../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAMA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;ACJA;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22aspect.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/items/aspect.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EACC;;AAEA;EACC;EACA;EACA;;AAGD;EACC;EACA%22,%22file%22:%22aspect.css%22%7D */
