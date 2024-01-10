@@ -1,5 +1,10 @@
 export class PlayerActor {
-	static createCustomSpell() {};
+	static createCustomSpell() {
+		this.createEmbeddedDocuments(
+			"Item",
+			[{ type: `spell`, name: `New Spell` }]
+		);
+	};
 
 	static async updateEmbeddedDocument($event) {
 		let data = $event.target.dataset;

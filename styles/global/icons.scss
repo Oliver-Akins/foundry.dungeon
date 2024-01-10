@@ -2,6 +2,9 @@ $iconSizes: 12, 14, 16, 18, 20, 22, 24;
 
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon {
 	.icon {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
 
 		// The various icon sizes
 		@each $size in $iconSizes {
