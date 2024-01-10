@@ -14,9 +14,14 @@ export class ActorHandler extends Actor {
 		return this.actorTypes[this.type];
 	};
 
-	updateEmbeddedDocument($event) {
-		if (!this.fn?.updateEmbeddedDocument) return;
-		this.fn.updateEmbeddedDocument.bind(this)($event);
+	genericEmbeddedUpdate($event) {
+		if (!this.fn?.genericEmbeddedUpdate) return;
+		this.fn.genericEmbeddedUpdate.bind(this)($event);
+	};
+
+	genericEmbeddedDelete($event) {
+		if (!this.fn?.genericEmbeddedDelete) return;
+		this.fn.genericEmbeddedDelete.bind(this)($event);
 	};
 
 	createCustomSpell() {
