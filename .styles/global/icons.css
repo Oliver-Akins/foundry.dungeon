@@ -1,3 +1,8 @@
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon .icon--12 {
   height: 12px;
   width: 12px;
@@ -27,4 +32,4 @@
   width: 24px;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../styles/global/icons.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAOG;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA%22,%22file%22:%22icons.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../styles/global/icons.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGC;EACC;EACA;EACA;;AAIC;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA;;AAFD;EACC;EACA%22,%22file%22:%22icons.css%22%7D */

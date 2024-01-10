@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+/*
+Greens:
+	Dark Cyan: #32908F, #048A81
+	Verdigris: #48A9A6
+	Cambridge Blue: #72BDA3
+	Carribean Current: #28666E
+
+Reds:
+	Indian Red: #C1666B
+	Persian Red: #C3423F
+	Wine: #7C3238
+	Penn Red: #960200
+*/
 .dotdungeon > .window-content ::-webkit-scrollbar {
   width: 10px;
 }
@@ -63,4 +76,4 @@
   word-break: break-all;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aEhBW;EFiBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDLW;;ACOX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;;AAMH;EACC;;AAEA;EACC;EACA,YErDW;;AFuDX;EACC;EACA,aE3DS;EF4DT%22,%22file%22:%22generic.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;ACER;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;ADGC;EACC;;AAED;EACC;;AAGD;EEfA;EACA;EACA;EFeC,aChBW;EDiBX;;AAGD;EACC;;AAGD;EEzBA;EACA;EACA;EFyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aFLW;;AEOX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;;AAMH;EACC;;AAEA;EACC;EACA,YCrDW;;ADuDX;EACC;EACA,aC3DS;ED4DT%22,%22file%22:%22generic.css%22%7D */

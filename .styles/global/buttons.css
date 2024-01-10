@@ -1,3 +1,16 @@
+/*
+Greens:
+	Dark Cyan: #32908F, #048A81
+	Verdigris: #48A9A6
+	Cambridge Blue: #72BDA3
+	Carribean Current: #28666E
+
+Reds:
+	Indian Red: #C1666B
+	Persian Red: #C3423F
+	Wine: #7C3238
+	Penn Red: #960200
+*/
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button {
   border-radius: 4px;
   box-sizing: border-box;
@@ -7,15 +20,19 @@
   border-radius: 4px;
   transition: 400ms;
   padding: 4px 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm {
-  background: #00aa00;
-  color: black;
+  background: #048A81;
+  color: white;
 }
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm:focus {
   background: transparent;
-  color: #00aa00;
-  border-color: #00aa00;
+  color: #048A81;
+  border-color: #048A81;
 }
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.neutral {
   background: #007ACC;
@@ -45,4 +62,4 @@
   padding: 2px 2px;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../styles/global/buttons.scss%22,%22../../styles/_vars.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAGC;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC,YCNc;EDOd,OCNe;;ADOf;EACC;EACA,OCVa;EDWb,cCXa;;ADef;EACC,YCbc;EDcd,OCbe;;ADcf;EACC;EACA,OCjBa;EDkBb,cClBa;;ADsBf;EACC,YCpBa;EDqBb,OClBc;;ADmBd;EACC;EACA,OCxBY;EDyBZ,cCzBY;;AD6Bd;EACC;;AAID;EACC;;AACA;EACC%22,%22file%22:%22buttons.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../styles/_vars.scss%22,%22../../styles/global/buttons.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAMA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;ACHC;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACC,YDEc;ECDd,ODEe;;ACDf;EACC;EACA,ODFa;ECGb,cDHa;;ACOf;EACC,YDLc;ECMd,ODLe;;ACMf;EACC;EACA,ODTa;ECUb,cDVa;;ACcf;EACC,YDZa;ECab,ODVc;;ACWd;EACC;EACA,ODhBY;ECiBZ,cDjBY;;ACqBd;EACC;;AAID;EACC;;AACA;EACC%22,%22file%22:%22buttons.css%22%7D */

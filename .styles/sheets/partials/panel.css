@@ -1,3 +1,16 @@
+/*
+Greens:
+	Dark Cyan: #32908F, #048A81
+	Verdigris: #48A9A6
+	Cambridge Blue: #72BDA3
+	Carribean Current: #28666E
+
+Reds:
+	Indian Red: #C1666B
+	Persian Red: #C3423F
+	Wine: #7C3238
+	Penn Red: #960200
+*/
 .dotdungeon .panel {
   display: grid;
   grid-template-rows: min-content 1fr;
@@ -37,4 +50,4 @@
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/sheets/partials/panel.scss%22,%22../../../styles/mixins/_foundry.scss%22,%22../../../styles/_vars.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIA;EACC;EACA;EAEA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EClBD;EACA;EACA;EDkBE;EACA;EACA,aErBU;EFsBV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AG7BD;EHkCA;IACC;IACA%22,%22file%22:%22panel.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../styles/_vars.scss%22,%22../../../styles/sheets/partials/panel.scss%22,%22../../../styles/mixins/_foundry.scss%22,%22../../../styles/mixins/_breakpoints.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAMA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;ACFA;EACC;EACA;EAEA;;AAEA;EACC;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EClBD;EACA;EACA;EDkBE;EACA;EACA,aDrBU;ECsBV;;AAGD;EAEC,QADO;EAEP,OAFO;EAGP;;AAIF;EACC;;;AE7BD;EFkCA;IACC;IACA%22,%22file%22:%22panel.css%22%7D */
