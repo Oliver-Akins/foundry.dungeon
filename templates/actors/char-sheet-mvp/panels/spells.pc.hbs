@@ -4,14 +4,16 @@
 			<summary data-collapse-id="{{spell.uuid}}">
 				<span class="flex-grow" style="flex-grow: 1">
 					{{spell.name}}
-					(Cost: {{spell.system.cost}})
+					{{localize "dotdungeon.actor.pc.spells.title.cost" cost=spell.system.cost}}
 				</span>
 			</summary>
 
 
 			<div class="spell">
 				<div class="spell__name">
-					<label for="{{spell.uuid}}-name">Name</label>
+					<label for="{{spell.uuid}}-name">
+						{{localize "dotdungeon.actor.pc.spells.name.label"}}
+					</label>
 					<input
 						type="text"
 						id="{{spell.uuid}}-name"
@@ -21,19 +23,25 @@
 					>
 				</div>
 				<div class="spell__cost">
-					<label for="{{spell.uuid}}-cost">Cost</label>
+					<label for="{{spell.uuid}}-cost">
+						{{localize "dotdungeon.actor.pc.spells.cost.label"}}
+					</label>
 					<input
 						type="text"
 						id="{{spell.uuid}}-cost"
 						value="{{spell.system.cost}}"
+						placeholder="{{localize "dotdungeon.actor.pc.spells.cost.placeholder"}}"
 						data-embedded-update="system.cost"
 						data-embedded-id="{{spell.uuid}}"
 					>
 				</div>
 				<div class="spell__description">
-					<label for="{{spell.uuid}}-description">Description</label>
+					<label for="{{spell.uuid}}-description">
+						{{localize "dotdungeon.actor.pc.spells.description.label"}}
+					</label>
 					<textarea
 						id="{{spell.uuid}}-description"
+						placeholder="{{localize "dotdungeon.actor.pc.spells.description.placeholder"}}"
 						data-embedded-update="system.description"
 						data-embedded-id="{{spell.uuid}}"
 					>{{spell.system.description}}</textarea>
@@ -48,6 +56,8 @@
 					</button>
 					<button
 						class="danger reduced-padding equal-padding"
+						data-embedded-delete
+						data-embedded-id="{{spell.uuid}}"
 					>
 						<div class="icon icon--20">
 							{{{ ../icons.garbage-bin }}}
@@ -55,10 +65,14 @@
 					</button>
 				</div>
 			</div>
+			<div class="debug-data">
+				{{spell.uuid}}
+				{{dd-stringify spell}}
+			</div>
 		</details>
 	{{else}}
 		<p>
-			You have no spells yet!
+			{{localize "dotdungeon.actor.pc.spells.empty"}}
 		</p>
 	{{/each}}
 
@@ -71,7 +85,7 @@
 				{{{ icons.create }}}
 			</div>
 			<span>
-				Add Spell
+				{{localize "dotdungeon.actor.pc.spells.add.label"}}
 			</span>
 		</button>
 	</div>

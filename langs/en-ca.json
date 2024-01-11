@@ -170,6 +170,20 @@
 						"mag": "Mags",
 						"cell": "Cells"
 					}
+				},
+				"spells": {
+					"empty": "You have no spells yet",
+					"title.cost": "(Cost: {cost})",
+					"name.label": "Name",
+					"cost": {
+						"label": "Cost",
+						"placeholder": "Bytes per spell cast..."
+					},
+					"description": {
+						"label": "Description",
+						"placeholder": "This spell does..."
+					},
+					"add.label": "Add Spell"
 				}
 			},
 			"sync": {
@@ -199,7 +213,16 @@
 		},
 		"notification": {
 			"error": {
-				"invalid-integer": "You must enter a valid whole number"
+				"invalid-integer": "You must enter a valid whole number",
+				"item-not-found": "Failed to find an item to delete."
+			}
+		},
+		"dialogs": {
+			"spell": {
+				"delete": {
+					"title": "Confirm Spell Deletion",
+					"content": "Are you sure you would like to delete the spell: {name}<br /><br />This action cannot be reversed."
+				}
 			}
 		}
 	},
