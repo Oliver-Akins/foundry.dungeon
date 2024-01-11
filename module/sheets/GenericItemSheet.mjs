@@ -1,3 +1,4 @@
+import DOTDUNGEON from "../config.mjs";
 import { preloadIcons } from "../handlebars.mjs";
 
 export class GenericItemSheet extends ItemSheet {
@@ -20,7 +21,6 @@ export class GenericItemSheet extends ItemSheet {
 
 	async getData() {
 		const ctx = {};
-		const item = this.item.toObject(false);
 
 		// Send all of the settings that sheets need into their context
 		ctx.settings = {};
@@ -32,9 +32,10 @@ export class GenericItemSheet extends ItemSheet {
 
 		ctx.meta = {
 			expanded: this._expanded,
-			idp: this.actor.uuid,
+			idp: this.item.uuid,
 		};
 
+		ctx.config = DOTDUNGEON;
 		ctx.icons = await preloadIcons();
 
 		return ctx;

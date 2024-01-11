@@ -41,6 +41,10 @@
 		@include input-generic;
 	}
 
+	textarea {
+		resize: vertical;
+	}
+
 	select, select:hover {
 		cursor: pointer;
 

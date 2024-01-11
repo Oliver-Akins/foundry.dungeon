@@ -10,11 +10,10 @@ export class SpellItemData extends DescribedItemData {
 				blank: true,
 				trim: true,
 				options() {
-					let skills = [ `` ];
-					for (const group in DOTDUNGEON.skills) {
-						skills.push(...skills[group]);
-					};
-					return skills;
+					return [
+						``,
+						...DOTDUNGEON.allSkills
+					];
 				},
 			}),
 		});

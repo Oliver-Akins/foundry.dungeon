@@ -200,6 +200,10 @@
 				flex-direction: column;
 				gap: 4px;
 
+				.placeholder {
+					opacity: 75%;
+				}
+
 				&__actions {
 					display: flex;
 					flex-direction: row;

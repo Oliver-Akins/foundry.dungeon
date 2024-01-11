@@ -24,4 +24,15 @@
 			aria-description="{{localize "dotdungeon.item.spell.aria.description"}}"
 		>{{system.description}}</textarea>
 	</label>
+	<label for="{{meta.idp}}-skill">
+		{{localize "dotdungeon.item.spell.skill.label"}}
+	</label>
+	<select name="system.skill" id="{{meta.idp}}-skill">
+		{{#select system.skill}}
+			<option value="">{{localize "dotdungeon.item.spell.options.no-skill"}}</option>
+			{{#each config.allSkills as | skill |}}
+				<option value="{{skill}}">{{localize (concat "dotdungeon.keyword.skill." skill)}}</option>
+			{{/each}}
+		{{/select}}
+	</select>
 </form>

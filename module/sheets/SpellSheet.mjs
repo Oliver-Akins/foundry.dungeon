@@ -23,14 +23,12 @@ export class SpellSheet extends GenericItemSheet {
 	};
 
 	async getData() {
-		const ctx = {};
-		const item = this.item.toObject(false);
+		const ctx = await super.getData();
 
-		ctx.name = super.name;
-		ctx.item = item;
-		ctx.system = item.system;
-		ctx.flags = item.flags;
-
+		ctx.item = this.item;
+		ctx.system = this.item.system;
+		ctx.flags = this.item.flags;
+		console.log(ctx)
 		return ctx;
 	};
 };

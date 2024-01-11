@@ -43,6 +43,9 @@
 .dotdungeon > .window-content textarea:active {
   border-color: rgb(0, 0, 0);
 }
+.dotdungeon > .window-content textarea {
+  resize: vertical;
+}
 .dotdungeon > .window-content select, .dotdungeon > .window-content select:hover {
   cursor: pointer;
 }
@@ -63,4 +66,4 @@
   word-break: break-all;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aEhBW;EFiBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDLW;;ACOX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAEA;EACC;;;AAMH;EACC;;AAEA;EACC;EACA,YErDW;;AFuDX;EACC;EACA,aE3DS;EF4DT%22,%22file%22:%22generic.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../styles/generic.scss%22,%22../styles/mixins/_foundry.scss%22,%22../styles/_vars.scss%22,%22../styles/mixins/_partials.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIQ;AAKP;EACC;;AAED;EACC;;AAGD;ECfA;EACA;EACA;EDeC,aEhBW;EFiBX;;AAGD;EACC;;AAGD;ECzBA;EACA;EACA;EDyBC;EACA;;AAEA;EACC;;AAIF;AAAA;AAAA;EAGC;EGpCD;EACA;EACA;EACA;EACA;EACA,aDLW;;ACOX;AAAA;AAAA;AAAA;AAAA;EAEC;;AH+BD;EACC;;AAGD;EACC;;AAEA;EACC;;;AAMH;EACC;;AAEA;EACC;EACA,YEzDW;;AF2DX;EACC;EACA,aE/DS;EFgET%22,%22file%22:%22generic.css%22%7D */

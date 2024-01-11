@@ -175,15 +175,17 @@
 					"empty": "You have no spells yet",
 					"title.cost": "(Cost: {cost})",
 					"name.label": "Name",
-					"cost": {
-						"label": "Cost",
-						"placeholder": "Bytes per spell cast..."
-					},
+					"skill.label": "Spell Skill: {skill}",
 					"description": {
-						"label": "Description",
-						"placeholder": "This spell does..."
+						"label": "Description:",
+						"placeholder": "There's no description for this spell yet..."
 					},
-					"add.label": "Add Spell"
+					"add.label": "Add Spell",
+					"aria": {
+						"edit": "",
+						"delete": "Delete spell",
+						"chat": "Send spell information to chat"
+					}
 				}
 			},
 			"sync": {
@@ -204,6 +206,10 @@
 				"name.placeholder": "Name...",
 				"cost.label": "Cost",
 				"description.label": "Description",
+				"skill.label": "Spell Skill",
+				"options": {
+					"no-skill": "No Skill"
+				},
 				"aria": {
 					"name": "The spell's name",
 					"cost": "The amount of bytes it takes to cast the spell",
@@ -221,8 +227,40 @@
 			"spell": {
 				"delete": {
 					"title": "Confirm Spell Deletion",
-					"content": "Are you sure you would like to delete the spell: {name}<br /><br />This action cannot be reversed."
+					"content": "Are you sure you would like to delete the spell: {name}<br /><br />This action cannot be undone."
 				}
+			}
+		},
+		"keyword": {
+			"stat": {
+				"build": "Build",
+				"meta": "Meta",
+				"presence": "Presence",
+				"hands": "Hands",
+				"tilt": "Tilt",
+				"rng": "RNG"
+			},
+			"skill": {
+				"defense": "Defense",
+				"magic": "Magic",
+				"melee": "Melee",
+				"platforming": "Platforming",
+				"strength": "Strength",
+				"alchemy": "Alchemy",
+				"arcanum": "Arcanum",
+				"dreams": "Dream",
+				"lore": "Lore",
+				"navigation": "Navigation",
+				"animal_handling": "Animal Handling",
+				"perception": "Perception",
+				"sneak": "Sneak",
+				"speech": "Speech",
+				"vibes": "Vibes",
+				"accuracy": "Accuracy",
+				"crafting": "Crafting",
+				"engineering": "Engineering",
+				"explosives": "Explosives",
+				"piloting": "Piloting"
 			}
 		}
 	},

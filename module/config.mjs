@@ -6,17 +6,37 @@ const damageTypes = [ `slashing`, `piercing`, `smashing`, `gun`, `neon`, `shadow
 
 const ammoTypes = [`quivers`, `mags`, `cells`];
 
+const stats = [ `build`, `meta`, `presence`, `hands`, `tilt`, `rng` ];
+
+const buildSkills = [ "defense", "magic", "melee", "platforming", "strength", ];
+const metaSkills = [ "alchemy", "arcanum", "dreams", "lore", "navigation", ];
+const presenceSkills = [ "animal_handling", "perception", "sneak", "speech", "vibes", ];
+const handsSkills = [ "accuracy", "crafting", "engineering", "explosives", "piloting", ];
+
+const allSkills = [
+	...buildSkills,
+	...metaSkills,
+	...presenceSkills,
+	...handsSkills,
+];
+
 const skills = {
-	build: [ "defense", "magic", "melee", "platforming", "strength", ],
-	meta: [ "alchemy", "arcanum", "dreams", "lore", "navigation", ],
-	presence: [ "animal_handling", "perception", "sneak", "speech", "vibes", ],
-	hands: [ "accuracy", "crafting", "engineering", "explosives", "piloting", ]
+	build: buildSkills,
+	meta: metaSkills,
+	presence: presenceSkills,
+	hands: handsSkills,
 };
 
 export default {
+	stats,
 	statDice,
 	trainingLevels,
 	damageTypes,
 	ammoTypes,
+	buildSkills,
+	metaSkills,
+	presenceSkills,
+	handsSkills,
+	allSkills,
 	skills,
 };

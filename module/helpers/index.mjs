@@ -25,5 +25,6 @@ export default {
 	"nor": (a, b) => !(a || b),
 	"nand": (a, b) => !(a && b),
 	"xor": (a, b) => (a || b) && !(a && b),
-	"xnor": (a, b) => !((a || b) && !(a && b))
+	"xnor": (a, b) => !((a || b) && !(a && b)),
+	"defined": v => v != null
 };
