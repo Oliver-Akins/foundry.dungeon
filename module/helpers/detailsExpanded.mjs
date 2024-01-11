@@ -7,5 +7,8 @@
  * @returns {"open"|null} The HTML insertion indicating the details is expanded
  */
 export function detailsExpanded(expanded, collapseId) {
-	return expanded.has(collapseId) ? "open" : null;
+	if (expanded.has(collapseId)) {
+		return `open`;
+	}
+	return ``;
 };
