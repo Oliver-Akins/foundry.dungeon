@@ -21,7 +21,9 @@ export class PlayerSheet extends GenericActorSheet {
 
 		html.find(`.add-spell`).on(`click`, this.actor.createCustomSpell.bind(this.actor));
 		html.find(`[data-embedded-update]`)
-			.on(`change`, this.actor.updateEmbeddedDocument.bind(this.actor));
+			.on(`change`, this.actor.genericEmbeddedUpdate.bind(this.actor));
+		html.find(`[data-embedded-delete]`)
+			.on(`click`, this.actor.genericEmbeddedDelete.bind(this.actor));
 	};
 
 	async getData() {
