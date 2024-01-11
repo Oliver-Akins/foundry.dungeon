@@ -46,7 +46,7 @@ export class GenericActorSheet extends ActorSheet {
 	};
 
 	async _handleRoll($e) {
-		let data = $e.target.dataset;
+		let data = $e.currentTarget.dataset;
 		if (!data.rollFormula) {
 			console.warn(`.dungeon | Element has .roll class with no roll formula`, $e.target);
 			return;
@@ -67,8 +67,8 @@ export class GenericActorSheet extends ActorSheet {
 	};
 
 	_handleSummaryToggle($e) {
-		let data = $e.target.dataset;
-		let open = $e.target.parentNode.open;
+		let data = $e.currentTarget.dataset;
+		let open = $e.currentTarget.parentNode.open;
 		console.debug(`.dungeon | Collapse ID: ${data.collapseId} (open: ${open})`);
 
 		/*
