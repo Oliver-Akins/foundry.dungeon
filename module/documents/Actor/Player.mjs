@@ -37,11 +37,26 @@ export class PlayerActor {
 	};
 
 	/** @this {Actor} */
-	static createCustomSpell() {
-		this.createEmbeddedDocuments(
+	static async createCustomSpell() {
+		let items = await this.createEmbeddedDocuments(
 			"Item",
-			[{ type: `spell`, name: `New Spell` }]
+			[{
+				type: `spell`,
+				name: game.i18n.format(`dotdungeon.defaults.spell.name`),
+			}]
 		);
+		if (items.length == 0) {
+			ui.notifications.error(
+				`dotdungeon.notifications.error.spell-create-failed`,
+				{ localize: true, console: false }
+			);
+			return;
+		};
 		this.sheet.render();
+		if (game.settings.get(`dotdungeon`, `openEmbeddedOnCreate`)) {
+			for (const item of items) {
+				item.sheet.render(true);
+			};
+		};
 	};
 };

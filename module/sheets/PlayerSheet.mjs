@@ -24,6 +24,8 @@ export class PlayerSheet extends GenericActorSheet {
 			.on(`change`, this.actor.genericEmbeddedUpdate.bind(this.actor));
 		html.find(`[data-embedded-delete]`)
 			.on(`click`, this.actor.genericEmbeddedDelete.bind(this.actor));
+		html.find(`[data-embedded-edit]`)
+			.on(`click`, this.actor.openEmbeddedSheet.bind(this.actor));
 	};
 
 	async getData() {

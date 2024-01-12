@@ -67,6 +67,10 @@
 					"supplies": "Supplies",
 					"resources": "Resources"
 				}
+			},
+			"openEmbeddedOnCreate": {
+				"name": "Edit Custom Items Immediately When Created",
+				"description": "Tells the character sheets that have \"Add\" buttons to open the Item's sheet when you create the new item so that you can immediately edit it without needing to click more buttons."
 			}
 		},
 		"sheet-names": {
@@ -220,7 +224,8 @@
 		"notification": {
 			"error": {
 				"invalid-integer": "You must enter a valid whole number",
-				"item-not-found": "Failed to find an item to delete."
+				"item-not-found": "Failed to find an item to delete",
+				"spell-create-failed": "Failed to create a custom spell"
 			}
 		},
 		"dialogs": {
@@ -261,6 +266,11 @@
 				"engineering": "Engineering",
 				"explosives": "Explosives",
 				"piloting": "Piloting"
+			}
+		},
+		"defaults": {
+			"spell": {
+				"name": "(Unnamed Spell)"
 			}
 		}
 	},

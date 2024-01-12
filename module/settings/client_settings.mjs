@@ -8,4 +8,14 @@ export default function() {
 		default: true,
 		requiresReload: false,
 	});
+
+	game.settings.register(`dotdungeon`, `openEmbeddedOnCreate`, {
+		name: `dotdungeon.settings.openEmbeddedOnCreate.name`,
+		hint: `dotdungeon.settings.openEmbeddedOnCreate.description`,
+		scope: `client`,
+		type: Boolean,
+		config: true,
+		default: true,
+		requiresReload: false,
+	});
 };
