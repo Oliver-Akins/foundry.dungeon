@@ -177,6 +177,7 @@
 				},
 				"spells": {
 					"empty": "You have no spells yet",
+					"edit": "Edit",
 					"title.cost": "(Cost: {cost})",
 					"name.label": "Name",
 					"skill.label": "Spell Skill: {skill}",
