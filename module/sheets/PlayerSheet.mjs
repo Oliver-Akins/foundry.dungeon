@@ -20,8 +20,9 @@ export class PlayerSheet extends GenericActorSheet {
 		console.debug(`.dungeon | Adding event listeners for Actor: ${this.id}`);
 
 		html.find(`.add-spell`).on(`click`, this.actor.createCustomSpell.bind(this.actor));
-		html.find(`[data-embedded-update]`)
-			.on(`change`, this.actor.genericEmbeddedUpdate.bind(this.actor));
+		// TODO: Apparently the `change` event is bad to use in Foundry
+		// html.find(`[data-embedded-update]`)
+		// 	.on(`change`, this.actor.genericEmbeddedUpdate.bind(this.actor));
 		html.find(`[data-embedded-delete]`)
 			.on(`click`, this.actor.genericEmbeddedDelete.bind(this.actor));
 		html.find(`[data-embedded-edit]`)
@@ -38,6 +39,7 @@ export class PlayerSheet extends GenericActorSheet {
 
 		ctx.computed = {
 			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
+			canAddAspect: ctx.items.aspect.length == 0,
 		};
 
 		console.log(ctx)

@@ -16,7 +16,7 @@
   background: #048A81;
   color: white;
 }
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm:focus {
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.confirm:focus-visible {
   background: transparent;
   color: #048A81;
   border-color: #048A81;
@@ -25,7 +25,7 @@
   background: #007ACC;
   color: white;
 }
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.neutral:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.neutral:focus {
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.neutral:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.neutral:focus-visible {
   background: transparent;
   color: #007ACC;
   border-color: #007ACC;
@@ -34,7 +34,7 @@
   background: #960200;
   color: white;
 }
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger:focus {
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger:hover, .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content button.danger:focus-visible {
   background: transparent;
   color: #960200;
   border-color: #960200;

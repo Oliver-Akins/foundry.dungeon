@@ -18,7 +18,7 @@
 		&.confirm {
 			background: $colour-confirm;
 			color: $text-on-confirm;
-			&:hover, &:focus {
+			&:hover, &:focus-visible {
 				background: transparent;
 				color: $colour-confirm;
 				border-color: $colour-confirm;
@@ -28,7 +28,7 @@
 		&.neutral {
 			background: $colour-neutral;
 			color: $text-on-neutral;
-			&:hover, &:focus {
+			&:hover, &:focus-visible {
 				background: transparent;
 				color: $colour-neutral;
 				border-color: $colour-neutral;
@@ -38,7 +38,7 @@
 		&.danger {
 			background: $colour-danger;
 			color: $text-on-danger;
-			&:hover, &:focus {
+			&:hover, &:focus-visible {
 				background: transparent;
 				color: $colour-danger;
 				border-color: $colour-danger;

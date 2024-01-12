@@ -9,7 +9,7 @@ export class PlayerActor {
 
 	/** @this {Actor} */
 	static async genericEmbeddedDelete($event) {
-		let data = $event.delegateTarget.dataset;
+		let data = $event.currentTarget.dataset;
 		let item = await fromUuid(data.embeddedId);
 
 		if (!item) {
@@ -34,6 +34,20 @@ export class PlayerActor {
 			},
 			defaultYes: false,
 		});
+	};
+
+	/** @this {Actor} */
+	static async createCustomItem(defaults) {
+		let items = await this.createEmbeddedDocuments(`Item`, defaults);
+		if (items.length == 0) {
+			throw new Error();
+		};
+		this.sheet.render();
+		if (game.settings.get(`dotdungeon`, `openEmbeddedOnCreate`)) {
+			for (const item of items) {
+				item.sheet.render(true);
+			};
+		};
 	};
 
 	/** @this {Actor} */

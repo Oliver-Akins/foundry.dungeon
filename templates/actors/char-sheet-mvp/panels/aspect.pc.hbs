@@ -1,37 +1,52 @@
 {{#> dotdungeon.panel class="aspect" title="dotdungeon.actor.pc.panel.aspect"}}
-	<input
-		type="text"
-		class="aspect__name--input"
-		name="system.aspect.name"
-		placeholder="{{localize "dotdungeon.actor.pc.aspect.name.placeholder"}}"
-		value="{{system.aspect.name}}"
-	>
-	<label class="aspect__used--label">
-		{{localize "dotdungeon.actor.pc.aspect.used"}}
-		<input
-			type="checkbox"
-			class="aspect__used--input"
-			name="system.aspect.used"
-			{{checked system.aspect.used}}
+	{{#each items.aspect as | aspect |}}
+		<div class="aspect">
+			<h3 class="aspect__name">{{aspect.name}}</h3>
+			{{#if (defined aspect.system.deactivateAfter)}}
+				<p class="aspect__duration">
+					{{localize "dotdungeon.actor.pc.aspect.duration" duration=(dd-toFriendlyDuration aspect.system.deactivateAfter)}}
+				</p>
+			{{/if}}
+			{{#if aspect.system.info}}
+				<div class="aspect__description">
+					<p>
+						{{aspect.system.info}}
+					</p>
+				</div>
+			{{/if}}
+			<div class="aspect__used">
+				<input
+					id="{{aspect.uuid}}-used"
+					type="checkbox"
+					class="aspect__used--input"
+					{{checked aspect.system.used}}
+				>
+				<label
+					class="aspect__used--label"
+					for="{{aspect.uuid}}-used"
+				>
+					{{localize "dotdungeon.actor.pc.aspect.used"}}
+				</label>
+			</div>
+			<div class="actions">
+				<button
+					class="confirm"
+					data-embedded-edit="{{aspect.uuid}}"
+				>
+					Edit
+				</button>
+			</div>
+		</div>
+	{{else}}
+		<p>
+			{{localize "dotdungeon.actor.pc.aspect.empty"}}
+		</p>
+	{{/each}}
+	{{#if (or computed.canAddAspect (not (dd-empty items.aspect)))}}
+		<button
+			class="confirm"
 		>
-	</label>
-	<label class="aspect__duration--label">
-		{{localize "dotdungeon.actor.pc.aspect.duration"}}
-		{{#if system.aspect.deactivateAfter}}
-			<span class="friendly-duration aspect__duration--friendly">
-				({{dd-toFriendlyDuration system.aspect.deactivateAfter}})
-			</span>
-		{{/if}}
-		<input
-			type="number"
-			class="aspect__duration--input"
-			name="system.aspect.deactivateAfter"
-			value="{{system.aspect.deactivateAfter}}"
-		>
-	</label>
-	<textarea
-		class="aspect__description--input"
-		name="system.aspect.description"
-		placeholder="{{localize "dotdungeon.actor.pc.aspect.description.placeholder"}}"
-	>{{system.aspect.description}}</textarea>
-	{{/ dotdungeon.panel}}
+			{{localize "dotdungeon.actor.pc.aspect.add"}}
+		</button>
+	{{/if}}
+{{/ dotdungeon.panel}}

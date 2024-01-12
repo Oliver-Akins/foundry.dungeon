@@ -15,11 +15,10 @@ export class ActorHandler extends Actor {
 	};
 
 	async openEmbeddedSheet($event) {
-		console.log(`openEmbeddedSheet`)
 		if (this.fn?.openEmbeddedSheet) {
 			this.fn.openEmbeddedSheet.bind(this)($event);
 		} else {
-			const data = $event.currentTarget.dataset;
+			const data = $event.target.dataset;
 			let item = await fromUuid(data.embeddedEdit);
 			item?.sheet.render(true);
 		};
@@ -35,9 +34,8 @@ export class ActorHandler extends Actor {
 		this.fn.genericEmbeddedDelete.bind(this)($event);
 	};
 
-	async createCustomSpell() {
+	async createCustomSpell($event) {
 		if (!this.fn?.createCustomSpell) return;
-		this.fn.createCustomSpell.bind(this)();
-		this.sheet.render(true);
+		this.fn.createCustomSpell.bind(this)($event);
 	};
 };

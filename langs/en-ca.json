@@ -130,8 +130,9 @@
 				"aspect": {
 					"name.placeholder": "Name...",
 					"used": "Used",
-					"duration": "Duration",
-					"description.placeholder": "Description..."
+					"duration": "Duration: {duration}",
+					"empty": "You don't have an Aspect yet, add one using the button below or drag one onto your character sheet.",
+					"add": "Add An Aspect"
 				},
 				"respawns.header": "Respawns",
 				"sync.header": "Sync",

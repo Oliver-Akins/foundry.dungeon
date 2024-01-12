@@ -141,6 +141,18 @@
 					resize: vertical;
 				}
 			}
+
+			.aspect {
+				&__used {
+					display: flex;
+					align-items: center;
+					gap: 4px;
+
+					&--input {
+						margin: 0;
+					}
+				}
+			}
 		}
 		&--weapons {
 			grid-area: weapons;
@@ -203,13 +215,6 @@
 				.placeholder {
 					opacity: 75%;
 				}
-
-				&__actions {
-					display: flex;
-					flex-direction: row;
-					justify-content: end;
-					gap: 4px;
-				}
 			}
 		}
 		&--mounts {
@@ -221,6 +226,13 @@
 		&--storage {
 			grid-area: storage;
 		}
+	}
+
+	.actions {
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+		gap: 4px;
 	}
 }
 

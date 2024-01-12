@@ -15,6 +15,7 @@ export default {
 
 	// Simple helpers
 	"dd-stringify": v => JSON.stringify(v, null, `  `),
+	"dd-empty": v => v.length == 0,
 
 	// Logic helpers
 	"eq": (a, b) => a == b,
@@ -26,5 +27,5 @@ export default {
 	"nand": (a, b) => !(a && b),
 	"xor": (a, b) => (a || b) && !(a && b),
 	"xnor": (a, b) => !((a || b) && !(a && b)),
-	"defined": v => v != null
+	"defined": v => v != null,
 };
