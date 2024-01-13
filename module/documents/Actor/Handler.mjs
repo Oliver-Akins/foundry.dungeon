@@ -36,7 +36,6 @@ export class ActorHandler extends Actor {
 
 	async genericEmbeddedCreate($event) {
 		const data = $event.currentTarget.dataset;
-		console.log(data)
 		if (!this.fn?.[`createCustom${data.embeddedCreate}`]) return;
 		this.fn?.[`createCustom${data.embeddedCreate}`].bind(this)($event);
 	};
