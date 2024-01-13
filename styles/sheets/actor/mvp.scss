@@ -133,9 +133,9 @@
 			grid-area: aspect;
 			.panel__content {
 				display: grid;
-				grid-template-rows: min-content min-content min-content 1fr;
-				height: 100%;
+				grid-template-rows: min-content min-content;
 				gap: 4px;
+				text-align: center;
 
 				textarea {
 					resize: vertical;
@@ -216,6 +216,12 @@
 					opacity: 75%;
 				}
 			}
+
+			.panel__content {
+				display: flex;
+				gap: 4px;
+				flex-direction: column;
+			}
 		}
 		&--mounts {
 			grid-area: mounts;
@@ -233,6 +239,12 @@
 		flex-direction: row;
 		justify-content: end;
 		gap: 4px;
+	}
+
+	.panel__content {
+		.center {
+			text-align: center;
+		}
 	}
 }
 
