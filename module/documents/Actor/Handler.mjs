@@ -1,4 +1,4 @@
-import { PlayerActor } from "./Player.mjs";
+import PlayerActor from "./Player.mjs";
 
 export class ActorHandler extends Actor {
 	actorTypes = {
