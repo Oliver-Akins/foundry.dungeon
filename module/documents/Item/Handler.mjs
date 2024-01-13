@@ -1,6 +1,11 @@
 import AspectItem from "./Aspect.mjs";
 
+/**
+ * @extends {Item}
+ */
 export class ItemHandler extends Item {
+	/** @override */
+
 	itemTypes = {
 		aspect: AspectItem,
 	};

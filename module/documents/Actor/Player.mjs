@@ -1,3 +1,5 @@
+import { ItemHandler } from "../Item/Handler.mjs";
+
 /** @this {Actor} */
 async function genericEmbeddedUpdate($event) {
 	let data = $event.delegateTarget.dataset;
@@ -68,10 +70,29 @@ async function createCustomSpell() {
 	}]);
 };
 
+/**
+ * @param {ItemHandler} item
+ * @this {Actor}
+ */
+async function preAspectEmbed(item) {
+	let limit = 1
+	if (this.itemTypes.aspect.length >= limit) {
+		ui.notifications.error(
+			game.i18n.format(
+				`dotdungeon.notification.error.aspect-limit-reached`,
+				{ limit }
+			),
+			{ console: false }
+		);
+		return false;
+	};
+};
+
 export default {
 	genericEmbeddedDelete,
 	genericEmbeddedUpdate,
 	createCustomItem,
 	createCustomAspect,
-	createCustomSpell
+	createCustomSpell,
+	preAspectEmbed,
 };
