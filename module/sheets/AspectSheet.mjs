@@ -1,4 +1,6 @@
-export class AspectSheet extends ItemSheet {
+import { GenericItemSheet } from "./GenericItemSheet.mjs";
+
+export class AspectSheet extends GenericItemSheet {
 	static get defaultOptions() {
 		let opts = mergeObject(
 			super.defaultOptions,
@@ -21,13 +23,13 @@ export class AspectSheet extends ItemSheet {
 
 	async getData() {
 		const ctx = {};
-		const item = this.item.toObject(false);
+		const item = this.item;
 
-		ctx.name = super.name;
 		ctx.item = item;
 		ctx.system = item.system;
 		ctx.flags = item.flags;
 
+		console.log(item.uuid, `context:`, ctx);
 		return ctx;
 	};
 };

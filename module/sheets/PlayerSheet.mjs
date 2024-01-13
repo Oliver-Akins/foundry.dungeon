@@ -33,7 +33,7 @@ export class PlayerSheet extends GenericActorSheet {
 			canAddAspect: ctx.items.aspect.length == 0,
 		};
 
-		console.log(ctx)
+		console.log(actor.uuid, `context:`, ctx)
 		return ctx;
 	};
 };

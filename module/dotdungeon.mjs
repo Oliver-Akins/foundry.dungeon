@@ -6,6 +6,7 @@ import { SyncData } from "./models/SyncData.mjs";
 
 // Main Documents
 import { ActorHandler } from "./documents/Actor/Handler.mjs";
+import { ItemHandler } from "./documents/Item/Handler.mjs";
 
 // Character Sheets
 import { SpellSheet } from "./sheets/SpellSheet.mjs";
@@ -34,6 +35,7 @@ Hooks.once(`init`, () => {
 	CONFIG.Item.dataModels.aspect = AspectItemData;
 	CONFIG.Item.dataModels.spell = SpellItemData;
 	CONFIG.Actor.documentClass = ActorHandler;
+	CONFIG.Item.documentClass = ItemHandler;
 
 	CONFIG.DOTDUNGEON = DOTDUNGEON;
 

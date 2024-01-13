@@ -227,7 +227,8 @@
 			"error": {
 				"invalid-integer": "You must enter a valid whole number",
 				"item-not-found": "Failed to find an item to delete",
-				"spell-create-failed": "Failed to create a custom spell"
+				"spell-create-failed": "Failed to create a custom spell",
+				"aspect-limit-reached": "You cannot have more than {limit} aspects"
 			}
 		},
 		"dialogs": {
