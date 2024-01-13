@@ -34,8 +34,10 @@ export class ActorHandler extends Actor {
 		this.fn.genericEmbeddedDelete.bind(this)($event);
 	};
 
-	async createCustomSpell($event) {
-		if (!this.fn?.createCustomSpell) return;
-		this.fn.createCustomSpell.bind(this)($event);
+	async genericEmbeddedCreate($event) {
+		const data = $event.currentTarget.dataset;
+		console.log(data)
+		if (!this.fn?.[`createCustom${data.embeddedCreate}`]) return;
+		this.fn?.[`createCustom${data.embeddedCreate}`].bind(this)($event);
 	};
 };

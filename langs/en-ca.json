@@ -273,6 +273,9 @@
 		"defaults": {
 			"spell": {
 				"name": "(Unnamed Spell)"
+			},
+			"aspect": {
+				"name": "(Unnamed Aspect)"
 			}
 		}
 	},

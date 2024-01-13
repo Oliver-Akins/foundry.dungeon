@@ -67,16 +67,15 @@
 	{{/each}}
 
 
-	<div class="flex-row">
-		<button
-			class="confirm add-spell"
-		>
-			<div aria-hidden="true" class="icon icon--20">
-				{{{ icons.create }}}
-			</div>
-			<span>
-				{{localize "dotdungeon.actor.pc.spells.add.label"}}
-			</span>
-		</button>
-	</div>
+	<button
+		class="confirm"
+		data-embedded-create="Spell"
+	>
+		<div aria-hidden="true" class="icon icon--20">
+			{{{ icons.create }}}
+		</div>
+		<span>
+			{{localize "dotdungeon.actor.pc.spells.add.label"}}
+		</span>
+	</button>
 {{/ dotdungeon.panel}}

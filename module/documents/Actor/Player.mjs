@@ -37,13 +37,16 @@ export class PlayerActor {
 	};
 
 	/** @this {Actor} */
-	static async createCustomItem(defaults) {
+	static async createCustomItem(defaults, opts = {}) {
 		let items = await this.createEmbeddedDocuments(`Item`, defaults);
 		if (items.length == 0) {
 			throw new Error();
 		};
 		this.sheet.render();
-		if (game.settings.get(`dotdungeon`, `openEmbeddedOnCreate`)) {
+		if (
+			game.settings.get(`dotdungeon`, `openEmbeddedOnCreate`)
+			&& !opts.overrideSheetOpen
+		) {
 			for (const item of items) {
 				item.sheet.render(true);
 			};
@@ -51,26 +54,18 @@ export class PlayerActor {
 	};
 
 	/** @this {Actor} */
+	static async createCustomAspect() {
+		await PlayerActor.createCustomItem.bind(this)([{
+			type: `aspect`,
+			name: game.i18n.format(`dotdungeon.defaults.aspect.name`),
+		}]);
+	};
+
+	/** @this {Actor} */
 	static async createCustomSpell() {
-		let items = await this.createEmbeddedDocuments(
-			"Item",
-			[{
-				type: `spell`,
-				name: game.i18n.format(`dotdungeon.defaults.spell.name`),
-			}]
-		);
-		if (items.length == 0) {
-			ui.notifications.error(
-				`dotdungeon.notifications.error.spell-create-failed`,
-				{ localize: true, console: false }
-			);
-			return;
-		};
-		this.sheet.render();
-		if (game.settings.get(`dotdungeon`, `openEmbeddedOnCreate`)) {
-			for (const item of items) {
-				item.sheet.render(true);
-			};
-		};
+		await PlayerActor.createCustomItem.bind(this)([{
+			type: `spell`,
+			name: game.i18n.format(`dotdungeon.defaults.spell.name`),
+		}]);
 	};
 };
