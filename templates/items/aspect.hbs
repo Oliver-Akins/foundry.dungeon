@@ -23,4 +23,17 @@
 			aria-description="{{localize "dotdungeon.aria.aspect-description"}}"
 		>{{system.info}}</textarea>
 	</label>
+	{{#if item.isEmbedded}}
+		<input
+			id="{{meta.idp}}-used"
+			type="checkbox"
+			name="system.used"
+			{{checked system.used}}
+		>
+		<label
+			for="{{meta.idp}}-used"
+		>
+			{{localize "dotdungeon.actor.pc.aspect.used"}}
+		</label>
+	{{/if}}
 </form>
