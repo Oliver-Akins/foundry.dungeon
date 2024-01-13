@@ -68,13 +68,13 @@ Hooks.once(`init`, () => {
 Hooks.once(`ready`, () => {
 	console.debug(".dungeon | Ready");
 
-	if (game.settings.get(`dotdungeon`, `devMode`)) {
-		let tab = game.settings.get(`dotdungeon`, `defaultTab`);
-		if (!ui.sidebar?.tabs?.[tab]) {
-			console.error(`Couldn't find a sidebar tab with ID:`, tab);
+	let defaultTab = game.settings.get(`dotdungeon`, `defaultTab`);
+	if (defaultTab ) {
+		if (!ui.sidebar?.tabs?.[defaultTab]) {
+			console.error(`Couldn't find a sidebar tab with ID:`, defaultTab);
 		} else {
-			console.debug(`Switching sidebar tab to:`, tab);
-			ui.sidebar.tabs[tab].activate();
+			console.debug(`Switching sidebar tab to:`, defaultTab);
+			ui.sidebar.tabs[defaultTab].activate();
 		};
 	};
 });
