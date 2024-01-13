@@ -1,4 +1,4 @@
-export class SyncData extends foundry.abstract.DataModel {
+export class SyncData extends foundry.abstract.TypeDataModel {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		return {
