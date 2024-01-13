@@ -15,7 +15,6 @@ export class AspectSheet extends ItemSheet {
 	activateListeners(html) {
 		super.activateListeners(html);
 
-		if (this.document.isEmbedded) return;
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Item: ${this.id}`);
 	};

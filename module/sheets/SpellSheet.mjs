@@ -17,7 +17,6 @@ export class SpellSheet extends GenericItemSheet {
 	activateListeners(html) {
 		super.activateListeners(html);
 
-		if (this.document.isEmbedded) return;
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Generic Item: ${this.id}`);
 	};
