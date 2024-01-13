@@ -1,5 +1,5 @@
 // Data Models
-import { AspectItemData } from "./models/AspectItemData.mjs";
+import { AspectItemData } from "./models/Item/Aspect.mjs";
 import { SpellItemData } from "./models/Item/Spell.mjs";
 import { PlayerData } from "./models/PlayerData.mjs";
 import { SyncData } from "./models/SyncData.mjs";

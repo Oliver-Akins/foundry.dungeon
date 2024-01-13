@@ -1,4 +1,4 @@
-export class AspectItemData extends foundry.abstract.DataModel {
+export class AspectItemData extends foundry.abstract.TypeDataModel {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		return {
