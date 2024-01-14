@@ -70,17 +70,23 @@ async function createCustomSpell() {
 	}]);
 };
 
+/** @this {Actor} */
+async function atAspectLimit() {
+	let limit = game.settings.get(`dotdungeon`, `aspectLimit`);
+	console.log(this.itemTypes.aspect.length, `>=`, limit, `-->`, this.itemTypes.aspect.length >= limit)
+	return this.itemTypes.aspect.length >= limit;
+};
+
 /**
  * @param {ItemHandler} item
  * @this {Actor}
  */
 async function preAspectEmbed(item) {
-	let limit = 1
-	if (this.itemTypes.aspect.length >= limit) {
+	if (await atAspectLimit.bind(this)()) {
 		ui.notifications.error(
 			game.i18n.format(
 				`dotdungeon.notification.error.aspect-limit-reached`,
-				{ limit }
+				{ limit: game.settings.get(`dotdungeon`, `aspectLimit`) }
 			),
 			{ console: false }
 		);
@@ -89,10 +95,11 @@ async function preAspectEmbed(item) {
 };
 
 export default {
-	genericEmbeddedDelete,
-	genericEmbeddedUpdate,
+	atAspectLimit,
 	createCustomItem,
 	createCustomAspect,
 	createCustomSpell,
+	genericEmbeddedDelete,
+	genericEmbeddedUpdate,
 	preAspectEmbed,
 };

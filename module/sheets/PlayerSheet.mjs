@@ -1,6 +1,10 @@
+import { ActorHandler } from "../documents/Actor/Handler.mjs";
 import { GenericActorSheet } from "./GenericActorSheet.mjs";
 
 export class PlayerSheet extends GenericActorSheet {
+
+	/** @override {ActorHandler} actor */
+
 	static get defaultOptions() {
 		let opts = mergeObject(
 			super.defaultOptions,
@@ -22,7 +26,8 @@ export class PlayerSheet extends GenericActorSheet {
 
 	async getData() {
 		const ctx = await super.getData();
-		const actor = this.actor.toObject(false);
+		/** @type {ActorHandler} */
+		const actor = this.actor;
 
 		ctx.system = actor.system;
 		ctx.flags = actor.flags;
@@ -30,7 +35,7 @@ export class PlayerSheet extends GenericActorSheet {
 
 		ctx.computed = {
 			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
-			canAddAspect: ctx.items.aspect.length == 0,
+			canAddAspect: !await actor.proxyFunction.bind(actor)(`atAspectLimit`),
 		};
 
 		console.log(actor.uuid, `context:`, ctx)

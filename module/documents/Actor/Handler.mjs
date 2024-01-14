@@ -1,7 +1,7 @@
 import PlayerActor from "./Player.mjs";
 
 export class ActorHandler extends Actor {
-	actorTypes = {
+	proxyTargets = {
 		player: PlayerActor,
 	};
 
@@ -11,7 +11,12 @@ export class ActorHandler extends Actor {
 
 	/** @type {class|undefined} */
 	get fn() {
-		return this.actorTypes[this.type];
+		return this.proxyTargets[this.type];
+	};
+
+	async proxyFunction(funcName, ...args) {
+		if (!this.fn?.[funcName]) return;
+		return await this.fn?.[funcName].bind(this)(...args);
 	};
 
 	async openEmbeddedSheet($event) {

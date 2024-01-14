@@ -6,7 +6,7 @@ import AspectItem from "./Aspect.mjs";
 export class ItemHandler extends Item {
 	/** @override */
 
-	itemTypes = {
+	proxyTargets = {
 		aspect: AspectItem,
 	};
 
@@ -16,7 +16,12 @@ export class ItemHandler extends Item {
 
 	/** @type {class|undefined} */
 	get fn() {
-		return this.itemTypes[this.type];
+		return this.proxyTargets[this.type];
+	};
+
+	async proxyFunction(funcName, ...args) {
+		if (!this.fn?.[funcName]) return;
+		return await this.fn?.[funcName].bind(this)(...args);
 	};
 
 	async _preCreate(...args) {
