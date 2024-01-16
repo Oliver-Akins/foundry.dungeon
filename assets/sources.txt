@@ -18,6 +18,16 @@ Fritz Duggan:
 Landan Lloyd:
 	create.svg (https://thenounproject.com/icon/create-1447560/)
 
+Rokhman Kharis:
+	close.svg (https://thenounproject.com/icon/close-4996834/)
+
+Athok:
+	sheet.svg (https://thenounproject.com/icon/sheet-5939348/)
+
+Icon Depot:
+	edit.svg (https://thenounproject.com/icon/edit-1489252/)
+
 Oliver Akins:
 	chat-bubble.svg : Scaling
 	create.svg : Scaling, Optimization
+	sheet.svg : Scaling

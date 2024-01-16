@@ -31,6 +31,9 @@ export const icons = [
 	`dice/d12.svg`,
 	`dice/d20.svg`,
 	`create.svg`,
+	`close.svg`,
+	`edit.svg`,
+	`sheet.svg`,
 ];
 
 
