@@ -1,8 +1,8 @@
 // Data Models
 import { AspectItemData } from "./models/Item/Aspect.mjs";
 import { SpellItemData } from "./models/Item/Spell.mjs";
-import { PlayerData } from "./models/PlayerData.mjs";
-import { SyncData } from "./models/SyncData.mjs";
+import { PlayerData } from "./models/Actor/Player.mjs";
+import { SyncData } from "./models/Actor/Sync.mjs";
 
 // Main Documents
 import { ActorHandler } from "./documents/Actor/Handler.mjs";

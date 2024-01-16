@@ -1,4 +1,4 @@
-import { MappingField } from "./fields/MappingField.mjs";
+import { MappingField } from "../fields/MappingField.mjs";
 
 function diceChoiceField() {
 	return new foundry.data.fields.StringField({
