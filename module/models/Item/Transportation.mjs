@@ -8,10 +8,6 @@ export class TransportationItemData extends DescribedItemData {
 				initial: null,
 				nullable: true,
 			}),
-			purchase: new fields.NumberField({
-				initial: null,
-				nullable: true,
-			}),
 			upkeep: new fields.NumberField({
 				initial: null,
 				nullable: true,

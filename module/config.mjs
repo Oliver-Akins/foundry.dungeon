@@ -8,10 +8,10 @@ const ammoTypes = [`quivers`, `mags`, `cells`];
 
 const stats = [ `build`, `meta`, `presence`, `hands`, `tilt`, `rng` ];
 
-const buildSkills = [ "defense", "magic", "melee", "platforming", "strength", ];
-const metaSkills = [ "alchemy", "arcanum", "dreams", "lore", "navigation", ];
-const presenceSkills = [ "animal_handling", "perception", "sneak", "speech", "vibes", ];
-const handsSkills = [ "accuracy", "crafting", "engineering", "explosives", "piloting", ];
+const buildSkills = [ `defense`, `magic`, `melee`, `platforming`, `strength`, ];
+const metaSkills = [ `alchemy`, `arcanum`, `dreams`, `lore`, `navigation`, ];
+const presenceSkills = [ `animal_handling`, `perception`, `sneak`, `speech`, `vibes`, ];
+const handsSkills = [ `accuracy`, `crafting`, `engineering`, `explosives`, `piloting`, ];
 
 const allSkills = [
 	...buildSkills,
@@ -27,6 +27,11 @@ const skills = {
 	hands: handsSkills,
 };
 
+const itemTiers = [
+	`simple`, `greater`,
+	`rare`, `legendary`
+];
+
 export default {
 	stats,
 	statDice,
@@ -39,4 +44,5 @@ export default {
 	handsSkills,
 	allSkills,
 	skills,
+	itemTiers,
 };

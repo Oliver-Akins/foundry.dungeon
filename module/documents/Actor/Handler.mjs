@@ -1,5 +1,6 @@
 import PlayerActor from "./Player.mjs";
 
+/** @extends {Actor} */
 export class ActorHandler extends Actor {
 	proxyTargets = {
 		player: PlayerActor,

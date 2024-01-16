@@ -1,13 +1,11 @@
 import AspectItem from "./Aspect.mjs";
+import SpellItem from "./Spell.mjs";
 
-/**
- * @extends {Item}
- */
+/** @extends {Item} */
 export class ItemHandler extends Item {
-	/** @override */
-
 	proxyTargets = {
 		aspect: AspectItem,
+		spell: SpellItem
 	};
 
 	constructor(data, ctx) {
@@ -17,6 +15,11 @@ export class ItemHandler extends Item {
 	/** @type {class|undefined} */
 	get fn() {
 		return this.proxyTargets[this.type];
+	};
+
+	async migrateSystemData() {
+		if (!this.fn?.migrateSystemData) return;
+		this.fn?.migrateSystemData.bind(this)();
 	};
 
 	async proxyFunction(funcName, ...args) {
