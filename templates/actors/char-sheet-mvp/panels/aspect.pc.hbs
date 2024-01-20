@@ -33,7 +33,17 @@
 					class="confirm"
 					data-embedded-edit="{{aspect.uuid}}"
 				>
-					Edit
+					{{localize "dotdungeon.actor.pc.aspect.edit"}}
+				</button>
+				<button
+					class="danger equal-padding"
+					aria-label="{{localize "dotdungeon.actor.pc.aspect.aria.delete"}}"
+					data-embedded-delete
+					data-embedded-id="{{aspect.uuid}}"
+				>
+					<div aria-hidden="true" class="icon icon--20">
+						{{{ ../icons.garbage-bin }}}
+					</div>
 				</button>
 			</div>
 		</div>

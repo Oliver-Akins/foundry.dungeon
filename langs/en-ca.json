@@ -136,7 +136,11 @@
 					"used": "Used",
 					"duration": "Duration: {duration}",
 					"empty": "You don't have an Aspect yet, add one using the button below or drag one onto your character sheet.",
-					"add": "Add An Aspect"
+					"add": "Add An Aspect",
+					"edit": "Edit",
+					"aria": {
+						"delete": "Delete aspect"
+					}
 				},
 				"respawns.header": "Respawns",
 				"sync.header": "Sync",
@@ -244,6 +248,12 @@
 				"delete": {
 					"title": "Confirm Spell Deletion",
 					"content": "Are you sure you would like to delete the spell: {name}<br /><br />This action cannot be undone."
+				}
+			},
+			"aspect": {
+				"delete": {
+					"title": "Confirm Aspect Deletion",
+					"content": "Are you sure you would like to delete the aspect: {name}<br /><br />This action cannot be undone."
 				}
 			}
 		},
