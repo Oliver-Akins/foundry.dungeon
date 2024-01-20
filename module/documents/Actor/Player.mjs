@@ -1,14 +1,6 @@
 import { ItemHandler } from "../Item/Handler.mjs";
 
 /** @this {Actor} */
-async function genericEmbeddedUpdate($event) {
-	let data = $event.delegateTarget.dataset;
-	let item = await fromUuid(data.embeddedId);
-	item?.update({ [data.embeddedUpdate]: $event.target.value });
-	this.sheet.render();
-};
-
-/** @this {Actor} */
 async function genericEmbeddedDelete($event) {
 	let data = $event.currentTarget.dataset;
 	let item = await fromUuid(data.embeddedId);
@@ -73,7 +65,6 @@ async function createCustomSpell() {
 /** @this {Actor} */
 async function atAspectLimit() {
 	let limit = game.settings.get(`dotdungeon`, `aspectLimit`);
-	console.log(this.itemTypes.aspect.length, `>=`, limit, `-->`, this.itemTypes.aspect.length >= limit)
 	return this.itemTypes.aspect.length >= limit;
 };
 
@@ -100,6 +91,5 @@ export default {
 	createCustomAspect,
 	createCustomSpell,
 	genericEmbeddedDelete,
-	genericEmbeddedUpdate,
 	preAspectEmbed,
 };

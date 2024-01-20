@@ -31,8 +31,19 @@ export class ActorHandler extends Actor {
 	};
 
 	async genericEmbeddedUpdate($event) {
-		if (!this.fn?.genericEmbeddedUpdate) return;
-		this.fn.genericEmbeddedUpdate.bind(this)($event);
+		if (this.fn?.genericEmbeddedUpdate) {
+			return this.fn.genericEmbeddedUpdate.bind(this)($event);
+		};
+		const target = $event.delegateTarget;
+		const data = target.dataset;
+		const item = await fromUuid(data.embeddedId);
+
+		let value = target.value;
+		switch (target.type) {
+			case "checkbox": value = target.checked; break;
+		};
+
+		await item?.update({ [data.embeddedUpdate]: value });
 	};
 
 	async genericEmbeddedDelete($event) {
