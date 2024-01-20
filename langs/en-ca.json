@@ -97,8 +97,8 @@
 					"weapons": "Weapons",
 					"roles": "Roles",
 					"spells": "Spells",
-					"mounts": "Mounts",
-					"summons": "Summons",
+					"mounts": "Transportation",
+					"summons": "Pets",
 					"storage": "Storage"
 				},
 				"stat": {
