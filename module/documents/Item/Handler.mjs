@@ -1,13 +1,11 @@
 import AspectItem from "./Aspect.mjs";
 import SpellItem from "./Spell.mjs";
-import StructureItem from "./Structure.mjs";
 
 /** @extends {Item} */
 export class ItemHandler extends Item {
 	proxyTargets = {
 		aspect: AspectItem,
 		spell: SpellItem,
-		structure: StructureItem,
 	};
 
 	constructor(data, ctx) {
