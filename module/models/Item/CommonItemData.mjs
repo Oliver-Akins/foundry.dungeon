@@ -1,4 +1,4 @@
-import { itemTiers } from "../../config.mjs";
+import DOTDUNGEON from "../../config.mjs";
 
 export class CommonItemData extends foundry.abstract.TypeDataModel {
 	static defineSchema() {
@@ -15,7 +15,7 @@ export class CommonItemData extends foundry.abstract.TypeDataModel {
 			tier: new fields.StringField({
 				initial: `simple`,
 				nullable: false,
-				choices: itemTiers,
+				choices: DOTDUNGEON.itemTiers,
 			}),
 		};
 	};
