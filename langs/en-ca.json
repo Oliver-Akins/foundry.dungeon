@@ -200,6 +200,9 @@
 						"delete": "Delete spell",
 						"chat": "Send spell information to chat"
 					}
+				},
+				"summons": {
+					"upkeep": "(Upkeep: {upkeep})"
 				}
 			},
 			"sync": {

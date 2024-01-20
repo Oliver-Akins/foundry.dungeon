@@ -1,3 +1,49 @@
 {{#> dotdungeon.panel class="summons" title="dotdungeon.actor.pc.panel.summons"}}
-	Summons
+	{{#each items.pet as | pet |}}
+		<details {{dd-expanded ../meta.expanded pet.uuid}}>
+			<summary data-collapse-id="{{pet.uuid}}">
+				{{ pet.name }}
+				{{#if (defined pet.system.upkeep)}}
+					<span>
+						{{localize "dotdungeon.actor.summons.upkeep" upkeep=(pet.system.upkeep)}}
+					</span>
+				{{/if}}
+			</summary>
+
+			<div class="summon">
+				{{#if pet.system.description}}
+					<p class="summon_description">
+						{{pet.system.description}}
+					</p>
+				{{/if}}
+				<div class="actions">
+					<button
+						class="confirm equal-padding"
+						data-embedded-edit="{{pet.uuid}}"
+					>
+						Edit
+					</button>
+					<button
+						class="neutral equal-padding"
+						data-embedded-chat
+						data-embedded-id="{{pet.uuid}}"
+					>
+						<div aria-hidden="true" class="icon icon--20">
+							{{{ ../icons.chat-bubble }}}
+						</div>
+					</button>
+					<button
+						class="danger equal-padding"
+						aria-label="{{localize "dotdungeon.actor.pc.summons.aria.delete"}}"
+						data-embedded-delete
+						data-embedded-id="{{pet.uuid}}"
+					>
+						<div aria-hidden="true" class="icon icon--20">
+							{{{ ../icons.garbage-bin }}}
+						</div>
+					</button>
+				</div>
+			</div>
+		</details>
+	{{/each}}
 {{/ dotdungeon.panel}}
