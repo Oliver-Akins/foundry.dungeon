@@ -74,7 +74,7 @@
 			},
 			"aspectLimit": {
 				"name": "Character Aspect Limit",
-				"description": "Limit how many Aspects a single character can have. The Server is able to bypass this restriction."
+				"description": "Limit how many Aspects a single character can have."
 			}
 		},
 		"sheet-names": {
