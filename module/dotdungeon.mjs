@@ -79,7 +79,7 @@ Hooks.once(`ready`, () => {
 	console.debug(".dungeon | Ready");
 
 	let defaultTab = game.settings.get(`dotdungeon`, `defaultTab`);
-	if (defaultTab ) {
+	if (defaultTab) {
 		if (!ui.sidebar?.tabs?.[defaultTab]) {
 			console.error(`Couldn't find a sidebar tab with ID:`, defaultTab);
 		} else {
