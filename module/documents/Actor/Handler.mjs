@@ -57,6 +57,25 @@ export class ActorHandler extends Actor {
 		this.fn?.[`createCustom${data.embeddedCreate}`].bind(this)($event);
 	};
 
+	async genericSendToChat($event) {
+		const data = $event.currentTarget.dataset;
+		const type = data.messageType;
+		console.log(data)
+		if (this.fn?.[`send${type}ToChat`]) {
+			return await this.fn?.[`send${type}ToChat`].bind(this)($event);
+		};
+		if (!data.messageContent) {
+			console.warn(`.dungeon | Tried to send a chat message with no content`);
+			return;
+		};
+		let message = await ChatMessage.create({
+			content: data.messageContent,
+			flavor: data.messageFlavor,
+			speaker: { actor: this.actor }
+		});
+		message.render();
+	};
+
 	/**
 	 * @param {ItemHandler} item
 	 * @returns {boolean} true to allow the document to be embedded

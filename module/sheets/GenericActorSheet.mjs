@@ -49,6 +49,8 @@ export class GenericActorSheet extends ActorSheet {
 			.on(`click`, this.actor.genericEmbeddedDelete.bind(this.actor));
 		html.find(`[data-embedded-create]`)
 			.on(`click`, this.actor.genericEmbeddedCreate.bind(this.actor));
+		html.find(`[data-message-type]`)
+			.on(`click`, this.actor.genericSendToChat.bind(this.actor));
 		html.find(`[data-embedded-edit]`)
 			.on(`click`, this.actor.openEmbeddedSheet.bind(this.actor));
 	};

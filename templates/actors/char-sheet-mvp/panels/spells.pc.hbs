@@ -40,7 +40,9 @@
 					<button
 						class="neutral equal-padding"
 						aria-label="{{localize "dotdungeon.actor.pc.spells.aria.chat"}}"
-						data-embedded-chat
+						data-message-type="Spell"
+						data-message-flavor="{{spell.name}} {{localize "dotdungeon.actor.pc.spells.title.cost" cost=spell.system.usage_cost}}"
+						data-message-content="{{spell.system.description}}"
 						data-embedded-id="{{spell.uuid}}"
 					>
 						<div aria-hidden="true" class="icon icon--20">
