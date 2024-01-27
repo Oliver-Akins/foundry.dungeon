@@ -1,0 +1,47 @@
+<form autocomplete="off" class="item--pet">
+	<h2>
+		<input
+			type="text"
+			placeholder="{{localize "dotdungeon.item.pet.name.placeholder"}}"
+			name="name"
+			value="{{item.name}}"
+			aria-label="{{localize "dotdungeon.item.pet.aria.name"}}"
+		>
+	</h2>
+	<label>
+		{{localize "dotdungeon.item.pet.cost.label"}}
+		<input
+			type="number"
+			name="system.buy"
+			value="{{system.buy}}"
+			aria-label="{{localize "dotdungeon.item.pet.aria.cost"}}"
+		>
+	</label>
+	<label>
+		{{localize "dotdungeon.item.pet.upkeep.label"}}
+		<input
+			type="number"
+			name="system.upkeep"
+			value="{{system.upkeep}}"
+			aria-label="{{localize "dotdungeon.item.pet.aria.upkeep"}}"
+		>
+	</label>
+	<label>
+		{{localize "dotdungeon.item.pet.description"}}
+		<textarea
+			name="system.description"
+			aria-description="{{localize "dotdungeon.aria.pet-description"}}"
+		>{{system.description}}</textarea>
+	</label>
+	{{#if item.isEmbedded}}
+		<input
+			type="checkbox"
+			id="{{meta.idp}}-pokeballd"
+			name="system.pokeballd"
+			{{checked system.pokeballd}}
+		>
+		<label for="{{meta.idp}}-pokeballd">
+			{{localize "dotdungeon.item.pet.pokeballd"}}
+		</label>
+	{{/if}}
+</form>

@@ -11,8 +11,8 @@
 		"spells weapons aspect"
 		"backpack roles mounts"
 		"backpack roles mounts"
-		"summons storage storage"
-		"summons storage storage";
+		"pets storage storage"
+		"pets storage storage";
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	grid-template-rows:
 		min-content
@@ -226,8 +226,18 @@
 		&--mounts {
 			grid-area: mounts;
 		}
-		&--summons {
-			grid-area: summons;
+		&--pets {
+			grid-area: pets;
+
+			.panel__content {
+				display: grid;
+				grid-template-rows: min-content min-content;
+				gap: 4px;
+
+				textarea {
+					resize: vertical;
+				}
+			}
 		}
 		&--storage {
 			grid-area: storage;
@@ -266,8 +276,8 @@
 				"backpack roles"
 				"backpack roles"
 				"backpack spells"
-				"summons spells"
-				"summons storage"
+				"pets spells"
+				"pets storage"
 				"mounts storage"
 				"mounts storage";
 
@@ -305,7 +315,7 @@
 				"weapons"
 				"spells"
 				"mounts"
-				"summons"
+				"pets"
 				"storage";
 
 			.panel {

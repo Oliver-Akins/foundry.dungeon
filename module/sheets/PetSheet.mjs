@@ -1,11 +1,11 @@
 import { GenericItemSheet } from "./GenericItemSheet.mjs";
 
-export class SpellSheet extends GenericItemSheet {
+export class PetSheet extends GenericItemSheet {
 	static get defaultOptions() {
 		let opts = mergeObject(
 			super.defaultOptions,
 			{
-				template: `systems/dotdungeon/templates/items/spell.hbs`,
+				template: `systems/dotdungeon/templates/items/pet.hbs`,
 				width: 280,
 				height: 340,
 			}
@@ -18,7 +18,7 @@ export class SpellSheet extends GenericItemSheet {
 		super.activateListeners(html);
 
 		if (!this.isEditable) return;
-		console.debug(`.dungeon | Adding event listeners for Spell Item: ${this.id}`);
+		console.debug(`.dungeon | Adding event listeners for Pet Item: ${this.id}`);
 	};
 
 	async getData() {

@@ -15,7 +15,7 @@ export const partials = [
 	`actors/char-sheet-mvp/panels/roles.pc.hbs`,
 	`actors/char-sheet-mvp/panels/spells.pc.hbs`,
 	`actors/char-sheet-mvp/panels/storage.pc.hbs`,
-	`actors/char-sheet-mvp/panels/summons.pc.hbs`,
+	`actors/char-sheet-mvp/panels/pets.pc.hbs`,
 	`actors/char-sheet-mvp/panels/sync.pc.hbs`,
 	`actors/char-sheet-mvp/panels/weapons.pc.hbs`,
 ];

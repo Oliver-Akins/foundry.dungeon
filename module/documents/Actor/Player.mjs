@@ -63,6 +63,26 @@ async function createCustomSpell() {
 };
 
 /** @this {Actor} */
+async function createCustomPet() {
+	const body = new URLSearchParams({
+		number: 1,
+		animal: `Cat`,
+		"X-Requested-With": "fetch"
+	})
+	const r = await fetch(
+		`https://randommer.io/pet-names`,
+		{
+			method: "POST",
+			body
+		}
+	);
+	await createCustomItem.bind(this)([{
+		type: `pet`,
+		name: (await r.json())[0] ?? game.i18n.localize(`dotdungeon.defaults.pet.name`),
+	}]);
+};
+
+/** @this {Actor} */
 async function atAspectLimit() {
 	let limit = game.settings.get(`dotdungeon`, `aspectLimit`);
 	return this.itemTypes.aspect.length >= limit;
@@ -90,6 +110,7 @@ export default {
 	createCustomItem,
 	createCustomAspect,
 	createCustomSpell,
+	createCustomPet,
 	genericEmbeddedDelete,
 	preAspectEmbed,
 };

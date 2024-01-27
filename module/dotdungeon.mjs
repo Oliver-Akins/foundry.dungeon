@@ -2,6 +2,7 @@
 import { AspectItemData } from "./models/Item/Aspect.mjs";
 import { SpellItemData } from "./models/Item/Spell.mjs";
 import { PlayerData } from "./models/Actor/Player.mjs";
+import { PetItemData } from "./models/Item/Pet.mjs";
 import { SyncData } from "./models/Actor/Sync.mjs";
 
 // Main Documents
@@ -13,6 +14,7 @@ import { SpellSheet } from "./sheets/SpellSheet.mjs";
 import { AspectSheet } from "./sheets/AspectSheet.mjs";
 import { PlayerSheet } from "./sheets/PlayerSheet.mjs";
 import { BasicSyncSheet } from "./sheets/SyncVariations/BasicSyncSheet.mjs";
+import { PetSheet } from "./sheets/PetSheet.mjs";
 
 // Utility imports
 import * as hbs from "./handlebars.mjs";
@@ -34,6 +36,7 @@ Hooks.once(`init`, () => {
 	CONFIG.Actor.dataModels.sync = SyncData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
 	CONFIG.Item.dataModels.spell = SpellItemData;
+	CONFIG.Item.dataModels.pet = PetItemData;
 	CONFIG.Actor.documentClass = ActorHandler;
 	CONFIG.Item.documentClass = ItemHandler;
 
@@ -61,6 +64,11 @@ Hooks.once(`init`, () => {
 		types: ["spell"],
 		label: "dotdungeon.sheet-names.SpellSheet"
 	});
+	Items.registerSheet("dotdungeon", PetSheet, {
+		makeDefault: true,
+		types: ["pet"],
+		lable: "dotdungeon.sheet-names.PetSheet"
+	})
 
 	hbs.registerHandlebarsHelpers();
 	hbs.preloadHandlebarsTemplates();

@@ -1,18 +1,18 @@
-{{#> dotdungeon.panel class="summons" title="dotdungeon.actor.pc.panel.summons"}}
+{{#> dotdungeon.panel class="pets" title="dotdungeon.actor.pc.panel.pets"}}
 	{{#each items.pet as | pet |}}
 		<details {{dd-expanded ../meta.expanded pet.uuid}}>
 			<summary data-collapse-id="{{pet.uuid}}">
 				{{ pet.name }}
 				{{#if (defined pet.system.upkeep)}}
 					<span>
-						{{localize "dotdungeon.actor.summons.upkeep" upkeep=(pet.system.upkeep)}}
+						{{localize "dotdungeon.actor.pets.upkeep" upkeep=(pet.system.upkeep)}}
 					</span>
 				{{/if}}
 			</summary>
 
-			<div class="summon">
+			<div class="pet">
 				{{#if pet.system.description}}
-					<p class="summon_description">
+					<p class="pet_description">
 						{{pet.system.description}}
 					</p>
 				{{/if}}
@@ -23,6 +23,7 @@
 					>
 						Edit
 					</button>
+					<!--
 					<button
 						class="neutral equal-padding"
 						data-embedded-chat
@@ -32,9 +33,10 @@
 							{{{ ../icons.chat-bubble }}}
 						</div>
 					</button>
+					-->
 					<button
 						class="danger equal-padding"
-						aria-label="{{localize "dotdungeon.actor.pc.summons.aria.delete"}}"
+						aria-label="{{localize "dotdungeon.actor.pc.pets.aria.delete"}}"
 						data-embedded-delete
 						data-embedded-id="{{pet.uuid}}"
 					>
@@ -45,5 +47,20 @@
 				</div>
 			</div>
 		</details>
+	{{else}}
+		<p>
+			You have no pets, add one using the button below or drag one onto your sheet
+		</p>
 	{{/each}}
+	<button
+		class="confirm"
+		data-embedded-create="Pet"
+	>
+		<div aria-hidden="true" class="icon icon--20">
+			{{{ icons.create }}}
+		</div>
+		<span>
+			{{localize "dotdungeon.actor.pc.pets.add"}}
+		</span>
+	</button>
 {{/ dotdungeon.panel}}

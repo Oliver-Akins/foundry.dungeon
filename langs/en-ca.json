@@ -83,7 +83,8 @@
 				"basic": "Theme: Basic"
 			},
 			"AspectSheet": "Aspect Sheet",
-			"SpellSheet": "Spell Sheet"
+			"SpellSheet": "Spell Sheet",
+			"PetSheet": "Pet Sheet"
 		},
 		"actor": {
 			"pc": {
@@ -98,7 +99,7 @@
 					"roles": "Roles",
 					"spells": "Spells",
 					"mounts": "Transportation",
-					"summons": "Pets",
+					"pets": "Pets",
 					"storage": "Storage"
 				},
 				"stat": {
@@ -201,8 +202,9 @@
 						"chat": "Send spell information to chat"
 					}
 				},
-				"summons": {
-					"upkeep": "(Upkeep: {upkeep})"
+				"pets": {
+					"upkeep": "(Upkeep: {upkeep})",
+					"add": "Add a Pet"
 				}
 			},
 			"sync": {
@@ -232,6 +234,13 @@
 					"cost": "The amount of bytes it takes to cast the spell",
 					"description": "The details of the spell"
 				}
+			},
+			"pet": {
+				"cost.label": "Purchase Cost",
+				"name.placeholder": "Name...",
+				"pokeballd": "In Jar?",
+				"upkeep.label": "Pet Upkeep",
+				"description": "Description:"
 			}
 		},
 		"notification": {
@@ -257,6 +266,12 @@
 				"delete": {
 					"title": "Confirm Aspect Deletion",
 					"content": "Are you sure you would like to delete the aspect: {name}<br /><br />This action cannot be undone."
+				}
+			},
+			"pet": {
+				"delete": {
+					"title": "You want to kill your pet?!",
+					"content": "Are you sure you would like to kill the pet: {name}<br /><br />This action cannot be undone."
 				}
 			}
 		},
@@ -298,6 +313,9 @@
 			},
 			"aspect": {
 				"name": "(Unnamed Aspect)"
+			},
+			"pet": {
+				"name": "(Unnamed Pet)"
 			}
 		}
 	},
