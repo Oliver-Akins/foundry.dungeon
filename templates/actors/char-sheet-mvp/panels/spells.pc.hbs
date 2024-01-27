@@ -4,8 +4,8 @@
 			<summary data-collapse-id="{{spell.uuid}}">
 				<span class="flex-grow" style="flex-grow: 1">
 					{{spell.name}}
-					{{#if (defined spell.system.cost)}}
-						{{localize "dotdungeon.actor.pc.spells.title.cost" cost=spell.system.cost}}
+					{{#if (defined spell.system.usage_cost)}}
+						{{localize "dotdungeon.actor.pc.spells.title.cost" cost=spell.system.usage_cost}}
 					{{/if}}
 				</span>
 			</summary>
