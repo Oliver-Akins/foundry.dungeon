@@ -4,6 +4,7 @@ import { SpellItemData } from "./models/Item/Spell.mjs";
 import { PlayerData } from "./models/Actor/Player.mjs";
 import { PetItemData } from "./models/Item/Pet.mjs";
 import { SyncData } from "./models/Actor/Sync.mjs";
+import { MobData } from "./models/Actor/Mob.mjs";
 
 // Main Documents
 import { ActorHandler } from "./documents/Actor/Handler.mjs";
@@ -14,6 +15,7 @@ import { SpellSheet } from "./sheets/SpellSheet.mjs";
 import { AspectSheet } from "./sheets/AspectSheet.mjs";
 import { PlayerSheet } from "./sheets/PlayerSheet.mjs";
 import { BasicSyncSheet } from "./sheets/SyncVariations/BasicSyncSheet.mjs";
+import { MobSheet } from "./sheets/MobSheet.mjs";
 import { PetSheet } from "./sheets/PetSheet.mjs";
 
 // Utility imports
@@ -34,6 +36,7 @@ Hooks.once(`init`, () => {
 
 	CONFIG.Actor.dataModels.player = PlayerData;
 	CONFIG.Actor.dataModels.sync = SyncData;
+	CONFIG.Actor.dataModels.mob = MobData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
 	CONFIG.Item.dataModels.spell = SpellItemData;
 	CONFIG.Item.dataModels.pet = PetItemData;
@@ -47,6 +50,11 @@ Hooks.once(`init`, () => {
 		makeDefault: true,
 		types: ["player"],
 		label: "dotdungeon.sheet-names.PlayerSheet"
+	});
+	Actors.registerSheet("dotdungeon", MobSheet, {
+		makeDefault: true,
+		types: ["mob"],
+		label: "dotdungeon.sheet-names.MobSheet"
 	});
 	Actors.registerSheet("dotdungeon", BasicSyncSheet, {
 		makeDefault: true,

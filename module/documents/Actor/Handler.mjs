@@ -1,9 +1,11 @@
 import PlayerActor from "./Player.mjs";
+import MobActor from "./Mob.mjs";
 
 /** @extends {Actor} */
 export class ActorHandler extends Actor {
 	proxyTargets = {
 		player: PlayerActor,
+		mob: MobActor,
 	};
 
 	constructor(data, ctx) {
