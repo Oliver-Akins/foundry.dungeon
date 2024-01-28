@@ -42,7 +42,7 @@ Hooks.once(`init`, () => {
 
 	CONFIG.DOTDUNGEON = DOTDUNGEON;
 
-	Actors.unregisterSheet("core", ActorSheet);
+	// Actors.unregisterSheet("core", ActorSheet);
 	Actors.registerSheet("dotdungeon", PlayerSheet, {
 		makeDefault: true,
 		types: ["player"],
