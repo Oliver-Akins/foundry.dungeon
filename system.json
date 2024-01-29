@@ -15,8 +15,8 @@
 		}
 	],
 	"url": "https://github.com/Oliver-Akins/foundry.dungeon",
-	"manifest": "https://raw.githubusercontent.com/Oliver-Akins/foundry.dungeon/main/system.json",
-	"download": "https://github.com/Oliver-Akins/foundry.dungeon/releases/download/untagged-fb28066f8c666cb29371/dotdungeon-v0.0.1.zip",
+	"manifest": "https://github.com/Oliver-Akins/foundry.dungeon/releases/latest/download/system.json",
+	"download": "https://github.com/Oliver-Akins/foundry.dungeon/releases/latest/download/dotdungeon.zip",
 	"esmodules": [
 		"module/dotdungeon.mjs"
 	],
