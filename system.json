@@ -3,6 +3,9 @@
 	"title": ".dungeon",
 	"description": "",
 	"version": "0.0.1",
+	"download": "https://github.com/Oliver-Akins/foundry.dungeon/releases/download/v0.0.1/dotdungeon.zip",
+	"manifest": "https://github.com/Oliver-Akins/foundry.dungeon/releases/latest/download/system.json",
+	"url": "https://github.com/Oliver-Akins/foundry.dungeon",
 	"compatibility": {
 		"minimum": 11,
 		"verified": 11,
@@ -14,9 +17,6 @@
 			"url": "https://oliver.akins.me"
 		}
 	],
-	"url": "https://github.com/Oliver-Akins/foundry.dungeon",
-	"manifest": "https://github.com/Oliver-Akins/foundry.dungeon/releases/latest/download/system.json",
-	"download": "https://github.com/Oliver-Akins/foundry.dungeon/releases/latest/download/dotdungeon.zip",
 	"esmodules": [
 		"module/dotdungeon.mjs"
 	],
