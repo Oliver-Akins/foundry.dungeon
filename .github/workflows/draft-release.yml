@@ -36,9 +36,6 @@ jobs:
       # Compile the stuff that needs to be compiled
       - run: npm run build
 
-      - name: Create the zip
-        run: zip -r ${{ vars.zip_name || 'release' }}.zip ${{ vars.files_to_release }}
-
       - name: Move system.json to a temp file
         id: manifest-move
         run: mv system.json system.temp.json
@@ -46,6 +43,9 @@ jobs:
       - name: Update the download property in the manifest
         id: manifest-update
         run: cat system.temp.json | jq -r --tab '.download = "https://github.com/${{ github.repository }}/releases/download/v${{ steps.version.outputs.version }}/${{ vars.zip_name }}.zip"' > system.json
+
+      - name: Create the zip
+        run: zip -r ${{ vars.zip_name || 'release' }}.zip ${{ vars.files_to_release }}
 
       - name: Create the draft release
         uses: ncipollo/release-action@v1
