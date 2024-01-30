@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "css": "sass --watch --embed-source-map --no-error-css styles/:.styles/"
+    "css": "sass --watch --embed-source-map --no-error-css styles/:.styles/",
+    "build": "sass --embed-source-map --no-error-css styles/:.styles/"
   },
   "devDependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
