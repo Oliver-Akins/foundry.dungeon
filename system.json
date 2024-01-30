@@ -2,7 +2,7 @@
 	"id": "dotdungeon",
 	"title": ".dungeon",
 	"description": "",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"download": "https://github.com/Oliver-Akins/foundry.dungeon/releases/download/v0.0.1/dotdungeon.zip",
 	"manifest": "https://github.com/Oliver-Akins/foundry.dungeon/releases/latest/download/system.json",
 	"url": "https://github.com/Oliver-Akins/foundry.dungeon",
