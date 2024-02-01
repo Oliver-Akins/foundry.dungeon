@@ -29,7 +29,7 @@ import loadSettings from "./settings/index.mjs";
 import DOTDUNGEON from "./config.mjs";
 
 
-Hooks.once(`init`, () => {
+Hooks.once(`init`, async () => {
 	console.debug(`.dungeon | Initializing`);
 
 	loadSettings();
@@ -76,10 +76,14 @@ Hooks.once(`init`, () => {
 		makeDefault: true,
 		types: ["pet"],
 		lable: "dotdungeon.sheet-names.PetSheet"
-	})
+	});
+
 
 	hbs.registerHandlebarsHelpers();
 	hbs.preloadHandlebarsTemplates();
+
+	CONFIG.CACHE = {};
+	CONFIG.CACHE.icons = await hbs.preloadIcons();
 });
 
 

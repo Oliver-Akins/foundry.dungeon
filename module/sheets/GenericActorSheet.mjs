@@ -1,5 +1,4 @@
 import DOTDUNGEON from "../config.mjs";
-import { preloadIcons } from "../handlebars.mjs";
 
 export class GenericActorSheet extends ActorSheet {
 	_expanded = new Set();
@@ -29,7 +28,7 @@ export class GenericActorSheet extends ActorSheet {
 
 		ctx.actor = this.actor;
 		ctx.config = DOTDUNGEON;
-		ctx.icons = await preloadIcons();
+		ctx.icons = CONFIG.CACHE.icons;
 
 		return ctx;
 	};

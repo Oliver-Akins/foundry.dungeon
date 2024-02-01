@@ -1,5 +1,4 @@
 import DOTDUNGEON from "../config.mjs";
-import { preloadIcons } from "../handlebars.mjs";
 
 export class GenericItemSheet extends ItemSheet {
 	_expanded = new Set();
@@ -35,7 +34,7 @@ export class GenericItemSheet extends ItemSheet {
 		};
 
 		ctx.config = DOTDUNGEON;
-		ctx.icons = await preloadIcons();
+		ctx.icons = CONFIG.CACHE.icons;
 
 		return ctx;
 	};

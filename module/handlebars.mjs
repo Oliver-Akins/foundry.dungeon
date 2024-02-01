@@ -78,7 +78,6 @@ export async function preloadHandlebarsTemplates() {
  *   displaying the icon
  */
 export async function preloadIcons() {
-	console.groupCollapsed(`.dungeon | Loading icons for handlebars`);
 	const pathPrefix = `systems/dotdungeon/assets/`
 	const parsedIcons = {};
 
@@ -90,21 +89,18 @@ export async function preloadIcons() {
 				if (response.status !== 200) { continue };
 				const svgData = await response.text();
 				parsedIcons[iconName] = svgData;
-				console.debug(`Loaded icon: ${icon}`);
 			} catch {
-				console.error(`Failed to fetch/parse icon: ${icon}`);
+				console.error(`.dungeon | Failed to fetch/parse icon: ${icon}`);
 				continue;
 			};
 		}
 		else if (icon.endsWith(`.png`)) {
 			parsedIcons[iconName] = `<img alt="" src="${pathPrefix}${icon}">`;
-			console.debug(`Loaded icon: ${icon}`);
 		}
 		else {
-			console.warn(`Icon "${icon}" failed to be handled by a loader`)
+			console.warn(`.dungeon | Icon "${icon}" failed to be handled by a loader`)
 		};
 	};
 
-	console.groupEnd();
 	return parsedIcons;
 };
