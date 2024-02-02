@@ -1,77 +1,79 @@
 <form autocomplete="off" class="actor--mob">
-	<h2><input type="text" name="name" value="{{actor.name}}"></h2>
-	<table>
-		<tr>
-			<td><label for="{{meta.idp}}-dice">Dice</label></td>
-			<td>
-				<input
-					type="text"
-					id="{{meta.idp}}-dice"
-					name="system.dice"
-					value="{{system.dice}}"
-				>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="{{meta.idp}}-bonus">Bonus</label></td>
-			<td>
-				<input
-					type="number"
-					id="{{meta.idp}}-bonus"
-					name="system.bonus"
-					value="{{system.bonus}}"
-				>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="{{meta.idp}}-initiative">Initiative</label></td>
-			<td>
-				<input
-					type="number"
-					id="{{meta.idp}}-initiative"
-					name="system.initiative"
-					value="{{system.initiative}}"
-				>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="{{meta.idp}}-bytes">Bytes</label></td>
-			<td>
-				<input
-					type="number"
-					id="{{meta.idp}}-bytes"
-					name="system.bytes"
-					value="{{system.bytes}}"
-				>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="{{meta.idp}}-morale">Morale</label></td>
-			<td>
-				<input
-					type="number"
-					id="{{meta.idp}}-morale"
-					name="system.morale"
-					value="{{system.morale}}"
-				>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="{{meta.idp}}-drops">Drops</label></td>
-			<td>
-				<input
-					type="text"
-					id="{{meta.idp}}-drops"
-					name="system.drops"
-					value="{{system.drops}}"
-				>
-			</td>
-		</tr>
-	</table>
-	<label for="{{meta.idp}}-stunts">Stunts</label>
-	<textarea
+	<div class="avatar"></div>
+	<input
 		type="text"
-		id="{{meta.idp}}-stunts"
-		name="system.stunts"
-	>{{system.stunts}}</textarea>
+		class="name wide masked"
+		name="name"
+		value="{{actor.name}}"
+	>
+	<label class="initiative mask-input">
+		Initiative:
+		<input
+			type="number"
+			name="system.initiative"
+			value="{{system.initiative}}"
+		>
+	</label>
+	<label class="bytes mask-input">
+		Bytes:
+		<input
+			type="number"
+			name="system.bytes"
+			value="{{system.bytes}}"
+		>
+	</label>
+	<div class="dice">
+		Dice:
+		<button data-roll-formula="2d20" class="roll die reduced-padding neutral">
+			2d20x5
+		</button>
+		<button data-roll-formula="1d4" class="roll die reduced-padding neutral">
+			1d4
+		</button>
+		<button data-roll-formula="3d6" class="roll die reduced-padding neutral">
+			3d6
+		</button>
+		<div style="flex-grow: 1"></div>
+		<button class="confirm">Edit</button>
+	</div>
+	<label class="bonus mask-input">
+		Bonus:
+		<input
+			type="number"
+			name="system.bonus"
+			value="{{system.bonus}}"
+		>
+	</label>
+	<label class="morale mask-input">
+		Morale:
+		<input
+			type="number"
+			name="system.morale"
+			value="{{system.morale}}"
+		>
+	</label>
+	<label class="immune wide mask-input">
+		Immune:
+		<input
+			type="text"
+			class="left"
+			name="system.immune"
+			value="{{system.immune}}"
+		>
+	</label>
+	<label class="weak wide mask-input">
+		Weak:
+		<input
+			type="text"
+			class="left"
+			name="system.weak"
+			value="{{system.weak}}"
+		>
+	</label>
+	<label class="stunts">
+		Stunts:
+		<textarea
+			name="system.stunts"
+		>{{system.stunts}}</textarea>
+	</label>
 </form>

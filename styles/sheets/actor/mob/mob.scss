@@ -1,0 +1,119 @@
+@use "../../../vars" as *;
+@use "avatar" as *;
+
+.dotdungeon .actor--mob {
+	--gap: 8px;
+	--avatar-size: 80px;
+	--row-height: calc((var(--avatar-size) - var(--gap)) / 2);
+	padding: var(--gap);
+	display: grid;
+	grid-template-columns: var(--avatar-size) 1fr 1fr;
+	grid-template-rows: repeat(6, var(--row-height)) minmax(var(--row-height), 1fr);
+	gap: var(--gap);
+	grid-template-areas:
+		"avatar . ."
+		"avatar . ."
+		"dice . ."
+		"dice . ."
+		"dice . ."
+		"dice stunts stunts"
+		"dice stunts stunts";
+
+	label, .dice {
+		border: 2px solid black;
+		border-radius: 4px;
+		gap: 4px;
+		padding: 4px;
+	}
+
+	input.masked {
+		border: 2px solid black;
+		background: none;
+		box-shadow: none;
+		&:focus {
+			transform: scale(102%);
+		}
+	}
+
+	label.mask-input {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		transition: all ease-in-out 50ms;
+
+		&:focus-within {
+			transform: scale(102%);
+		}
+
+		input {
+			text-align: right;
+			border: none;
+			background: none;
+			&:focus, &:focus-visible {
+				box-shadow: none;
+			}
+		}
+
+		input.left {
+			text-align: left;
+		}
+	}
+
+	.wide {
+		grid-column: span 2;
+	}
+
+
+// Area-specific stylings
+
+	.name {
+		height: 100%;
+		font-size: 1.5rem;
+		input {
+			height: 100%;
+		}
+	}
+
+	.dice {
+		grid-area: dice;
+		display: flex;
+		flex-direction: column;
+
+		.die {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			border: 2px solid black;
+			border-radius: 4px;
+
+			.formula {
+				flex-grow: 1;
+				align-self: center;
+			}
+		}
+	}
+
+	.stunts {
+		grid-area: stunts;
+		display: flex;
+		flex-direction: column;
+		transition: all ease-in-out 50ms;
+
+		&:focus-within {
+			transform: scale(102%);
+		}
+
+		textarea {
+			flex-grow: 1;
+			resize: none;
+			border: none;
+			box-shadow: none;
+			background: none;
+		}
+	}
+
+	.avatar {
+		@include avatar;
+		border-radius: 4px;
+	}
+}
