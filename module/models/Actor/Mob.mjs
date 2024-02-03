@@ -34,6 +34,10 @@ export class MobData extends foundry.abstract.TypeDataModel {
 				initial: ``,
 				blank: true,
 			}),
+			bytes: new fields.NumberField({
+				initial: 0,
+				min: 0,
+			}),
 		};
 	};
 };
