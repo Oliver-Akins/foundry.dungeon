@@ -41,7 +41,7 @@ export class GenericActorSheet extends ActorSheet {
 		console.debug(`.dungeon | Generic sheet adding listeners`);
 
 		html.find(`summary`).on(`click`, this._handleSummaryToggle.bind(this));
-		html.find(`.roll`).on(`click`, this._handleRoll.bind(this));
+		html.find(`[data-roll-formula]`).on(`click`, this._handleRoll.bind(this));
 		html.find(`[data-embedded-update]`)
 			.on(`change`, this.actor.genericEmbeddedUpdate.bind(this.actor));
 		html.find(`[data-embedded-delete]`)
@@ -56,10 +56,6 @@ export class GenericActorSheet extends ActorSheet {
 
 	async _handleRoll($e) {
 		let data = $e.currentTarget.dataset;
-		if (!data.rollFormula) {
-			console.warn(`.dungeon | Element has .roll class with no roll formula`, $e.target);
-			return;
-		};
 		console.debug(`.dungeon | Attempting to roll with formula "${data.rollFormula}"`);
 
 		let flavor;
