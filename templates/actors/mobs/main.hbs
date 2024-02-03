@@ -27,8 +27,8 @@
 		<input
 			type="text"
 			class="left"
-			name="system.immune"
-			value="{{system.immune}}"
+			name="system.drops"
+			value="{{system.drops}}"
 		>
 	</label>
 	<label class="bonus mask-input">
@@ -67,17 +67,20 @@
 	</label>
 	<div class="dice">
 		Dice:
-		<button data-roll-formula="2d20" class="roll die reduced-padding neutral">
-			2d20x5
-		</button>
-		<button data-roll-formula="1d4" class="roll die reduced-padding neutral">
-			1d4
-		</button>
-		<button data-roll-formula="3d6" class="roll die reduced-padding neutral">
-			3d6
-		</button>
+		{{#each system.dice as | die |}}
+			<button
+				type="button"
+				class="neutral reduced-padding"
+				data-roll-formula="{{die.count}}d{{die.sides}}"
+			>
+				{{die.count}}d{{die.sides}}
+				{{#if (gt die.repeat 1)}}
+					x {{die.repeat}}
+				{{/if}}
+			</button>
+		{{/each}}
 		<div style="flex-grow: 1"></div>
-		<button class="confirm">Edit</button>
+		<button class="confirm edit-dice">Edit</button>
 	</div>
 	<label class="description mask-textarea">
 		Description:

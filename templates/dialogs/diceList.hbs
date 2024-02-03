@@ -1,37 +1,68 @@
 <form class="dialog--dice-list">
-	{{#each dice as | die |}}
-		<div class="die" data-die-id="{{die.id}}">
-			{{dd-stringify die}}
-			<label>
+	<div class="dice">
+		{{#each dice as | die |}}
+			<div class="die">
 				<input
 					type="number"
-					name="die.count"
+					id="Die.{{die.id}}-count"
+					class="count"
+					name="{{die.id}}.count"
+					value="{{die.count}}"
+					aria-label="The number of dice to roll at the same time"
 				>
-			</label>
-			<label>
+				<span class="large" aria-hidden="true">d</span>
 				<input
 					type="number"
-					name="die.sides"
+					id="Die.{{die.id}}-sides"
+					class="sides"
+					name="{{die.id}}.sides"
+					value="{{die.sides}}"
+					aria-label="The number of sides that are on the dice"
 				>
-			</label>
-			<label>
+				<span class="large" aria-hidden="true">x</span>
 				<input
 					type="number"
-					name="die.repeat"
+					id="Die.{{die.id}}-repeat"
+					class="repeat"
+					name="{{die.id}}.repeat"
+					value="{{die.repeat}}"
+					aria-label="The number of times to repeat this dice "
 				>
-			</label>
-		</div>
-	{{/each}}
-	<button type="button" data-action="addDie">
-		Add Die
-	</button>
-	{{#if settings.devMode}}
-		<div class="debug-data">
-			Dice:
-			{{dd-stringify dice}}
-			<hr>
-			Settings:
-			{{dd-stringify settings}}
-		</div>
-	{{/if}}
+				<button
+					type="button"
+					class="danger"
+					data-id="{{die.id}}"
+					data-action="deleteDie"
+					aria-label=""
+				>
+					<div aria-hidden="true" class="icon icon--26">
+						{{{ ../icons.garbage-bin }}}
+					</div>
+				</button>
+			</div>
+		{{/each}}
+	</div>
+	<div class="actions">
+		<button
+			type="button"
+			class="neutral"
+			data-action="addDie"
+		>
+			Add Die
+		</button>
+	</div>
+	<div class="actions">
+		<button
+			class="confirm"
+		>
+			Save and Close
+		</button>
+		<button
+			type="button"
+			class="danger"
+			data-action="closeNoSave"
+		>
+			Close
+		</button>
+	</div>
 </form>

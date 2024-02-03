@@ -42,4 +42,8 @@ export class GenericDialog extends FormApplication {
 		if (!this[data.action]) return;
 		this[data.action].bind(this)($e);
 	};
+
+	closeNoSave() {
+		this.close({ submit: false, });
+	};
 };

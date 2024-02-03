@@ -1,3 +1,54 @@
-.dotdungeon.dialog--dice-list {
-	padding: 4px;
+.dotdungeon:has(.dialog--dice-list) {
+	max-width: 275px;
+	min-width: 275px;
+}
+
+.dotdungeon .dialog--dice-list {
+	padding: 8px;
+
+	.dice {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.die {
+		align-items: center;
+		border: 2px solid;
+		border-radius: 4px;
+		display: grid;
+		gap: 4px;
+		grid-template-rows: 40px;
+		grid-template-columns: 1fr 15px 1fr 15px 1fr 15px 1fr;
+		padding: 4px;
+		text-align: center;
+
+		label {
+			font-size: 0.8125rem;
+		}
+
+		.large { font-size: 1.2rem; }
+
+		.count { grid-column: 1; }
+		.sides { grid-column: 3; }
+		.repeat { grid-column: 5; }
+
+		button { grid-column: 7; }
+
+		input {
+			height: 100%;
+			font-size: 1.1rem;
+		}
+	}
+
+	.actions {
+		margin-top: 8px;
+		display: flex;
+		flex-direction: row;
+		gap: 4px;
+
+		button {
+			flex-grow: 1;
+		}
+	}
 }

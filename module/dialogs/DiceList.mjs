@@ -1,6 +1,7 @@
 import { GenericDialog } from "./GenericDialog.mjs";
 
 export class DiceList extends GenericDialog {
+
 	constructor(mobActor) {
 		super({}, { title: `${mobActor.name}'s Dice List` });
 		this.actor = mobActor;
@@ -14,22 +15,31 @@ export class DiceList extends GenericDialog {
 		const opts = mergeObject({
 			...super.defaultOptions,
 			template: `systems/dotdungeon/templates/dialogs/diceList.hbs`,
-			width: 400,
+			width: 275,
 			height: 400,
-			submitOnClose: true,
+			submitOnClose: false,
+			resizable: true,
 		});
-		opts.classes.push(`dotdungeon`);
+		opts.classes?.push(`dotdungeon`);
 		return opts;
 	};
 
 	async getData() {
 		const ctx = await super.getData();
 		ctx.dice = this.dice;
+		console.debug(`DiceList context`, ctx);
 		return ctx;
 	};
 
-	async _updateObject(event, formData) {
-		console.log(event, formData);
+	async _updateObject(_event, formData) {
+		const newDice = this.dice.map(d => {
+			return {
+				count: formData[`${d.id}.count`],
+				sides: formData[`${d.id}.sides`],
+				repeat: formData[`${d.id}.repeat`],
+			};
+		});
+		await this.actor.update({ "system.dice": newDice });
 	};
 
 	addDie() {
@@ -39,6 +49,12 @@ export class DiceList extends GenericDialog {
 			repeat: 1,
 			id: randomID(),
 		});
+		this.render();
+	};
+
+	deleteDie($e) {
+		const data = $e.currentTarget.dataset;
+		this.dice = this.dice.filter(d => d.id !== data.id);
 		this.render();
 	};
 };
