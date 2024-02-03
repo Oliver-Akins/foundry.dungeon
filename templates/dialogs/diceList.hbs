@@ -1,0 +1,37 @@
+<form class="dialog--dice-list">
+	{{#each dice as | die |}}
+		<div class="die" data-die-id="{{die.id}}">
+			{{dd-stringify die}}
+			<label>
+				<input
+					type="number"
+					name="die.count"
+				>
+			</label>
+			<label>
+				<input
+					type="number"
+					name="die.sides"
+				>
+			</label>
+			<label>
+				<input
+					type="number"
+					name="die.repeat"
+				>
+			</label>
+		</div>
+	{{/each}}
+	<button type="button" data-action="addDie">
+		Add Die
+	</button>
+	{{#if settings.devMode}}
+		<div class="debug-data">
+			Dice:
+			{{dd-stringify dice}}
+			<hr>
+			Settings:
+			{{dd-stringify settings}}
+		</div>
+	{{/if}}
+</form>

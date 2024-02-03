@@ -1,5 +1,6 @@
 import { ActorHandler } from "../documents/Actor/Handler.mjs";
 import { GenericActorSheet } from "./GenericActorSheet.mjs";
+import { DiceList } from "../dialogs/DiceList.mjs";
 
 export class MobSheet extends GenericActorSheet {
 	static get defaultOptions() {
@@ -21,6 +22,12 @@ export class MobSheet extends GenericActorSheet {
 		if (this.document.isEmbedded) return;
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Mob: ${this.id}`);
+
+		html.find(`.edit-dice`)
+			.on(`click`, async () => {
+				let d = new DiceList(this.actor);
+				d.render(true);
+			});
 	};
 
 	async getData() {

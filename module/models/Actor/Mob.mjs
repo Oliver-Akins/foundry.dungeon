@@ -2,10 +2,6 @@ export class MobData extends foundry.abstract.TypeDataModel {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		return {
-			dice: new fields.StringField({
-				initial: ``,
-				blank: true,
-			}),
 			bonus: new fields.NumberField({
 				initial: 0,
 				nullable: false,
@@ -42,6 +38,15 @@ export class MobData extends foundry.abstract.TypeDataModel {
 				initial: ``,
 				blank: true,
 			}),
+			dice: new fields.ArrayField(
+				new fields.SchemaField({
+					// {count}d{sides} x {repeat}
+					count: new fields.NumberField({ min: 1 }),
+					sides: new fields.NumberField({ min: 2 }),
+					repeat: new fields.NumberField({ min: 1 }),
+				}),
+				{ initial: [] }
+			),
 		};
 	};
 };
