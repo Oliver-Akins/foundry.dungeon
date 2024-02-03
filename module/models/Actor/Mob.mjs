@@ -38,6 +38,10 @@ export class MobData extends foundry.abstract.TypeDataModel {
 				initial: 0,
 				min: 0,
 			}),
+			description: new fields.StringField({
+				initial: ``,
+				blank: true,
+			}),
 		};
 	};
 };
