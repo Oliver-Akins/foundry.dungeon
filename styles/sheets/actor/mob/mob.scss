@@ -3,21 +3,20 @@
 
 .dotdungeon .actor--mob {
 	--gap: 8px;
-	--avatar-size: 80px;
+	--avatar-size: 100px;
 	--row-height: calc((var(--avatar-size) - var(--gap)) / 2);
 	padding: var(--gap);
 	display: grid;
-	grid-template-columns: var(--avatar-size) 1fr 1fr;
-	grid-template-rows: repeat(6, var(--row-height)) minmax(var(--row-height), 1fr);
+	grid-template-columns: var(--avatar-size) repeat(4, minmax(0, 1fr));
+	grid-template-rows: repeat(5, var(--row-height)) minmax(var(--row-height), 1fr);
 	gap: var(--gap);
 	grid-template-areas:
-		"avatar . ."
-		"avatar . ."
-		"dice . ."
-		"dice . ."
-		"dice . ."
-		"dice stunts stunts"
-		"dice stunts stunts";
+		"avatar . . . ."
+		"avatar . . . ."
+		"dice . . . ."
+		"dice description description stunts stunts"
+		"dice description description stunts stunts"
+		"dice description description stunts stunts";
 
 	label, .dice {
 		border: 2px solid black;
@@ -49,6 +48,8 @@
 			text-align: right;
 			border: none;
 			background: none;
+			border-radius: 0;
+			border-bottom: 1px solid black;
 			&:focus, &:focus-visible {
 				box-shadow: none;
 			}
@@ -61,6 +62,24 @@
 
 	.wide {
 		grid-column: span 2;
+	}
+
+	.mask-textarea {
+		display: flex;
+		flex-direction: column;
+		transition: all ease-in-out 50ms;
+
+		&:focus-within {
+			transform: scale(102%);
+		}
+
+		textarea {
+			flex-grow: 1;
+			resize: none;
+			border: none;
+			box-shadow: none;
+			background: none;
+		}
 	}
 
 
@@ -95,21 +114,9 @@
 
 	.stunts {
 		grid-area: stunts;
-		display: flex;
-		flex-direction: column;
-		transition: all ease-in-out 50ms;
-
-		&:focus-within {
-			transform: scale(102%);
-		}
-
-		textarea {
-			flex-grow: 1;
-			resize: none;
-			border: none;
-			box-shadow: none;
-			background: none;
-		}
+	}
+	.description {
+		grid-area: description;
 	}
 
 	.avatar {

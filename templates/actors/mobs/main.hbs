@@ -22,20 +22,15 @@
 			value="{{system.bytes}}"
 		>
 	</label>
-	<div class="dice">
-		Dice:
-		<button data-roll-formula="2d20" class="roll die reduced-padding neutral">
-			2d20x5
-		</button>
-		<button data-roll-formula="1d4" class="roll die reduced-padding neutral">
-			1d4
-		</button>
-		<button data-roll-formula="3d6" class="roll die reduced-padding neutral">
-			3d6
-		</button>
-		<div style="flex-grow: 1"></div>
-		<button class="confirm">Edit</button>
-	</div>
+	<label class="immune wide mask-input">
+		Drops:
+		<input
+			type="text"
+			class="left"
+			name="system.immune"
+			value="{{system.immune}}"
+		>
+	</label>
 	<label class="bonus mask-input">
 		Bonus:
 		<input
@@ -52,15 +47,6 @@
 			value="{{system.morale}}"
 		>
 	</label>
-	<label class="immune wide mask-input">
-		Immune:
-		<input
-			type="text"
-			class="left"
-			name="system.immune"
-			value="{{system.immune}}"
-		>
-	</label>
 	<label class="weak wide mask-input">
 		Weak:
 		<input
@@ -70,7 +56,36 @@
 			value="{{system.weak}}"
 		>
 	</label>
-	<label class="stunts">
+	<label class="immune wide mask-input">
+		Immune:
+		<input
+			type="text"
+			class="left"
+			name="system.immune"
+			value="{{system.immune}}"
+		>
+	</label>
+	<div class="dice">
+		Dice:
+		<button data-roll-formula="2d20" class="roll die reduced-padding neutral">
+			2d20x5
+		</button>
+		<button data-roll-formula="1d4" class="roll die reduced-padding neutral">
+			1d4
+		</button>
+		<button data-roll-formula="3d6" class="roll die reduced-padding neutral">
+			3d6
+		</button>
+		<div style="flex-grow: 1"></div>
+		<button class="confirm">Edit</button>
+	</div>
+	<label class="description mask-textarea">
+		Description:
+		<textarea
+			name="system.description"
+		>{{system.description}}</textarea>
+	</label>
+	<label class="stunts mask-textarea">
 		Stunts:
 		<textarea
 			name="system.stunts"

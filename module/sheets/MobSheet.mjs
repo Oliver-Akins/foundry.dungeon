@@ -7,8 +7,8 @@ export class MobSheet extends GenericActorSheet {
 			super.defaultOptions,
 			{
 				template: `systems/dotdungeon/templates/actors/mobs/main.hbs`,
-				width: 300,
-				height: 360,
+				width: 750,
+				height: 390,
 			}
 		);
 		opts.classes.push(`dotdungeon`);
@@ -33,6 +33,8 @@ export class MobSheet extends GenericActorSheet {
 		ctx.items = this.actor.itemTypes;
 
 		ctx.computed = {};
+
+		// Compute rolls here
 
 		console.log(actor.uuid, `context:`, ctx)
 		return ctx;
