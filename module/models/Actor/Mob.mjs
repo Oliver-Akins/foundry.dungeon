@@ -4,6 +4,7 @@ export class MobData extends foundry.abstract.TypeDataModel {
 		return {
 			dice: new fields.StringField({
 				initial: ``,
+				blank: true,
 			}),
 			bonus: new fields.NumberField({
 				initial: 0,
@@ -22,6 +23,14 @@ export class MobData extends foundry.abstract.TypeDataModel {
 				blank: true,
 			}),
 			stunts: new fields.StringField({
+				initial: ``,
+				blank: true,
+			}),
+			immune: new fields.StringField({
+				initial: ``,
+				blank: true,
+			}),
+			weak: new fields.StringField({
 				initial: ``,
 				blank: true,
 			}),
