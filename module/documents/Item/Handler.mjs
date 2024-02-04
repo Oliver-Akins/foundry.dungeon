@@ -17,11 +17,6 @@ export class ItemHandler extends Item {
 		return this.proxyTargets[this.type];
 	};
 
-	async migrateSystemData() {
-		if (!this.fn?.migrateSystemData) return;
-		this.fn?.migrateSystemData.bind(this)();
-	};
-
 	async proxyFunction(funcName, ...args) {
 		if (!this.fn?.[funcName]) return;
 		return await this.fn?.[funcName].bind(this)(...args);
