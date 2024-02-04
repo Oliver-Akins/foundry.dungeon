@@ -49,4 +49,9 @@ export class MobData extends foundry.abstract.TypeDataModel {
 			),
 		};
 	};
+
+	static migrateData(source) {
+		console.log(`migrateData data`, source);
+		source.dice = [];
+	};
 };
