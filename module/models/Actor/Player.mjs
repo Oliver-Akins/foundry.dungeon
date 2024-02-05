@@ -97,14 +97,14 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 			}),
 			weapon: new fields.SchemaField({
 				mainHand: new fields.SchemaField({
-					name: new fields.StringField({ blank: true, trim: true }),
+					name: new fields.StringField({ initial: ``, blank: true, trim: true }),
 					damage: weaponDamageTypeField(),
 					ranged: new fields.BooleanField({ initial: false }),
 					scope: new fields.BooleanField({ initial: false }),
 					ammo: ammoTypeField(),
 				}),
 				offHand: new fields.SchemaField({
-					name: new fields.StringField({ blank: true, trim: true }),
+					name: new fields.StringField({ initial: ``, blank: true, trim: true }),
 					damage: weaponDamageTypeField(),
 					ranged: new fields.BooleanField({ initial: false }),
 					scope: new fields.BooleanField({ initial: false }),
