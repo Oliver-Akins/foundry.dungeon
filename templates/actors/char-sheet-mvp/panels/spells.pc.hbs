@@ -32,12 +32,14 @@
 				{{/if}}
 				<div class="actions">
 					<button
+						type="button"
 						class="confirm"
 						data-embedded-edit="{{spell.uuid}}"
 					>
 						{{localize "dotdungeon.actor.pc.spells.edit"}}
 					</button>
 					<button
+						type="button"
 						class="neutral equal-padding"
 						aria-label="{{localize "dotdungeon.actor.pc.spells.aria.chat"}}"
 						data-message-type="Spell"
@@ -50,6 +52,7 @@
 						</div>
 					</button>
 					<button
+						type="button"
 						class="danger equal-padding"
 						aria-label="{{localize "dotdungeon.actor.pc.spells.aria.delete"}}"
 						data-embedded-delete
@@ -70,6 +73,7 @@
 
 
 	<button
+		type="button"
 		class="confirm"
 		data-embedded-create="Spell"
 	>

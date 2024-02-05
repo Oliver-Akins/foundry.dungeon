@@ -18,6 +18,7 @@
 				{{/if}}
 				<div class="actions">
 					<button
+						type="button"
 						class="confirm equal-padding"
 						data-embedded-edit="{{pet.uuid}}"
 					>
@@ -25,6 +26,7 @@
 					</button>
 					<!--
 					<button
+						type="button"
 						class="neutral equal-padding"
 						data-embedded-chat
 						data-embedded-id="{{pet.uuid}}"
@@ -35,6 +37,7 @@
 					</button>
 					-->
 					<button
+						type="button"
 						class="danger equal-padding"
 						aria-label="{{localize "dotdungeon.actor.pc.pets.aria.delete"}}"
 						data-embedded-delete
@@ -53,6 +56,7 @@
 		</p>
 	{{/each}}
 	<button
+		type="button"
 		class="confirm"
 		data-embedded-create="Pet"
 	>

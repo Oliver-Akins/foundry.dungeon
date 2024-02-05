@@ -32,12 +32,14 @@
 			</div>
 			<div class="actions">
 				<button
+					type="button"
 					class="confirm"
 					data-embedded-edit="{{aspect.uuid}}"
 				>
 					{{localize "dotdungeon.actor.pc.aspect.edit"}}
 				</button>
 				<button
+					type="button"
 					class="danger equal-padding"
 					aria-label="{{localize "dotdungeon.actor.pc.aspect.aria.delete"}}"
 					data-embedded-delete
@@ -56,6 +58,7 @@
 	{{/each}}
 	{{#if (or computed.canAddAspect (dd-empty items.aspect))}}
 		<button
+			type="button"
 			class="confirm"
 			data-embedded-create="Aspect"
 		>
