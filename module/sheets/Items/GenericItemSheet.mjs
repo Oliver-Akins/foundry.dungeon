@@ -33,6 +33,10 @@ export class GenericItemSheet extends ItemSheet {
 			idp: this.item.uuid,
 		};
 
+		ctx.item = this.item;
+		ctx.system = this.item.system;
+		ctx.flags = this.item.flags;
+
 		ctx.config = DOTDUNGEON;
 		ctx.icons = CONFIG.CACHE.icons;
 

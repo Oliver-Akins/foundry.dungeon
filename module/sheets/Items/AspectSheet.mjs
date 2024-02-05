@@ -23,13 +23,6 @@ export class AspectSheet extends GenericItemSheet {
 
 	async getData() {
 		const ctx = {};
-		const item = this.item;
-
-		ctx.item = item;
-		ctx.system = item.system;
-		ctx.flags = item.flags;
-
-		console.log(item.uuid, `context:`, ctx);
 		return ctx;
 	};
 };

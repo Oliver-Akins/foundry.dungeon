@@ -23,10 +23,6 @@ export class SpellSheet extends GenericItemSheet {
 
 	async getData() {
 		const ctx = await super.getData();
-
-		ctx.item = this.item;
-		ctx.system = this.item.system;
-		ctx.flags = this.item.flags;
 		return ctx;
 	};
 };
