@@ -1,4 +1,4 @@
-import DOTDUNGEON from "../config.mjs";
+import DOTDUNGEON from "../../config.mjs";
 
 export class GenericItemSheet extends ItemSheet {
 	_expanded = new Set();

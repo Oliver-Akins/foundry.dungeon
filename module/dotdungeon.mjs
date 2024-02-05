@@ -10,13 +10,15 @@ import { MobData } from "./models/Actor/Mob.mjs";
 import { ActorHandler } from "./documents/Actor/Handler.mjs";
 import { ItemHandler } from "./documents/Item/Handler.mjs";
 
-// Character Sheets
-import { SpellSheet } from "./sheets/SpellSheet.mjs";
-import { AspectSheet } from "./sheets/AspectSheet.mjs";
+// Item Sheets
+import { SpellSheet } from "./sheets/Items/SpellSheet.mjs";
+import { AspectSheet } from "./sheets/Items/AspectSheet.mjs";
+import { PetSheet } from "./sheets/Items/PetSheet.mjs";
+
+// Actor Sheets
 import { PlayerSheet } from "./sheets/PlayerSheet.mjs";
 import { BasicSyncSheet } from "./sheets/SyncVariations/BasicSyncSheet.mjs";
 import { MobSheet } from "./sheets/MobSheet.mjs";
-import { PetSheet } from "./sheets/PetSheet.mjs";
 
 // Utility imports
 import * as hbs from "./handlebars.mjs";
