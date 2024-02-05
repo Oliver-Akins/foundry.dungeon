@@ -50,8 +50,8 @@ export class MobData extends foundry.abstract.TypeDataModel {
 		};
 	};
 
+	// Called during create, read, and update
 	static migrateData(source) {
-		console.log(`migrateData data`, source);
-		source.dice = [];
+		return source;
 	};
 };
