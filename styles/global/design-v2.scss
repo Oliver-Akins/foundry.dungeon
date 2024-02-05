@@ -1,0 +1,55 @@
+.item--custom,
+.actor--mob {
+	input {
+		border: 2px solid black;
+		background: none;
+		box-shadow: none;
+
+		&.left { text-align: left; }
+		&.center { text-align: center; }
+		&.right { text-align: right; }
+
+		&:focus {
+			transform: scale(102%);
+		}
+	}
+
+	label.masked-input.masked-input {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		transition: all ease-in-out 50ms;
+
+		&:focus-within {
+			transform: scale(102%);
+		}
+
+		> input {
+			border: none;
+			background: none;
+			border-radius: 0;
+			border: none;
+			&:focus, &:focus-visible {
+				box-shadow: none;
+			}
+		}
+	}
+
+	label.masked-textarea.masked-textarea {
+		display: flex;
+		flex-direction: column;
+		transition: all ease-in-out 50ms;
+
+		&:focus-within {
+			transform: scale(102%);
+		}
+
+		textarea {
+			flex-grow: 1;
+			resize: none;
+			border: none;
+			box-shadow: none;
+			background: none;
+		}
+	}
+}

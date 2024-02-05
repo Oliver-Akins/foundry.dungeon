@@ -6,23 +6,25 @@
 		name="name"
 		value="{{actor.name}}"
 	>
-	<label class="initiative mask-input">
+	<label class="initiative masked-input">
 		Initiative:
 		<input
 			type="number"
+			class="right"
 			name="system.initiative"
 			value="{{system.initiative}}"
 		>
 	</label>
-	<label class="bytes mask-input">
+	<label class="bytes masked-input">
 		Bytes:
 		<input
 			type="number"
+			class="right"
 			name="system.bytes"
 			value="{{system.bytes}}"
 		>
 	</label>
-	<label class="immune wide mask-input">
+	<label class="immune wide masked-input">
 		Drops:
 		<input
 			type="text"
@@ -31,23 +33,25 @@
 			value="{{system.drops}}"
 		>
 	</label>
-	<label class="bonus mask-input">
+	<label class="bonus masked-input">
 		Bonus:
 		<input
 			type="number"
+			class="right"
 			name="system.bonus"
 			value="{{system.bonus}}"
 		>
 	</label>
-	<label class="morale mask-input">
+	<label class="morale masked-input">
 		Morale:
 		<input
 			type="number"
+			class="right"
 			name="system.morale"
 			value="{{system.morale}}"
 		>
 	</label>
-	<label class="weak wide mask-input">
+	<label class="weak wide masked-input">
 		Weak:
 		<input
 			type="text"
@@ -56,7 +60,7 @@
 			value="{{system.weak}}"
 		>
 	</label>
-	<label class="immune wide mask-input">
+	<label class="immune wide masked-input">
 		Immune:
 		<input
 			type="text"
@@ -82,13 +86,13 @@
 		<div style="flex-grow: 1"></div>
 		<button class="confirm edit-dice">Edit</button>
 	</div>
-	<label class="description mask-textarea">
+	<label class="description masked-textarea">
 		Description:
 		<textarea
 			name="system.description"
 		>{{system.description}}</textarea>
 	</label>
-	<label class="stunts mask-textarea">
+	<label class="stunts masked-textarea">
 		Stunts:
 		<textarea
 			name="system.stunts"

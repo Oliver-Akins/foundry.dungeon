@@ -34,54 +34,9 @@
 		}
 	}
 
-	label.mask-input {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		transition: all ease-in-out 50ms;
-
-		&:focus-within {
-			transform: scale(102%);
-		}
-
-		input {
-			text-align: right;
-			border: none;
-			background: none;
-			border-radius: 0;
-			border-bottom: 1px solid black;
-			&:focus, &:focus-visible {
-				box-shadow: none;
-			}
-		}
-
-		input.left {
-			text-align: left;
-		}
-	}
-
 	.wide {
 		grid-column: span 2;
 	}
-
-	.mask-textarea {
-		display: flex;
-		flex-direction: column;
-		transition: all ease-in-out 50ms;
-
-		&:focus-within {
-			transform: scale(102%);
-		}
-
-		textarea {
-			flex-grow: 1;
-			resize: none;
-			border: none;
-			box-shadow: none;
-			background: none;
-		}
-	}
-
 
 // Area-specific stylings
 
