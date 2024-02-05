@@ -4,6 +4,7 @@
 		border: 2px solid black;
 		background: none;
 		box-shadow: none;
+		height: unset;
 
 		&.left { text-align: left; }
 		&.center { text-align: center; }
@@ -19,6 +20,10 @@
 		flex-direction: row;
 		align-items: center;
 		transition: all ease-in-out 50ms;
+		border: 2px solid black;
+		border-radius: 4px;
+		gap: 4px;
+		padding: 4px;
 
 		&:focus-within {
 			transform: scale(102%);
@@ -39,6 +44,10 @@
 		display: flex;
 		flex-direction: column;
 		transition: all ease-in-out 50ms;
+		border: 2px solid black;
+		border-radius: 4px;
+		gap: 4px;
+		padding: 4px;
 
 		&:focus-within {
 			transform: scale(102%);

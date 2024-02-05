@@ -1,0 +1,50 @@
+<form class="item--custom">
+	<input
+		type="text"
+		class="masked name"
+		name="name"
+		value="{{item.name}}"
+	>
+	<label class="masked-input quantity">
+		Quantity:
+		<input
+			type="number"
+			class="right"
+			name="system.quantity"
+			value="{{system.quantity}}"
+		>
+	</label>
+	<label class="masked-input cost">
+		Cost:
+		<input
+			type="number"
+			class="right"
+			name="system.buy"
+			value="{{system.buy}}"
+		>
+	</label>
+	<label class="masked-input usage">
+		Usage Cost:
+		<input
+			type="number"
+			class="right"
+			name="system.usage_cost"
+			value="{{system.usage_cost}}"
+		>
+	</label>
+	{{!-- <label class="masked-select tier">
+		Tier:
+		<select name="system.tier">
+			<option value="a">Potatpo</option>
+			<option value="b">Potatpo</option>
+			<option value="c">Potatpo</option>
+			<option value="d">Potatpo</option>
+		</select>
+	</label> --}}
+	<label class="masked-textarea description">
+		Description:
+		<textarea
+			name="system.description"
+		>{{system.description}}</textarea>
+	</label>
+</form>

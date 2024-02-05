@@ -1,0 +1,16 @@
+.item--custom {
+	padding: 8px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(3, min-content) 1fr;
+	grid-template-areas:
+		"name name"
+		". ."
+		"usage usage"
+		"description description";
+	gap: 8px;
+
+	.name { grid-area: name; }
+	.usage { grid-area: usage; }
+	.description { grid-area: description; }
+}

@@ -1,4 +1,5 @@
 // Data Models
+import { DescribedItemData } from "./models/Item/DescribedItemData.mjs";
 import { AspectItemData } from "./models/Item/Aspect.mjs";
 import { SpellItemData } from "./models/Item/Spell.mjs";
 import { PlayerData } from "./models/Actor/Player.mjs";
@@ -11,13 +12,14 @@ import { ActorHandler } from "./documents/Actor/Handler.mjs";
 import { ItemHandler } from "./documents/Item/Handler.mjs";
 
 // Item Sheets
-import { SpellSheet } from "./sheets/Items/SpellSheet.mjs";
+import { CustomItemSheet } from "./sheets/Items/CustomItemSheet.mjs";
 import { AspectSheet } from "./sheets/Items/AspectSheet.mjs";
+import { SpellSheet } from "./sheets/Items/SpellSheet.mjs";
 import { PetSheet } from "./sheets/Items/PetSheet.mjs";
 
 // Actor Sheets
-import { PlayerSheet } from "./sheets/PlayerSheet.mjs";
 import { BasicSyncSheet } from "./sheets/SyncVariations/BasicSyncSheet.mjs";
+import { PlayerSheet } from "./sheets/PlayerSheet.mjs";
 import { MobSheet } from "./sheets/MobSheet.mjs";
 
 // Utility imports
@@ -39,6 +41,7 @@ Hooks.once(`init`, async () => {
 	CONFIG.Actor.dataModels.player = PlayerData;
 	CONFIG.Actor.dataModels.sync = SyncData;
 	CONFIG.Actor.dataModels.mob = MobData;
+	CONFIG.Item.dataModels.custom = DescribedItemData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
 	CONFIG.Item.dataModels.spell = SpellItemData;
 	CONFIG.Item.dataModels.pet = PetItemData;
@@ -77,8 +80,12 @@ Hooks.once(`init`, async () => {
 	Items.registerSheet("dotdungeon", PetSheet, {
 		makeDefault: true,
 		types: ["pet"],
-		lable: "dotdungeon.sheet-names.PetSheet"
+		label: "dotdungeon.sheet-names.PetSheet"
 	});
+	Items.registerSheet("dotdungeon", CustomItemSheet, {
+		makeDefault: true,
+		label: "dotdungeon.sheet-names.CustomItemSheet"
+	})
 
 
 	hbs.registerHandlebarsHelpers();
