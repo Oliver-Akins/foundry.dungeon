@@ -23,7 +23,8 @@ export class ItemHandler extends Item {
 	};
 
 	async _preCreate(...args) {
-		if (!this.fn?._preCreate) return;
-		return this.fn?._preCreate.bind(this)(...args);
+		if (this.fn?._preCreate) return this.fn?._preCreate.bind(this)(...args);
+		if (this.isEmbedded) return await this.actor?.preItemEmbed(this);
+		return;
 	};
 };

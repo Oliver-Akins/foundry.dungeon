@@ -1,6 +1,6 @@
 import { GenericItemSheet } from "./GenericItemSheet.mjs";
 
-export class CustomItemSheet extends GenericItemSheet {
+export class UntypedItemSheet extends GenericItemSheet {
 	static get defaultOptions() {
 		let opts = mergeObject(
 			super.defaultOptions,

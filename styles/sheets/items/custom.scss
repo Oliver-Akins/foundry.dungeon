@@ -11,6 +11,6 @@
 	gap: 8px;
 
 	.name { grid-area: name; }
-	.usage { grid-area: usage; }
+	.usage { grid-area: usage; white-space: nowrap; }
 	.description { grid-area: description; }
 }

@@ -58,8 +58,59 @@
 			aria-valuenow="{{system.supplies}}"
 		>
 	</label>
-	<label class="grow col">
-		Inventory
-		<textarea class="grow" name="system.inventoryString">{{system.inventoryString}}</textarea>
-	</label>
+	{{#each items.untyped as | item |}}
+		<details {{dd-expanded ../meta.expanded item.uuid}}>
+			<summary data-collapse-id="{{item.uuid}}">
+				{{item.name}} (x {{item.system.quantity}})
+			</summary>
+			<div class="item">
+				{{#if (defined item.system.buy)}}
+					<div>Cost: {{item.system.buy}}</div>
+				{{/if}}
+				{{#if item.system.description}}
+					<p>{{item.system.description}}</p>
+				{{/if}}
+				<div class="actions">
+					<button
+						type="button"
+						class="confirm"
+						data-embedded-edit="{{item.uuid}}"
+					>
+						Edit
+					</button>
+					<button
+						type="button"
+						class="neutral equal-padding"
+						data-message-type="Untyped"
+						data-message-content="{{item.system.description}}"
+						data-embedded-id="{{item.uuid}}"
+					>
+						<div aria-hidden="true" class="icon icon--20">
+							{{{ ../icons.chat-bubble }}}
+						</div>
+					</button>
+					<button
+						type="button"
+						class="danger equal-padding"
+						data-embedded-delete
+						data-embedded-id="{{item.uuid}}"
+					>
+						<div aria-hidden="true" class="icon icon--20">
+							{{{ ../icons.garbage-bin }}}
+						</div>
+					</button>
+				</div>
+			</div>
+		</details>
+	{{/each}}
+	<button
+		type="button"
+		class="confirm"
+		data-embedded-create="Untyped"
+	>
+		<div aria-hidden="true" class="icon icon--20">
+			{{{ icons.create }}}
+		</div>
+		Add Item
+	</button>
 {{/ dotdungeon.panel}}

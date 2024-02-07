@@ -47,6 +47,14 @@ async function createCustomItem(defaults, opts = {}) {
 };
 
 /** @this {Actor} */
+async function createCustomUntyped() {
+	await createCustomItem.bind(this)([{
+		type: `untyped`,
+		name: game.i18n.format(`dotdungeon.defaults.untyped.name`),
+	}]);
+};
+
+/** @this {Actor} */
 async function createCustomAspect() {
 	await createCustomItem.bind(this)([{
 		type: `aspect`,
@@ -105,12 +113,33 @@ async function preAspectEmbed(item) {
 	};
 };
 
+/**
+ * @param {ItemHandler} item
+ * @this {Actor}
+ */
+async function preUntypedEmbed(item) {
+	let inventoryItem = this.itemTypes.untyped.find(i => i.name === item.name);
+	if (inventoryItem) {
+		inventoryItem.update({"system.quantity": inventoryItem.system.quantity + 1});
+		ui.notifications.info(
+			game.i18n.format(
+				`dotdungeon.notification.info.increased-item-quantity`,
+				{ name: inventoryItem.name }
+			),
+			{ console: false }
+		);
+		return false;
+	};
+};
+
 export default {
 	atAspectLimit,
 	createCustomItem,
+	createCustomUntyped,
 	createCustomAspect,
 	createCustomSpell,
 	createCustomPet,
 	genericEmbeddedDelete,
 	preAspectEmbed,
+	preUntypedEmbed,
 };

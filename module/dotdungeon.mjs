@@ -12,7 +12,7 @@ import { ActorHandler } from "./documents/Actor/Handler.mjs";
 import { ItemHandler } from "./documents/Item/Handler.mjs";
 
 // Item Sheets
-import { CustomItemSheet } from "./sheets/Items/CustomItemSheet.mjs";
+import { UntypedItemSheet } from "./sheets/Items/UntypedItemSheet.mjs";
 import { AspectSheet } from "./sheets/Items/AspectSheet.mjs";
 import { SpellSheet } from "./sheets/Items/SpellSheet.mjs";
 import { PetSheet } from "./sheets/Items/PetSheet.mjs";
@@ -41,7 +41,7 @@ Hooks.once(`init`, async () => {
 	CONFIG.Actor.dataModels.player = PlayerData;
 	CONFIG.Actor.dataModels.sync = SyncData;
 	CONFIG.Actor.dataModels.mob = MobData;
-	CONFIG.Item.dataModels.custom = DescribedItemData;
+	CONFIG.Item.dataModels.untyped = DescribedItemData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
 	CONFIG.Item.dataModels.spell = SpellItemData;
 	CONFIG.Item.dataModels.pet = PetItemData;
@@ -82,9 +82,9 @@ Hooks.once(`init`, async () => {
 		types: ["pet"],
 		label: "dotdungeon.sheet-names.PetSheet"
 	});
-	Items.registerSheet("dotdungeon", CustomItemSheet, {
+	Items.registerSheet("dotdungeon", UntypedItemSheet, {
 		makeDefault: true,
-		label: "dotdungeon.sheet-names.CustomItemSheet"
+		label: "dotdungeon.sheet-names.UntypedItemSheet"
 	})
 
 

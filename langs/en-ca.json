@@ -254,6 +254,9 @@
 			},
 			"warn": {
 				"negative-aspect-limit": "The Aspect limit must be 0 or greater"
+			},
+			"info": {
+				"increased-item-quantity": "Increased the item quantity for: {name}"
 			}
 		},
 		"dialogs": {
@@ -273,6 +276,12 @@
 				"delete": {
 					"title": "You want to kill your pet?!",
 					"content": "Are you sure you would like to kill the pet: {name}<br /><br />This action cannot be undone."
+				}
+			},
+			"untyped": {
+				"delete": {
+					"title": "Confirm Item Deletion",
+					"content": "Are you sure you would like to delete the item: {name}<br /><br />This action cannot be undone."
 				}
 			}
 		},
@@ -317,6 +326,9 @@
 			},
 			"pet": {
 				"name": "(Unnamed Pet)"
+			},
+			"untyped": {
+				"name": "Unknown Item"
 			}
 		}
 	},

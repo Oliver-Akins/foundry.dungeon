@@ -8,7 +8,7 @@
 	},
 	"Item": {
 		"types": [
-			"custom",
+			"untyped",
 			"aspect",
 			"weapon",
 			"armour",
