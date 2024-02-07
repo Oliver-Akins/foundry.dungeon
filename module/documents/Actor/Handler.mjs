@@ -62,7 +62,6 @@ export class ActorHandler extends Actor {
 	async genericSendToChat($event) {
 		const data = $event.currentTarget.dataset;
 		const type = data.messageType;
-		console.log(data)
 		if (this.fn?.[`send${type}ToChat`]) {
 			return await this.fn?.[`send${type}ToChat`].bind(this)($event);
 		};

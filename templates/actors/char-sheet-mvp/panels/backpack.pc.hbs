@@ -58,6 +58,7 @@
 			aria-valuenow="{{system.supplies}}"
 		>
 	</label>
+	<hr>
 	{{#each items.untyped as | item |}}
 		<details {{dd-expanded ../meta.expanded item.uuid}}>
 			<summary data-collapse-id="{{item.uuid}}">
@@ -67,8 +68,23 @@
 				{{#if (defined item.system.buy)}}
 					<div>Cost: {{item.system.buy}}</div>
 				{{/if}}
+				<label class="row">
+					<span class="grow">Quantity</span>
+					<input
+						type="number"
+						class="bytes-input"
+						value="{{item.system.quantity}}"
+						data-embedded-update="system.quantity"
+						data-embedded-update-on="blur"
+						data-embedded-id="{{item.uuid}}"
+					>
+				</label>
 				{{#if item.system.description}}
 					<p>{{item.system.description}}</p>
+				{{else}}
+					<p style="opacity: 75;%">
+						This item hasn't been described yet
+					</p>
 				{{/if}}
 				<div class="actions">
 					<button

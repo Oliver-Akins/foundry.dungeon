@@ -50,7 +50,7 @@ Hooks.once(`init`, async () => {
 
 	CONFIG.DOTDUNGEON = DOTDUNGEON;
 
-	// Actors.unregisterSheet("core", ActorSheet);
+
 	Actors.registerSheet("dotdungeon", PlayerSheet, {
 		makeDefault: true,
 		types: ["player"],
@@ -67,6 +67,13 @@ Hooks.once(`init`, async () => {
 		label: "dotdungeon.sheet-names.SyncSheet.basic"
 	});
 
+	Items.registerSheet("dotdungeon", UntypedItemSheet, {
+		makeDefault: true,
+		label: "dotdungeon.sheet-names.UntypedItemSheet",
+	});
+	Items.unregisterSheet("dotdungeon", UntypedItemSheet, {
+		types: ["aspect"],
+	});
 	Items.registerSheet("dotdungeon", AspectSheet, {
 		makeDefault: true,
 		types: ["aspect"],
@@ -82,10 +89,6 @@ Hooks.once(`init`, async () => {
 		types: ["pet"],
 		label: "dotdungeon.sheet-names.PetSheet"
 	});
-	Items.registerSheet("dotdungeon", UntypedItemSheet, {
-		makeDefault: true,
-		label: "dotdungeon.sheet-names.UntypedItemSheet"
-	})
 
 
 	hbs.registerHandlebarsHelpers();

@@ -4,7 +4,6 @@
     "build": "sass --embed-source-map --no-error-css styles/:.styles/"
   },
   "devDependencies": {
-    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
     "sass": "^1.69.5"
   }
 }

@@ -42,8 +42,10 @@ export class GenericActorSheet extends ActorSheet {
 
 		html.find(`summary`).on(`click`, this._handleSummaryToggle.bind(this));
 		html.find(`[data-roll-formula]`).on(`click`, this._handleRoll.bind(this));
-		html.find(`[data-embedded-update]`)
+		html.find(`[data-embedded-update-on="change"]`)
 			.on(`change`, this.actor.genericEmbeddedUpdate.bind(this.actor));
+		html.find(`[data-embedded-update-on="blur"]`)
+			.on(`blur`, this.actor.genericEmbeddedUpdate.bind(this.actor));
 		html.find(`[data-embedded-delete]`)
 			.on(`click`, this.actor.genericEmbeddedDelete.bind(this.actor));
 		html.find(`[data-embedded-create]`)

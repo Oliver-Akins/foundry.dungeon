@@ -85,7 +85,7 @@
 			"AspectSheet": "Aspect Sheet",
 			"SpellSheet": "Spell Sheet",
 			"PetSheet": "Pet Sheet",
-			"CustomItemSheet": "Custom Item"
+			"UntypedItemSheet": "Custom Item"
 		},
 		"actor": {
 			"pc": {

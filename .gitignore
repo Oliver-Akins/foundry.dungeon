@@ -3,3 +3,4 @@ node_modules/
 *.bak.*
 references.txt
 .styles/
+/foundry.js
