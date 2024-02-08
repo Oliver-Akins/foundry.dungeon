@@ -1,3 +1,11 @@
+// Type definitions for Foundry VTT v11
+// Definitions by: Oliver Akins
+
+namespace foundry {
+	export const data: any;
+	export const abstract: any;
+}
+
 interface Game {
 	/**
 	 * The named view which is currently active.
