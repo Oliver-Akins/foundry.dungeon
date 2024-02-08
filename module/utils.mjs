@@ -1,13 +1,15 @@
-export function reloadWindows(type = null) {
-	if (!type) {
-		for (const window of globalThis.ui.windows) {
-			window.render(true);
-		};
-		return;
+/**
+ * @param {string} path
+ * @param {object} data
+ * @returns {unknown}
+ */
+export function getPath(path, data) {
+	if (!path.includes(`.`)) {
+		return data[path];
 	};
-	for (const window of globalThis.ui.windows) {
-		if (window instanceof type) {
-			window.render(true);
-		};
-	};
+	let [ key, nextPath ] = path.split(`.`, 2)
+	return getPath(
+		nextPath,
+		data[key]
+	);
 };

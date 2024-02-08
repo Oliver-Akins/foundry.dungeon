@@ -34,11 +34,11 @@ export const icons = [
 	`close.svg`,
 	`edit.svg`,
 	`sheet.svg`,
+	`minus.svg`,
 ];
 
 
 export async function registerHandlebarsHelpers() {
-	console.log(Handlebars)
 	Handlebars.registerHelper(helpers);
 };
 

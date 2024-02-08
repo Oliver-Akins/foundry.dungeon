@@ -79,6 +79,12 @@
 				flex-direction: row;
 				align-items: center;
 			}
+			.grid-row {
+				display: grid;
+				grid-template-columns: 1fr min-content 25% min-content;
+				gap: 4px;
+				align-items: center;
+			}
 			.col {
 				display: flex;
 				flex-direction: column;
@@ -95,9 +101,13 @@
 
 			.bytes-input,
 			.supplies-count,
-			.materials-count {
-				width: 25%;
+			.materials-count,
+			.item-quantity {
 				text-align: center;
+			}
+
+			.item-quantity {
+				width: 25%
 			}
 
 			textarea {

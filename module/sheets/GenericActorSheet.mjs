@@ -1,4 +1,5 @@
 import DOTDUNGEON from "../config.mjs";
+import { getPath } from "../utils.mjs";
 
 export class GenericActorSheet extends ActorSheet {
 	_expanded = new Set();
@@ -54,6 +55,10 @@ export class GenericActorSheet extends ActorSheet {
 			.on(`click`, this.actor.genericSendToChat.bind(this.actor));
 		html.find(`[data-embedded-edit]`)
 			.on(`click`, this.actor.openEmbeddedSheet.bind(this.actor));
+		html.find(`button[data-increment]`)
+			.on(`click`, this._incrementValue.bind(this));
+		html.find(`button[data-decrement]`)
+			.on(`click`, this._decrementValue.bind(this));
 	};
 
 	async _handleRoll($e) {
@@ -73,7 +78,27 @@ export class GenericActorSheet extends ActorSheet {
 		});
 	};
 
-	_handleSummaryToggle($e) {
+	async _incrementValue($e) {
+		const target = $e.currentTarget;
+		const data = target.dataset;
+		const value = getPath(data.increment, this.actor);
+		if (typeof value != "number") {
+			return;
+		};
+		this.actor.update({ [data.increment]: value + 1 });
+	};
+
+	async _decrementValue($e) {
+		const target = $e.currentTarget;
+		const data = target.dataset;
+		const value = getPath(data.decrement, this.actor);
+		if (typeof value != "number") {
+			return;
+		};
+		this.actor.update({ [data.decrement]: value - 1 });
+	};
+
+	async _handleSummaryToggle($e) {
 		let data = $e.currentTarget.dataset;
 		let open = $e.currentTarget.parentNode.open;
 		console.debug(`.dungeon | Collapse ID: ${data.collapseId} (open: ${open})`);

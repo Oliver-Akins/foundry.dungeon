@@ -38,37 +38,4 @@
 	{{> dotdungeon.pc.pets }}
 
 	{{> dotdungeon.pc.storage}}
-
-	{{#if settings.devMode}}
-		<div class="debug-data" style="grid-column: 1 / span 3">
-			<div>
-				Settings:
-				<pre><code>{{dd-stringify settings}}</code></pre>
-			</div>
-			<div>
-				Meta:
-				<pre><code>{{dd-stringify meta}}</code></pre>
-			</div>
-			<hr>
-			<div>
-				Config:
-				<pre><code>{{dd-stringify config}}</code></pre>
-			</div>
-			<hr>
-			<div>
-				Items:
-				<pre><code>{{dd-stringify items}}</code></pre>
-			</div>
-			<hr>
-			<div>
-				System:
-				<pre><code>{{dd-stringify system}}</code></pre>
-			</div>
-			<hr>
-			<div>
-				Actor:
-				<pre><code>{{dd-stringify actor}}</code></pre>
-			</div>
-		</div>
-	{{/if}}
 </form>

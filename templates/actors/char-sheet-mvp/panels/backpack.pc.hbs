@@ -1,9 +1,21 @@
 {{#> dotdungeon.panel class="backpack" title="dotdungeon.actor.pc.panel.backpack"}}
-	<label class="row">
-		<span class="grow">
+	<div class="grid-row">
+		<label
+			for="{{meta.idp}}-bytes-input"
+		>
 			{{localize "dotdungeon.actor.pc.backpack.bytes.label"}}
-		</span>
+		</label>
+		<button
+			class="neutral reduced-padding equal-padding"
+			data-decrement="system.bytes"
+			aria-label="Decrease byte count by one"
+		>
+			<div aria-hidden="true" class="icon icon--16">
+				{{{ icons.minus }}}
+			</div>
+		</button>
 		<input
+			id="{{meta.idp}}-bytes-input"
 			class="bytes-input"
 			type="number"
 			name="system.bytes"
@@ -13,51 +25,89 @@
 			aria-valuemin="0"
 			aria-valuenow="{{system.bytes}}"
 		>
-	</label>
-	<label class="row">
-		<span class="grow">
+		<button
+			class="neutral reduced-padding equal-padding"
+			data-increment="system.bytes"
+			aria-label="Increase byte count by one"
+		>
+			<div aria-hidden="true" class="icon icon--16">
+				{{{ icons.create }}}
+			</div>
+		</button>
+	</div>
+	<div class="grid-row">
+		<label for="{{meta.idp}}-supplies-input">
 			{{localize
 				(concat
 					"dotdungeon.settings.resourcesOrSupplies.option."
 					settings.resourcesOrSupplies
 				)
 			}}
-			{{#if settings.devMode}}
-				<span class="debug-data">
-					({{settings.resourcesOrSupplies}})
-				</span>
-			{{/if}}
-		</span>
+		</label>
+		<button
+			class="neutral reduced-padding equal-padding"
+			data-decrement="system.supplies"
+			aria-label="Decrease supplies count by one"
+		>
+			<div aria-hidden="true" class="icon icon--16">
+				{{{ icons.minus }}}
+			</div>
+		</button>
 		<input
+			id="{{meta.idp}}-supplies-input"
 			class="supplies-count"
 			type="number"
 			name="system.supplies"
 			value="{{system.supplies}}"
 			min="0"
-			max="5"
 			aria-label="{{localize "dotdungeon.aria.actor.pc.input.supplies"}}"
 			aria-valuemin="0"
-			aria-valuemax="5"
 			aria-valuenow="{{system.supplies}}"
 		>
-	</label>
-	<label class="row">
-		<span class="grow">
+		<button
+			class="neutral reduced-padding equal-padding"
+			data-increment="system.supplies"
+			aria-label="Increase supplies count by one"
+		>
+			<div aria-hidden="true" class="icon icon--16">
+				{{{ icons.create }}}
+			</div>
+		</button>
+	</div>
+	<div class="grid-row">
+		<label for="{{meta.idp}}-materials-input">
 			{{localize "dotdungeon.actor.pc.backpack.materials.label"}}
-		</span>
+		</label>
+		<button
+			class="neutral reduced-padding equal-padding"
+			data-decrement="system.materials"
+			aria-label="Decrease materials count by one"
+		>
+			<div aria-hidden="true" class="icon icon--16">
+				{{{ icons.minus }}}
+			</div>
+		</button>
 		<input
+			id="{{meta.idp}}-materials-input"
 			class="materials-count"
 			type="number"
 			name="system.materials"
 			value="{{system.materials}}"
 			min="0"
-			max="5"
 			aria-label="{{localize "dotdungeon.aria.actor.pc.input.materials"}}"
 			aria-valuemin="0"
-			aria-valuemax="5"
 			aria-valuenow="{{system.supplies}}"
 		>
-	</label>
+		<button
+			class="neutral reduced-padding equal-padding"
+			data-increment="system.materials"
+			aria-label="Increase materials count by one"
+		>
+			<div aria-hidden="true" class="icon icon--16">
+				{{{ icons.create }}}
+			</div>
+		</button>
+	</div>
 	<hr>
 	{{#each items.untyped as | item |}}
 		<details {{dd-expanded ../meta.expanded item.uuid}}>
@@ -72,7 +122,7 @@
 					<span class="grow">Quantity</span>
 					<input
 						type="number"
-						class="bytes-input"
+						class="item-quantity"
 						value="{{item.system.quantity}}"
 						data-embedded-update="system.quantity"
 						data-embedded-update-on="blur"
@@ -82,7 +132,7 @@
 				{{#if item.system.description}}
 					<p>{{item.system.description}}</p>
 				{{else}}
-					<p style="opacity: 75;%">
+					<p style="opacity: 75%;">
 						This item hasn't been described yet
 					</p>
 				{{/if}}
