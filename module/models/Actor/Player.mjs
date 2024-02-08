@@ -119,13 +119,11 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 			supplies: new fields.NumberField({
 				initial: 0,
 				min: 0,
-				max: 5,
 				integer: true
 			}),
 			materials: new fields.NumberField({
 				initial: 0,
 				min: 0,
-				max: 5,
 				integer: true
 			}),
 			pet: new fields.SchemaField({
