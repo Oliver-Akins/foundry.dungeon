@@ -6,7 +6,7 @@ export class AbstractSyncSheet extends GenericActorSheet {
 			super.defaultOptions,
 			{
 				width: 200,
-				height: 200,
+				height: 275,
 			}
 		);
 		opts.classes.push(
@@ -22,11 +22,12 @@ export class AbstractSyncSheet extends GenericActorSheet {
 
 		ctx.system = actor.system;
 		ctx.flags = actor.flags;
-
-		console.groupCollapsed(`SyncSheet.getData`);
-		console.log(`ctx`, ctx);
-		console.log(`actor`, actor);
-		console.groupEnd();
 		return ctx;
+	};
+
+	activateListeners(html) {
+		super.activateListeners(html);
+		html.find(`.use-rest-die`)
+			.on(`click`, this.actor.useRestDie.bind(this.actor));
 	};
 };

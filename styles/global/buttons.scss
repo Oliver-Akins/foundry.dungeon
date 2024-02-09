@@ -1,5 +1,7 @@
 @use "../vars.scss" as *;
 
+@use "sass:color" as color;
+
 .dotdungeon.dotdungeon.dotdungeon.dotdungeon > .window-content {
 	button {
 		border-radius: 4px;
@@ -21,30 +23,51 @@
 		&.confirm {
 			background: $colour-confirm;
 			color: $text-on-confirm;
-			&:hover, &:focus-visible {
+
+			&:hover:not(:disabled),
+			&:focus-visible {
 				background: transparent;
 				color: $colour-confirm;
 				border-color: $colour-confirm;
+			}
+
+			&:disabled {
+				background: color.adjust($colour-confirm, $lightness: -10%);
+				color: color.adjust($text-on-confirm, $lightness: -15%);
 			}
 		}
 
 		&.neutral {
 			background: $colour-neutral;
 			color: $text-on-neutral;
-			&:hover, &:focus-visible {
+
+			&:hover:not(:disabled),
+			&:focus-visible {
 				background: transparent;
 				color: $colour-neutral;
 				border-color: $colour-neutral;
+			}
+
+			&:disabled {
+				background: color.adjust($colour-neutral, $lightness: -10%);
+				color: color.adjust($text-on-neutral, $lightness: -15%);
 			}
 		}
 
 		&.danger {
 			background: $colour-danger;
 			color: $text-on-danger;
-			&:hover, &:focus-visible {
+
+			&:hover:not(:disabled),
+			&:focus-visible {
 				background: transparent;
 				color: $colour-danger;
 				border-color: $colour-danger;
+			}
+
+			&:disabled {
+				background: color.adjust($colour-danger, $lightness: -10%);
+				color: color.adjust($text-on-danger, $lightness: -15%);
 			}
 		}
 

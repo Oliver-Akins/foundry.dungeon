@@ -17,4 +17,38 @@
 			value="{{system.value}}"
 		>
 	</label>
+	<div class="rest-container">
+		Rest Dice:
+		<div class="button-row">
+			<button
+				type="button"
+				class="neutral equal-padding"
+				data-decrement="system.rest_dice"
+				{{disabled (eq system.rest_dice 0)}}
+			>
+				<div aria-hidden="true" class="icon icon--14">
+					{{{ icons.minus }}}
+				</div>
+			</button>
+			<span class="value">
+				{{system.rest_dice}}
+			</span>
+			<button
+				type="button"
+				class="neutral equal-padding"
+				data-increment="system.rest_dice"
+			>
+				<div aria-hidden="true" class="icon icon--14">
+					{{{ icons.create }}}
+				</div>
+			</button>
+		</div>
+		<button
+			type="button"
+			class="confirm use-rest-die"
+			{{disabled (eq system.rest_dice 0)}}
+		>
+			Use a Rest Dice
+		</button>
+	</div>
 </form>

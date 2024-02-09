@@ -3,10 +3,18 @@ export class SyncData extends foundry.abstract.TypeDataModel {
 		const fields = foundry.data.fields;
 		return {
 			value: new fields.NumberField({
-				required: true,
 				integer: true,
 				initial: 100,
 			}),
+			rest_dice: new fields.NumberField({
+				integer: true,
+				initial: 0,
+				min: 0,
+			}),
+			milestones_hit: new fields.SetField(
+				new fields.NumberField({ integer: true, }),
+				{ initial: [] },
+			),
 		};
 	};
 };

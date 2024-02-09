@@ -1,11 +1,13 @@
 import PlayerActor from "./Player.mjs";
 import MobActor from "./Mob.mjs";
+import SyncActor from "./Sync.mjs";
 
 /** @extends {Actor} */
 export class ActorHandler extends Actor {
 	proxyTargets = {
 		player: PlayerActor,
 		mob: MobActor,
+		sync: SyncActor,
 	};
 
 	constructor(data, ctx) {
@@ -89,4 +91,10 @@ export class ActorHandler extends Actor {
 		};
 		return true;
 	};
+
+	_preUpdate(...args) {
+		return this.proxyFunction("_preUpdate", ...args);
+	};
+
+	useRestDie() { return this.proxyFunction("useRestDie"); };
 };
