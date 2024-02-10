@@ -43,7 +43,6 @@ export class MobSheet extends GenericActorSheet {
 
 		// Compute rolls here
 
-		console.log(actor.uuid, `context:`, ctx)
 		return ctx;
 	};
 };

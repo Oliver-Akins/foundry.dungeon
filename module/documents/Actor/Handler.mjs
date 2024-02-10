@@ -85,7 +85,6 @@ export class ActorHandler extends Actor {
 	 */
 	async preItemEmbed(item) {
 		let type = item.type[0].toUpperCase() + item.type.slice(1);
-		console.log(`preEmbed type =`, type)
 		if (this.fn?.[`pre${type}Embed`]) {
 			return await this.fn?.[`pre${type}Embed`].bind(this)(item);
 		};

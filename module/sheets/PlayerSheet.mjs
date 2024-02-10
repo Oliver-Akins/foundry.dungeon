@@ -38,7 +38,6 @@ export class PlayerSheet extends GenericActorSheet {
 			canAddAspect: !await actor.proxyFunction.bind(actor)(`atAspectLimit`),
 		};
 
-		console.log(actor.uuid, `context:`, ctx)
 		return ctx;
 	};
 };

@@ -136,6 +136,7 @@ async function preUntypedEmbed(item) {
 function getRollData() {
 	const data = {
 		initiative: this.system.stats.hands ?? 0,
+		stats: this.system.stats,
 	};
 	return data;
 };

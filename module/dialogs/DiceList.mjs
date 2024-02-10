@@ -27,7 +27,6 @@ export class DiceList extends GenericDialog {
 	async getData() {
 		const ctx = await super.getData();
 		ctx.dice = this.dice;
-		console.debug(`DiceList context`, ctx);
 		return ctx;
 	};
 
