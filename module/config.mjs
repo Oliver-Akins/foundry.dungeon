@@ -40,7 +40,7 @@ export const syncMilestones = [
 	{ value: 100, andReturn: true },
 ];
 
-export const syncDice = "1d20";
+export const syncDice = `1d20`;
 
 export default {
 	stats,
