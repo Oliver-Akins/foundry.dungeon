@@ -132,6 +132,14 @@ async function preUntypedEmbed(item) {
 	};
 };
 
+/** @this {Actor} */
+function getRollData() {
+	const data = {
+		initiative: this.system.stats.hands ?? 0,
+	};
+	return data;
+};
+
 export default {
 	atAspectLimit,
 	createCustomItem,
@@ -142,4 +150,5 @@ export default {
 	genericEmbeddedDelete,
 	preAspectEmbed,
 	preUntypedEmbed,
+	getRollData,
 };

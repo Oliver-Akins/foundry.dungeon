@@ -96,5 +96,10 @@ export class ActorHandler extends Actor {
 		return this.proxyFunction("_preUpdate", ...args);
 	};
 
-	useRestDie() { return this.proxyFunction("useRestDie"); };
+	getRollData() {
+		if (!this.fn?.getRollData) return {};
+		return this.fn?.getRollData.bind(this)();
+	};
+
+	useRestDie() {return this.proxyFunction("useRestDie")};
 };

@@ -35,5 +35,6 @@
 			"extensions": ["css", "hbs", "json", "js", "mjs", "svg"],
 			"paths": ["templates", "langs", ".styles", "module", "assets"]
 		}
-	}
+	},
+	"initiative": "@initiative"
 }
