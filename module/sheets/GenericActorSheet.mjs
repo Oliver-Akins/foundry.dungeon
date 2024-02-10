@@ -1,5 +1,4 @@
 import DOTDUNGEON from "../config.mjs";
-import { getPath } from "../utils.mjs";
 
 export class GenericActorSheet extends ActorSheet {
 	_expanded = new Set();
@@ -81,7 +80,7 @@ export class GenericActorSheet extends ActorSheet {
 	async _incrementValue($e) {
 		const target = $e.currentTarget;
 		const data = target.dataset;
-		const value = getPath(data.increment, this.actor);
+		const value = getProperty(this.actor, data.increment);
 		if (typeof value != "number") {
 			return;
 		};
@@ -91,7 +90,7 @@ export class GenericActorSheet extends ActorSheet {
 	async _decrementValue($e) {
 		const target = $e.currentTarget;
 		const data = target.dataset;
-		const value = getPath(data.decrement, this.actor);
+		const value = getProperty(this.actor, data.decrement);
 		if (typeof value != "number") {
 			return;
 		};
