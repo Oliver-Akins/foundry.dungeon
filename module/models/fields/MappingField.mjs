@@ -129,4 +129,4 @@ export class MappingField extends foundry.data.fields.ObjectField {
 		path.shift();
 		return this.model._getField(path);
 	}
-}
+};
