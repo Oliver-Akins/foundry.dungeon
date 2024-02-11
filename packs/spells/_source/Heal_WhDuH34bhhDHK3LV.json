@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Heal",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Heal wounds, young and old, by soothing the energy around you. Regain d10 Sync.",
+    "skill": "magic",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704948272274,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "WhDuH34bhhDHK3LV",
+  "sort": 1100000,
+  "_key": "!items!WhDuH34bhhDHK3LV"
+}

@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Disguise Self",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Transform your avatar into an entity matching the environment, like a vase, chest, or plant. This illusion stays until you are attacked or make an attack.",
+    "skill": "magic",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704948095237,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "ESwYY87mZbzVT1lW",
+  "sort": 1000000,
+  "_key": "!items!ESwYY87mZbzVT1lW"
+}

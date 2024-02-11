@@ -1,0 +1,110 @@
+{
+  "name": "Dragon",
+  "type": "mob",
+  "_id": "TxMsleI1qG86zj6B",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "bonus": 6,
+    "initiative": 20,
+    "morale": 2,
+    "drops": "Dragon Materials",
+    "stunts": "Breath Weapon: At the end of the round, the Dragon breathes its fire onto the battlefield, forcing everyone to make a contest against its current dice.",
+    "immune": "Piercing, Slashing, Smashing",
+    "weak": "Gun, Neon",
+    "bytes": 0,
+    "description": "Children of Annwn that explode from her body and conquer the hex of their birth. Stylized after the lung Dragons",
+    "dice": [
+      {
+        "count": 3,
+        "sides": 6,
+        "repeat": 4
+      },
+      {
+        "count": 2,
+        "sides": 6,
+        "repeat": 2
+      }
+    ]
+  },
+  "prototypeToken": {
+    "name": "Dragon",
+    "displayName": 0,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1707676733262,
+    "modifiedTime": 1707676892258,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_key": "!actors!TxMsleI1qG86zj6B"
+}

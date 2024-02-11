@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Meteor",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Reach into the Detritus and pull something free. Choose two entities in addition to yourself to survive. Destroy all other entities in the area.",
+    "skill": "magic",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704948377846,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "YifLvJsoCKAy8mBS",
+  "sort": 800000,
+  "_key": "!items!YifLvJsoCKAy8mBS"
+}

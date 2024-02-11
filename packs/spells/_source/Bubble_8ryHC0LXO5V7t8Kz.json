@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Bubble",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Create a circle with your hand to encase one target in a bubble that floats above the battlefield. The target may roll Tilt to end this effect. Any damage to the bubble pops it. A falling target is stunned until their next turn.",
+    "skill": "magic",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704947765627,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "8ryHC0LXO5V7t8Kz",
+  "sort": 1600000,
+  "_key": "!items!8ryHC0LXO5V7t8Kz"
+}

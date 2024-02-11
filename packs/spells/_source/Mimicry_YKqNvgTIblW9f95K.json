@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Mimicry",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Split a copy off of yourself. You can puppet them through hand signs, but they still move and act when you aren't controlling them.",
+    "skill": "magic",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704948442337,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "YKqNvgTIblW9f95K",
+  "sort": 200000,
+  "_key": "!items!YKqNvgTIblW9f95K"
+}

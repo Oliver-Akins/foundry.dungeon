@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Vanishment",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Hide a single entity from all eyes.",
+    "skill": "magic",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704949001028,
+    "modifiedTime": 1707674955455,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "qO7UpU2Y5v5fmuKY",
+  "sort": 0,
+  "_key": "!items!qO7UpU2Y5v5fmuKY"
+}

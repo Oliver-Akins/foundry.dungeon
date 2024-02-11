@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Omega",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Can only be case when you reach 0 Sync. Sacrifice your avatar and your influence over Annwn to give the party 20 Sync",
+    "skill": "magic",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704948748118,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "7wHFyHwO0rTAR9tm",
+  "sort": 400000,
+  "_key": "!items!7wHFyHwO0rTAR9tm"
+}

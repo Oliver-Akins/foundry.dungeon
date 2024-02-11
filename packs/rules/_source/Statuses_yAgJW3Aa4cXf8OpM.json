@@ -1,0 +1,757 @@
+{
+  "name": "Statuses",
+  "_id": "yAgJW3Aa4cXf8OpM",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "Overview",
+      "type": "text",
+      "_id": "p8wlxSqcQhZQRnaO",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Status are applied when traps are triggered, mobs land unique attacks, or by fumbling certain actions. When a status is applied, its effects are immediate. A player can use their action to make a tilt roll to end the status. Otherwise they'll need foils or magic to cure the status.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675677774,
+        "modifiedTime": 1707675687491,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.p8wlxSqcQhZQRnaO"
+    },
+    {
+      "sort": 200000,
+      "name": "Bleeding",
+      "type": "text",
+      "_id": "Vu6iNCHNbrf4Dywe",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Take 1 Sync damage at the start of each of your turns until the bleeding is stopped.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675698797,
+        "modifiedTime": 1707675710703,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.Vu6iNCHNbrf4Dywe"
+    },
+    {
+      "sort": 300000,
+      "name": "Blinded",
+      "type": "text",
+      "_id": "UgOXwykPoHH6mxuH",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>All navigation or targetting requires a successful luck roll.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675723698,
+        "modifiedTime": 1707675725827,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.UgOXwykPoHH6mxuH"
+    },
+    {
+      "sort": 400000,
+      "name": "Burning",
+      "type": "text",
+      "_id": "Zplq6oUkBLZjuLuC",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Take [[/roll 1d6 # 1d6]] Sync damage at the start of your turn.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675739369,
+        "modifiedTime": 1707675744761,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.Zplq6oUkBLZjuLuC"
+    },
+    {
+      "sort": 500000,
+      "name": "Charmed",
+      "type": "text",
+      "_id": "uPKEeeK5O8gILptc",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Act on the charmer's turn and add your dice to their damage.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675928934,
+        "modifiedTime": 1707675933413,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.uPKEeeK5O8gILptc"
+    },
+    {
+      "sort": 600000,
+      "name": "Confused",
+      "type": "text",
+      "_id": "INB0gL4EznwVg0yn",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>All failed rolls are considered fumbles</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675943152,
+        "modifiedTime": 1707675944882,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.INB0gL4EznwVg0yn"
+    },
+    {
+      "sort": 700000,
+      "name": "Deafened",
+      "type": "text",
+      "_id": "NOvC9fH492bYFqXb",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>You can't hear any voice communications or game sounds. You may need to cover your ears, leave the room, or deafen your headset.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675968679,
+        "modifiedTime": 1707675971640,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.NOvC9fH492bYFqXb"
+    },
+    {
+      "sort": 800000,
+      "name": "Drowning",
+      "type": "text",
+      "_id": "eBdIFH0ZWvcFFcTX",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>You've failed your swimming roll and are now drowning. Roll Tilt at the start of your turn until someone saves you or you are forced to respawn.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675981287,
+        "modifiedTime": 1707675986654,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.eBdIFH0ZWvcFFcTX"
+    },
+    {
+      "sort": 900000,
+      "name": "Frightened",
+      "type": "text",
+      "_id": "lsCvBn9TMtQl7Hgw",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>You must move as far as possible from the thing that frightened you. You can't take actions that harm the thing that frightened you.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675997068,
+        "modifiedTime": 1707675999184,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.lsCvBn9TMtQl7Hgw"
+    },
+    {
+      "sort": 1000000,
+      "name": "Grappled",
+      "type": "text",
+      "_id": "FErkgaSZlHPLdtd7",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>You can't move but you can still take your action.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676010259,
+        "modifiedTime": 1707676012998,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.FErkgaSZlHPLdtd7"
+    },
+    {
+      "sort": 1100000,
+      "name": "Invisible",
+      "type": "text",
+      "_id": "VEGpoa1DPtSheaEk",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Make an RNG roll to be able to spot an invisible target. All combat rolls must be made using RNG as well. Hitting an invisible target makes them visible.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676021625,
+        "modifiedTime": 1707676024296,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.VEGpoa1DPtSheaEk"
+    },
+    {
+      "sort": 1200000,
+      "name": "Lost",
+      "type": "text",
+      "_id": "9pAaAElhaowUbXqS",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>If you are afflicted with this status, all navigation requires a successful RNG roll. Failure means the Server chooses where you go.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676039784,
+        "modifiedTime": 1707676045882,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.9pAaAElhaowUbXqS"
+    },
+    {
+      "sort": 1300000,
+      "name": "Paralyzed",
+      "type": "text",
+      "_id": "Tmeq77W6rtFhtR8M",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>You can't move or take an action on your turn. All damage you take is doubled.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676104227,
+        "modifiedTime": 1707676107220,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.Tmeq77W6rtFhtR8M"
+    },
+    {
+      "sort": 1400000,
+      "name": "Poisoned",
+      "type": "text",
+      "_id": "RSKucW2LOCbR6iwb",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>You make all rolls using your Tilt dice. Failure marks a respawn. Respawning removes this status.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676117414,
+        "modifiedTime": 1707676125744,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.RSKucW2LOCbR6iwb"
+    },
+    {
+      "sort": 1500000,
+      "name": "Rage",
+      "type": "text",
+      "_id": "5G1Gj8eeKrmTLk2v",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>You must attack the person or creature nearest to you.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676138008,
+        "modifiedTime": 1707676140388,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.5G1Gj8eeKrmTLk2v"
+    },
+    {
+      "sort": 1600000,
+      "name": "Sickened",
+      "type": "text",
+      "_id": "nUy4CjnVZgL1bsdn",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>You make all rolls with -1</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676151943,
+        "modifiedTime": 1707676154116,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.nUy4CjnVZgL1bsdn"
+    },
+    {
+      "sort": 1700000,
+      "name": "Silenced",
+      "type": "text",
+      "_id": "xuAqJEceowRBS6EK",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Cannot cast songs and voice communication doesn't work. Cover your mouth or mute your microphone.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676173514,
+        "modifiedTime": 1707676176637,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.xuAqJEceowRBS6EK"
+    },
+    {
+      "sort": 1800000,
+      "name": "Sleeping",
+      "type": "text",
+      "_id": "vrAbVZkCvwsjRb0i",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>All attacks auto-hit and deal twice as much damage. If attacking a sleeping mob, the attack removes two dice.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676185470,
+        "modifiedTime": 1707676188134,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.vrAbVZkCvwsjRb0i"
+    },
+    {
+      "sort": 1900000,
+      "name": "Slowed",
+      "type": "text",
+      "_id": "lkpQ9j1NLhnkfZvI",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>You go at the end of initiative and can only more <strong>or</strong> take an action on your turn, not both.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676197864,
+        "modifiedTime": 1707676201034,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.lkpQ9j1NLhnkfZvI"
+    },
+    {
+      "sort": 2000000,
+      "name": "Stunned",
+      "type": "text",
+      "_id": "aTVNF7ftndKpRO3C",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Your turn is skilled this round of initiative. Then remove this status.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676211147,
+        "modifiedTime": 1707676215921,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.aTVNF7ftndKpRO3C"
+    },
+    {
+      "sort": 2100000,
+      "name": "Tripped",
+      "type": "text",
+      "_id": "S4ogXF1XCORqPqz3",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Melee attacks against you count as crits if they hit. Ranged attacks treat you as behind partial cover. You can end this status at the end of your turn, no roll is needed.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707676224313,
+        "modifiedTime": 1707676227775,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!yAgJW3Aa4cXf8OpM.S4ogXF1XCORqPqz3"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1707675666312,
+    "modifiedTime": 1707676227775,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_key": "!journal!yAgJW3Aa4cXf8OpM"
+}

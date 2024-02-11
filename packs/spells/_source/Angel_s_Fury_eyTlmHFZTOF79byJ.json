@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Angel's Fury",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "You enshrine a party member's head with a fiery crown, allowing them to auto-destroy a single mob up to a d10.",
+    "skill": "magic",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704947604011,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "eyTlmHFZTOF79byJ",
+  "sort": 1700000,
+  "_key": "!items!eyTlmHFZTOF79byJ"
+}

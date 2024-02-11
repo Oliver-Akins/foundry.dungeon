@@ -30,6 +30,43 @@
 			"path": "langs/en-ca.json"
 		}
 	],
+"packs": [
+	{
+		"name": "untyped",
+		"label": "Generic Items",
+		"system": "dotdungeon",
+		"type": "Item",
+		"path": "packs/untyped"
+	},
+	{
+		"name": "spells",
+		"label": "Core Spells",
+		"system": "dotdungeon",
+		"type": "Item",
+		"path": "packs/spells"
+	},
+	{
+		"name": "aspects",
+		"label": "Core Aspects",
+		"system": "dotdungeon",
+		"type": "Item",
+		"path": "packs/aspects"
+	},
+	{
+		"name": "beastiary",
+		"label": "Core Beastiary",
+		"system": "dotdungeon",
+		"type": "Actor",
+		"path": "packs/beastiary"
+	},
+	{
+		"name": "rules",
+		"label": "Core Rules",
+		"system": "dotdungeon",
+		"type": "JournalEntry",
+		"path": "packs/rules"
+	}
+],
 	"flags": {
 		"hotReload": {
 			"extensions": ["css", "hbs", "json", "js", "mjs", "svg"],

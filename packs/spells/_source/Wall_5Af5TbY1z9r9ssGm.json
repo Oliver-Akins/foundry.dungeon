@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Wall",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Add to the dungeon, change the architecture. A new wall is created from surrounding material, connecting two nearby walls of your choice.",
+    "skill": "dreams",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704949029619,
+    "modifiedTime": 1707674960427,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "5Af5TbY1z9r9ssGm",
+  "sort": 0,
+  "_key": "!items!5Af5TbY1z9r9ssGm"
+}

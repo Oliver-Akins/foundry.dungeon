@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Cellar Door",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "A surface becomes an entrance into a liminal space big enough to hold five party members. If the door is shut from the inside, the space is impenetrable. It lasts for up to thirty minutes.",
+    "skill": "magic",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704947905093,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "ywIywJEL6r84ETx6",
+  "sort": 1500000,
+  "_key": "!items!ywIywJEL6r84ETx6"
+}

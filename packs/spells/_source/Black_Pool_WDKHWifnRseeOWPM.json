@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Black Pool",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "You cast unholy light onto the bottom of the dungeon steps, flooding it with magical, black ichor. From its murky depths, Darkroot, the Skeleton Prince, crawls forth to answer a single question about the dungeon you're in.",
+    "skill": "dreams",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704947661164,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "WDKHWifnRseeOWPM",
+  "sort": 1800000,
+  "_key": "!items!WDKHWifnRseeOWPM"
+}

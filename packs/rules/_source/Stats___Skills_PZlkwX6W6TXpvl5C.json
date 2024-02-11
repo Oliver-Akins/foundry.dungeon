@@ -1,0 +1,232 @@
+{
+  "name": "Stats & Skills",
+  "_id": "PZlkwX6W6TXpvl5C",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "Skills",
+      "type": "text",
+      "_id": "tf71tBEsorEzwg5D",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Skills are in-game abilities that dictate how good your Avatar is at accomplishing tasks. Choose three skills to gain training in, alongside the one skill gifted by your job. <em>Training</em> in a skill means you get +2 to rolls when using it. <em>Expertise</em> in a skill means you get +4 to rolls when using it.</p><p>Skills are categorized by which Stat they fall under. Add your bonus to Contests where the Skill is applicable, rolling your Stat Dice and adding the Skill to the result.</p><p></p><h2>Skill Training</h2><p>To learn a new skill, PCs must find someone who can teach it to them. This requires a payment of 20 Bytes and a week of downtime. To gain Expertise in a skill, the player and the Server Host must agree to a challenge. Failure to accomplish the challenge locks you out of the skill into another challenge is agreed upon. If the challenge is accomplished the player gains Expertise in the skill.</p><p></p><h2>Detailed Skill Breakdowns</h2><ul><li><p>@UUID[.hcU7kvIyJEyQfjZI]{Build Skills}</p></li><li><p>@UUID[.eEKc5g8nyJo4gzcA]{Meta Skills}</p></li><li><p>@UUID[.Bv7FKq69XgfNgq0G]{Presence Skills}</p></li><li><p>@UUID[.YjSClMTdT8psEy3k]{Hands Skills}</p></li></ul>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675426941,
+        "modifiedTime": 1707676418844,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!PZlkwX6W6TXpvl5C.tf71tBEsorEzwg5D"
+    },
+    {
+      "sort": 200000,
+      "name": "Build Skills",
+      "type": "text",
+      "_id": "hcU7kvIyJEyQfjZI",
+      "title": {
+        "show": true,
+        "level": 2
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<h2>Defense</h2><p>Instead of armor, characters have a base defense that acts as damage reduction. Training in defense gives you 1dr, and Expertise gives you 2dr. Some clothes and armour may offer more damage reduction.</p><p></p><h2>Magic</h2><p>Training in magic lets you cast spells. Without training, you might be able to read the spells but their magic is lost on you. Expertise allows you to identify who cast a particular spell and detect magic in the area.</p><p></p><h2>Melee</h2><p>Training in melee allows you to use big melee weapons. Expertise allows you a unique \"stance\" with your weapon of choice. Whether you're swinging a sword or a punch, add your training when making attacks against against opponents.</p><p></p><h2>Platforming</h2><p>Acrobatic leaps, climbing, and navigating dangerous terrain. Training in platforming gives you tighter control over your Avatar's movements. Expertise gives you a double jump.</p><p></p><h2>Strength</h2><p>Knocking this over, pushing things out of the way, and general, hand-made destruction. Training in strength makes objects weigh less to your character. Expertise lets you throw large objects.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675453145,
+        "modifiedTime": 1707675622437,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!PZlkwX6W6TXpvl5C.hcU7kvIyJEyQfjZI"
+    },
+    {
+      "sort": 300000,
+      "name": "Meta Skills",
+      "type": "text",
+      "_id": "eEKc5g8nyJo4gzcA",
+      "title": {
+        "show": true,
+        "level": 2
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<h2>Alchemy</h2><p>Creating and identifying foils. Training in alchemy allows your character to craft lesser foils out of Materials. Expertise lets you craft greater foils.</p><p></p><h2>Arcanum</h2><p>The knowledge and training to use magic items and sci-fi tech. Training in arcanum allows you to use neon weapons. Expertise gives you basic information about magic items that are within your line of sight.</p><p></p><h2>Dreams</h2><p>Considered a hidden skill of the game, because it's not clearly defined on the wiki. [Call to action! The .dungeon wiki is open for contributors who know more about this skill]</p><section class=\"secret\" id=\"secret-p8sDnaGF4dVcH8aS\"><p>Training in dreams allows you to make pacts with the pantheon of .dungeon. Expertise in it allows you to open yourself to the world of Annwn and receive messages from it. Often cryptic or prophetic.</p></section><p></p><h2>Lore</h2><p>Training in lore means the game expands descriptive text. Expertise means the game might butt in to give you information, even when you didn't ask for it.</p><p></p><h2>Navigation</h2><p>Training in navigation improves your HUD radar and quest markers. Expertise gives you active hints to help you search and travel.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675480467,
+        "modifiedTime": 1707675613151,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!PZlkwX6W6TXpvl5C.eEKc5g8nyJo4gzcA"
+    },
+    {
+      "sort": 400000,
+      "name": "Presence Skills",
+      "type": "text",
+      "_id": "Bv7FKq69XgfNgq0G",
+      "title": {
+        "show": true,
+        "level": 2
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<h2>Animal Handling</h2><p>Training in animal handling allows you to take on animals (and some monsters) as pets. Expertise in animal handling lets you reroll animal reactions to you, and take on a mount.</p><p></p><h2>Perception</h2><p>Training in perception improves colours, sounds, and smells to enhance your senses. Expertise in perception does this even more and also adds faint outlines to things of interest. The invisible hands of the game like you.</p><p></p><h2>Sneak</h2><p>Training in sneak reduces the ambient and active sounds of your Avatar. Expertise makes you completely silent while crouched.</p><p></p><h2>Speech</h2><p>Training in speech improves NPC reactions to you. Expertise in speech rerolls reaction rolls even in dangerous situations.</p><p></p><h2>Vibes</h2><p>Training in vibes improves the haptic feedback of your VR rig, giving you subtle signals when things are off. Expertise improves this even more and makes NPCs more readable.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675495034,
+        "modifiedTime": 1707675630479,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!PZlkwX6W6TXpvl5C.Bv7FKq69XgfNgq0G"
+    },
+    {
+      "sort": 500000,
+      "name": "Hands Skills",
+      "type": "text",
+      "_id": "YjSClMTdT8psEy3k",
+      "title": {
+        "show": true,
+        "level": 2
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<h2>Accuracy</h2><p>Training in accuracy reduces arrow and bullet drop and other things that affect trajectory of ranged attacks. Expertise subtly slows aiming down to give you greater control.</p><p></p><h2>Crafting</h2><p>Training in crafting allows you to create lesser versions of items as long as you have the supplies. Expertise allows you to create greater versions.</p><p></p><h2>Engineering</h2><p>Training in engineering aids you in repairing vehicles and other machinery in the world. Expertise aids you further by reducing repair costs.</p><p></p><h2>Explosives</h2><p>Training in explosives allows you more wiggle room for failure while using them in combat and aids you in building and disarming explosives. Expertise allows you to disarm explosives without destroying them.</p><p></p><h2>Piloting</h2><p>Training in piloting improves vehicle responsiveness and makes them easier to control. Expertise allows for a semi-auto-pilot so you can take on simple tasks while also piloting.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675529083,
+        "modifiedTime": 1707675636786,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!PZlkwX6W6TXpvl5C.YjSClMTdT8psEy3k"
+    },
+    {
+      "sort": 0,
+      "name": "Stats",
+      "type": "text",
+      "_id": "tv9jEZflqkGgQ1Az",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<h2>Build</h2><p>System mastery, character optimization, the crunch of the game.</p><p></p><h2>Meta</h2><p>Knowledge of the game, its setting, and its development.</p><p></p><h2>Presence</h2><p>Your senses, charisma, and immersion in the virtual world.</p><p></p><h2>Hands</h2><p>Your reaction time, hand-eye coordination, and precision.</p><p></p><h2>Tilt</h2><p>Tilt is how you keep your cool when the virtual world is unfair. Other RPGs call this a \"save\" or a \"saving throw\". Whenever your character would take on a status effect, roll your Tilt dice, <strong>getting a 4 or higher is a success, avoiding the status.</strong></p><p></p><h2>RNG</h2><p>RNG is also known as \"luck\" in other RPGs, RNG rolls are done for random events, loot drops, and other acts of chance the Server needs to account for. You can also roll RNG against an NPC to see if they are nearby.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1707675599891,
+        "modifiedTime": 1707675641462,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!PZlkwX6W6TXpvl5C.tv9jEZflqkGgQ1Az"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1707675420080,
+    "modifiedTime": 1707676418844,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_key": "!journal!PZlkwX6W6TXpvl5C"
+}

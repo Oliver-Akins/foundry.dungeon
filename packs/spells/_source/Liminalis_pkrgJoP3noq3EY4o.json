@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Liminalis",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Draw the essence of another door upon the door in front of you. They are now linked forever for you and your party members.",
+    "skill": "dreams",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704948322259,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "pkrgJoP3noq3EY4o",
+  "sort": 1200000,
+  "_key": "!items!pkrgJoP3noq3EY4o"
+}

@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Solar Flare",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "Eclipse the sun with your hand. The halo of light auto-destroys d4 entities in the field of battle.",
+    "skill": "",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704948846489,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "KblpgCg4Bmmk0sJS",
+  "sort": 600000,
+  "_key": "!items!KblpgCg4Bmmk0sJS"
+}

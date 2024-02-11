@@ -1,0 +1,33 @@
+{
+  "folder": null,
+  "name": "Buff",
+  "type": "spell",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": "The magic of the elk hand sign grants each party member a d8 to add to their next roll.",
+    "skill": "dreams",
+    "quantity": 1,
+    "buy": null,
+    "usage_cost": null,
+    "tier": "simple"
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1704947859875,
+    "modifiedTime": 1707674953656,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_id": "IfNKFvoGeMXEVMNz",
+  "sort": 1400000,
+  "_key": "!items!IfNKFvoGeMXEVMNz"
+}
