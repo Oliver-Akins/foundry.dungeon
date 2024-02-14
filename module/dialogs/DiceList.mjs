@@ -30,6 +30,16 @@ export class DiceList extends GenericDialog {
 		return ctx;
 	};
 
+	async activateListeners(html) {
+		super.activateListeners(html);
+
+		if (!this.isEditable) return;
+		console.debug(`.dungeon | DiceList adding event listeners`);
+
+		html.find(`[data-die-update]`)
+			.on(`change`, this.updateDieInMemoryOnly.bind(this))
+	};
+
 	async _updateObject(_event, formData) {
 		const newDice = this.dice.map(d => {
 			return {
@@ -39,6 +49,19 @@ export class DiceList extends GenericDialog {
 			};
 		});
 		await this.actor.update({ "system.dice": newDice });
+	};
+
+	updateDieInMemoryOnly($e) {
+		const target = $e.currentTarget;
+		const data = target.dataset;
+		const value = target.value;
+		const [ dieId, field ] = data.dieUpdate.split(`.`);
+		for (const die of this.dice) {
+			if (die.id === dieId) {
+				die[field] = value;
+				return
+			};
+		};
 	};
 
 	addDie() {

@@ -8,6 +8,7 @@
 					class="count"
 					name="{{die.id}}.count"
 					value="{{die.count}}"
+					data-die-update="{{die.id}}.count"
 					aria-label="The number of dice to roll at the same time"
 				>
 				<span class="large" aria-hidden="true">d</span>
@@ -17,6 +18,7 @@
 					class="sides"
 					name="{{die.id}}.sides"
 					value="{{die.sides}}"
+					data-die-update="{{die.id}}.sides"
 					aria-label="The number of sides that are on the dice"
 				>
 				<span class="large" aria-hidden="true">x</span>
@@ -26,6 +28,7 @@
 					class="repeat"
 					name="{{die.id}}.repeat"
 					value="{{die.repeat}}"
+					data-die-update="{{die.id}}.repeat"
 					aria-label="The number of times to repeat this dice "
 				>
 				<button
