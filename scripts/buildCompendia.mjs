@@ -1,3 +1,4 @@
+import { existsSync } from "fs";
 import { readFile } from "fs/promises";
 import { join } from "path";
 import { compilePack } from "@foundryvtt/foundryvtt-cli";
@@ -12,8 +13,13 @@ async function main() {
 
 	for (const compendium of system.packs) {
 		console.debug(`Packing ${compendium.label} (${compendium.name})`);
+		let src = join(process.cwd(), compendium.path, `_source`);
+		if (!existsSync(src)) {
+			console.warn(`${compendium.path} doesn't exist, skipping.`)
+			continue;
+		};
 		await compilePack(
-			join(process.cwd(), compendium.path, `_source`),
+			src,
 			join(process.cwd(), compendium.path),
 			{ recursive: true },
 		);
