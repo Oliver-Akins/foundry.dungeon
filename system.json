@@ -32,6 +32,13 @@
 	],
 	"packs": [
 		{
+			"name": "adventures",
+			"label": "Adventures",
+			"system": "dotdungeon",
+			"type": "Adventure",
+			"path": "packs/adventures"
+		},
+		{
 			"name": "untyped",
 			"label": "Generic Items",
 			"system": "dotdungeon",
