@@ -1,18 +1,18 @@
 {
-  "name": "Dream Materials",
+  "folder": "FpQZ612cZuEoLAEQ",
+  "name": "Lucky Foil",
   "type": "untyped",
-  "_id": "Y2ngvKcIMgfTaW05",
+  "_id": "fDAWnUfvsPW7OrQz",
   "img": "icons/svg/item-bag.svg",
   "system": {
     "quantity": 1,
-    "buy": null,
-    "usage_cost": null,
+    "buy": 4,
+    "usage_cost": 0,
     "tier": "simple",
-    "description": ""
+    "description": "Reroll one RNG roll. Tears after use."
   },
   "effects": [],
-  "folder": "MMUe6fSojzLZ1kEx",
-  "sort": 100000,
+  "sort": 0,
   "ownership": {
     "default": 0,
     "SXF6LgHA8oYfOhCm": 3
@@ -22,9 +22,9 @@
     "systemId": "dotdungeon",
     "systemVersion": "0.0.5",
     "coreVersion": "11.315",
-    "createdTime": 1707677200136,
-    "modifiedTime": 1708052963493,
+    "createdTime": 1708052984357,
+    "modifiedTime": 1708053080172,
     "lastModifiedBy": "SXF6LgHA8oYfOhCm"
   },
-  "_key": "!items!Y2ngvKcIMgfTaW05"
+  "_key": "!items!fDAWnUfvsPW7OrQz"
 }

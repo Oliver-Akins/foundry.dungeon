@@ -11,8 +11,8 @@
     "description": "A resource used to craft dyes and buy decorations. Fashion Materials can be acquired through rare mob drops, found in dungeon chests, or traded for at the Auction House."
   },
   "effects": [],
-  "folder": null,
-  "sort": 0,
+  "folder": "MMUe6fSojzLZ1kEx",
+  "sort": 200000,
   "ownership": {
     "default": 0,
     "SXF6LgHA8oYfOhCm": 3
@@ -23,7 +23,7 @@
     "systemVersion": "0.0.5",
     "coreVersion": "11.315",
     "createdTime": 1707677060852,
-    "modifiedTime": 1707677136467,
+    "modifiedTime": 1708052964560,
     "lastModifiedBy": "SXF6LgHA8oYfOhCm"
   },
   "_key": "!items!7Wa6J1aOeFoOGWqo"

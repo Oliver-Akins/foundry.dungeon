@@ -1,0 +1,30 @@
+{
+  "folder": "FpQZ612cZuEoLAEQ",
+  "name": "Solar Foil",
+  "type": "untyped",
+  "_id": "IaDutRd6ggG5y1I9",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "quantity": 1,
+    "buy": 4,
+    "usage_cost": 0,
+    "tier": "simple",
+    "description": "Insert into your weapon to imbue it with solar damage. Insert it into your armor to negate the next solar damage you take."
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1708053008790,
+    "modifiedTime": 1708053083362,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_key": "!items!IaDutRd6ggG5y1I9"
+}

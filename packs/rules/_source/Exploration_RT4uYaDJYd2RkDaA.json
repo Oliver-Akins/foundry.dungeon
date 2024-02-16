@@ -1,0 +1,21 @@
+{
+  "name": "Exploration",
+  "_id": "RT4uYaDJYd2RkDaA",
+  "pages": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1708054253372,
+    "modifiedTime": 1708054253372,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_key": "!journal!RT4uYaDJYd2RkDaA"
+}

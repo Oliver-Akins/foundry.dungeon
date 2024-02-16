@@ -1,0 +1,94 @@
+{
+  "name": "Inventory",
+  "_id": "y7CfRycKl5A8SpnH",
+  "pages": [
+    {
+      "sort": 100000,
+      "name": "Bytes",
+      "type": "text",
+      "_id": "3uVI4u2ByT8Tt6jq",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p>Bytes are the currency of .dungeon. They can only be gained by interacting with the game: travelling to far away places, fighting mobs, exploring randomly generated structures, and taking on quests. They are used for everything from buying gear, to casting spells, and uncovering secrets in the world.</p><p></p><h2>Gaining Bytes</h2><p>A character gains 1 Byte (1b) per day as long as they log in and play. Traveling into a new hex for the first time also nets 1b. Defeating an encounter without taking Sync damage will gain the party an additional 1b each.</p><p></p><h2>The Hidden World of Bytes</h2><p>Last year, players discovered that an entire region of the map was unlocked once they accumulated enough Bytes, leading to speculation that the developers have hidden other things behind Bytes. Secret doors have been found in the tutorial dungeon. Some mobs are hidden until a certain number of Bytes are acquired. There are many secrets we've yet to uncover.</p>",
+        "markdown": ""
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1708053617428,
+        "modifiedTime": 1708058964191,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!y7CfRycKl5A8SpnH.3uVI4u2ByT8Tt6jq"
+    },
+    {
+      "sort": 200000,
+      "name": "Resources/Supplies",
+      "type": "text",
+      "_id": "u0e8iLKCdCbdBkRG",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Note:</strong> The wiki uses the terms \"Resources\" and \"Supplies\" interchangeably, they are functionally equivalent in every way.</p>",
+        "markdown": ""
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "system": {},
+      "ownership": {
+        "default": -1,
+        "SXF6LgHA8oYfOhCm": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "dotdungeon",
+        "systemVersion": "0.0.5",
+        "coreVersion": "11.315",
+        "createdTime": 1708053891257,
+        "modifiedTime": 1708060045044,
+        "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+      },
+      "_key": "!journal.pages!y7CfRycKl5A8SpnH.u0e8iLKCdCbdBkRG"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1708053607510,
+    "modifiedTime": 1708060045044,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_key": "!journal!y7CfRycKl5A8SpnH"
+}

@@ -1,0 +1,105 @@
+{
+  "name": "Arya",
+  "type": "mob",
+  "_id": "oCHOQYCQEI1zk5zO",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "bonus": 4,
+    "initiative": null,
+    "morale": 20,
+    "drops": "Arya's Cloak",
+    "stunts": "Arya's Shroud - On her initiative, Arya drags a player into her shroud, a foggy one-on-one arena. They leave at the beginning of Arya's next turn if she chooses a new victim.",
+    "immune": "Solar, Shadow, Neon",
+    "weak": "Gun",
+    "bytes": 0,
+    "description": "The Queen of the Wode. A gargantuan fox who converses with her all-seeing children (the Palims) through hidden strings of code. If you find her, perform a /bow and offer anything of value. She can guide you where you need to go.",
+    "dice": [
+      {
+        "count": 3,
+        "sides": 6,
+        "repeat": 5
+      }
+    ]
+  },
+  "prototypeToken": {
+    "name": "Arya",
+    "displayName": 0,
+    "actorLink": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "scaleX": 1,
+      "scaleY": 1,
+      "offsetX": 0,
+      "offsetY": 0,
+      "rotation": 0
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "SXF6LgHA8oYfOhCm": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1708052549670,
+    "modifiedTime": 1708052728103,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_key": "!actors!oCHOQYCQEI1zk5zO"
+}

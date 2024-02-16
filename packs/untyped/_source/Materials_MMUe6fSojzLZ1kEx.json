@@ -1,0 +1,19 @@
+{
+  "name": "Materials",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "MMUe6fSojzLZ1kEx",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "systemId": "dotdungeon",
+    "systemVersion": "0.0.5",
+    "coreVersion": "11.315",
+    "createdTime": 1708052960887,
+    "modifiedTime": 1708052960887,
+    "lastModifiedBy": "SXF6LgHA8oYfOhCm"
+  },
+  "_key": "!folders!MMUe6fSojzLZ1kEx"
+}
