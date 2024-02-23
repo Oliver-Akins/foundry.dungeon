@@ -22,7 +22,7 @@ export class AspectSheet extends GenericItemSheet {
 	};
 
 	async getData() {
-		const ctx = {};
+		const ctx = await super.getData();
 		return ctx;
 	};
 };
