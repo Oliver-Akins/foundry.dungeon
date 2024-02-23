@@ -42,6 +42,11 @@ export const syncMilestones = [
 
 export const syncDice = `1d20`;
 
+export const localizerConfig = {
+	subKeyPattern: /@(?<key>[a-zA-Z\.]+)/gm,
+	maxDepth: 10,
+};
+
 export default {
 	stats,
 	statDice,
@@ -57,4 +62,5 @@ export default {
 	itemTiers,
 	syncMilestones,
 	syncDice,
+	localizerConfig
 };
