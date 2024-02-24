@@ -7,5 +7,10 @@
 	"[yaml,yml]": {
 		"editor.insertSpaces": true,
 		"editor.tabSize": 2
+	},
+	"git.branchProtection": [],
+	"files.exclude": {
+		"dotdungeon.lock": true,
+		".styles": true,
 	}
 }
