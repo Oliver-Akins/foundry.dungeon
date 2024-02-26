@@ -19,7 +19,8 @@ import { PetSheet } from "./sheets/Items/PetSheet.mjs";
 
 // Actor Sheets
 import { BasicSyncSheet } from "./sheets/SyncVariations/BasicSyncSheet.mjs";
-import { PlayerSheet } from "./sheets/PlayerSheet.mjs";
+import { PlayerSheet } from "./sheets/MVPPCSheet.mjs";
+import { MVPPCSheet } from "./sheets/MVPPCSheet.mjs";
 import { MobSheet } from "./sheets/MobSheet.mjs";
 
 // Utility imports
@@ -51,7 +52,7 @@ Hooks.once(`init`, async () => {
 	CONFIG.DOTDUNGEON = DOTDUNGEON;
 
 
-	Actors.registerSheet("dotdungeon", PlayerSheet, {
+	Actors.registerSheet("dotdungeon", MVPPCSheet, {
 		makeDefault: true,
 		types: ["player"],
 		label: "dotdungeon.sheet-names.PlayerSheet"

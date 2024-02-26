@@ -1,7 +1,7 @@
 import { ActorHandler } from "../documents/Actor/Handler.mjs";
 import { GenericActorSheet } from "./GenericActorSheet.mjs";
 
-export class PlayerSheet extends GenericActorSheet {
+export class MVPPCSheet extends GenericActorSheet {
 
 	/** @override {ActorHandler} actor */
 
