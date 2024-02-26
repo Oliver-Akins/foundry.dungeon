@@ -1,0 +1,7 @@
+$bg-base: #202b38;
+
+.actor--pc {
+	--sheet-bg: #{$bg-base};
+	--nav-bg: var(--panel-bg);
+	--panel-bg: rgba(255, 255, 255, 0.05);
+}

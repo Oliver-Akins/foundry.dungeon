@@ -1,0 +1,11 @@
+@use "./themes/dark.scss";
+
+.dotdungeon .actor--pc {
+	background: var(--sheet-bg);
+	display: grid;
+	grid-template-rows: 1fr minmax(min-content, 50px);
+
+	nav {
+		background: var(--panel-bg);
+	}
+}

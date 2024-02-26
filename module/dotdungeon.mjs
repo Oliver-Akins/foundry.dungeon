@@ -19,7 +19,7 @@ import { PetSheet } from "./sheets/Items/PetSheet.mjs";
 
 // Actor Sheets
 import { BasicSyncSheet } from "./sheets/SyncVariations/BasicSyncSheet.mjs";
-import { PlayerSheet } from "./sheets/MVPPCSheet.mjs";
+import { PlayerSheetv2 } from "./sheets/Actors/PC/Improved.mjs";
 import { MVPPCSheet } from "./sheets/MVPPCSheet.mjs";
 import { MobSheet } from "./sheets/MobSheet.mjs";
 
@@ -55,7 +55,12 @@ Hooks.once(`init`, async () => {
 	Actors.registerSheet("dotdungeon", MVPPCSheet, {
 		makeDefault: true,
 		types: ["player"],
-		label: "dotdungeon.sheet-names.PlayerSheet"
+		label: "dotdungeon.sheet-names.PlayerSheet.MVP"
+	});
+	Actors.registerSheet("dotdungeon", PlayerSheetv2, {
+		makeDefault: false,
+		types: ["player"],
+		label: "dotdungeon.sheet-names.PlayerSheet.v2"
 	});
 	Actors.registerSheet("dotdungeon", MobSheet, {
 		makeDefault: true,

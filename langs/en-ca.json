@@ -78,7 +78,10 @@
 			}
 		},
 		"sheet-names": {
-			"PlayerSheet": "PC/PUG Sheet",
+			"PlayerSheet": {
+				"MVP": "MVP PC Sheet",
+				"v2": "PC Sheet"
+			},
 			"SyncSheet": {
 				"basic": "Theme: Basic"
 			},

@@ -1,7 +1,7 @@
 @use "../../vars.scss" as *;
 @use "../../mixins/breakpoints" as *;
 
-.dotdungeon .actor--pc {
+.dotdungeon .actor--pc-mvp {
 	display: grid;
 	grid-template-areas:
 		"profile stats stats"
