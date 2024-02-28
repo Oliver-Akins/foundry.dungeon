@@ -8,8 +8,8 @@ export class PlayerSheetv2 extends GenericActorSheet {
 				template: `systems/dotdungeon/templates/actors/char-sheet/v2/sheet.hbs`,
 				tabs: [
 					{
-						// group: `page`,
-						navSelector: `.potato`,
+						group: `page`,
+						navSelector: `nav`,
 						contentSelector: `.tab-content`,
 						initial: `tab1`,
 					},

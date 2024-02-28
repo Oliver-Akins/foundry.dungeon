@@ -1,11 +1,26 @@
 @use "./themes/dark.scss";
+@use "../../../mixins/material" as material;
 
 .dotdungeon .actor--pc {
-	background: var(--sheet-bg);
+	background-color: var(--sheet-bg);
 	display: grid;
 	grid-template-rows: 1fr minmax(min-content, 50px);
 
+	color: white;
+
+	.panel-0dp { @include material.elevate(0); margin: 1rem; padding: 10px; }
+	.panel-1dp { @include material.elevate(1); margin: 1rem; padding: 10px; }
+	.panel-2dp { @include material.elevate(2); margin: 1rem; padding: 10px; }
+	.panel-3dp { @include material.elevate(3); margin: 1rem; padding: 10px; }
+	.panel-4dp { @include material.elevate(4); margin: 1rem; padding: 10px; }
+	.panel-6dp { @include material.elevate(6); margin: 1rem; padding: 10px; }
+	.panel-8dp { @include material.elevate(8); margin: 1rem; padding: 10px; }
+	.panel-12dp { @include material.elevate(12); margin: 1rem; padding: 10px; }
+	.panel-16dp { @include material.elevate(16); margin: 1rem; padding: 10px; }
+	.panel-24dp { @include material.elevate(24); margin: 1rem; padding: 10px; }
+
 	nav {
-		background: var(--panel-bg);
+		background-color: var(--nav-bg);
+		@include material.elevate(02)
 	}
 }

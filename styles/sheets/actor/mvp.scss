@@ -271,7 +271,7 @@
 
 @include bp-m {
 	.dotdungeon {
-		.actor--pc {
+		.actor--pc-mvp {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 			grid-template-rows: repeat(15, min-content);
 			grid-template-areas:
@@ -311,7 +311,7 @@
 
 @include bp-s {
 	.dotdungeon {
-		.actor--pc {
+		.actor--pc-mvp {
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(12, min-content);
 			grid-template-areas:

@@ -1,0 +1,6 @@
+@mixin elevate($height) {
+	background-color: var(--elevation-#{$height}dp);
+	-webkit-box-shadow: 0px 0px #{$height * 1.75}px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px #{$height * 1.75}px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px #{$height * 1.75}px 0px rgba(0,0,0,0.75);
+}
