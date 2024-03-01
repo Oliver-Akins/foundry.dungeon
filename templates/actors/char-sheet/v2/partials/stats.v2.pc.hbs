@@ -1,0 +1,56 @@
+<div class="tab stats-panel" data-group="page" data-tab="stats">
+	{{!--
+		Iterate over each stat in the display data
+		- header:
+			- localized stat name
+			- stat dice dropdown
+			- roll button
+		- body (if skills present):
+			- iterate over all of the skills
+				- localized skill name
+				- training dropdown
+				- roll button
+	 --}}
+	{{#each computed.stats as | stat |}}
+		<div class="e-1dp stat">
+			<div class="stat__header">
+				<h2>{{stat.name}}</h2>
+				<select
+					name="system.stats.{{stat.key}}"
+					class="e-2dp"
+				>
+					{{#select stat.value}}
+						<option value="">---</option>
+						{{#each stat.dieOptions as | die |}}
+							<option value="{{die.value}}" {{disabled die.disabled}}>
+								{{die.label}}
+							</option>
+						{{/each}}
+					{{/select}}
+				</select>
+				<button type="button" class="e-2dp">
+					Roll
+				</button>
+			</div>
+			{{#if stat.skills}}
+				<div class="stat__skills">
+					{{#each stat.skills as | skill |}}
+						<label for="">{{skill.name}}</label>
+						<select name="" id="" class="e-2dp"></select>
+						<button
+							type="button"
+							class="e-2dp"
+							{{disabled skill.rollDisabled}}
+						>
+							{{#if skill.rollDisabled}}
+								Locked
+							{{else}}
+								{{skill.formula}}
+							{{/if}}
+						</button>
+					{{/each}}
+				</div>
+			{{/if}}
+		</div>
+	{{/each}}
+</div>

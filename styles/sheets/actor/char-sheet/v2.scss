@@ -1,26 +1,34 @@
 @use "./themes/dark.scss";
 @use "../../../mixins/material" as material;
 
+@use "./pages/stats.scss";
+
 .dotdungeon .actor--pc {
 	background-color: var(--sheet-bg);
-	display: grid;
-	grid-template-rows: 1fr minmax(min-content, 50px);
+	position: relative;
 
 	color: white;
 
-	.panel-0dp { @include material.elevate(0); margin: 1rem; padding: 10px; }
-	.panel-1dp { @include material.elevate(1); margin: 1rem; padding: 10px; }
-	.panel-2dp { @include material.elevate(2); margin: 1rem; padding: 10px; }
-	.panel-3dp { @include material.elevate(3); margin: 1rem; padding: 10px; }
-	.panel-4dp { @include material.elevate(4); margin: 1rem; padding: 10px; }
-	.panel-6dp { @include material.elevate(6); margin: 1rem; padding: 10px; }
-	.panel-8dp { @include material.elevate(8); margin: 1rem; padding: 10px; }
-	.panel-12dp { @include material.elevate(12); margin: 1rem; padding: 10px; }
-	.panel-16dp { @include material.elevate(16); margin: 1rem; padding: 10px; }
-	.panel-24dp { @include material.elevate(24); margin: 1rem; padding: 10px; }
+	.e-0dp { @include material.elevate(0); }
+	.e-1dp { @include material.elevate(1); }
+	.e-2dp { @include material.elevate(2); }
+	.e-3dp { @include material.elevate(3); }
+	.e-4dp { @include material.elevate(4); }
+	.e-6dp { @include material.elevate(6); }
+	.e-8dp { @include material.elevate(8); }
+	.e-12dp { @include material.elevate(12); }
+	.e-16dp { @include material.elevate(16); }
+	.e-24dp { @include material.elevate(24); }
 
 	nav {
 		background-color: var(--nav-bg);
-		@include material.elevate(02)
+		@include material.elevate(02);
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+
+	.page-content {
+		padding: 16px;
 	}
 }

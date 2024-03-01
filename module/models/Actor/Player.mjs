@@ -1,4 +1,5 @@
 import { MappingField } from "../fields/MappingField.mjs";
+import DOTDUNGEON from "../../config.mjs";
 
 function diceChoiceField() {
 	return new foundry.data.fields.StringField({
@@ -6,17 +7,17 @@ function diceChoiceField() {
 		blank: true,
 		trim: true,
 		options() {
-			return CONFIG.DOTDUNGEON.statDice;
+			return DOTDUNGEON.statDice;
 		},
 	});
 };
 
 function trainingLevelField() {
-	return new foundry.data.fields.StringField({
-		initial: ``,
-		blank: true,
-		trim: true,
-		options: CONFIG.DOTDUNGEON.trainingLevels,
+	return new foundry.data.fields.NumberField({
+		initial: 0,
+		min: -1,
+		integer: true,
+		options: Object.values(DOTDUNGEON.trainingLevels),
 	});
 };
 
@@ -24,7 +25,7 @@ function weaponDamageTypeField() {
 	return new foundry.data.fields.StringField({
 		initial: ``,
 		blank: true,
-		options: [ ``, ...CONFIG.DOTDUNGEON.damageTypes ],
+		options: [ ``, ...DOTDUNGEON.damageTypes ],
 	});
 };
 
@@ -32,7 +33,7 @@ function ammoTypeField() {
 	return new foundry.data.fields.StringField({
 		initial: ``,
 		blank: true,
-		options: [ ``, ...CONFIG.DOTDUNGEON.ammoTypes ],
+		options: [ ``, ...DOTDUNGEON.ammoTypes ],
 	});
 };
 
@@ -40,6 +41,14 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		return {
+			/*
+			These are special data properties that will be used by ActiveEffects
+			to modify certain limits within the actor, allowing for neat hacks
+			that change these
+			*/
+			weapon_slots: new fields.NumberField({ initial: 2 }),
+			inventory_slots: new fields.NumberField({ initial: 0 }),
+
 			bytes: new fields.NumberField({
 				initial: 0,
 				min: 0,

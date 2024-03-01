@@ -1,0 +1,48 @@
+.dotdungeon .actor--pc .active.stats-panel {
+	display: grid;
+	height: 100%;
+	gap: 16px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto;
+
+	.stat {
+		border-radius: 8px;
+		color: white;
+
+		select {
+			height: 100%;
+			outline: none;
+			border: none;
+		}
+
+		&__header {
+			padding: 8px;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			color: var(--stat-divider-text-color);
+			gap: 8px;
+			> :first-child {
+				flex-grow: 1;
+			}
+			&:not(:only-child) {
+				border-bottom: 1px solid var(--stat-divider-color);
+			}
+		}
+
+		&__skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 8px;
+			margin: 8px;
+			align-items: center;
+			label {
+				text-align: end;
+				justify-self: right;
+			}
+			button {
+				margin-right: 25%;
+			}
+		}
+	}
+}

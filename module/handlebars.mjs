@@ -7,7 +7,7 @@ export const partials = [
 	`partials/panel.hbs`,
 	`items/aspect.hbs`,
 
-	// All of the partials for the PC sheet panels
+	// All of the partials for the PC MVP sheet panels
 	`actors/char-sheet-mvp/panels/aspect.pc.hbs`,
 	`actors/char-sheet-mvp/panels/backpack.pc.hbs`,
 	`actors/char-sheet-mvp/panels/mounts.pc.hbs`,
@@ -18,6 +18,9 @@ export const partials = [
 	`actors/char-sheet-mvp/panels/pets.pc.hbs`,
 	`actors/char-sheet-mvp/panels/sync.pc.hbs`,
 	`actors/char-sheet-mvp/panels/weapons.pc.hbs`,
+
+	// The v2 PC sheet partials
+	`actors/char-sheet/v2/partials/stats.v2.pc.hbs`,
 ];
 
 export const icons = [

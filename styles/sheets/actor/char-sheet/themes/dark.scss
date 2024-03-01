@@ -2,8 +2,8 @@ $t: transparent;
 
 $background: #0a0a0a;
 $surface: #121212;
-$primary: $t;
-$secondary: $t;
+$primary: #005300;
+$secondary: #6c056c;
 $on-background: $t;
 $on-surface: $t;
 $on-primary: $t;
@@ -12,17 +12,19 @@ $on-secondary: $t;
 .actor--pc {
 	--sheet-bg: #{$background};
 	--nav-bg: #{$surface};
-	--panel-bg: #{$surface};
 
 	/* Elevation backgrounds to following Material design */
-	--elevation-0dp: #{$surface};
-	--elevation-1dp: color-mix(in lab, #{$surface}, white 5%);
-	--elevation-2dp: color-mix(in lab, #{$surface}, white 7%);
-	--elevation-3dp: color-mix(in lab, #{$surface}, white 8%);
-	--elevation-4dp: color-mix(in lab, #{$surface}, white 9%);
-	--elevation-6dp: color-mix(in lab, #{$surface}, white 11%);
-	--elevation-8dp: color-mix(in lab, #{$surface}, white 12%);
-	--elevation-12dp: color-mix(in lab, #{$surface}, white 14%);
-	--elevation-16dp: color-mix(in lab, #{$surface}, white 15%);
-	--elevation-24dp: color-mix(in lab, #{$surface}, white 16%);
+	--elevation-0dp-bg: #{$surface};
+	--elevation-1dp-bg: color-mix(in lab, transparent, white 5%);
+	--elevation-2dp-bg: color-mix(in lab, transparent, white 7%);
+	--elevation-3dp-bg: color-mix(in lab, transparent, white 8%);
+	--elevation-4dp-bg: color-mix(in lab, transparent, white 9%);
+	--elevation-6dp-bg: color-mix(in lab, transparent, white 11%);
+	--elevation-8dp-bg: color-mix(in lab, transparent, white 12%);
+	--elevation-12dp-bg: color-mix(in lab, transparent, white 14%);
+	--elevation-16dp-bg: color-mix(in lab, transparent, white 15%);
+	--elevation-24dp-bg: color-mix(in lab, transparent, white 16%);
+
+	--stat-divider-color: #{$secondary};
+	--stat-header-text-color: white;
 }

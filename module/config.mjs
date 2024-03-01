@@ -1,6 +1,11 @@
 export const statDice = [ `d4`, `d6`, `d8`, `d10`, `d12`, `d20` ];
 
-export const trainingLevels = [``, `locked`, `+2`, `+4`];
+export const trainingLevels = {
+	locked: -1,
+	untrained: 0,
+	trained: 2,
+	expert: 4
+}
 
 export const damageTypes = [ `slashing`, `piercing`, `smashing`, `gun`, `neon`, `shadow`, `solar` ];
 

@@ -3,6 +3,7 @@ import { createArray } from "./createArray.mjs";
 import { detailsExpanded } from "./detailsExpanded.mjs";
 import { objectValue } from "./objectValue.mjs";
 import { toFriendlyDuration } from "./toFriendlyDuration.mjs";
+import { localizer } from "../utils/localizer.mjs";
 
 export default {
 
@@ -12,6 +13,7 @@ export default {
 	"dd-toFriendlyDuration": toFriendlyDuration,
 	"dd-objectValue": objectValue,
 	"dd-expanded": detailsExpanded,
+	"dd-i18n": localizer,
 
 	// Simple helpers
 	"dd-stringify": v => JSON.stringify(v, null, `  `),
