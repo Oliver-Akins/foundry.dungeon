@@ -64,13 +64,16 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			selector. Disables all dice options that are selected, but not used
 			by this stat.
 			*/
-			stat.dieOptions = DOTDUNGEON.statDice.map(die => {
-				return {
-					value: die,
-					label: localizer(`dotdungeon.die.${die}`, { stat: statName }),
-					disabled: usedDice.has(die) && this.actor.system.stats[statName] !== die,
-				};
-			});
+			stat.dieOptions = [
+				{ label: `---`, value: `` },
+				...DOTDUNGEON.statDice.map(die => {
+					return {
+						value: die,
+						label: localizer(`dotdungeon.die.${die}`, { stat: statName }),
+						disabled: usedDice.has(die) && this.actor.system.stats[statName] !== die,
+					};
+				})
+			];
 
 			/*
 			Calculating the data needed in order to display all of the skills
@@ -81,10 +84,10 @@ export class PlayerSheetv2 extends GenericActorSheet {
 				const value = this.actor.system.skills[statName][skill];
 				stat.skills.push({
 					key: skill,
-					name: localizer(`dotdungeon.skills.${skill}`),
+					name: game.i18n.format(`dotdungeon.skills.${skill}`),
 					value,
-					formula: `1` + stat.value + modifierToString(value),
-					rollDisabled: stat.value === `` || value === `locked`,
+					formula: `1` + stat.value + modifierToString(value, { spaces: true }),
+					rollDisabled: stat.value === `` || value === -1,
 				});
 			};
 

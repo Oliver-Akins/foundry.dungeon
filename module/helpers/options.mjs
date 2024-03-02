@@ -1,3 +1,5 @@
+import { localizer } from "../utils/localizer.mjs";
+
 /**
  * @typedef {object} Option
  * @property {string} [label]
@@ -9,7 +11,8 @@
  * @param {string | number} selected
  * @param {Array<Option | string>} opts
  */
-export function options(selected, opts) {
+export function options(selected, opts, meta) {
+	const { localize = false } = meta.hash;
 	selected = Handlebars.escapeExpression(selected);
 	const htmlOptions = [];
 
@@ -24,7 +27,7 @@ export function options(selected, opts) {
 				${selected === opt.value ? "selected" : ""}
 				${opt.disabled ? "disabled" : ""}
 			>
-				${opt.label}
+				${localize ? localizer(opt.label) : opt.label}
 			</option>`
 		);
 	};

@@ -1,11 +1,11 @@
 export const statDice = [ `d4`, `d6`, `d8`, `d10`, `d12`, `d20` ];
 
-export const trainingLevels = {
-	locked: -1,
-	untrained: 0,
-	trained: 2,
-	expert: 4
-}
+export const trainingLevels = [
+	{ key: "locked", label: "dotdungeon.trainingLevel.locked", value: -1 },
+	{ key: "untrained", label: "dotdungeon.trainingLevel.untrained", value: 0 },
+	{ key: "trained", label: "dotdungeon.trainingLevel.trained", value: 2 },
+	{ key: "expert", label: "dotdungeon.trainingLevel.expert", value: 4 },
+];
 
 export const damageTypes = [ `slashing`, `piercing`, `smashing`, `gun`, `neon`, `shadow`, `solar` ];
 
@@ -32,6 +32,7 @@ export const skills = {
 	hands: handsSkills,
 };
 
+export const defaultItemTier = `simple`;
 export const itemTiers = [
 	`simple`, `greater`,
 	`rare`, `legendary`
@@ -64,6 +65,7 @@ export default {
 	handsSkills,
 	allSkills,
 	skills,
+	defaultItemTier,
 	itemTiers,
 	syncMilestones,
 	syncDice,

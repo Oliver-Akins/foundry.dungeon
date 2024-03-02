@@ -7,12 +7,12 @@
 
 	.stat {
 		border-radius: 8px;
-		color: white;
 
 		select {
 			height: 100%;
 			outline: none;
 			border: none;
+			text-align: center;
 		}
 
 		&__header {
@@ -22,9 +22,17 @@
 			flex-direction: row;
 			color: var(--stat-divider-text-color);
 			gap: 8px;
-			> :first-child {
+			> h2 {
 				flex-grow: 1;
+				color: var(--stat-header-text-color);
 			}
+			.dice-select {
+				color: var(--stat-dice-select-text-color);
+			}
+			.roll-stat {
+				color: var(--stat-roll-button-text-color);
+			}
+
 			&:not(:only-child) {
 				border-bottom: 1px solid var(--stat-divider-color);
 			}
@@ -36,12 +44,23 @@
 			gap: 8px;
 			margin: 8px;
 			align-items: center;
-			label {
-				text-align: end;
-				justify-self: right;
-			}
-			button {
-				margin-right: 25%;
+
+			.skill {
+				&__label {
+					text-align: end;
+					justify-self: right;
+					color: var(--skill-name-text-color);
+				}
+				&__training {
+					color: var(--skill-training-select-text-color);
+					option {
+						background: var(--skill-training-select-bg);
+					}
+				}
+				&__roll {
+					margin-right: 25%;
+					color: var(--skill-roll-button-text-color);
+				}
 			}
 		}
 	}

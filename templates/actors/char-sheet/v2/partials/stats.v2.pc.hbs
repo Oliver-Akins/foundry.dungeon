@@ -1,38 +1,44 @@
 <div class="tab stats-panel" data-group="page" data-tab="stats">
-	{{!--
-		Iterate over each stat in the display data
-		- header:
-			- localized stat name
-			- stat dice dropdown
-			- roll button
-		- body (if skills present):
-			- iterate over all of the skills
-				- localized skill name
-				- training dropdown
-				- roll button
-	 --}}
 	{{#each computed.stats as | stat |}}
 		<div class="e-1dp stat">
 			<div class="stat__header">
 				<h2>{{stat.name}}</h2>
 				<select
 					name="system.stats.{{stat.key}}"
-					class="e-2dp"
+					class="e-2dp dice-select"
 				>
 					{{{dd-options stat.value stat.dieOptions}}}
 				</select>
-				<button type="button" class="e-2dp">
+				<button
+					type="button"
+					class="e-2dp roll-stat"
+				>
 					Roll
 				</button>
 			</div>
 			{{#if stat.skills}}
-				<div class="stat__skills">
+				<div class="stat__skills skill">
 					{{#each stat.skills as | skill |}}
-						<label for="">{{skill.name}}</label>
-						<select name="" id="" class="e-2dp"></select>
+						<label
+							for="{{meta.idp}}-{{skill.key}}-training"
+							class="skill__label"
+						>
+							{{skill.name}}
+						</label>
+						<select
+							name="system.skills.{{stat.key}}.{{skill.key}}"
+							id="{{meta.idp}}-{{skill.key}}-training"
+							class="e-2dp skill__training"
+						>
+							{{{dd-options
+								skill.value
+								@root.config.trainingLevels
+								localize=true
+							}}}
+						</select>
 						<button
 							type="button"
-							class="e-2dp"
+							class="e-2dp skill__roll"
 							{{disabled skill.rollDisabled}}
 						>
 							{{#if skill.rollDisabled}}
