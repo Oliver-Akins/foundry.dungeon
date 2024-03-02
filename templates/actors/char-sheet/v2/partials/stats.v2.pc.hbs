@@ -19,14 +19,7 @@
 					name="system.stats.{{stat.key}}"
 					class="e-2dp"
 				>
-					{{#select stat.value}}
-						<option value="">---</option>
-						{{#each stat.dieOptions as | die |}}
-							<option value="{{die.value}}" {{disabled die.disabled}}>
-								{{die.label}}
-							</option>
-						{{/each}}
-					{{/select}}
+					{{{dd-options stat.value stat.dieOptions}}}
 				</select>
 				<button type="button" class="e-2dp">
 					Roll
