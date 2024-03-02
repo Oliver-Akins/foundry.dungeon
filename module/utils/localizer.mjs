@@ -14,8 +14,8 @@ export function localizer(key, args = {}, depth = 0) {
 		const subkey = match.groups.key;
 		localized =
 			localized.slice(0, match.index)
-			+ localizer(subkey.slice(1), args, depth + 1)
-			+ localized.slice(match.index + subkey.length)
+			+ localizer(subkey, args, depth + 1)
+			+ localized.slice(match.index + subkey.length + 1)
 	};
 	return localized;
 };

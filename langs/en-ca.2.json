@@ -43,6 +43,14 @@
 			"d10": "d10",
 			"d12": "d12",
 			"d20": "d20"
+		},
+		"sheet": {
+			"actor": {
+				"v2": {
+					"stat-not-chosen": "Select a dice to see the {name} skills",
+					"skill-roll-locked": "@dotdungeon.trainingLevel.locked"
+				}
+			}
 		}
 	}
 }

@@ -17,38 +17,46 @@
 				</button>
 			</div>
 			{{#if stat.skills}}
-				<div class="stat__skills skill">
-					{{#each stat.skills as | skill |}}
-						<label
-							for="{{meta.idp}}-{{skill.key}}-training"
-							class="skill__label"
-						>
-							{{skill.name}}
-						</label>
-						<select
-							name="system.skills.{{stat.key}}.{{skill.key}}"
-							id="{{meta.idp}}-{{skill.key}}-training"
-							class="e-2dp skill__training"
-						>
-							{{{dd-options
-								skill.value
-								@root.config.trainingLevels
-								localize=true
-							}}}
-						</select>
-						<button
-							type="button"
-							class="e-2dp skill__roll"
-							{{disabled skill.rollDisabled}}
-						>
-							{{#if skill.rollDisabled}}
-								Locked
-							{{else}}
-								{{skill.formula}}
-							{{/if}}
-						</button>
-					{{/each}}
+				{{#if stat.value}}
+					<div class="stat__skills skill">
+						{{#each stat.skills as | skill |}}
+							<label
+								for="{{@root.meta.idp}}-{{skill.key}}-training"
+								class="skill__label"
+							>
+								{{skill.name}}
+							</label>
+							<select
+								name="system.skills.{{stat.key}}.{{skill.key}}"
+								id="{{@root.meta.idp}}-{{skill.key}}-training"
+								class="e-2dp skill__training"
+							>
+								{{{dd-options
+									skill.value
+									@root.config.trainingLevels
+									localize=true
+								}}}
+							</select>
+							<button
+								type="button"
+								class="e-2dp skill__roll"
+								{{disabled skill.rollDisabled}}
+							>
+								{{#if skill.rollDisabled}}
+									{{dd-i18n "dotdungeon.sheet.actor.v2.skill-roll-locked"}}
+								{{else}}
+									{{skill.formula}}
+								{{/if}}
+							</button>
+						{{/each}}
+					</div>
+				{{else}}
+				<div class="stat__empty">
+					<p>
+						{{dd-i18n "dotdungeon.sheet.actor.v2.stat-not-chosen" stat}}
+					</p>
 				</div>
+				{{/if}}
 			{{/if}}
 		</div>
 	{{/each}}

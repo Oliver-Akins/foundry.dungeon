@@ -7,6 +7,8 @@
 
 	.stat {
 		border-radius: 8px;
+		display: flex;
+		flex-direction: column;
 
 		select {
 			height: 100%;
@@ -28,6 +30,9 @@
 			}
 			.dice-select {
 				color: var(--stat-dice-select-text-color);
+				option {
+					background: var(--stat-dice-select-bg);
+				}
 			}
 			.roll-stat {
 				color: var(--stat-roll-button-text-color);
@@ -38,12 +43,20 @@
 			}
 		}
 
-		&__skills {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 8px;
-			margin: 8px;
+		&__empty {
+			display: flex;
+			justify-content: center;
 			align-items: center;
+			flex-grow: 1;
+		}
+
+		&__skills {
+			align-items: center;
+			box-sizing: border-box;
+			display: grid;
+			gap: 8px;
+			grid-template-columns: repeat(3, 1fr);
+			padding: 8px;
 
 			.skill {
 				&__label {

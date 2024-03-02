@@ -87,7 +87,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 					name: game.i18n.format(`dotdungeon.skills.${skill}`),
 					value,
 					formula: `1` + stat.value + modifierToString(value, { spaces: true }),
-					rollDisabled: stat.value === `` || value === -1,
+					rollDisabled: value === -1,
 				});
 			};
 

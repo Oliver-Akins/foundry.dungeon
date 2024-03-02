@@ -27,10 +27,12 @@ $on-secondary: $t;
 
 	--stat-header-text-color: #{$on-surface};
 	--stat-dice-select-text-color: #{$on-surface};
+	--stat-dice-select-bg: #{$surface};
 	--stat-roll-button-text-color: #{$on-surface};
 	--stat-divider-color: #{$secondary};
+	--stat-not-chosen-placeholder-text-color: #{$on-surface};
 	--skill-name-text-color: #{$on-surface};
-	--skill-training-select: #{$surface};
+	--skill-training-select-bg: #{$surface};
 	--skill-training-select-text-color: #{$on-surface};
 	--skill-roll-button-text-color: #{$on-surface};
 }
