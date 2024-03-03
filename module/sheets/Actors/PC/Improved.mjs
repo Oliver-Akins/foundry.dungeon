@@ -12,10 +12,16 @@ export class PlayerSheetv2 extends GenericActorSheet {
 				tabs: [
 					{
 						group: `page`,
-						navSelector: `nav`,
+						navSelector: `nav.page`,
 						contentSelector: `.page-content`,
-						initial: `stats`,
+						initial: `inventory`,
 					},
+					{
+						group: `inventory`,
+						navSelector: `nav.inventory`,
+						contentSelector: `.tab[data-tab="inventory"]`,
+						initial: `player`,
+					}
 				],
 			}
 		);

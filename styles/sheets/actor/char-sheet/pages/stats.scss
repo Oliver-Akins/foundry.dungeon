@@ -1,6 +1,5 @@
-.dotdungeon .actor--pc .active.stats-panel {
+.dotdungeon .actor--pc-v2 .active.stats-page {
 	display: grid;
-	height: 100%;
 	gap: 16px;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto auto;

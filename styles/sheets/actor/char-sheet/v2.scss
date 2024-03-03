@@ -1,13 +1,11 @@
 @use "./themes/dark.scss";
 @use "../../../mixins/material" as material;
+@use "../../../mixins/partials" as partials;
 
 @use "./pages/stats.scss";
 
-.dotdungeon .actor--pc {
+.dotdungeon .actor--pc-v2 {
 	background-color: var(--sheet-bg);
-	position: relative;
-
-	color: white;
 
 	.e-0dp { @include material.elevate(0); }
 	.e-1dp { @include material.elevate(1); }
@@ -20,12 +18,33 @@
 	.e-16dp { @include material.elevate(16); }
 	.e-24dp { @include material.elevate(24); }
 
-	nav {
-		background-color: var(--nav-bg);
-		@include material.elevate(02);
+	.nav-bar {
+		@include material.elevate(8);
+		background: color-mix(in lab, var(--nav-bg), white 5%);
 		position: absolute;
 		bottom: 0;
-		width: 100%;
+		width: calc(100% - 6px);
+
+		nav {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 8px;
+			padding: 8px;
+		}
+
+		@include partials.sub-nav("page", "inventory", flex);
+
+		button {
+			@include material.elevate(2);
+			height: 36px;
+			box-sizing: border-box;
+
+			&:hover {
+				// background: color-mix(in lab, inherit, currentColor 4%);
+				@include material.elevate(4);
+			}
+		}
 	}
 
 	.page-content {

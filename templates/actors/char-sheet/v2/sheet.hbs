@@ -1,20 +1,29 @@
-<form autocomplete="off" class="actor--pc">
+<form autocomplete="off" class="actor--pc-v2">
 	{{!-- All panels here --}}
 	<section class="page-content">
 		<div class="tab" data-group="page" data-tab="avatar">Avatar</div>
 		{{> dotdungeon.pc.v2.stats }}
 		<div class="tab" data-group="page" data-tab="combat">Combat</div>
-		<div class="tab" data-group="page" data-tab="inventory">Inventory</div>
+		{{> dotdungeon.pc.v2.inventory }}
 		<div class="tab" data-group="page" data-tab="spells">Spells</div>
+		<div class="tab" data-group="page" data-tab="settings">Settings</div>
 	</section>
 
 
 	{{!-- Tab list here --}}
-	<nav data-group="page">
-		<button type="button" data-tab="avatar">Avatar</button>
-		<button type="button" data-tab="stats">Stats / Skills</button>
-		<button type="button" data-tab="combat">Combat</button>
-		<button type="button" data-tab="inventory">Inventory</button>
-		<button type="button" data-tab="spells">Spells</button>
-	</nav>
+	<div class="nav-bar">
+		<nav class="inventory" data-group="inventory">
+			<button type="button" data-group="inventory" data-tab="storage">Storage</button>
+			<button type="button" data-group="inventory" data-tab="player">Player</button>
+			<button type="button" data-group="inventory" data-tab="transportation">Transportation</button>
+		</nav>
+		<nav class="page" data-group="page">
+			<button type="button" data-group="page" data-tab="avatar">Avatar</button>
+			<button type="button" data-group="page" data-tab="stats">Stats / Skills</button>
+			<button type="button" data-group="page" data-tab="combat">Combat</button>
+			<button type="button" data-group="page" data-tab="inventory">Inventory</button>
+			<button type="button" data-group="page" data-tab="spells">Spells</button>
+			<button type="button" data-group="page" data-tab="settings">Settings</button>
+		</nav>
+	</div>
 </form>

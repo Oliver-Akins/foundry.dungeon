@@ -1,4 +1,5 @@
 @use "../vars" as *;
+@use "./material" as material;
 
 @mixin input-generic {
 	border-width: 2px;
@@ -11,5 +12,15 @@
 	&:focus,
 	&:active {
 		transform: scale(103%);
+	}
+}
+
+@mixin sub-nav($parent, $group, $display) {
+	nav.#{$group} {
+		@include material.elevate(1);
+		display: none;
+	}
+	&:has(nav.#{$parent} .active[data-tab="#{$group}"]) nav.#{$group} {
+		display: #{$display};
 	}
 }

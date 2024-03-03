@@ -1,0 +1,9 @@
+.dotdungeon .actor--pc-v2 .active .inventory-page {
+	margin-bottom: 100px;
+}
+
+.dotdungeon .actor--pc-v2 .active .inventory-page .tab[data-tab="player"] {
+	display: grid;
+	gap: 16px;
+	grid-template-columns: 1fr 4fr;
+}
