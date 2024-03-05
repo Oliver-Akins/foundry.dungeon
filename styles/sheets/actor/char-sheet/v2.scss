@@ -3,6 +3,7 @@
 @use "../../../mixins/partials" as partials;
 
 @use "./pages/stats.scss";
+@use "./pages/inventory.scss";
 
 .dotdungeon .actor--pc-v2 {
 	background-color: var(--sheet-bg);
@@ -57,5 +58,7 @@
 
 	.page-content {
 		padding: 16px;
+		padding-bottom: 69px;
+		height: 100%;
 	}
 }
