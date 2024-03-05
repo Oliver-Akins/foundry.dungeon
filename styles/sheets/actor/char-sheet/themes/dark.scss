@@ -12,6 +12,7 @@ $on-secondary: $t;
 .actor--pc-v2 {
 	--sheet-bg: #{$background};
 	--nav-bg: #{$surface};
+	--nav-button-text: #{$on-surface};
 
 	/* Elevation backgrounds to following Material design */
 	--elevation-0dp-bg: #{$surface};

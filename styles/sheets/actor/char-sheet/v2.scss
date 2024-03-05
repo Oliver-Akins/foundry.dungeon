@@ -39,10 +39,18 @@
 			@include material.elevate(2);
 			height: 36px;
 			box-sizing: border-box;
+			color: var(--nav-button-text);
+
+			&:focus-visible {
+				border-style: solid;
+				border-width: 2px;
+				border-color: currentColor;
+				background: var(--elevation-8dp-bg);
+			}
 
 			&:hover {
-				// background: color-mix(in lab, inherit, currentColor 4%);
-				@include material.elevate(4);
+				@include material.elevate(6);
+				background: hsl( from currentColor / 50% ); // probably gonna need color-mix
 			}
 		}
 	}
