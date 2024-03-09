@@ -46,5 +46,15 @@
 	</div>
 	<div class="e-1dp panel filter-panel">
 		<h2>Show</h2>
+		<label>
+			<input type="checkbox" name="">
+			All
+		</label>
+		{{#each computed.itemFilters as | filter |}}
+			<label class="{{filter.key}}-filter">
+				<input type="checkbox" {{checked filter.active}}>
+				{{filter.label}}
+			</label>
+		{{/each}}
 	</div>
 </div>

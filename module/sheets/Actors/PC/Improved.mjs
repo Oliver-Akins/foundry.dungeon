@@ -50,6 +50,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
 			canAddAspect: !await actor.proxyFunction.bind(actor)(`atAspectLimit`),
 			stats: this.#statData,
+			itemFilters: this.#itemFilters,
 		};
 		console.log(ctx)
 		return ctx;
@@ -100,6 +101,30 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			stats.push(stat);
 		};
 		return stats;
+	};
+
+	_itemFiltersActive = new Set();
+	toggleItemFilter(filterName) {
+		if (this._itemFiltersActive.has(filterName)) {
+			this._itemFiltersActive.add(filterName);
+		} else {
+			this._itemFiltersActive.delete(filterName);
+		};
+		this.render();
+	};
+
+	get #itemFilters() {
+		const types = CONFIG.Item.typeLabels;
+		const filters = [];
+		for (const type in types) {
+			if (["base", "spell", "legendaryItem"].includes(type)) continue;
+			filters.push({
+				label: localizer(types[type]),
+				key: type,
+				active: this._itemFiltersActive.has(type),
+			});
+		};
+		return filters;
 	};
 
 	_updateObject(...args) {
