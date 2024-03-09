@@ -1,17 +1,46 @@
 <div class="tab" data-group="inventory" data-tab="player">
-	<div class="e-1dp">
+	<div class="e-1dp panel containers-panel">
 		<h2>Containers</h2>
 	</div>
-	<div class="e-1dp item-list">
+	<div class="e-1dp panel item-list">
 		<h2>Item list</h2>
 	</div>
-	<div class="e-1dp">
+	<div class="e-1dp panel capacity-panel">
 		<h2>Capacity</h2>
 	</div>
-	<div class="e-1dp">
-		<h2>Bytes</h2>
+	<div class="e-1dp panel bytes-panel">
+		<label
+			for="{{meta.idp}}-player-inventory-bytes-input"
+		>
+			Bytes
+		</label>
+		<button
+			type="button"
+			class="equal-padding"
+			data-decrement="system.bytes"
+			aria-label="Decrease byte count by one"
+		>
+			<div aria-hidden="true" class="icon icon--14">
+				{{{ icons.minus }}}
+			</div>
+		</button>
+		<input
+			type="number"
+			id="{{meta.idp}}-player-inventory-bytes-input"
+			value="{{system.bytes}}"
+		>
+		<button
+			type="button"
+			class="equal-padding"
+			data-increment="system.bytes"
+			aria-label="Increase byte count by one"
+		>
+			<div aria-hidden="true" class="icon icon--14">
+				{{{ icons.create }}}
+			</div>
+		</button>
 	</div>
-	<div class="e-1dp">
+	<div class="e-1dp panel filter-panel">
 		<h2>Show</h2>
 	</div>
 </div>

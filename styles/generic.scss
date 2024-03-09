@@ -38,8 +38,8 @@
 	input[type="text"],
 	input[type="number"],
 	textarea {
+		@include fvtt_reset;
 		padding: 5px 7px;
-		@include input-generic;
 	}
 
 	textarea {

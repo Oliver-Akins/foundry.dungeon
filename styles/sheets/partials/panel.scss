@@ -2,7 +2,7 @@
 @use "../../mixins/foundry" as *;
 @use "../../vars" as *;
 
-.dotdungeon .panel {
+.dotdungeon .actor--pc-mvp .panel {
 	display: grid;
 	grid-template-rows: min-content 1fr;
 
