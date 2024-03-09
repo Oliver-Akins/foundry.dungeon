@@ -55,4 +55,13 @@
 
 		}
 	}
+
+	.capacity-panel {
+		display: grid;
+		grid-template-columns: 1fr 30px min-content 30px;
+
+		.used, .total {
+			text-align: center;
+		}
+	}
 }
