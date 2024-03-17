@@ -58,6 +58,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			canAddAspect: !await actor.proxyFunction.bind(actor)(`atAspectLimit`),
 			stats: this.#statData,
 			itemFilters: this.#itemFilters,
+			capacity: this.#inventoryCapacity,
 		};
 		console.log(ctx)
 		return ctx;
@@ -132,6 +133,14 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			});
 		};
 		return filters;
+	};
+
+	get #inventoryCapacity() {
+		return {
+			used: this.actor.items
+				.reduce((sum, i) => sum + i.system.uses_inventory_slot ? i.system.quantity : 0, 0),
+			max: this.actor.system.inventory_slots,
+		};
 	};
 
 	_updateObject(...args) {

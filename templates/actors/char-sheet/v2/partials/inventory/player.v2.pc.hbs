@@ -5,10 +5,9 @@
 	{{> dotdungeon.pc.v2.item-list }}
 	<div class="e-1dp panel capacity-panel">
 		<h2>Capacity</h2>
-		{{!-- This will need some aria love --}}
-		<span class="used">X</span>
-		<span>/</span>
-		<span class="total">Y</span>
+		<span class="used">{{computed.capacity.used}}</span>
+		<span aria-label="inventory slots used out of">/</span>
+		<span class="total">{{computed.capacity.max}}</span>
 	</div>
 	<div class="e-1dp panel bytes-panel">
 		<label

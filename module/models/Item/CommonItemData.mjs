@@ -10,6 +10,10 @@ export class CommonItemData extends foundry.abstract.TypeDataModel {
 				nullable: false,
 				integer: true,
 			}),
+			uses_inventory_slot: new fields.BooleanField({
+				initial: true,
+				nullable: false,
+			}),
 			buy: new fields.NumberField({
 				initial: null,
 				nullable: true,
