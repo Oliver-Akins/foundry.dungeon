@@ -53,6 +53,19 @@ export const localizerConfig = {
 	maxDepth: 10,
 };
 
+export const itemFilters = [
+	`untyped`,
+	`aspect`,
+	`weapon`,
+	`armour`,
+	`equipment`,
+	`foil`,
+	`pet`,
+	`transportation`,
+	`structure`,
+	`service`,
+];
+
 export default {
 	stats,
 	statDice,
@@ -69,5 +82,6 @@ export default {
 	itemTiers,
 	syncMilestones,
 	syncDice,
-	localizerConfig
+	localizerConfig,
+	itemFilters,
 };

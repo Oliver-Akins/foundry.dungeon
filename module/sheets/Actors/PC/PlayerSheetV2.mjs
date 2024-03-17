@@ -114,20 +114,19 @@ export class PlayerSheetv2 extends GenericActorSheet {
 	_itemFiltersActive = new Set();
 	toggleItemFilter(filterName) {
 		if (this._itemFiltersActive.has(filterName)) {
-			this._itemFiltersActive.add(filterName);
-		} else {
 			this._itemFiltersActive.delete(filterName);
+		} else {
+			this._itemFiltersActive.add(filterName);
 		};
 		this.render();
 	};
 
 	get #itemFilters() {
-		const types = CONFIG.Item.typeLabels;
+		const types = DOTDUNGEON.itemFilters;
 		const filters = [];
-		for (const type in types) {
-			if (["base", "spell", "legendaryItem"].includes(type)) continue;
+		for (const type of types) {
 			filters.push({
-				label: localizer(types[type]),
+				label: localizer(`TYPES.Item.${type}`),
 				key: type,
 				active: this._itemFiltersActive.has(type),
 			});
