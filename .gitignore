@@ -2,6 +2,7 @@ node_modules/
 *.tmp
 *.bak.*
 references.txt
+references/
 .styles/
 /foundry.js
 *.lock
