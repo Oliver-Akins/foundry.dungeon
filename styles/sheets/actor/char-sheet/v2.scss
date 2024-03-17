@@ -19,6 +19,11 @@
 	.e-16dp { @include material.elevate(16); }
 	.e-24dp { @include material.elevate(24); }
 
+	.scrollable {
+		container-type: size;
+		overflow: auto;
+	}
+
 	.nav-bar {
 		@include material.elevate(8);
 		background: color-mix(in lab, var(--nav-bg), white 5%);

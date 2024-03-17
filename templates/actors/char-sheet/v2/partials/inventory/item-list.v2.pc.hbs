@@ -1,42 +1,22 @@
-<div class="e-1dp panel item-list">
-	{{!--
-		Materials
-		Foils
-	--}}
-	<div class="materials">
-		<h2>Materials</h2>
-		<hr>
-	</div>
-	<div class="foils">
-		<h2>Foils</h2>
-		<hr>
-	</div>
-	<div class="custom">
-		<h2>Custom</h2>
-		<hr>
-	</div>
-	<div class="aspects">
-		<h2>Aspects</h2>
-		<hr>
-	</div>
-	<div class="equipment">
-		<h2>Equipment</h2>
-		<hr>
-	</div>
-	<div class="weapons">
-		<h2>Weapons</h2>
-		<hr>
-	</div>
-	<div class="armour">
-		<h2>Armour</h2>
-		<hr>
-	</div>
-	<div class="structures">
-		<h2>Structures</h2>
-		<hr>
-	</div>
-	<div class="transportation">
-		<h2>Transportation</h2>
-		<hr>
-	</div>
+<div class="e-1dp scrollable panel item-list">
+	{{#if computed.noItemTypesVisible}}
+		<p>
+			Enable a filter to show items of that type!
+		</p>
+	{{/if}}
+	{{#each computed.itemFilters as | filter |}}
+		{{#if filter.active}}
+			<section class="item-list__group">
+				<h2>{{filter.label}}</h2>
+				<hr>
+				<div class="{{@key}}-list">
+					<div>Item</div>
+					<div>Item</div>
+					<div>Item</div>
+					<div>Item</div>
+					<div>Item</div>
+				</div>
+			</section>
+		{{/if}}
+	{{/each}}
 </div>
