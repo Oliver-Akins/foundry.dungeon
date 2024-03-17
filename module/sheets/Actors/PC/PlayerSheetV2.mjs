@@ -14,7 +14,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 						group: `page`,
 						navSelector: `nav.page`,
 						contentSelector: `.page-content`,
-						initial: `inventory`,
+						initial: `avatar`,
 					},
 					{
 						group: `inventory`,
@@ -35,6 +35,13 @@ export class PlayerSheetv2 extends GenericActorSheet {
 		if (this.document.isEmbedded) return;
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Actor: ${this.id}`);
+
+		html.find(`.create-ae`).on(`click`, async ($e) => {
+			console.debug(`Creating an ActiveEffect?`);
+			ActiveEffect.implementation.create({
+				name: "Default AE",
+			}, { parent: this.actor, renderSheet: true });
+		});
 	};
 
 	async getData() {
