@@ -14,7 +14,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 						group: `page`,
 						navSelector: `nav.page`,
 						contentSelector: `.page-content`,
-						initial: `avatar`,
+						initial: `inventory`,
 					},
 					{
 						group: `inventory`,
@@ -42,6 +42,12 @@ export class PlayerSheetv2 extends GenericActorSheet {
 				name: "Default AE",
 			}, { parent: this.actor, renderSheet: true });
 		});
+		html.find(`[data-filter-toggle]`).on(`change`, ($e) => {
+			const target = $e.delegateTarget;
+			const filter = target.dataset.filterToggle;
+			this.toggleItemFilter(filter);
+			this._renderInner();
+		});
 	};
 
 	async getData() {
@@ -58,6 +64,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			canAddAspect: !await actor.proxyFunction.bind(actor)(`atAspectLimit`),
 			stats: this.#statData,
 			itemFilters: this.#itemFilters,
+			noItemTypesVisible: this._itemTypesHidden.size === DOTDUNGEON.itemFilters.length,
 			capacity: this.#inventoryCapacity,
 		};
 		console.log(ctx)
@@ -111,25 +118,24 @@ export class PlayerSheetv2 extends GenericActorSheet {
 		return stats;
 	};
 
-	_itemFiltersActive = new Set();
+	_itemTypesHidden = new Set();
 	toggleItemFilter(filterName) {
-		if (this._itemFiltersActive.has(filterName)) {
-			this._itemFiltersActive.delete(filterName);
+		if (this._itemTypesHidden.has(filterName)) {
+			this._itemTypesHidden.delete(filterName);
 		} else {
-			this._itemFiltersActive.add(filterName);
+			this._itemTypesHidden.add(filterName);
 		};
 		this.render();
 	};
 
 	get #itemFilters() {
 		const types = DOTDUNGEON.itemFilters;
-		const filters = [];
+		const filters = {};
 		for (const type of types) {
-			filters.push({
+			filters[type] = {
 				label: localizer(`TYPES.Item.${type}`),
-				key: type,
-				active: this._itemFiltersActive.has(type),
-			});
+				active: !this._itemTypesHidden.has(type),
+			};
 		};
 		return filters;
 	};
