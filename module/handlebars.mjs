@@ -23,6 +23,7 @@ export const partials = [
 	`actors/char-sheet/v2/partials/stats.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/inventory.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/player.v2.pc.hbs`,
+	`actors/char-sheet/v2/partials/inventory/item-list.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/storage.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/transportation.v2.pc.hbs`,
 ];
