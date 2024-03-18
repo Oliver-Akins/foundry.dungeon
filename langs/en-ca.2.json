@@ -52,5 +52,25 @@
 				}
 			}
 		}
+	},
+	"TYPES": {
+		"Actor": {
+			"player": "Player",
+			"sync": "Sync"
+		},
+		"Item": {
+			"aspect": "Aspect",
+			"weapon": "Weapon",
+			"armour": "Armour",
+			"equipment": "Equipment",
+			"foil": "Foil",
+			"pet": "Pet",
+			"structure": "Structure",
+			"service": "Service",
+			"materials": "Materials",
+			"legendaryItem": "Legendary Item",
+			"spell": "Spell",
+			"untyped": "Custom"
+		}
 	}
 }
