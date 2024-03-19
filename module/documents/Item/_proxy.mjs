@@ -1,5 +1,5 @@
-import { Aspect } from "./Aspect.mjs";
 import { DotDungeonItem } from "./GenericItem.mjs";
+import { Aspect } from "./Aspect.mjs";
 
 const classes = {
 	aspect: Aspect,
