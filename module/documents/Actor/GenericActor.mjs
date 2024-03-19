@@ -1,8 +1,6 @@
 import { localizer } from "../../utils/localizer.mjs";
 
 export class DotDungeonActor extends Actor {
-	/** @type {any} */
-	system;
 
 	async openEmbeddedSheet($event) {
 		const data = $event.target.dataset;

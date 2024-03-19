@@ -5,10 +5,6 @@ import { modifierToString } from "../../../utils/modifierToString.mjs";
 import { Player } from "../../../documents/Actor/Player.mjs";
 
 export class PlayerSheetv2 extends GenericActorSheet {
-
-	/** @type {Player | null} */
-	actor;
-
 	static get defaultOptions() {
 		let opts = mergeObject(
 			super.defaultOptions,
