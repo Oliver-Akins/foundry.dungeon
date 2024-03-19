@@ -11,6 +11,38 @@
 	</div>
 	<div class="e-1dp panel bytes-panel">
 		<label
+			for="{{meta.idp}}-player-inventory-supplies-input"
+		>
+			Supplies
+		</label>
+		<button
+			type="button"
+			class="equal-padding"
+			data-decrement="system.supplies"
+			aria-label="Decrease supply count by one"
+		>
+			<div aria-hidden="true" class="icon icon--14">
+				{{{ icons.minus }}}
+			</div>
+		</button>
+		<input
+			type="number"
+			id="{{meta.idp}}-player-inventory-supplies-input"
+			value="{{system.supplies}}"
+		>
+		<button
+			type="button"
+			class="equal-padding"
+			data-increment="system.supplies"
+			aria-label="Increase supply count by one"
+		>
+			<div aria-hidden="true" class="icon icon--14">
+				{{{ icons.create }}}
+			</div>
+		</button>
+	</div>
+	<div class="e-1dp panel bytes-panel">
+		<label
 			for="{{meta.idp}}-player-inventory-bytes-input"
 		>
 			Bytes
