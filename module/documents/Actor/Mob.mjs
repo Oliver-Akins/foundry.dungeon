@@ -1,11 +1,10 @@
-/** @this {Actor} */
-function getRollData() {
-	const data = {
-		initiative: this.system.initiative ?? 0,
-	};
-	return data;
-};
+import { DotDungeonActor } from "./GenericActor.mjs";
 
-export default {
-	getRollData,
+export class Mob extends DotDungeonActor {
+	getRollData() {
+		const data = {
+			initiative: this.system.initiative ?? 0,
+		};
+		return data;
+	};
 };

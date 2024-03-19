@@ -9,6 +9,7 @@
 	"Item": {
 		"types": [
 			"untyped",
+			"material",
 			"aspect",
 			"weapon",
 			"armour",

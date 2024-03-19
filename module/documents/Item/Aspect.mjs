@@ -1,10 +1,9 @@
-/** @this {ItemHandler} */
-async function _preCreate(_data, _options, _user) {
-	if (this.isEmbedded) {
-		return await this.actor?.preItemEmbed(this);
-	};
-};
+import { DotDungeonItem } from "./GenericItem.mjs";
 
-export default {
-	_preCreate,
+export class Aspect extends DotDungeonItem {
+	async _preCreate() {
+		if (this.isEmbedded) {
+			return await this.actor?.preItemEmbed(this);
+		};
+	}
 };

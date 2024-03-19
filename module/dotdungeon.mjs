@@ -8,8 +8,8 @@ import { SyncData } from "./models/Actor/Sync.mjs";
 import { MobData } from "./models/Actor/Mob.mjs";
 
 // Main Documents
-import { ActorHandler } from "./documents/Actor/Handler.mjs";
-import { ItemHandler } from "./documents/Item/Handler.mjs";
+import { ActorProxy } from "./documents/Actor/_proxy.mjs";
+import { ItemProxy } from "./documents/Item/_proxy.mjs";
 
 // Item Sheets
 import { UntypedItemSheet } from "./sheets/Items/UntypedItemSheet.mjs";
@@ -46,8 +46,8 @@ Hooks.once(`init`, async () => {
 	CONFIG.Item.dataModels.aspect = AspectItemData;
 	CONFIG.Item.dataModels.spell = SpellItemData;
 	CONFIG.Item.dataModels.pet = PetItemData;
-	CONFIG.Actor.documentClass = ActorHandler;
-	CONFIG.Item.documentClass = ItemHandler;
+	CONFIG.Actor.documentClass = ActorProxy;
+	CONFIG.Item.documentClass = ItemProxy;
 
 	CONFIG.DOTDUNGEON = DOTDUNGEON;
 

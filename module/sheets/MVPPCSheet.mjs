@@ -35,7 +35,7 @@ export class MVPPCSheet extends GenericActorSheet {
 
 		ctx.computed = {
 			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
-			canAddAspect: !await actor.proxyFunction.bind(actor)(`atAspectLimit`),
+			canAddAspect: !this.actor.atAspectLimit,
 		};
 
 		return ctx;

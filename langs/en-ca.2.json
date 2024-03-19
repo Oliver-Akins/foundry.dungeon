@@ -51,6 +51,9 @@
 					"skill-roll-locked": "@dotdungeon.trainingLevel.locked"
 				}
 			}
+		},
+		"default": {
+			"name": "(Unnamed @TYPES.{document}.{type})"
 		}
 	},
 	"TYPES": {
@@ -67,7 +70,7 @@
 			"pet": "Pet",
 			"structure": "Structure",
 			"service": "Service",
-			"materials": "Materials",
+			"material": "Materials",
 			"legendaryItem": "Legendary Item",
 			"spell": "Spell",
 			"untyped": "Custom"

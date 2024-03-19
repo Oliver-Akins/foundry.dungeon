@@ -2,8 +2,13 @@ import { GenericActorSheet } from "../../GenericActorSheet.mjs";
 import DOTDUNGEON from "../../../config.mjs";
 import { localizer } from "../../../utils/localizer.mjs";
 import { modifierToString } from "../../../utils/modifierToString.mjs";
+import { Player } from "../../../documents/Actor2/Player.mjs";
 
 export class PlayerSheetv2 extends GenericActorSheet {
+
+	/** @type {Player | null} */
+	actor;
+
 	static get defaultOptions() {
 		let opts = mergeObject(
 			super.defaultOptions,
@@ -61,7 +66,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 
 		ctx.computed = {
 			canChangeGroup: ctx.settings.playersCanChangeGroup || ctx.isGM,
-			canAddAspect: !await actor.proxyFunction.bind(actor)(`atAspectLimit`),
+			canAddAspect: !this.actor.atAspectLimit,
 			stats: this.#statData,
 			itemFilters: this.#itemFilters,
 			noItemTypesVisible: this._itemTypesHidden.size === DOTDUNGEON.itemFilters.length,

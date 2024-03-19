@@ -54,7 +54,7 @@ export const localizerConfig = {
 };
 
 export const itemFilters = [
-	`materials`,
+	`material`,
 	`untyped`,
 	`aspect`,
 	`weapon`,

@@ -1,155 +1,68 @@
-import { ItemHandler } from "../Item/Handler.mjs";
+import { DotDungeonActor } from "./GenericActor.mjs";
+import { DotDungeonItem } from "../Item/GenericItem.mjs";
 
-/** @this {Actor} */
-async function genericEmbeddedDelete($event) {
-	let data = $event.currentTarget.dataset;
-	let item = await fromUuid(data.embeddedId);
+export class Player extends DotDungeonActor {
 
-	if (!item) {
-		ui.notifications.error(
-			`dotdungeon.notification.error.item-not-found`,
-			{ console: false }
+	async createCustomPet() {
+		const body = new URLSearchParams({
+			number: 1,
+			animal: `Cat`,
+			"X-Requested-With": "fetch"
+		});
+		const r = await fetch(
+			`https://randommer.io/pet-names`,
+			{
+				method: "POST",
+				body
+			}
 		);
-		return;
+		await this.createEmbeddedItem([{
+			type: `pet`,
+			name: (await r.json())[0] ?? game.i18n.localize(`dotdungeon.defaults.pet.name`),
+		}]);
 	};
 
-	Dialog.confirm({
-		title: game.i18n.format(
-			`dotdungeon.dialogs.${item.type}.delete.title`,
-			item
-		),
-		content: game.i18n.format(
-			`dotdungeon.dialogs.${item.type}.delete.content`,
-			item
-		),
-		yes: () => {
-			item.delete();
-		},
-		defaultYes: false,
-	});
-};
-
-/** @this {Actor} */
-async function createCustomItem(defaults, opts = {}) {
-	let items = await this.createEmbeddedDocuments(`Item`, defaults);
-	if (items.length == 0) {
-		throw new Error();
+	get atAspectLimit() {
+		let limit = game.settings.get(`dotdungeon`, `aspectLimit`);
+		return this.itemTypes.aspect.length >= limit;
 	};
-	this.sheet.render();
-	if (
-		game.settings.get(`dotdungeon`, `openEmbeddedOnCreate`)
-		&& !opts.overrideSheetOpen
-	) {
-		for (const item of items) {
-			item.sheet.render(true);
+
+	async preAspectEmbed(item) {
+		if (this.atAspectLimit) {
+			ui.notifications.error(
+				game.i18n.format(
+					`dotdungeon.notification.error.aspect-limit-reached`,
+					{ limit: game.settings.get(`dotdungeon`, `aspectLimit`) }
+				),
+				{ console: false }
+			);
+			return false;
 		};
 	};
-};
 
-/** @this {Actor} */
-async function createCustomUntyped() {
-	await createCustomItem.bind(this)([{
-		type: `untyped`,
-		name: game.i18n.format(`dotdungeon.defaults.untyped.name`),
-	}]);
-};
-
-/** @this {Actor} */
-async function createCustomAspect() {
-	await createCustomItem.bind(this)([{
-		type: `aspect`,
-		name: game.i18n.format(`dotdungeon.defaults.aspect.name`),
-	}]);
-};
-
-/** @this {Actor} */
-async function createCustomSpell() {
-	await createCustomItem.bind(this)([{
-		type: `spell`,
-		name: game.i18n.format(`dotdungeon.defaults.spell.name`),
-	}]);
-};
-
-/** @this {Actor} */
-async function createCustomPet() {
-	const body = new URLSearchParams({
-		number: 1,
-		animal: `Cat`,
-		"X-Requested-With": "fetch"
-	})
-	const r = await fetch(
-		`https://randommer.io/pet-names`,
-		{
-			method: "POST",
-			body
-		}
-	);
-	await createCustomItem.bind(this)([{
-		type: `pet`,
-		name: (await r.json())[0] ?? game.i18n.localize(`dotdungeon.defaults.pet.name`),
-	}]);
-};
-
-/** @this {Actor} */
-async function atAspectLimit() {
-	let limit = game.settings.get(`dotdungeon`, `aspectLimit`);
-	return this.itemTypes.aspect.length >= limit;
-};
-
-/**
- * @param {ItemHandler} item
- * @this {Actor}
- */
-async function preAspectEmbed(item) {
-	if (await atAspectLimit.bind(this)()) {
-		ui.notifications.error(
-			game.i18n.format(
-				`dotdungeon.notification.error.aspect-limit-reached`,
-				{ limit: game.settings.get(`dotdungeon`, `aspectLimit`) }
-			),
-			{ console: false }
-		);
-		return false;
+	/**
+	 * @param {DotDungeonItem} item
+	*/
+	async preUntypedEmbed(item) {
+		let inventoryItem = this.itemTypes.untyped.find(i => i.name === item.name);
+		if (inventoryItem) {
+			inventoryItem.update({"system.quantity": inventoryItem.system.quantity + 1});
+			ui.notifications.info(
+				game.i18n.format(
+					`dotdungeon.notification.info.increased-item-quantity`,
+					{ name: inventoryItem.name }
+				),
+				{ console: false }
+			);
+			return false;
+		};
 	};
-};
 
-/**
- * @param {ItemHandler} item
- * @this {Actor}
- */
-async function preUntypedEmbed(item) {
-	let inventoryItem = this.itemTypes.untyped.find(i => i.name === item.name);
-	if (inventoryItem) {
-		inventoryItem.update({"system.quantity": inventoryItem.system.quantity + 1});
-		ui.notifications.info(
-			game.i18n.format(
-				`dotdungeon.notification.info.increased-item-quantity`,
-				{ name: inventoryItem.name }
-			),
-			{ console: false }
-		);
-		return false;
+	getRollData() {
+		const data = {
+			initiative: this.system.stats.hands ?? 0,
+			stats: this.system.stats,
+		};
+		return data;
 	};
-};
-
-/** @this {Actor} */
-function getRollData() {
-	const data = {
-		initiative: this.system.stats.hands ?? 0,
-		stats: this.system.stats,
-	};
-	return data;
-};
-
-export default {
-	atAspectLimit,
-	createCustomItem,
-	createCustomUntyped,
-	createCustomAspect,
-	createCustomSpell,
-	createCustomPet,
-	genericEmbeddedDelete,
-	preAspectEmbed,
-	preUntypedEmbed,
-	getRollData,
 };
