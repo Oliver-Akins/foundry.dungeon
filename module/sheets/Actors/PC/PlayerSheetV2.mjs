@@ -2,7 +2,7 @@ import { GenericActorSheet } from "../../GenericActorSheet.mjs";
 import DOTDUNGEON from "../../../config.mjs";
 import { localizer } from "../../../utils/localizer.mjs";
 import { modifierToString } from "../../../utils/modifierToString.mjs";
-import { Player } from "../../../documents/Actor2/Player.mjs";
+import { Player } from "../../../documents/Actor/Player.mjs";
 
 export class PlayerSheetv2 extends GenericActorSheet {
 

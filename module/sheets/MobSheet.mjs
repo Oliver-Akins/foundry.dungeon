@@ -1,4 +1,3 @@
-import { ActorHandler } from "../documents/Actor/Handler.mjs";
 import { GenericActorSheet } from "./GenericActorSheet.mjs";
 import { DiceList } from "../dialogs/DiceList.mjs";
 import { PopoutTextEditor } from "../dialogs/PopoutTextEditor.mjs";

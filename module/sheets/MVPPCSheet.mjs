@@ -1,4 +1,3 @@
-import { ActorHandler } from "../documents/Actor/Handler.mjs";
 import { GenericActorSheet } from "./GenericActorSheet.mjs";
 
 export class MVPPCSheet extends GenericActorSheet {
