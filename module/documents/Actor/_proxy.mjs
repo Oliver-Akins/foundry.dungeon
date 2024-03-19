@@ -20,7 +20,7 @@ export const ActorProxy = new Proxy(function () {}, {
 		return new classes[data.type](...args);
 	},
 	get(target, prop, receiver) {
-		console.log(prop)
+
 		if (["create", "createDocuments"].includes(prop)) {
 			return function (data, options) {
 				if (data.constructor === Array) {
