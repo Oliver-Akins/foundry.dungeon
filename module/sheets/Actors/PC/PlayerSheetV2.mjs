@@ -144,7 +144,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 	get #inventoryCapacity() {
 		return {
 			used: this.actor.items
-				.reduce((sum, i) => sum + i.system.uses_inventory_slot ? i.system.quantity : 0, 0),
+				.reduce((sum, i) => sum + (i.system.uses_inventory_slot ? i.system.quantity : 0), 0),
 			max: this.actor.system.inventory_slots,
 		};
 	};
