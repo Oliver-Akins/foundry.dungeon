@@ -5,12 +5,14 @@ const classes = {
 	aspect: Aspect,
 };
 
+const defaultClass = DotDungeonItem;
+
 export const ItemProxy = new Proxy(function () {}, {
 	construct(target, args) {
 		const [data] = args;
 
 		if (!classes.hasOwnProperty(data.type)) {
-			return new DotDungeonItem(...args);
+			return new defaultClass(...args);
 		}
 
 		return new classes[data.type](...args);
@@ -24,19 +26,20 @@ export const ItemProxy = new Proxy(function () {}, {
 				}
 
 				if (!classes.hasOwnProperty(data.type)) {
-					return DotDungeonItem.create(data, options);
+					return defaultClass.create(data, options);
 				}
 
-				return classes[data.type].create(data, options)
+				return classes[data.type].create(data, options);
 			};
 		};
 
 		if (prop == Symbol.hasInstance) {
 			return function (instance) {
-				return Object.values(classes).some(i => instance instanceof i)
+				if (instance instanceof defaultClass) return true;
+				return Object.values(classes).some(i => instance instanceof i);
 			};
 		};
 
-		return DotDungeonItem[prop];
+		return defaultClass[prop];
 	},
 });

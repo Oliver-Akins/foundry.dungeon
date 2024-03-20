@@ -9,12 +9,14 @@ const classes = {
 	sync: Sync,
 };
 
+const defaultClass = DotDungeonActor;
+
 export const ActorProxy = new Proxy(function () {}, {
 	construct(target, args) {
 		const [data] = args;
 
 		if (!classes.hasOwnProperty(data.type)) {
-			return new DotDungeonActor(...args);
+			return new defaultClass(...args);
 		}
 
 		return new classes[data.type](...args);
@@ -24,23 +26,24 @@ export const ActorProxy = new Proxy(function () {}, {
 		if (["create", "createDocuments"].includes(prop)) {
 			return function (data, options) {
 				if (data.constructor === Array) {
-					return data.map(i => ItemProxy.create(i, options))
+					return data.map(i => ActorProxy.create(i, options))
 				}
 
 				if (!classes.hasOwnProperty(data.type)) {
-					return DotDungeonActor.create(data, options);
+					return defaultClass.create(data, options);
 				}
 
-				return classes[data.type].create(data, options)
+				return classes[data.type].create(data, options);
 			};
 		};
 
 		if (prop == Symbol.hasInstance) {
 			return function (instance) {
-				return Object.values(classes).some(i => instance instanceof i)
+				if (instance instanceof defaultClass) return true;
+				return Object.values(classes).some(i => instance instanceof i);
 			};
 		};
 
-		return DotDungeonActor[prop];
+		return defaultClass[prop];
 	},
 });
