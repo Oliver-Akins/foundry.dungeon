@@ -1,5 +1,6 @@
 // Data Models
 import { DescribedItemData } from "./models/Item/DescribedItemData.mjs";
+import { CommonItemData } from "./models/Item/CommonItemData.mjs";
 import { AspectItemData } from "./models/Item/Aspect.mjs";
 import { SpellItemData } from "./models/Item/Spell.mjs";
 import { PlayerData } from "./models/Actor/Player.mjs";
@@ -43,6 +44,7 @@ Hooks.once(`init`, async () => {
 	CONFIG.Actor.dataModels.sync = SyncData;
 	CONFIG.Actor.dataModels.mob = MobData;
 	CONFIG.Item.dataModels.untyped = DescribedItemData;
+	CONFIG.Item.dataModels.material = CommonItemData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
 	CONFIG.Item.dataModels.spell = SpellItemData;
 	CONFIG.Item.dataModels.pet = PetItemData;
