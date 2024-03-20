@@ -33,6 +33,8 @@ const loaders = {
 
 		return false;
 	},
+	js() {window.location.reload()},
+	mjs() {window.location.reload()},
 };
 
 Hooks.on(`hotReload`, async (data) => {
