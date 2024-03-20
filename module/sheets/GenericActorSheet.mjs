@@ -43,21 +43,25 @@ export class GenericActorSheet extends ActorSheet {
 		html.find(`summary`).on(`click`, this._handleSummaryToggle.bind(this));
 		html.find(`[data-roll-formula]`).on(`click`, this._handleRoll.bind(this));
 		html.find(`[data-embedded-update-on="change"]`)
-			.on(`change`, this.actor.genericEmbeddedUpdate.bind(this.actor));
+			.on(`change`, this.genericEmbeddedUpdate.bind(this));
 		html.find(`[data-embedded-update-on="blur"]`)
-			.on(`blur`, this.actor.genericEmbeddedUpdate.bind(this.actor));
+			.on(`blur`, this.genericEmbeddedUpdate.bind(this));
 		html.find(`[data-embedded-delete]`)
-			.on(`click`, this.actor.genericEmbeddedDelete.bind(this.actor));
+			.on(`click`, this.genericEmbeddedDelete.bind(this));
 		html.find(`[data-embedded-create]`)
-			.on(`click`, this.actor.genericEmbeddedCreate.bind(this.actor));
+			.on(`click`, this.genericEmbeddedCreate.bind(this));
 		html.find(`[data-message-type]`)
-			.on(`click`, this.actor.genericSendToChat.bind(this.actor));
+			.on(`click`, this.genericSendToChat.bind(this));
 		html.find(`[data-embedded-edit]`)
-			.on(`click`, this.actor.openEmbeddedSheet.bind(this.actor));
+			.on(`click`, this.openEmbeddedSheet.bind(this));
 		html.find(`button[data-increment]`)
 			.on(`click`, this._incrementValue.bind(this));
 		html.find(`button[data-decrement]`)
 			.on(`click`, this._decrementValue.bind(this));
+		html.find(`button[data-embedded-increment]`)
+			.on(`click`, this.genericEmbeddedIncrement.bind(this));
+		html.find(`button[data-embedded-decrement]`)
+			.on(`click`, this.genericEmbeddedDecrement.bind(this));
 	};
 
 	async _handleRoll($e) {
@@ -113,5 +117,107 @@ export class GenericActorSheet extends ActorSheet {
 		} else {
 			this._expanded.delete(data.collapseId);
 		};
+	};
+
+	async openEmbeddedSheet($event) {
+		const data = $event.target.dataset;
+		let item = await fromUuid(data.embeddedEdit);
+		item?.sheet.render(true);
+	};
+
+	async genericEmbeddedCreate($event) {
+		const data = $event.currentTarget.dataset;
+		if (!this[`createCustom${data.embeddedCreate}`]) {
+			this.createEmbeddedItem({
+				type: data.embeddedCreate,
+				name: localizer(
+					`dotdungeon.default.name`,
+					{ document: `Actor`, type: data.embeddedCreate }
+				),
+			});
+		} else {
+			this[`createCustom${data.embeddedCreate}`]($event);
+		};
+	};
+
+	async genericEmbeddedUpdate($event) {
+		const target = $event.currentTarget;
+		const data = target.dataset;
+		const item = await fromUuid(data.embeddedId);
+
+		let value = target.value;
+		switch (target.type) {
+			case "checkbox": value = target.checked; break;
+		};
+
+		await item?.update({ [data.embeddedUpdate]: value });
+	};
+
+	async genericEmbeddedIncrement($event) {
+		const target = $event.currentTarget;
+		const data = target.dataset;
+		const item = await fromUuid(data.embeddedId);
+		const value = getProperty(item, data.embeddedIncrement);
+		if (typeof value != "number") {
+			return;
+		};
+		await item?.update({ [data.embeddedIncrement]: value + 1 });
+	};
+
+	async genericEmbeddedDecrement($event) {
+		const target = $event.currentTarget;
+		const data = target.dataset;
+		const item = await fromUuid(data.embeddedId);
+		const value = getProperty(item, data.embeddedDecrement);
+		if (typeof value != "number") {
+			return;
+		};
+		await item?.update({ [data.embeddedDecrement]: value - 1 });
+	};
+
+	async genericEmbeddedDelete($event) {
+		let data = $event.currentTarget.dataset;
+		let item = await fromUuid(data.embeddedId);
+
+		if (!item) {
+			ui.notifications.error(
+				`dotdungeon.notification.error.item-not-found`,
+				{ console: false }
+			);
+			return;
+		};
+
+		Dialog.confirm({
+			title: game.i18n.format(
+				`dotdungeon.dialogs.${item.type}.delete.title`,
+				item
+			),
+			content: game.i18n.format(
+				`dotdungeon.dialogs.${item.type}.delete.content`,
+				item
+			),
+			yes: () => {
+				item.delete();
+			},
+			defaultYes: false,
+		});
+	};
+
+	async genericSendToChat($event) {
+		const data = $event.currentTarget.dataset;
+		const type = data.messageType;
+		if (this[`send${type}ToChat`]) {
+			return await this[`send${type}ToChat`]($event);
+		};
+		if (!data.messageContent) {
+			console.warn(`.dungeon | Tried to send a chat message with no content`);
+			return;
+		};
+		let message = await ChatMessage.create({
+			content: data.messageContent,
+			flavor: data.messageFlavor,
+			speaker: { actor: this.actor },
+		});
+		message.render();
 	};
 };
