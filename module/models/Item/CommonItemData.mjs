@@ -14,6 +14,10 @@ export class CommonItemData extends foundry.abstract.TypeDataModel {
 				initial: true,
 				nullable: false,
 			}),
+			quantity_affects_used_capacity: new fields.BooleanField({
+				initial: true,
+				nullable: false,
+			}),
 			buy: new fields.NumberField({
 				initial: null,
 				nullable: true,

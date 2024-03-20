@@ -9,6 +9,16 @@ export default function() {
 		requiresReload: false,
 	});
 
+	game.settings.register(`dotdungeon`, `materialsAffectCapacity`, {
+		name: `dotdungeon.settings.materialsAffectCapacity.name`,
+		hint: `dotdungeon.settings.materialsAffectCapacity.description`,
+		scope: `world`,
+		config: true,
+		type: Boolean,
+		default: true,
+		requiresReload: false,
+	});
+
 	game.settings.register(`dotdungeon`, `resourcesOrSupplies`, {
 		name: `dotdungeon.settings.resourcesOrSupplies.name`,
 		hint: `dotdungeon.settings.resourcesOrSupplies.description`,

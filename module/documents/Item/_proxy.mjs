@@ -1,8 +1,10 @@
 import { DotDungeonItem } from "./GenericItem.mjs";
 import { Aspect } from "./Aspect.mjs";
+import { Material } from "./Material.mjs";
 
 const classes = {
 	aspect: Aspect,
+	material: Material,
 };
 
 const defaultClass = DotDungeonItem;
