@@ -1,6 +1,58 @@
 <div class="material">
-	Material Name
-	<button type="button">-</button>
-	X
-	<button type="button">+</button>
+	<label
+		for="{{meta.idp}}-{{item.uuid}}-quantity-input"
+		class="material__label"
+		data-tooltip="{{item.name}}"
+		data-tooltip-direction="UP"
+	>
+		{{item.name}}
+	</label>
+	{{#if (eq item.system.quantity 0)}}
+		<button
+			type="button"
+			class="material__button material__button--delete equal-padding "
+			data-embedded-delete
+			data-embedded-id="{{item.uuid}}"
+		>
+			<div aria-hidden="true" class="icon icon--14">
+				{{{ icons.garbage-bin }}}
+			</div>
+		</button>
+	{{else}}
+		<button
+			type="button"
+			aria-hidden="true"
+			tabindex="-1"
+			class="material__button material__button--decrement equal-padding "
+			data-embedded-decrement="system.quantity"
+			data-embedded-id="{{item.uuid}}"
+		>
+			<div aria-hidden="true" class="icon icon--14">
+				{{{ icons.minus }}}
+			</div>
+		</button>
+	{{/if}}
+	<input
+		type="number"
+		id="{{meta.idp}}-{{item.uuid}}-quantity-input"
+		class="material__input"
+		min="0"
+		value="{{item.system.quantity}}"
+		aria-label="The number of {{item.name}} you have"
+		data-embedded-id="{{item.uuid}}"
+		data-embedded-update="system.quantity"
+		data-embedded-update-on="blur"
+	>
+	<button
+		type="button"
+		aria-hidden="true"
+		tabindex="-1"
+		class="material__button material__button--increment equal-padding "
+		data-embedded-increment="system.quantity"
+		data-embedded-id="{{item.uuid}}"
+	>
+		<div aria-hidden="true" class="icon icon--14">
+			{{{ icons.create }}}
+		</div>
+	</button>
 </div>

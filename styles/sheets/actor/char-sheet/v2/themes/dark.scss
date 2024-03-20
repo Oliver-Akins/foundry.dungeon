@@ -9,10 +9,16 @@ $on-surface: white;
 $on-primary: $t;
 $on-secondary: $t;
 
+$title-font: 'Pixelify Sans', sans-serif;
+$body-font: sans-serif;
+
 .actor--pc-v2 {
 	--sheet-bg: #{$background};
 	--nav-bg: #{$surface};
 	--nav-button-text: #{$on-surface};
+
+	--tab-font: #{$title-font};
+	--input-font: #{$body-font};
 
 	/* Elevation backgrounds to following Material design */
 	--elevation-0dp-bg: #{$surface};
@@ -36,4 +42,8 @@ $on-secondary: $t;
 	--skill-training-select-bg: #{$surface};
 	--skill-training-select-text-color: #{$on-surface};
 	--skill-roll-button-text-color: #{$on-surface};
+
+	--inventory-material-color: white;
+	--inventory-material-hover-color: white;
+	--inventory-material-focus-color: white;
 }

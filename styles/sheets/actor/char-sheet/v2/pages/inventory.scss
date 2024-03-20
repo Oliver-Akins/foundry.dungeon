@@ -1,4 +1,4 @@
-@use "../../../../mixins/material" as material;
+@use "../../../../../mixins/material" as material;
 
 .dotdungeon .actor--pc-v2 .active.inventory-page {
 	padding-bottom: 50px;
@@ -91,6 +91,66 @@
 
 		input[type="checkbox"] {
 			margin: 0;
+		}
+	}
+
+	.item-list {
+		.material-list {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 8px;
+		}
+	}
+
+	.material {
+		@include material.elevate(1);
+		padding: 8px;
+		gap: 8px;
+		display: grid;
+		grid-template-columns: 1fr min-content 50px min-content;
+		align-items: center;
+		border-radius: 4px;
+
+		&__label {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			justify-self: left;
+			max-width: 100%;
+		}
+
+		&__button {
+			--size: 28px;
+			@include material.elevate(2);
+			transition: all 400ms ease-in-out;
+			color: var(--inventory-material-color);
+			border-width: 0;
+			width: var(--size);
+			height: var(--size);
+
+			&:hover {
+				@include material.elevate(4);
+				color: var(--inventory-material-hover-color);
+			}
+		}
+
+		&__input {
+			@include material.elevate(2);
+			font-family: var(--input-font);
+			text-align: center;
+			border-radius: 4px;
+			transition: all 400ms ease-in-out;
+			color: var(--inventory-material-color);
+
+			&:hover {
+				@include material.elevate(4);
+				color: var(--inventory-material-hover-color);
+			}
+
+			&:focus {
+				@include material.elevate(8);
+				color: var(--inventory-material-focus-color);
+			}
 		}
 	}
 }

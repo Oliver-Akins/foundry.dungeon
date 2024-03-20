@@ -1,6 +1,6 @@
 @use "./themes/dark.scss";
-@use "../../../mixins/material" as material;
-@use "../../../mixins/partials" as partials;
+@use "../../../../mixins/material" as material;
+@use "../../../../mixins/partials" as partials;
 
 @use "./pages/stats.scss";
 @use "./pages/inventory.scss";

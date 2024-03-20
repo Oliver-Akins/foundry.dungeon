@@ -1,0 +1,15 @@
+.dotdungeon.material {
+	button {
+		padding: 8px 16px;
+
+		&.outline {
+			border-style: solid;
+			border-color: var(--outline-button-border);
+		}
+
+		&:disabled {
+			opacity: 37%;
+			cursor: default;
+		}
+	}
+}
