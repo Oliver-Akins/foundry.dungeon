@@ -22,6 +22,7 @@
 	.scrollable {
 		container-type: size;
 		overflow: auto;
+		scrollbar-gutter: stable;
 	}
 
 	.nav-bar {

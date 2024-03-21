@@ -4,13 +4,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
 
+/*
+Enabling scrollbar customization on a per-sheet basis, with a relatively low
+specificity to allow easier overriding without artificially increasing it.
+*/
 .dotdungeon {
+	--scrollbar-width: 5px;
 	--scrollbar-handle-color: #782e22;
 	--scrollbar-handle-border-color: var(--color-border-highlight);
-
-
 	::-webkit-scrollbar {
-		width: var(--scrollbar-width, 5px);
+		width: var(--scrollbar-width);
 	}
 	::-webkit-scrollbar-thumb {
 		background: var(--scrollbar-handle-color);
