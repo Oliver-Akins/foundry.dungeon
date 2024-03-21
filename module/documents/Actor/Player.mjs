@@ -41,6 +41,8 @@ export class Player extends DotDungeonActor {
 	};
 
 	/**
+	 * TODO: Make this quantity increase work for all item types
+	 * TODO: Find item based of the source's ID, not name
 	 * @param {DotDungeonItem} item
 	*/
 	async preUntypedEmbed(item) {
