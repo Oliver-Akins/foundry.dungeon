@@ -20,6 +20,9 @@ $body-font: sans-serif;
 	--tab-font: #{$title-font};
 	--input-font: #{$body-font};
 
+	--scrollbar-handle-color: #{$primary};
+	--scrollbar-handle-border-color: color-mix(in lab, white 40%, var(--scrollbar-handle-color));
+
 	/* Elevation backgrounds to following Material design */
 	--elevation-0dp-bg: #{$surface};
 	--elevation-1dp-bg: color-mix(in lab, transparent, white 5%);

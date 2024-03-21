@@ -4,15 +4,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
 
-// Reset the parts of Foundry's styling which gets in the way of what I want
-.dotdungeon > .window-content {
+.dotdungeon {
+	--scrollbar-handle-color: #782e22;
+	--scrollbar-handle-border-color: var(--color-border-highlight);
+
 
 	::-webkit-scrollbar {
-		width: 10px;
+		width: var(--scrollbar-width, 5px);
 	}
 	::-webkit-scrollbar-thumb {
+		background: var(--scrollbar-handle-color);
+		border-color: var(--scrollbar-handle-border-color);
 		border-radius: 5px;
 	}
+}
+
+// Reset the parts of Foundry's styling which gets in the way of what I want
+.dotdungeon > .window-content {
 
 	h2, h3, h4, h5, h6 {
 		@include fvtt_reset;
