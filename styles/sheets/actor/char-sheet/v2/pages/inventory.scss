@@ -184,6 +184,46 @@
 		}
 
 		&__content {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr)) min-content;
+			grid-template-rows: repeat(3, min-content) auto;
+			gap: 8px;
+			padding: 4px;
+		}
+
+		&__usage, &__tier {
+			@include material.elevate(1);
+			padding: 8px;
+			display: flex;
+			align-items: center
+		}
+
+		button {
+			@include material.elevate(2);
+			&:hover {
+				@include material.elevate(4);
+			}
+		}
+
+		&__quantity--edit {
+			@include material.elevate(1);
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) 40px;
+			max-width: 100%;
+			align-items: center;
+			padding: 8px;
+			> :first-child {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+		}
+
+		&__description {
+			@include material.elevate(1);
+			margin: 0;
+			grid-row: span 3;
+			grid-column: span 3;
 		}
 	}
 }

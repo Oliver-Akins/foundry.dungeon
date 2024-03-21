@@ -20,14 +20,28 @@
 		<h3 class="untyped__name">
 			{{item.name}}
 		</h3>
-		<div class="untyped__quantity">
+		<div class="untyped__quantity--display">
 			(x {{item.system.quantity}})
 		</div>
 	</div>
 	{{#if (dd-set-has meta.expanded item.uuid)}}
 		<hr>
 		<div class="untyped__content">
-			Some Description
+			<div class="untyped__quantity--edit">
+				<label for="">
+					Quantity
+				</label>
+				<input
+					type="number"
+					value="{{item.system.quantity}}"
+				>
+			</div>
+			<div class="untyped__usage">Usage Cost</div>
+			<div class="untyped__tier">Tier</div>
+			<button type="button">C</button>
+			<p class="untyped__description">Description</p>
+			<button type="button">E</button>
+			<button type="button">D</button>
 		</div>
 	{{/if}}
 </section>
