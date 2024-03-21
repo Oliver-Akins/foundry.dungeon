@@ -40,7 +40,7 @@ export class GenericActorSheet extends ActorSheet {
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Generic sheet adding listeners`);
 
-		html.find(`summary`).on(`click`, this._handleSummaryToggle.bind(this));
+		html.find(`[data-collapse-id]`).on(`click`, this._handleSummaryToggle.bind(this));
 		html.find(`[data-roll-formula]`).on(`click`, this._handleRoll.bind(this));
 		html.find(`[data-embedded-update-on="change"]`)
 			.on(`change`, this.genericEmbeddedUpdate.bind(this));
@@ -102,21 +102,19 @@ export class GenericActorSheet extends ActorSheet {
 	};
 
 	async _handleSummaryToggle($e) {
-		let data = $e.currentTarget.dataset;
-		let open = $e.currentTarget.parentNode.open;
-		console.debug(`.dungeon | Collapse ID: ${data.collapseId} (open: ${open})`);
+		let target = $e.currentTarget;
+		let parent = target.parentElement;
+		let data = target.dataset;
+		console.debug(`.dungeon | Collapse ID: ${data.collapseId}`);
 
-		/*
-		This seeming inversion of logic is due to the fact that this handler
-		gets called before the element is updated to include/reflect the
-		change, so if the parentNode doesn't actually have it, then we're
-		opening it and vice-versa.
-		*/
-		if (!open) {
+		if (!this._expanded.has(data.collapseId)) {
 			this._expanded.add(data.collapseId);
 		} else {
 			this._expanded.delete(data.collapseId);
 		};
+		if (parent.nodeName !== "DETAILS") {
+			this.render();
+		}
 	};
 
 	async openEmbeddedSheet($event) {

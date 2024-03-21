@@ -1,6 +1,33 @@
-<div class="untyped">
-	{{item.name}}
-	<button type="button">-</button>
-	X
-	<button type="button">+</button>
-</div>
+<section class="untyped">
+	<div
+		class="untyped__header"
+		data-collapse-id="{{item.uuid}}"
+	>
+		<button
+			type="button"
+			class="equal-padding reduced-padding"
+			data-collapse-id="{{item.uuid}}"
+			aria-label="Toggle the extra information's visibility"
+		>
+			<div aria-hidden="true" class="icon icon--12">
+				{{#if (dd-set-has meta.expanded item.uuid)}}
+					{{{ icons.caret-down }}}
+				{{else}}
+					{{{ icons.caret-right }}}
+				{{/if}}
+			</div>
+		</button>
+		<h3 class="untyped__name">
+			{{item.name}}
+		</h3>
+		<div class="untyped__quantity">
+			(x {{item.system.quantity}})
+		</div>
+	</div>
+	{{#if (dd-set-has meta.expanded item.uuid)}}
+		<hr>
+		<div class="untyped__content">
+			Some Description
+		</div>
+	{{/if}}
+</section>

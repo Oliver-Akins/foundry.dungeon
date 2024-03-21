@@ -43,7 +43,15 @@ $body-font: sans-serif;
 	--skill-training-select-text-color: #{$on-surface};
 	--skill-roll-button-text-color: #{$on-surface};
 
+	/* Common Inventory Item Variables */
+	--inventory-item-name-font: #{$body-font};
+	--inventory-item-name-font-size: 0.875rem;
+
+	/* Material inventory item details */
 	--inventory-material-color: white;
 	--inventory-material-hover-color: white;
 	--inventory-material-focus-color: white;
+
+	/* Untyped (custom) inventory item details */
+	--inventory-untyped-color: white;
 }

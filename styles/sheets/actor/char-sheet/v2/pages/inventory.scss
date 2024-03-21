@@ -100,6 +100,12 @@
 			grid-template-columns: 1fr 1fr;
 			gap: 8px;
 		}
+
+		.untyped-list {
+			display: flex;
+			gap: 8px;
+			flex-direction: column;
+		}
 	}
 
 	.material {
@@ -112,6 +118,8 @@
 		border-radius: 4px;
 
 		&__label {
+			font-family: var(--inventory-item-name-font);
+			font-size: var(--inventory-item-name-font-size);
 			overflow: hidden;
 			white-space: nowrap;
 			text-overflow: ellipsis;
@@ -151,6 +159,31 @@
 				@include material.elevate(8);
 				color: var(--inventory-material-focus-color);
 			}
+		}
+	}
+
+	.untyped {
+		@include material.elevate(1);
+		padding: 8px;
+		border-radius: 4px;
+		color: var(--inventory-material-color);
+
+		&__header {
+			display: flex;
+			gap: 8px;
+			align-items: center;
+
+			button {
+				color: var(--inventory-material-color);
+			}
+		}
+		&__name {
+			flex-grow: 1;
+			font-family: var(--inventory-item-name-font);
+			font-size: var(--inventory-item-name-font-size);
+		}
+
+		&__content {
 		}
 	}
 }
