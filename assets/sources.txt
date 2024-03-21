@@ -1,5 +1,6 @@
 Amer Alamer
 	caret-right.svg (https://thenounproject.com/icon/arrow-caret-right-1143917/)
+	caret-down.svg (https://thenounproject.com/icon/arrow-caret-down-1143911/)
 
 Alice Design:
 	garbage-bin.svg (https://thenounproject.com/icon/garbage-2025492/)
