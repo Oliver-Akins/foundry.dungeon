@@ -118,8 +118,9 @@ export class GenericActorSheet extends ActorSheet {
 	};
 
 	async openEmbeddedSheet($event) {
-		const data = $event.target.dataset;
+		const data = $event.currentTarget.dataset;
 		let item = await fromUuid(data.embeddedEdit);
+		console.log(data)
 		item?.sheet.render(true);
 	};
 

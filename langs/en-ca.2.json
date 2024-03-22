@@ -48,12 +48,32 @@
 			"actor": {
 				"v2": {
 					"stat-not-chosen": "Select a dice to see the {name} skills",
-					"skill-roll-locked": "@dotdungeon.trainingLevel.locked"
+					"skill-roll-locked": "@dotdungeon.trainingLevel.locked",
+					"toggle-item-information": "Toggle the item's extra information visibility"
+				}
+			},
+			"item": {
+				"untyped": {
+					"quantity": "Quantity",
+					"usage": "Usage Cost",
+					"rarity": "Tier",
+					"no-description": "This item hasn't been described yet..."
 				}
 			}
 		},
+		"rarity": {
+			"simple": "Simple",
+			"greater": "Greater",
+			"rare": "Rare",
+			"legendary": "Legendary"
+		},
 		"default": {
 			"name": "(Unnamed @TYPES.{document}.{type})"
+		},
+		"common": {
+			"send-to-chat": "Send to Chat",
+			"edit": "Edit",
+			"delete": "Delete"
 		}
 	},
 	"TYPES": {

@@ -7,7 +7,8 @@
 			type="button"
 			class="equal-padding reduced-padding"
 			data-collapse-id="{{item.uuid}}"
-			aria-label="Toggle the extra information's visibility"
+			tabindex="0"
+			aria-label="{{dd-i18n 'dotdungeon.sheet.actor.v2.toggle-item-information' item}}"
 		>
 			<div aria-hidden="true" class="icon icon--12">
 				{{#if (dd-set-has meta.expanded item.uuid)}}
@@ -28,20 +29,74 @@
 		<hr>
 		<div class="untyped__content">
 			<div class="untyped__quantity--edit">
-				<label for="">
+				<label for="{{meta.idp}}-{{item.uuid}}-quantity">
 					Quantity
 				</label>
 				<input
 					type="number"
+					min="0"
+					id="{{meta.idp}}-{{item.uuid}}-quantity"
 					value="{{item.system.quantity}}"
+					data-embedded-id="{{item.uuid}}"
+					data-embedded-update="system.quantity"
+					data-embedded-update-on="blur"
 				>
 			</div>
-			<div class="untyped__usage">Usage Cost</div>
-			<div class="untyped__tier">Tier</div>
-			<button type="button">C</button>
-			<p class="untyped__description">Description</p>
-			<button type="button">E</button>
-			<button type="button">D</button>
+			<div class="untyped__usage">
+				<span>Usage Cost:</span>
+				<span>
+					{{dd-empty-state item.system.usage}}
+				</span>
+			</div>
+			<div class="untyped__tier">
+				<span>Tier:</span>
+				<span>{{dd-i18n (concat "dotdungeon.rarity." item.system.tier)}}</span>
+			</div>
+			<button
+				type="button"
+				aria-label="{{dd-i18n 'dotdungeon.common.send-to-chat'}}"
+				data-tooltip="{{dd-i18n 'dotdungeon.common.send-to-chat'}}"
+				data-tooltip-direction="RIGHT"
+				class="untyped__button--send-to-chat"
+			>
+				<div aria-hidden="true" class="icon icon--20">
+					{{{ icons.chat-bubble }}}
+				</div>
+			</button>
+			<p class="untyped__description">
+				{{#if item.system.description}}
+					{{item.system.description}}
+				{{else}}
+					<span class="placeholder">
+						This item hasn't been described yet...
+					</span>
+				{{/if}}
+			</p>
+			<button
+				type="button"
+				aria-label="{{dd-i18n 'dotdungeon.common.edit'}}"
+				data-tooltip="{{dd-i18n 'dotdungeon.common.edit'}}"
+				data-tooltip-direction="RIGHT"
+				class="untyped__button--edit"
+				data-embedded-edit="{{item.uuid}}"
+			>
+				<div aria-hidden="true" class="icon icon--20">
+					{{{ icons.edit }}}
+				</div>
+			</button>
+			<button
+				type="button"
+				aria-label="{{dd-i18n 'dotdungeon.common.delete'}}"
+				data-tooltip="{{dd-i18n 'dotdungeon.common.delete'}}"
+				data-tooltip-direction="RIGHT"
+				class="untyped__button--delete"
+				data-embedded-delete
+				data-embedded-id="{{item.uuid}}"
+			>
+				<div aria-hidden="true" class="icon icon--20">
+					{{{ icons.garbage-bin }}}
+				</div>
+			</button>
 		</div>
 	{{/if}}
 </section>

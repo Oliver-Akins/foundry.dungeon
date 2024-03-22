@@ -1,6 +1,8 @@
 import { localizerConfig } from "../config.mjs";
 
 export function localizer(key, args = {}, depth = 0) {
+	if (key instanceof Handlebars.SafeString) key = key.toString();
+
 	/** @type {string} */
 	let localized = game.i18n.format(key, args);
 	const subkeys = localized.matchAll(localizerConfig.subKeyPattern);

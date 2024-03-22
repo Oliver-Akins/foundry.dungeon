@@ -4,10 +4,12 @@ $background: #0a0a0a;
 $surface: #121212;
 $primary: #005300;
 $secondary: #6c056c;
+$danger: red;
 $on-background: $t;
 $on-surface: white;
 $on-primary: $t;
 $on-secondary: $t;
+$on-danger: black;
 
 $title-font: 'Pixelify Sans', sans-serif;
 $body-font: sans-serif;
@@ -56,5 +58,14 @@ $body-font: sans-serif;
 	--inventory-material-focus-color: white;
 
 	/* Untyped (custom) inventory item details */
-	--inventory-untyped-color: white;
+	--inventory-untyped-description-color: white;
+	--inventory-untyped-card-color: white;
+	--inventory-untyped-send-to-chat-color: white;
+	--inventory-untyped-edit-color: white;
+	--inventory-untyped-delete-color: white;
+	--inventory-untyped-delete-bg: color-mix(in lab, #{$danger} 30%, #{$surface});
+	--inventory-untyped-delete-bg-hover: color-mix(in lab, #{$danger} 37%, #{$surface});;
+	--inventory-untyped-quantity-font-size: 14px;
+	--inventory-untyped-quantity-color: white;
+	--inventory-untyped-quantity-input-color: white;
 }
