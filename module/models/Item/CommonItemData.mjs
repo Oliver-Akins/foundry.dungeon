@@ -42,12 +42,8 @@ export class CommonItemData extends foundry.abstract.TypeDataModel {
 				"inventory" = on player, equivalent to being put in a backpack
 				"storage" = not on player at all, in a chest in their house or
 					smth, these items should be displayed in the storage tab
-				"transportation" = not on player, in some form of transportation,
-					these items should be hidden on the sheet and the items that
-					are on a transportation should be referenced by UUID in that
-					transportation item
 				*/
-				choices: ["equipped", "inventory", "storage", "transportation"],
+				choices: ["equipped", "inventory", "storage"],
 			}),
 		};
 	};
