@@ -21,6 +21,7 @@ export default {
 	"dd-stringify": v => JSON.stringify(v, null, `  `),
 	"dd-empty": v => v.length == 0,
 	"dd-set-has": (s, k) => s.has(k),
+	"dd-empty-state": (v) => v ?? `--`,
 
 	// Logic helpers
 	"eq": (a, b) => a == b,
