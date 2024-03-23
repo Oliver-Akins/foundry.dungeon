@@ -1,7 +1,7 @@
 import { DotDungeonItem } from "./GenericItem.mjs";
 
 export class Aspect extends DotDungeonItem {
-	async _preCreate(...args) {
+	async _preCreate() {
 		if (this.isEmbedded) {
 			if (this.actor.atAspectLimit) {
 				ui.notifications.error(
@@ -14,7 +14,7 @@ export class Aspect extends DotDungeonItem {
 				return false;
 			};
 
-			return await this.actor?.preItemEmbed(...args);
+			return await this.actor?.preItemEmbed(this);
 		};
 	}
 };

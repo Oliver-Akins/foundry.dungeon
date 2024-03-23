@@ -15,9 +15,11 @@ export class DotDungeonActor extends Actor {
 		};
 	};
 
-	async preItemEmbed(data) {
-		let embedded = this.itemTypes[data.type].find(i => {
-			return i.name === data.name
+	async preItemEmbed(item) {
+
+		// Increases the quantity of already present items if they match via source
+		let embedded = this.itemTypes[item.type].find(i => {
+			return i.getFlag(`core`, `sourceId`) === `Item.${item.id}`
 		});
 		if (embedded) {
 			await embedded.update({"system.quantity": embedded.system.quantity + 1});
