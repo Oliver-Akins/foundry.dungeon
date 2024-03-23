@@ -27,39 +27,6 @@ export class Player extends DotDungeonActor {
 		return this.itemTypes.aspect.length >= limit;
 	};
 
-	async preAspectEmbed(item) {
-		if (this.atAspectLimit) {
-			ui.notifications.error(
-				game.i18n.format(
-					`dotdungeon.notification.error.aspect-limit-reached`,
-					{ limit: game.settings.get(`dotdungeon`, `aspectLimit`) }
-				),
-				{ console: false }
-			);
-			return false;
-		};
-	};
-
-	/**
-	 * TODO: Make this quantity increase work for all item types
-	 * TODO: Find item based of the source's ID, not name
-	 * @param {DotDungeonItem} item
-	*/
-	// async preUntypedEmbed(item) {
-	// 	let inventoryItem = this.itemTypes.untyped.find(i => i.name === item.name);
-	// 	if (inventoryItem) {
-	// 		inventoryItem.update({"system.quantity": inventoryItem.system.quantity + 1});
-	// 		ui.notifications.info(
-	// 			game.i18n.format(
-	// 				`dotdungeon.notification.info.increased-item-quantity`,
-	// 				{ name: inventoryItem.name }
-	// 			),
-	// 			{ console: false }
-	// 		);
-	// 		return false;
-	// 	};
-	// };
-
 	getRollData() {
 		const data = {
 			initiative: this.system.stats.hands ?? 0,

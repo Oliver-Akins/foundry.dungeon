@@ -1,7 +1,7 @@
 export class DotDungeonItem extends Item {
-	async _preCreate() {
+	async _preCreate(...args) {
 		if (this.isEmbedded) {
-			return await this.actor?.preItemEmbed(this);
+			return await this.actor?.preItemEmbed(...args);
 		};
 	};
 
