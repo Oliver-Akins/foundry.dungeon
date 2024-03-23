@@ -136,6 +136,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			filters[type] = {
 				label: localizer(`TYPES.Item.${type}`),
 				active: !this._itemTypesHidden.has(type),
+				createLabel: localizer(`dotdungeon.sheet.actor.v2.create-item`, {type}),
 			};
 		};
 		return filters;

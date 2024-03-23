@@ -1,3 +1,4 @@
+import { localizer } from "../utils/localizer.mjs";
 import DOTDUNGEON from "../config.mjs";
 
 export class GenericActorSheet extends ActorSheet {
@@ -127,11 +128,11 @@ export class GenericActorSheet extends ActorSheet {
 	async genericEmbeddedCreate($event) {
 		const data = $event.currentTarget.dataset;
 		if (!this[`createCustom${data.embeddedCreate}`]) {
-			this.createEmbeddedItem({
+			this.actor.createEmbeddedItem({
 				type: data.embeddedCreate,
 				name: localizer(
 					`dotdungeon.default.name`,
-					{ document: `Actor`, type: data.embeddedCreate }
+					{ document: `Item`, type: data.embeddedCreate }
 				),
 			});
 		} else {

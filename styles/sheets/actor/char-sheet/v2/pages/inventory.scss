@@ -27,6 +27,40 @@
 		}
 	}
 
+	.item-group {
+		&__header {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center
+		}
+
+		&__create-item {
+			@include material.elevate(2);
+			color: var(--inventory-create-item-font-color);
+			&:hover {
+				@include material.elevate(4);
+			}
+			&:focus-visible, &:active {
+				@include material.elevate(8);
+			}
+		}
+
+		&__list {
+			&--material {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 8px;
+			}
+
+			&--untyped {
+				display: flex;
+				gap: 8px;
+				flex-direction: column;
+			}
+		}
+	}
+
 	.panel {
 		padding: 8px;
 		border-radius: 4px;
@@ -54,7 +88,7 @@
 				background: hsl( from currentColor / 50% ); // probably gonna need color-mix
 			}
 
-			&:focus-visible {
+			&:focus-visible, &:active {
 				border-width: 2px;
 				border-color: currentColor;
 				background: var(--elevation-8dp-bg);
@@ -92,18 +126,6 @@
 		input[type="checkbox"] {
 			margin: 0;
 		}
-	}
-
-	.material-list {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 8px;
-	}
-
-	.untyped-list {
-		display: flex;
-		gap: 8px;
-		flex-direction: column;
 	}
 
 	.material {
@@ -174,6 +196,7 @@
 			display: flex;
 			gap: 8px;
 			align-items: center;
+			justify-content: space-between;
 
 			&:hover {
 				cursor: pointer;
@@ -188,6 +211,7 @@
 		}
 		&__name {
 			flex-grow: 1;
+			cursor: inherit;
 			font-family: var(--inventory-item-name-font);
 			font-size: var(--inventory-item-name-font-size);
 		}

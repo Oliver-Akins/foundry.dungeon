@@ -7,9 +7,24 @@
 	{{#each computed.itemFilters as | filter |}}
 		{{#if filter.active}}
 			<section class="item-list__group">
-				<h2>{{filter.label}}</h2>
+				<div class="item-group__header">
+					<h2>{{filter.label}}</h2>
+					<button
+						type="button"
+						class="item-group__create-item reduced-padding equal-padding"
+						data-embedded-create="{{@key}}"
+						aria-label="{{filter.createLabel}}"
+						data-tooltip="{{filter.createLabel}}"
+						data-tooltip-direction="LEFT"
+					>
+						<div aria-hidden="true" class="icon icon--16">
+							{{{ @root.icons.create }}}
+						</div>
+
+					</button>
+				</div>
 				<hr>
-				<div class="{{@key}}-list">
+				<div class="item-group__list--{{@key}}">
 					{{#each (lookup @root.items @key) as | item |}}
 						{{> (concat "dotdungeon.pc.v2." @../key) @root item=item}}
 					{{else}}

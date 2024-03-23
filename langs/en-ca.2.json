@@ -49,7 +49,8 @@
 				"v2": {
 					"stat-not-chosen": "Select a dice to see the {name} skills",
 					"skill-roll-locked": "@dotdungeon.trainingLevel.locked",
-					"toggle-item-information": "Toggle the item's extra information visibility"
+					"toggle-item-information": "Toggle the item's extra information visibility",
+					"create-item": "Create @TYPES.Item.{type}"
 				}
 			},
 			"item": {

@@ -3,7 +3,7 @@ import { createArray } from "./createArray.mjs";
 import { detailsExpanded } from "./detailsExpanded.mjs";
 import { objectValue } from "./objectValue.mjs";
 import { toFriendlyDuration } from "./toFriendlyDuration.mjs";
-import { localizer } from "../utils/localizer.mjs";
+import { handlebarsLocalizer } from "../utils/localizer.mjs";
 import { options } from "./options.mjs";
 
 export default {
@@ -14,7 +14,7 @@ export default {
 	"dd-toFriendlyDuration": toFriendlyDuration,
 	"dd-objectValue": objectValue,
 	"dd-expanded": detailsExpanded,
-	"dd-i18n": localizer,
+	"dd-i18n": handlebarsLocalizer,
 	"dd-options": options,
 
 	// Simple helpers

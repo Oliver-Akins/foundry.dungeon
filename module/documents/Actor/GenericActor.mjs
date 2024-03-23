@@ -1,6 +1,7 @@
 export class DotDungeonActor extends Actor {
 	async createEmbeddedItem(defaults, opts = {}) {
 		let items = await this.createEmbeddedDocuments(`Item`, defaults);
+		if (!Array.isArray(items)) items = items ? [items] : [];
 		if (items.length == 0) {
 			throw new Error(`Failed to create any items`);
 		};

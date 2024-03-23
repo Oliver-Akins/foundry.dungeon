@@ -48,6 +48,9 @@ $body-font: sans-serif;
 	--skill-training-select-text-color: #{$on-surface};
 	--skill-roll-button-text-color: #{$on-surface};
 
+	/* General variables for inventory tab */
+	--inventory-create-item-font-color: white;
+
 	/* Common Inventory Item Variables */
 	--inventory-item-name-font: #{$body-font};
 	--inventory-item-name-font-size: 0.875rem;
