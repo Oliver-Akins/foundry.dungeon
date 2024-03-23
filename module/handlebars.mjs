@@ -30,6 +30,10 @@ export const partials = [
 	`actors/char-sheet/v2/partials/inventory/items/untyped.v2.pc.hbs`,
 ];
 
+export const preAliasedPartials = {
+	"dotdungeon.pc.v2.foil": "actors/char-sheet/v2/partials/inventory/items/untyped.v2.pc.hbs",
+};
+
 export const icons = [
 	`caret-right.svg`,
 	`caret-down.svg`,
@@ -58,6 +62,10 @@ export async function preloadHandlebarsTemplates() {
 	const pathPrefix = `systems/dotdungeon/templates/`;
 
 	const paths = {};
+
+	for (const alias in preAliasedPartials) {
+		paths[alias] = `${pathPrefix}${preAliasedPartials[alias]}`;
+	};
 
 	for ( const partial of partials ) {
 		console.debug(`Loading partial: ${partial}`);
