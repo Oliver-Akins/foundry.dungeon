@@ -2,7 +2,6 @@ import { schemaOptions } from "./schemaOptions.mjs";
 import { createArray } from "./createArray.mjs";
 import { detailsExpanded } from "./detailsExpanded.mjs";
 import { objectValue } from "./objectValue.mjs";
-import { toFriendlyDuration } from "./toFriendlyDuration.mjs";
 import { handlebarsLocalizer } from "../utils/localizer.mjs";
 import { options } from "./options.mjs";
 
@@ -11,7 +10,6 @@ export default {
 	// Complex helpers
 	"dd-schemaOptions": schemaOptions,
 	"dd-array": createArray,
-	"dd-toFriendlyDuration": toFriendlyDuration,
 	"dd-objectValue": objectValue,
 	"dd-expanded": detailsExpanded,
 	"dd-i18n": handlebarsLocalizer,
