@@ -12,6 +12,7 @@ specificity to allow easier overriding without artificially increasing it.
 	--scrollbar-width: 5px;
 	--scrollbar-handle-color: #782e22;
 	--scrollbar-handle-border-color: var(--color-border-highlight);
+	--color-checkbox-checked: inherit;
 	::-webkit-scrollbar {
 		width: var(--scrollbar-width);
 	}
