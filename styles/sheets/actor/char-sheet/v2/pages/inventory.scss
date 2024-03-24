@@ -53,7 +53,7 @@
 				gap: 8px;
 			}
 
-			&--untyped {
+			&--untyped, &--aspect {
 				display: flex;
 				gap: 8px;
 				flex-direction: column;
@@ -186,7 +186,7 @@
 		}
 	}
 
-	.untyped {
+	.untyped, .aspect {
 		@include material.elevate(1);
 		padding: 8px;
 		border-radius: 4px;
@@ -252,24 +252,13 @@
 			}
 		}
 
-		&__usage, &__tier {
+		&__field {
 			@include material.elevate(1);
 			color: var(--inventory-untyped-card-color);
 			padding: 8px;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			border-radius: 4px;
-		}
-
-		&__quantity--edit {
-			@include material.elevate(1);
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-			padding: 0px 8px;
-			gap: 4px;
 			border-radius: 4px;
 
 			> :first-child {
@@ -278,15 +267,17 @@
 				white-space: nowrap;
 			}
 
-			input {
-				@include material.elevate(2);
-				font-family: var(--input-font);
-				font-size: var(--inventory-untyped-quantity-font-size);
-				width: 50px;
-				text-align: center;
-				border-radius: 4px;
-				padding: 5px 7px;
-				color: inherit;
+			&.editable {
+				input[type="text"], input[type="number"] {
+					@include material.elevate(1);
+					font-family: var(--input-font);
+					font-size: var(--inventory-untyped-quantity-font-size);
+					width: 50px;
+					text-align: center;
+					border-radius: 4px;
+					padding: 5px 7px;
+					color: inherit;
+				}
 			}
 		}
 

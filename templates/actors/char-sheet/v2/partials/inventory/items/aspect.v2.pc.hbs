@@ -1,6 +1,6 @@
-<section class="untyped">
+<section class="aspect">
 	<div
-		class="untyped__header"
+		class="aspect__header"
 		data-collapse-id="{{item.uuid}}"
 	>
 		<button
@@ -18,37 +18,34 @@
 				{{/if}}
 			</div>
 		</button>
-		<h3 class="untyped__name">
+		<h3 class="aspect__name">
 			{{item.name}}
 		</h3>
-		<div class="untyped__quantity--display">
-			(x {{item.system.quantity}})
-		</div>
 	</div>
 	{{#if (dd-set-has meta.expanded item.uuid)}}
 		<hr>
-		<div class="untyped__content">
-			<div class="untyped__field editable">
-				<label for="{{meta.idp}}-{{item.uuid}}-quantity">
-					Quantity
+		<div class="aspect__content">
+			<div class="aspect__field editable">
+				<label for="{{meta.idp}}-{{item.uuid}}-used">
+					Used
 				</label>
 				<input
-					type="number"
-					min="0"
-					id="{{meta.idp}}-{{item.uuid}}-quantity"
-					value="{{item.system.quantity}}"
+					type="checkbox"
+					{{checked item.system.used}}
+					id="{{meta.idp}}-{{item.uuid}}-used"
+					value="{{item.system.used}}"
 					data-embedded-id="{{item.uuid}}"
-					data-embedded-update="system.quantity"
-					data-embedded-update-on="blur"
+					data-embedded-update="system.used"
+					data-embedded-update-on="change"
 				>
 			</div>
-			<div class="untyped__field">
-				<span>Usage Cost:</span>
+			<div class="aspect__field">
+				<span>Duration:</span>
 				<span>
-					{{dd-empty-state item.system.usage}}
+					{{dd-empty-state item.friendlyDuration}}
 				</span>
 			</div>
-			<div class="untyped__field">
+			<div class="aspect__field">
 				<span>Tier:</span>
 				<span>{{dd-i18n (concat "dotdungeon.rarity." item.system.tier)}}</span>
 			</div>
@@ -57,13 +54,13 @@
 				aria-label="{{dd-i18n 'dotdungeon.common.send-to-chat'}}"
 				data-tooltip="{{dd-i18n 'dotdungeon.common.send-to-chat'}}"
 				data-tooltip-direction="RIGHT"
-				class="untyped__button--send-to-chat"
+				class="aspect__button--send-to-chat"
 			>
 				<div aria-hidden="true" class="icon icon--20">
 					{{{ icons.chat-bubble }}}
 				</div>
 			</button>
-			<p class="untyped__description">
+			<p class="aspect__description">
 				{{#if item.system.description}}
 					{{item.system.description}}
 				{{else}}
@@ -77,7 +74,7 @@
 				aria-label="{{dd-i18n 'dotdungeon.common.edit'}}"
 				data-tooltip="{{dd-i18n 'dotdungeon.common.edit'}}"
 				data-tooltip-direction="RIGHT"
-				class="untyped__button--edit"
+				class="aspect__button--edit"
 				data-embedded-edit="{{item.uuid}}"
 			>
 				<div aria-hidden="true" class="icon icon--20">
@@ -89,7 +86,7 @@
 				aria-label="{{dd-i18n 'dotdungeon.common.delete'}}"
 				data-tooltip="{{dd-i18n 'dotdungeon.common.delete'}}"
 				data-tooltip-direction="RIGHT"
-				class="untyped__button--delete"
+				class="aspect__button--delete"
 				data-embedded-delete
 				data-embedded-id="{{item.uuid}}"
 			>

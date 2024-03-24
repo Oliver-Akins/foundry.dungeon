@@ -28,6 +28,7 @@ export const partials = [
 	`actors/char-sheet/v2/partials/inventory/storage.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/items/material.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/items/untyped.v2.pc.hbs`,
+	`actors/char-sheet/v2/partials/inventory/items/aspect.v2.pc.hbs`,
 ];
 
 export const preAliasedPartials = {
