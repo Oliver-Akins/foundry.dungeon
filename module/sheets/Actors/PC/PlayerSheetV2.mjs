@@ -26,7 +26,6 @@ export class PlayerSheetv2 extends GenericActorSheet {
 				],
 			}
 		);
-		opts.classes.push(`dotdungeon`);
 		return opts;
 	};
 

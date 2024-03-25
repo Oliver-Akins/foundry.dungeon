@@ -2,6 +2,17 @@ import { localizer } from "../utils/localizer.mjs";
 import DOTDUNGEON from "../config.mjs";
 
 export class GenericActorSheet extends ActorSheet {
+	static get defaultOptions() {
+		let opts = mergeObject(
+			super.defaultOptions,
+			{
+				scrollY: [`.scrollable`],
+			}
+		);
+		opts.classes.push(`dotdungeon`);
+		return opts;
+	};
+
 	_expanded = new Set();
 
 	#propogatedSettings = [
