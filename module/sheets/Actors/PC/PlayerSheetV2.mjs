@@ -2,7 +2,6 @@ import { GenericActorSheet } from "../../GenericActorSheet.mjs";
 import DOTDUNGEON from "../../../config.mjs";
 import { localizer } from "../../../utils/localizer.mjs";
 import { modifierToString } from "../../../utils/modifierToString.mjs";
-import { Player } from "../../../documents/Actor/Player.mjs";
 
 export class PlayerSheetv2 extends GenericActorSheet {
 	static get defaultOptions() {
@@ -118,7 +117,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 		return stats;
 	};
 
-	_itemTypesHidden = new Set([`pet`, `armour`, `equipment`, `foil`, `structure`, `service`]);
+	_itemTypesHidden = new Set([`pet`, `armour`, `equipment`, `structure`, `service`]);
 	toggleItemFilter(filterName) {
 		if (this._itemTypesHidden.has(filterName)) {
 			this._itemTypesHidden.delete(filterName);
