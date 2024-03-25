@@ -1,0 +1,117 @@
+<section class="weapon">
+	<div
+		class="weapon__header"
+		data-collapse-id="{{item.uuid}}"
+	>
+		<button
+			type="button"
+			class="equal-padding reduced-padding"
+			data-collapse-id="{{item.uuid}}"
+			tabindex="0"
+			aria-label="{{dd-i18n 'dotdungeon.sheet.actor.v2.toggle-item-information' item}}"
+		>
+			<div aria-hidden="true" class="icon icon--12">
+				{{#if (dd-set-has meta.expanded item.uuid)}}
+					{{{ icons.caret-down }}}
+				{{else}}
+					{{{ icons.caret-right }}}
+				{{/if}}
+			</div>
+		</button>
+		<h3 class="weapon__name">
+			{{item.name}}
+		</h3>
+		<div class="weapon__quantity--display">
+			(x {{item.system.quantity}})
+		</div>
+	</div>
+	{{#if (dd-set-has meta.expanded item.uuid)}}
+		<hr>
+		<div class="weapon__content">
+			<div class="weapon__field editable">
+				<label for="{{meta.idp}}-{{item.uuid}}-quantity">
+					Quantity
+				</label>
+				<input
+					type="number"
+					min="0"
+					id="{{meta.idp}}-{{item.uuid}}-quantity"
+					value="{{item.system.quantity}}"
+					data-embedded-id="{{item.uuid}}"
+					data-embedded-update="system.quantity"
+					data-embedded-update-on="blur"
+				>
+			</div>
+			<div class="weapon__field">
+				<span>Type:</span>
+				<span>
+					{{ifThen item.system.ranged "Ranged" "Melee"}}
+				</span>
+			</div>
+			<div class="weapon__field">
+				<span>Damage:</span>
+				<span>
+					{{dd-empty-state item.system.damage}}
+				</span>
+			</div>
+			<button
+				type="button"
+				aria-label="{{dd-i18n 'dotdungeon.common.send-to-chat'}}"
+				data-tooltip="{{dd-i18n 'dotdungeon.common.send-to-chat'}}"
+				data-tooltip-direction="RIGHT"
+				class="weapon__button--send-to-chat"
+			>
+				<div aria-hidden="true" class="icon icon--20">
+					{{{ icons.chat-bubble }}}
+				</div>
+			</button>
+			<div class="weapon__field">
+				<span>Tier:</span>
+				<span>{{dd-i18n (concat "dotdungeon.rarity." item.system.tier)}}</span>
+			</div>
+			<div class="weapon__field">
+				{{ifThen item.system.scoped "Scoped" "No Scope"}}
+			</div>
+			<div class="weapon__field">
+				<span>Ammo:</span>
+				<span>
+					{{dd-empty-state item.system.ammo}}
+				</span>
+			</div>
+			<button
+				type="button"
+				aria-label="{{dd-i18n 'dotdungeon.common.edit'}}"
+				data-tooltip="{{dd-i18n 'dotdungeon.common.edit'}}"
+				data-tooltip-direction="RIGHT"
+				class="weapon__button--edit"
+				data-embedded-edit="{{item.uuid}}"
+			>
+				<div aria-hidden="true" class="icon icon--20">
+					{{{ icons.edit }}}
+				</div>
+			</button>
+			<p class="weapon__description">
+				{{#if item.system.description}}
+					{{item.system.description}}
+				{{else}}
+					<span class="placeholder">
+						This item hasn't been described yet...
+					</span>
+				{{/if}}
+			</p>
+			<button
+				type="button"
+				aria-label="{{dd-i18n 'dotdungeon.common.delete'}}"
+				data-tooltip="{{dd-i18n 'dotdungeon.common.delete'}}"
+				data-tooltip-direction="RIGHT"
+				class="weapon__button--delete"
+				data-embedded-delete
+				data-embedded-id="{{item.uuid}}"
+			>
+				<div aria-hidden="true" class="icon icon--20">
+					{{{ icons.garbage-bin }}}
+				</div>
+			</button>
+		</div>
+	{{/if}}
+</section>

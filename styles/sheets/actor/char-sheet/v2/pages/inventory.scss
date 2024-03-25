@@ -186,7 +186,7 @@
 		}
 	}
 
-	.untyped, .aspect {
+	.untyped, .aspect, .weapon {
 		@include material.elevate(1);
 		padding: 8px;
 		border-radius: 4px;
@@ -289,6 +289,12 @@
 			grid-column: span 3;
 			padding: 8px;
 			border-radius: 4px;
+		}
+	}
+
+	.weapon {
+		&__description {
+			grid-row: span 2;
 		}
 	}
 }
