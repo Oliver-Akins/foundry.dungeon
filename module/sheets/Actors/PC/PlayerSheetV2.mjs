@@ -2,6 +2,7 @@ import { GenericActorSheet } from "../../GenericActorSheet.mjs";
 import DOTDUNGEON from "../../../config.mjs";
 import { localizer } from "../../../utils/localizer.mjs";
 import { modifierToString } from "../../../utils/modifierToString.mjs";
+import { GenericContextMenu } from "../../../utils/GenericContextMenu.mjs";
 
 export class PlayerSheetv2 extends GenericActorSheet {
 	static get defaultOptions() {
@@ -47,6 +48,24 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			this.toggleItemFilter(filter);
 			this._renderInner();
 		});
+
+		// Make materials be able to be edited/deleted
+		new GenericContextMenu(html, `.material`, [
+			{
+				name: localizer(`dotdungeon.common.edit`),
+				callback: (html) => {
+					const data = html[0].dataset;
+					this.openEmbeddedSheet.bind(this)(data.embeddedId);
+				},
+			},
+			{
+				name: localizer(`dotdungeon.common.delete`),
+				callback: (html) => {
+					const data = html[0].dataset;
+					this.genericEmbeddedDelete.bind(this)(data.embeddedId);
+				},
+			},
+		]);
 	};
 
 	async getData() {

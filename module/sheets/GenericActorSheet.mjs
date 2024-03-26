@@ -59,12 +59,19 @@ export class GenericActorSheet extends ActorSheet {
 		html.find(`[data-embedded-update-on="blur"]`)
 			.on(`blur`, this.genericEmbeddedUpdate.bind(this));
 		html.find(`[data-embedded-delete]`)
-			.on(`click`, this.genericEmbeddedDelete.bind(this));
+			.on(`click`, ($e) => {
+				const id = $e.currentTarget.dataset.embeddedDelete;
+				this.genericEmbeddedDelete.bind(this)(id);
+			});
 		html.find(`[data-embedded-create]`)
 			.on(`click`, this.genericEmbeddedCreate.bind(this));
 		html.find(`[data-message-type]`)
 			.on(`click`, this.genericSendToChat.bind(this));
 		html.find(`[data-embedded-edit]`)
+			.on(`click`, ($e) => {
+				const id = $e.currentTarget.dataset.embeddedEdit;
+				this.openEmbeddedSheet.bind(this)(id);
+			})
 			.on(`click`, this.openEmbeddedSheet.bind(this));
 		html.find(`button[data-increment]`)
 			.on(`click`, this._incrementValue.bind(this));
@@ -129,10 +136,8 @@ export class GenericActorSheet extends ActorSheet {
 		};
 	};
 
-	async openEmbeddedSheet($event) {
-		const data = $event.currentTarget.dataset;
-		let item = await fromUuid(data.embeddedEdit);
-		console.log(data)
+	async openEmbeddedSheet(item_id) {
+		let item = await fromUuid(item_id);
 		item?.sheet.render(true);
 	};
 
@@ -186,9 +191,8 @@ export class GenericActorSheet extends ActorSheet {
 		await item?.update({ [data.embeddedDecrement]: value - 1 });
 	};
 
-	async genericEmbeddedDelete($event) {
-		let data = $event.currentTarget.dataset;
-		let item = await fromUuid(data.embeddedId);
+	async genericEmbeddedDelete(item_uuid) {
+		let item = await fromUuid(item_uuid);
 
 		if (!item) {
 			ui.notifications.error(
