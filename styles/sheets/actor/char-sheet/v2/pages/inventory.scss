@@ -218,7 +218,7 @@
 		}
 	}
 
-	.untyped, .aspect, .weapon {
+	.untyped, .aspect, .weapon, .pet {
 		@include material.elevate(1);
 		padding: 8px;
 		border-radius: 4px;

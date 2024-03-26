@@ -1,0 +1,97 @@
+<section
+	class="pet collapse"
+	{{dd-expanded meta.expanded item.uuid}}
+>
+	<div
+		class="collapse__header"
+		data-collapse-id="{{item.uuid}}"
+	>
+		<button
+			type="button"
+			class="collapse__toggle equal-padding reduced-padding"
+			data-collapse-id="{{item.uuid}}"
+			tabindex="0"
+			aria-label="{{dd-i18n 'dotdungeon.sheet.actor.v2.toggle-item-information' item}}"
+		>
+			<div aria-hidden="true" class="icon icon--12">
+				{{{ icons.caret-right }}}
+			</div>
+		</button>
+		<h3 class="pet__name">
+			{{item.name}}
+		</h3>
+	</div>
+	<div class="collapse__content">
+		<hr>
+		<div class="pet__content">
+			<div class="pet__field editable">
+				<label for="{{meta.idp}}-{{item.uuid}}-pokeballd">
+					In Jar?
+				</label>
+				<input
+					type="checkbox"
+					{{checked item.system.pokeballd}}
+					id="{{meta.idp}}-{{item.uuid}}-pokeballd"
+					data-embedded-id="{{item.uuid}}"
+					data-embedded-update="system.pokeballd"
+					data-embedded-update-on="change"
+				>
+			</div>
+			<div class="pet__field">
+				<span>Upkeep:</span>
+				<span>
+					{{dd-empty-state item.system.upkeep}}
+				</span>
+			</div>
+			<div class="pet__field">
+				<span>Tier:</span>
+				<span>{{dd-i18n (concat "dotdungeon.rarity." item.system.tier)}}</span>
+			</div>
+			<button
+				type="button"
+				aria-label="{{dd-i18n 'dotdungeon.common.send-to-chat'}}"
+				data-tooltip="{{dd-i18n 'dotdungeon.common.send-to-chat'}}"
+				data-tooltip-direction="RIGHT"
+				class="pet__button--send-to-chat"
+			>
+				<div aria-hidden="true" class="icon icon--20">
+					{{{ icons.chat-bubble }}}
+				</div>
+			</button>
+			<p class="pet__description">
+				{{#if item.system.description}}
+					{{item.system.description}}
+				{{else}}
+					<span class="placeholder">
+						This pet hasn't been described yet...
+					</span>
+				{{/if}}
+			</p>
+			<button
+				type="button"
+				aria-label="{{dd-i18n 'dotdungeon.common.edit'}}"
+				data-tooltip="{{dd-i18n 'dotdungeon.common.edit'}}"
+				data-tooltip-direction="RIGHT"
+				class="pet__button--edit"
+				data-embedded-edit="{{item.uuid}}"
+			>
+				<div aria-hidden="true" class="icon icon--20">
+					{{{ icons.edit }}}
+				</div>
+			</button>
+			<button
+				type="button"
+				aria-label="{{dd-i18n 'dotdungeon.common.delete'}}"
+				data-tooltip="{{dd-i18n 'dotdungeon.common.delete'}}"
+				data-tooltip-direction="RIGHT"
+				class="pet__button--delete"
+				data-embedded-delete
+				data-embedded-id="{{item.uuid}}"
+			>
+				<div aria-hidden="true" class="icon icon--20">
+					{{{ icons.garbage-bin }}}
+				</div>
+			</button>
+		</div>
+	</div>
+</section>

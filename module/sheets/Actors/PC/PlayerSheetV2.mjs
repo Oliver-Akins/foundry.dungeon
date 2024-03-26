@@ -117,7 +117,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 		return stats;
 	};
 
-	_itemTypesHidden = new Set([`pet`, `armour`, `equipment`, `structure`, `service`]);
+	_itemTypesHidden = new Set([`armour`, `equipment`, `structure`, `service`]);
 	toggleItemFilter(filterName) {
 		if (this._itemTypesHidden.has(filterName)) {
 			this._itemTypesHidden.delete(filterName);

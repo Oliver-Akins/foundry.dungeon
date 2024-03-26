@@ -30,6 +30,7 @@ export const partials = [
 	`actors/char-sheet/v2/partials/inventory/items/untyped.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/items/aspect.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/items/weapon.v2.pc.hbs`,
+	`actors/char-sheet/v2/partials/inventory/items/pet.v2.pc.hbs`,
 ];
 
 export const preAliasedPartials = {
