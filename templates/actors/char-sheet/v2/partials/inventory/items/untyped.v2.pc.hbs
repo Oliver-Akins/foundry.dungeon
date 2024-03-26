@@ -1,21 +1,20 @@
-<section class="untyped">
+<section
+	class="untyped collapse"
+	{{dd-expanded meta.expanded item.uuid}}
+>
 	<div
-		class="untyped__header"
+		class="collapse__header"
 		data-collapse-id="{{item.uuid}}"
 	>
 		<button
 			type="button"
-			class="equal-padding reduced-padding"
+			class="collapse__toggle equal-padding reduced-padding"
 			data-collapse-id="{{item.uuid}}"
 			tabindex="0"
 			aria-label="{{dd-i18n 'dotdungeon.sheet.actor.v2.toggle-item-information' item}}"
 		>
 			<div aria-hidden="true" class="icon icon--12">
-				{{#if (dd-set-has meta.expanded item.uuid)}}
-					{{{ icons.caret-down }}}
-				{{else}}
-					{{{ icons.caret-right }}}
-				{{/if}}
+				{{{ icons.caret-right }}}
 			</div>
 		</button>
 		<h3 class="untyped__name">
@@ -25,7 +24,7 @@
 			(x {{item.system.quantity}})
 		</div>
 	</div>
-	{{#if (dd-set-has meta.expanded item.uuid)}}
+	<div class="collapse__content">
 		<hr>
 		<div class="untyped__content">
 			<div class="untyped__field editable">
@@ -98,5 +97,5 @@
 				</div>
 			</button>
 		</div>
-	{{/if}}
+	</div>
 </section>

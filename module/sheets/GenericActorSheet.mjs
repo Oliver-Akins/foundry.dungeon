@@ -114,19 +114,19 @@ export class GenericActorSheet extends ActorSheet {
 	};
 
 	async _handleSummaryToggle($e) {
+		$e.stopPropagation();
 		let target = $e.currentTarget;
-		let parent = target.parentElement;
+		let parent = target.closest(`.collapse`);
 		let data = target.dataset;
 		console.debug(`.dungeon | Collapse ID: ${data.collapseId}`);
 
 		if (!this._expanded.has(data.collapseId)) {
 			this._expanded.add(data.collapseId);
+			parent.setAttribute(`open`, ``);
 		} else {
 			this._expanded.delete(data.collapseId);
+			parent.removeAttribute(`open`, ``);
 		};
-		if (parent.nodeName !== "DETAILS") {
-			this.render();
-		}
 	};
 
 	async openEmbeddedSheet($event) {
