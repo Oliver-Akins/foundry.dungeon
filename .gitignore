@@ -3,7 +3,9 @@ node_modules/
 *.bak.*
 references.txt
 references/
-.styles/
+/.*/
+!/.vscode/
+!/.github/
 /foundry.js
 *.lock
 *.zip
