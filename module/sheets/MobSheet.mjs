@@ -1,6 +1,5 @@
 import { GenericActorSheet } from "./GenericActorSheet.mjs";
 import { DiceList } from "../dialogs/DiceList.mjs";
-import { PopoutTextEditor } from "../dialogs/PopoutTextEditor.mjs";
 
 export class MobSheet extends GenericActorSheet {
 	static get defaultOptions() {
@@ -27,14 +26,6 @@ export class MobSheet extends GenericActorSheet {
 			.on(`click`, async () => {
 				let d = new DiceList(this.actor);
 				d.render(true);
-			});
-		html.find(`[data-text-editor]`)
-			.on(`click`, () => {
-				let editor = new PopoutTextEditor(
-					this.actor,
-					`system.description`
-				);
-				editor.render(true);
 			});
 	};
 
