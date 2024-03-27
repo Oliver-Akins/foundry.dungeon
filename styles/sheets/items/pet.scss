@@ -1,6 +1,6 @@
 @use "../../vars" as *;
 
-.dotdungeon .item--pet {
+.dotdungeon:not(.style-v3) .item--pet {
 	padding: 4px;
 
 	input[type=text] {

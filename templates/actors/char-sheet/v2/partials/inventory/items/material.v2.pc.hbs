@@ -10,7 +10,7 @@
 	{{#if (eq item.system.quantity 0)}}
 		<button
 			type="button"
-			class="material__button material__button--delete equal-padding "
+			class="material__button material__button--delete icon"
 			data-embedded-delete
 			data-embedded-id="{{item.uuid}}"
 		>
@@ -23,7 +23,7 @@
 			type="button"
 			aria-hidden="true"
 			tabindex="-1"
-			class="material__button material__button--decrement equal-padding "
+			class="material__button material__button--decrement icon"
 			data-embedded-decrement="system.quantity"
 			data-embedded-id="{{item.uuid}}"
 		>
@@ -47,7 +47,7 @@
 		type="button"
 		aria-hidden="true"
 		tabindex="-1"
-		class="material__button material__button--increment equal-padding "
+		class="material__button material__button--increment icon"
 		data-embedded-increment="system.quantity"
 		data-embedded-id="{{item.uuid}}"
 	>

@@ -26,6 +26,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 				],
 			}
 		);
+		opts.classes.push(`style-v3`);
 		return opts;
 	};
 

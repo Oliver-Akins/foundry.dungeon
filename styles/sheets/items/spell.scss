@@ -1,6 +1,6 @@
 @use "../../vars" as *;
 
-.dotdungeon .item--spell {
+.dotdungeon:not(.style-v3) .item--spell {
 	padding: 4px;
 
 	input[type=text] {

@@ -1,7 +1,7 @@
 @use "../../vars.scss" as *;
 @use "../../mixins/breakpoints" as *;
 
-.dotdungeon .actor--pc-mvp {
+.dotdungeon:not(.style-v3) .actor--pc-mvp {
 	display: grid;
 	grid-template-areas:
 		"profile stats stats"
@@ -270,7 +270,7 @@
 
 
 @include bp-m {
-	.dotdungeon {
+	.dotdungeon:not(.style-v3) {
 		.actor--pc-mvp {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 			grid-template-rows: repeat(15, min-content);
@@ -310,7 +310,7 @@
 }
 
 @include bp-s {
-	.dotdungeon {
+	.dotdungeon:not(.style-v3) {
 		.actor--pc-mvp {
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(12, min-content);

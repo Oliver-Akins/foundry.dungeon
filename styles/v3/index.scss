@@ -1,0 +1,33 @@
+/* Element-Styling */
+@use "./elements/button.scss";
+@use "./elements/headers.scss";
+@use "./elements/hr.scss";
+@use "./elements/icons.scss";
+
+/* Sheet Options */
+.dotdungeon.style-v3 {
+	--scrollbar-width: 5px;
+	--scrollbar-handle-color: #782e22;
+	--scrollbar-handle-border-color: var(--color-border-highlight);
+	--color-checkbox-checked: inherit;
+	::-webkit-scrollbar {
+		width: var(--scrollbar-width);
+	}
+	::-webkit-scrollbar-thumb {
+		background: var(--scrollbar-handle-color);
+		border-color: var(--scrollbar-handle-border-color);
+		border-radius: 5px;
+	}
+
+	container-type: size;
+
+	> .window-content {
+		padding: 0;
+
+		.debug-data {
+			opacity: 60%;
+			font-family: sans-serif;
+			word-break: break-all;
+		}
+	}
+}

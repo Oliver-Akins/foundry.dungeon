@@ -1,22 +1,22 @@
 @use "../../../vars" as *;
 @use "avatar" as *;
 
-.dotdungeon:not(.style-v3) .actor--mob {
+.dotdungeon:not(.style-v3) .actor--mob2 {
 	--gap: 8px;
 	--avatar-size: 100px;
 	--row-height: calc((var(--avatar-size) - var(--gap)) / 2);
 	padding: var(--gap);
 	display: grid;
-	grid-template-columns: var(--avatar-size) repeat(4, minmax(0, 1fr));
+	grid-template-columns: var(--avatar-size) repeat(2, minmax(0, 1fr));
 	grid-template-rows: repeat(5, var(--row-height)) minmax(var(--row-height), 1fr);
 	gap: var(--gap);
 	grid-template-areas:
-		"avatar . . . ."
-		"avatar . . . ."
-		"dice . . . ."
-		"dice description description stunts stunts"
-		"dice description description stunts stunts"
-		"dice description description stunts stunts";
+		"avatar . ."
+		"avatar . ."
+		"dice tabs tabs"
+		"dice tabs tabs"
+		"dice tabs tabs"
+		"dice tabs tabs";
 
 	label, .dice {
 		border: 2px solid black;
@@ -34,12 +34,53 @@
 		}
 	}
 
+	label.mask-input {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		transition: all ease-in-out 50ms;
+
+		&:focus-within {
+			transform: scale(102%);
+		}
+
+		input {
+			text-align: right;
+			border: none;
+			background: none;
+			border-radius: 0;
+			border-bottom: 1px solid black;
+			&:focus, &:focus-visible {
+				box-shadow: none;
+			}
+		}
+
+		input.left {
+			text-align: left;
+		}
+	}
+
 	.wide {
 		grid-column: span 2;
 	}
 
-// Area-specific stylings
+	.mask-textarea {
+		display: flex;
+		flex-direction: column;
+		transition: all ease-in-out 50ms;
 
+		&:focus-within {
+			transform: scale(102%);
+		}
+
+		textarea {
+			flex-grow: 1;
+			resize: none;
+			border: none;
+			box-shadow: none;
+			background: none;
+		}
+	}
 	.name {
 		height: 100%;
 		font-size: 1.5rem;
@@ -67,6 +108,7 @@
 		}
 	}
 
+	.tabs { grid-area: tabs; }
 	.stunts {
 		grid-area: stunts;
 	}

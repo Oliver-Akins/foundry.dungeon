@@ -2,7 +2,7 @@
 
 @use "sass:color" as color;
 
-.dotdungeon.dotdungeon > .window-content {
+.dotdungeon.dotdungeon:not(.style-v3) > .window-content {
 	button {
 		border-radius: 4px;
 		box-sizing: border-box;

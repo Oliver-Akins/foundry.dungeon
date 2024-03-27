@@ -1,6 +1,6 @@
 @use "../../../mixins/breakpoints" as *;
 
-.dotdungeon {
+:not(.style-v3).dotdungeon {
 	.actor--basic-sync {
 		display: flex;
 		justify-content: center;
@@ -52,7 +52,7 @@
 }
 
 @include bp-xs {
-	.dotdungeon {
+	:not(.style-v3).dotdungeon {
 		&--sync-sheet {
 			header {
 				.configure-sheet {

@@ -1,4 +1,4 @@
-.item--custom {
+.item--custom:not(.style-v3) {
 	padding: 8px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;

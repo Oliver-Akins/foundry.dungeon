@@ -1,5 +1,5 @@
-.item--custom,
-.actor--mob {
+.item--custom:not(.style-v3),
+.actor--mob:not(.style-v3) {
 	input {
 		border: 2px solid black;
 		background: none;

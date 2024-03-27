@@ -8,7 +8,7 @@
 Enabling scrollbar customization on a per-sheet basis, with a relatively low
 specificity to allow easier overriding without artificially increasing it.
 */
-.dotdungeon {
+.dotdungeon:not(.style-v3) {
 	--scrollbar-width: 5px;
 	--scrollbar-handle-color: #782e22;
 	--scrollbar-handle-border-color: var(--color-border-highlight);
@@ -24,7 +24,7 @@ specificity to allow easier overriding without artificially increasing it.
 }
 
 // Reset the parts of Foundry's styling which gets in the way of what I want
-.dotdungeon > .window-content {
+.dotdungeon:not(.style-v3) > .window-content {
 
 	h2, h3, h4, h5, h6 {
 		@include fvtt_reset;
@@ -74,7 +74,7 @@ specificity to allow easier overriding without artificially increasing it.
 }
 
 // Styling that doesn't belong to any particular part of my sheet
-.dotdungeon.dotdungeon.dotdungeon.dotdungeon {
+.dotdungeon.dotdungeon.dotdungeon.dotdungeon:not(.style-v3) {
 	container-type: size;
 
 	> .window-content {

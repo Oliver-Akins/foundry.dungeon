@@ -2,7 +2,7 @@
 @use "../../mixins/foundry" as *;
 @use "../../vars" as *;
 
-.dotdungeon .actor--pc-mvp .panel {
+.dotdungeon:not(.style-v3) .actor--pc-mvp .panel {
 	display: grid;
 	grid-template-rows: min-content 1fr;
 
@@ -39,7 +39,7 @@
 }
 
 @include bp-s {
-	.dotdungeon .panel__header .icon {
+	.dotdungeon:not(.style-v3) .panel__header .icon {
 		display: none;
 		visibility: hidden;
 	}

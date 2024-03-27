@@ -22,3 +22,7 @@
 @use "./sheets/items/aspect.scss";
 @use "./sheets/items/spell.scss";
 @use "./sheets/items/pet.scss";
+
+/* NEW BETTER SCOPED CSS ONLY BELOW HERE */
+
+@use "./v3/index.scss";

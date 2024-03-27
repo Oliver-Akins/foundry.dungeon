@@ -1,6 +1,6 @@
 @use "../../vars" as *;
 
-.dotdungeon .item--aspect {
+.dotdungeon:not(.style-v3) .item--aspect {
 	padding: 4px;
 
 	input[type=text] {

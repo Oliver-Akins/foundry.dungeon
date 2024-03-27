@@ -1,4 +1,4 @@
-.dotdungeon .actor--pc-mvp .stat {
+.dotdungeon:not(.style-v3) .actor--pc-mvp .stat {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

@@ -1,9 +1,9 @@
-.dotdungeon:has(.dialog--dice-list) {
+.dotdungeon:not(.style-v3):has(.dialog--dice-list) {
 	max-width: 275px;
 	min-width: 275px;
 }
 
-.dotdungeon .dialog--dice-list {
+.dotdungeon:not(.style-v3) .dialog--dice-list {
 	padding: 8px;
 
 	.dice {

@@ -1,0 +1,32 @@
+<form autocomplete="off" class="actor--mob2">
+	<div class="avatar"></div>
+	<input
+		type="text"
+		class="name wide masked"
+		name="name"
+		value="{{actor.name}}"
+	>
+	<div class="dice">
+		Dice:
+		<button data-roll-formula="2d20" class="roll die reduced-padding neutral">
+			2d20x5
+		</button>
+		<button data-roll-formula="1d4" class="roll die reduced-padding neutral">
+			1d4
+		</button>
+		<button data-roll-formula="3d6" class="roll die reduced-padding neutral">
+			3d6
+		</button>
+		<div style="flex-grow: 1"></div>
+		<button class="confirm">Edit</button>
+	</div>
+	<div class="tabs">
+		<div class="tab-list">
+			<div class="tab">Combat</div>
+			<div class="tab">About</div>
+		</div>
+		<div class="tab-content">
+			Combat Tab
+		</div>
+	</div>
+</form>
