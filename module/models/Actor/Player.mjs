@@ -1,4 +1,3 @@
-import { MappingField } from "../fields/MappingField.mjs";
 import DOTDUNGEON from "../../config.mjs";
 
 function diceChoiceField() {
@@ -18,22 +17,6 @@ function trainingLevelField() {
 		min: -1,
 		integer: true,
 		options: Object.values(DOTDUNGEON.trainingLevels),
-	});
-};
-
-function weaponDamageTypeField() {
-	return new foundry.data.fields.StringField({
-		initial: ``,
-		blank: true,
-		options: [ ``, ...DOTDUNGEON.damageTypes ],
-	});
-};
-
-function ammoTypeField() {
-	return new foundry.data.fields.StringField({
-		initial: ``,
-		blank: true,
-		options: [ ``, ...DOTDUNGEON.ammoTypes ],
 	});
 };
 
@@ -92,65 +75,18 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 					piloting: trainingLevelField(),
 				})
 			}),
-			aspect: new fields.SchemaField({
-				name: new fields.StringField({ blank: true, trim: true }),
-				description: new fields.StringField({ blank: true, trim: true }),
-				deactivateAfter: new fields.NumberField({ min: 0, integer: true}),
-				used: new fields.BooleanField(),
-			}),
+			// ! Delete
 			roles: new fields.SchemaField({
 				r1: new fields.StringField({ blank: true, trim: true }),
 				r2: new fields.StringField({ blank: true, trim: true }),
 				r3: new fields.StringField({ blank: true, trim: true }),
 				r4: new fields.StringField({ blank: true, trim: true }),
 			}),
-			weapon: new fields.SchemaField({
-				mainHand: new fields.SchemaField({
-					name: new fields.StringField({ initial: ``, blank: true, trim: true }),
-					damage: weaponDamageTypeField(),
-					ranged: new fields.BooleanField({ initial: false }),
-					scope: new fields.BooleanField({ initial: false }),
-					ammo: ammoTypeField(),
-				}),
-				offHand: new fields.SchemaField({
-					name: new fields.StringField({ initial: ``, blank: true, trim: true }),
-					damage: weaponDamageTypeField(),
-					ranged: new fields.BooleanField({ initial: false }),
-					scope: new fields.BooleanField({ initial: false }),
-					ammo: ammoTypeField(),
-				}),
-				ammo: new fields.SchemaField({
-					quivers: new fields.NumberField({ min: 0, max: 10, integer: true }),
-					mags: new fields.NumberField({ min: 0, max: 10, integer: true }),
-					cells: new fields.NumberField({ min: 0, max: 10, integer: true }),
-				}),
-			}),
 			supplies: new fields.NumberField({
 				initial: 0,
 				min: 0,
 				integer: true
 			}),
-			materials: new fields.NumberField({
-				initial: 0,
-				min: 0,
-				integer: true
-			}),
-			pet: new fields.SchemaField({
-				name: new fields.StringField(),
-				info: new fields.StringField(),
-			}),
-			transport: new fields.SchemaField({
-				name: new fields.StringField(),
-				upkeep: new fields.NumberField({ min: 0, integer: true }),
-				info: new fields.StringField(),
-			}),
-			spells: new MappingField(
-				new fields.SchemaField({
-					name: new fields.StringField({ initial: ``, blank: true, trim: true }),
-					cost: new fields.NumberField({ initial: 0, min: 0 }),
-					info: new fields.StringField({ initial: ``, blank: true, trim: true }),
-				})
-			),
 			respawns: new fields.SchemaField({
 				r1: new fields.BooleanField(),
 				r2: new fields.BooleanField(),
@@ -161,7 +97,6 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 				integer: true,
 				initial: 0,
 			}),
-			inventoryString: new fields.StringField({ blank: true, trim: true }),
 		};
 	};
 };
