@@ -4,6 +4,9 @@
 @use "./elements/hr.scss";
 @use "./elements/icons.scss";
 
+/* Sheet Layouts */
+@use "./layouts/datasheet.scss";
+
 /* Sheet Options */
 .dotdungeon.style-v3 {
 	--scrollbar-width: 5px;

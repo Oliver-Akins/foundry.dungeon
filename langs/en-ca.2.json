@@ -75,6 +75,9 @@
 			"send-to-chat": "Send to Chat",
 			"edit": "Edit",
 			"delete": "Delete"
+		},
+		"sheet-names": {
+			"UntypedDataSheet": "Data Sheet"
 		}
 	},
 	"TYPES": {

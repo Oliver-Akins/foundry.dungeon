@@ -33,6 +33,7 @@ import "./hooks/hotReload.mjs";
 
 // Misc Imports
 import loadSettings from "./settings/index.mjs";
+import { devInit } from "./hooks/devInit.mjs";
 import DOTDUNGEON from "./config.mjs";
 
 
@@ -101,6 +102,9 @@ Hooks.once(`init`, async () => {
 		label: "dotdungeon.sheet-names.PetSheet"
 	});
 
+	if (game.settings.get(`dotdungeon`, `devMode`)) {
+		devInit();
+	};
 
 	hbs.registerHandlebarsHelpers();
 	hbs.preloadHandlebarsTemplates();

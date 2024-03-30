@@ -1,0 +1,141 @@
+<form autocomplete="off" class="datasheet">
+	<div>
+		<label for="{{meta.idp}}-name" data-tooltip="name">Name</label>
+		<input
+			type="text"
+			name="name"
+			id="{{meta.idp}}-name"
+			value="{{item.name}}"
+		>
+	</div>
+	<div>
+		<label
+			for="{{meta.idp}}-system.quantity"
+			data-tooltip="system.quantity"
+		>
+			Quantity
+		</label>
+		<input
+			type="number"
+			min="0"
+			name="system.quantity"
+			id="{{meta.idp}}-system.quantity"
+			value="{{system.quantity}}"
+		>
+	</div>
+	<div>
+		<label
+			for="{{meta.idp}}-system.uses_inventory_slot"
+			data-tooltip="system.uses_inventory_slot"
+		>
+			Uses Inventory Slot?
+		</label>
+		<input
+			type="checkbox"
+			name="system.uses_inventory_slot"
+			id="{{meta.idp}}-system.uses_inventory_slot"
+			{{checked system.uses_inventory_slot}}
+		>
+	</div>
+	<div>
+		<label
+			for="{{meta.idp}}-system.quantity_affects_used_capacity"
+			data-tooltip="system.quantity_affects_used_capacity"
+		>
+			Quantity Impacts Used Capacity
+		</label>
+		<input
+			type="checkbox"
+			name="system.quantity_affects_used_capacity"
+			id="{{meta.idp}}-system.quantity_affects_used_capacity"
+			{{checked system.quantity_affects_used_capacity}}
+		>
+	</div>
+	<div>
+		Computed Capacity Usage: {{item.usedCapacity}}
+	</div>
+	<div>
+		<label
+			for="{{meta.idp}}-system.buy"
+			data-tooltip="system.buy"
+		>
+			Purchase Cost
+		</label>
+		<input
+			type="number"
+			min="0"
+			name="system.buy"
+			id="{{meta.idp}}-system.buy"
+			value="{{system.buy}}"
+		>
+	</div>
+	<div>
+		<label
+			for="{{meta.idp}}-system.usage_cost"
+			data-tooltip="system.usage_cost"
+		>
+			Usage Cost
+		</label>
+		<input
+			type="number"
+			min="0"
+			name="system.usage_cost"
+			id="{{meta.idp}}-system.usage_cost"
+			value="{{system.usage_cost}}"
+		>
+	</div>
+	<div>
+		<label
+			for="{{meta.idp}}-system.tier"
+			data-tooltip="system.tier"
+		>
+			Rarity
+		</label>
+		{{!-- TODO: Dropdown? --}}
+		<input
+			type="text"
+			name="system.tier"
+			id="{{meta.idp}}-system.tier"
+			value="{{system.tier}}"
+		>
+	</div>
+	<div>
+		<label
+			for="{{meta.idp}}-system.combat_relevant"
+			data-tooltip="system.combat_relevant"
+		>
+			Shows Up In Combat Tab?
+		</label>
+		<input
+			type="checkbox"
+			name="system.combat_relevant"
+			id="{{meta.idp}}-system.combat_relevant"
+			{{checked system.combat_relevant}}
+		>
+	</div>
+	<div>
+		<label
+			for="{{meta.idp}}-system.location"
+			data-tooltip="system.location"
+		>
+			Location
+		</label>
+		{{!-- TODO: Dropdown? --}}
+		<input
+			type="text"
+			name="system.location"
+			id="{{meta.idp}}-system.location"
+			value="{{system.location}}"
+		>
+	</div>
+	<div>
+		<label
+			for="{{meta.idp}}-system.description"
+			data-tooltip="system.description"
+		>
+			Description
+		</label>
+		{{!-- TODO: Dropdown? --}}
+		<textarea name="system.description" id="{{meta.idp}}-system.description">{{system.description}}</textarea>
+	</div>
+</form>
