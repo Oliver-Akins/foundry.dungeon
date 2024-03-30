@@ -33,6 +33,14 @@ export class CommonItemData extends foundry.abstract.TypeDataModel {
 				nullable: false,
 				choices: DOTDUNGEON.itemTiers,
 			}),
+			/*
+			If this property is set to true, the item will be shown in the combat tab
+			list of items. This is shown whether or not the item is marked as "equipped".
+			*/
+			combat_relevant: new fields.BooleanField({
+				initial: false,
+				nullable: false,
+			}),
 			location: new fields.StringField({
 				initial: null,
 				nullable: true,
