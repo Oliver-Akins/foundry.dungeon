@@ -41,8 +41,16 @@
 		}
 	}
 
-	@include utils.tab("details") {
+	%flex-col {
 		display: flex;
 		flex-direction: column;
+	}
+
+	@include utils.tab("details") {
+		@extend %flex-col;
+	}
+
+	@include utils.tab("settings") {
+		@extend %flex-col;
 	}
 }

@@ -1,3 +1,22 @@
 <div class="tab" data-group="page" data-tab="settings">
-	Settings Tab
+	{{#if computed.isEmbedded}}
+		<div class="combat-relevant panel">
+			Useful in Combat?
+		</div>
+	{{/if}}
+	{{#if isGM}}
+		<div class="capacity-usage panel">
+			Uses Capacity?
+			<br>
+			(GM Only)
+		</div>
+		<div class="quantity-capacity panel">
+			Quantity Affects Capacity?
+			<br>
+			(GM Only)
+		</div>
+	{{/if}}
+	<div class="calculated-capacity panel">
+		Total Capacity Used:
+	</div>
 </div>
