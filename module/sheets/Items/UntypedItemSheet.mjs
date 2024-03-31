@@ -26,9 +26,6 @@ export class UntypedItemSheet extends GenericItemSheet {
 	activateListeners(html) {
 		super.activateListeners(html);
 
-		if (!this.isEditable) return;
-		console.debug(`.dungeon | Adding event listeners for Untyped Item: ${this.item.id}`);
-
 		new GenericContextMenu(html, `.photo.panel`, [
 			{
 				name: `View Larger`,
@@ -38,11 +35,15 @@ export class UntypedItemSheet extends GenericItemSheet {
 			},
 			{
 				name: `Change Photo`,
+				condition: () => this.isEditable,
 				callback: (html) => {
 					console.log(`.dungeon | Change Photo`);
 				},
 			},
 		]);
+
+		if (!this.isEditable) return;
+		console.debug(`.dungeon | Adding event listeners for Untyped Item: ${this.item.id}`);
 	};
 
 	async getData() {
