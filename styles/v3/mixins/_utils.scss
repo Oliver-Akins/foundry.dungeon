@@ -1,0 +1,5 @@
+@mixin tab($name) {
+	.tab.active[data-tab="#{$name}"] {
+		@content;
+	}
+}

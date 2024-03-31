@@ -8,10 +8,11 @@
 @use "./elements/hr.scss";
 @use "./elements/icons.scss";
 @use "./elements/nav.scss";
+@use "./elements/panel.scss";
 
 /* Sheet Layouts */
 @use "./layouts/datasheet.scss";
-@use "./layouts/items/untyped.scss";
+@use "./layouts/items/untyped/v2.scss";
 
 /* Sheet Options */
 .dotdungeon.style-v3 {

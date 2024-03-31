@@ -1,0 +1,38 @@
+@use "../../../mixins/material";
+@use "../../../mixins/utils";
+
+.dotdungeon.style-v3 .item--untyped {
+	.nav-bar {
+		@include material.elevate(8);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 6px;
+
+		nav {
+			display: flex;
+			flex-direction: row;
+			gap: 8px;
+			padding: 8px;
+		}
+	}
+
+	.page-content {
+		padding: 8px;
+		padding-bottom: 60px;
+		height: 100%;
+	}
+
+	@include utils.tab("general") {
+		display: grid;
+		--height: 50px;
+		grid-template-columns: var(--height) 1fr;
+		grid-template-rows: var(--height) 1fr;
+		gap: 8px;
+		height: 100%;
+
+		.description {
+			grid-column: 1 / -1;
+		}
+	}
+}

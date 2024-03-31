@@ -1,0 +1,8 @@
+@use "../mixins/material" as material;
+
+.dotdungeon.style-v3 > .window-content {
+	.panel {
+		@include material.elevate(2);
+		border-radius: 4px;
+	}
+}
