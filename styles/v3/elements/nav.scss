@@ -1,7 +1,7 @@
 @use "../mixins/material" as material;
 
 .dotdungeon.style-v3 > .window-content {
-	nav {
+	nav:not(#context-menu) {
 		display: flex;
 		flex-direction: row;
 		overflow-x: auto;

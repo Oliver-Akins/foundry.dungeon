@@ -1,3 +1,4 @@
+import { GenericContextMenu } from "../../utils/GenericContextMenu.mjs";
 import { GenericItemSheet } from "./GenericItemSheet.mjs";
 
 export class UntypedItemSheet extends GenericItemSheet {
@@ -20,6 +21,28 @@ export class UntypedItemSheet extends GenericItemSheet {
 		);
 		opts.classes.push(`dotdungeon`, `style-v3`);
 		return opts;
+	};
+
+	activateListeners(html) {
+		super.activateListeners(html);
+
+		if (!this.isEditable) return;
+		console.debug(`.dungeon | Adding event listeners for Untyped Item: ${this.item.id}`);
+
+		new GenericContextMenu(html, `.photo.panel`, [
+			{
+				name: `View Larger`,
+				callback: (html) => {
+					console.log(`.dungeon | View Larger`);
+				},
+			},
+			{
+				name: `Change Photo`,
+				callback: (html) => {
+					console.log(`.dungeon | Change Photo`);
+				},
+			},
+		]);
 	};
 
 	async getData() {
