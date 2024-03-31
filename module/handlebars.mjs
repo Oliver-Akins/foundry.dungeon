@@ -31,6 +31,12 @@ export const partials = [
 	`actors/char-sheet/v2/partials/inventory/items/aspect.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/items/weapon.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/items/pet.v2.pc.hbs`,
+
+	// The v2 Untyped sheet partials
+	`items/untyped/v2/tabs/general.v2.untyped.hbs`,
+	`items/untyped/v2/tabs/details.v2.untyped.hbs`,
+	`items/untyped/v2/tabs/effects.v2.untyped.hbs`,
+	`items/untyped/v2/tabs/settings.v2.untyped.hbs`,
 ];
 
 export const preAliasedPartials = {

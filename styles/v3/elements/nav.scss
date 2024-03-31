@@ -1,0 +1,11 @@
+@use "../mixins/material" as material;
+
+.dotdungeon.style-v3 > .window-content {
+	nav {
+		display: flex;
+		flex-direction: row;
+		overflow-x: auto;
+		gap: 8px;
+		padding: 8px;
+	}
+}

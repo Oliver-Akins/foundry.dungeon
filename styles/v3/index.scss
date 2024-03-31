@@ -1,11 +1,17 @@
+/* Themes */
+@use "./themes/material.css";
+@use "./themes/dark.css";
+
 /* Element-Styling */
 @use "./elements/button.scss";
 @use "./elements/headers.scss";
 @use "./elements/hr.scss";
 @use "./elements/icons.scss";
+@use "./elements/nav.scss";
 
 /* Sheet Layouts */
 @use "./layouts/datasheet.scss";
+@use "./layouts/items/untyped.scss";
 
 /* Sheet Options */
 .dotdungeon.style-v3 {
@@ -26,6 +32,8 @@
 
 	> .window-content {
 		padding: 0;
+		background: var(--sheet);
+		color: var(--on-sheet);
 
 		.debug-data {
 			opacity: 60%;

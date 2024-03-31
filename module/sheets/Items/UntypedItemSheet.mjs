@@ -5,17 +5,30 @@ export class UntypedItemSheet extends GenericItemSheet {
 		let opts = mergeObject(
 			super.defaultOptions,
 			{
-				template: `systems/dotdungeon/templates/items/custom.hbs`,
-				width: 280,
+				template: `systems/dotdungeon/templates/items/untyped/v2/index.hbs`,
+				width: 300,
 				height: 340,
+				tabs: [
+					{
+						group: `page`,
+						navSelector: `nav.page`,
+						contentSelector: `.page-content`,
+						initial: `general`,
+					},
+				],
 			}
 		);
-		opts.classes.push(`dotdungeon`);
+		opts.classes.push(`dotdungeon`, `style-v3`);
 		return opts;
 	};
 
 	async getData() {
 		const ctx = await super.getData();
+
+		ctx.computed = {
+			showSettingsTab: ctx.isGM || this.item.isOwned,
+		};
+
 		return ctx;
 	};
 };

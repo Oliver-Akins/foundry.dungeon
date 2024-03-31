@@ -1,0 +1,27 @@
+/*
+These CSS variables are all used in order to try following Material design as
+best as I can.
+*/
+
+.dotdungeon.style-v3 {
+	--elevation-0dp-bg: var(--surface);
+	--elevation-0dp-text: var(--on-surface);
+	--elevation-1dp-bg: color-mix(in lab, transparent, white 5%);
+	--elevation-1dp-text: white;
+	--elevation-2dp-bg: color-mix(in lab, transparent, white 7%);
+	--elevation-2dp-text: white;
+	--elevation-3dp-bg: color-mix(in lab, transparent, white 8%);
+	--elevation-3dp-text: white;
+	--elevation-4dp-bg: color-mix(in lab, transparent, white 9%);
+	--elevation-4dp-text: white;
+	--elevation-6dp-bg: color-mix(in lab, transparent, white 11%);
+	--elevation-6dp-text: white;
+	--elevation-8dp-bg: color-mix(in lab, transparent, white 12%);
+	--elevation-8dp-text: white;
+	--elevation-12dp-bg: color-mix(in lab, transparent, white 14%);
+	--elevation-12dp-text: white;
+	--elevation-16dp-bg: color-mix(in lab, transparent, white 15%);
+	--elevation-16dp-text: white;
+	--elevation-24dp-bg: color-mix(in lab, transparent, white 16%);
+	--elevation-24dp-text: white;
+}
