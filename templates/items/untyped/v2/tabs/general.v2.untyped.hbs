@@ -2,10 +2,16 @@
 	<div class="photo panel" style="background: yellowgreen"></div>
 	{{#if meta.isEditable}}
 		<input type="text" name="name" class="name panel h1" value="{{item.name}}">
+		<textarea
+			name="system.description"
+			class="description panel no-resize"
+		>{{system.description}}</textarea>
 	{{else}}
 		<h1 class="name panel--row">
 			{{item.name}}
 		</h1>
+		<div class="description panel">
+			{{system.description}}
+		</div>
 	{{/if}}
-	<div class="description panel"></div>
 </div>
