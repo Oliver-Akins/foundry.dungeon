@@ -1,9 +1,41 @@
 <div class="tab" data-group="page" data-tab="details">
-	<div class="cost panel">
-		Purchase Cost
+	<div class="cost panel--row">
+		{{#if meta.isEditable}}
+			<label for="{{meta.idp}}-purchase-cost">
+				Purchase Cost
+			</label>
+			<div class="grow"></div>
+			<input
+				type="number"
+				name="system.buy"
+				value="{{system.buy}}"
+				min="0"
+				id="{{meta.idp}}-purchase-cost"
+			>
+		{{else}}
+			Purchase Cost
+			<div class="grow"></div>
+			{{dd-empty-state system.buy}}
+		{{/if}}
 	</div>
-	<div class="usage-cost panel">
-		Usage Cost
+	<div class="usage-cost panel--row">
+		{{#if meta.isEditable}}
+			<label for="{{meta.idp}}-usage-cost">
+				Usage Cost
+			</label>
+			<div class="grow"></div>
+			<input
+				type="number"
+				name="system.usage_cost"
+				value="{{system.usage_cost}}"
+				min="0"
+				id="{{meta.idp}}-usage-cost"
+			>
+		{{else}}
+			Usage Cost
+			<div class="grow"></div>
+			{{dd-empty-state system.usage_cost}}
+		{{/if}}
 	</div>
 	<div class="tier panel">
 		Item Rarity

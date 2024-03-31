@@ -1,14 +1,15 @@
 @use "../mixins/material";
 
-.dotdungeon.style-v3 > .window-content input[type=text] {
+.dotdungeon.style-v3 > .window-content input[type=number] {
 	outline: none;
 	border: none;
 	@include material.elevate(3);
 	padding: 4px 8px;
 	color: white;
 	transition: all 200ms ease-in-out;
-	width: auto;
+	width: 50px;
 	height: auto;
+	text-align: center;
 
 	&:hover {
 		@include material.elevate(4);

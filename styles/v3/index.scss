@@ -3,8 +3,10 @@
 @use "./themes/dark.css";
 
 /* Element-Styling */
+@use "./elements/utilities.scss";
 @use "./elements/button.scss";
 @use "./elements/text-input.scss";
+@use "./elements/number-input.scss";
 @use "./elements/textarea.scss";
 @use "./elements/headers.scss";
 @use "./elements/hr.scss";
