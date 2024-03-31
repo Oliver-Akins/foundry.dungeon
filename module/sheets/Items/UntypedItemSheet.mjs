@@ -27,6 +27,7 @@ export class UntypedItemSheet extends GenericItemSheet {
 
 		ctx.computed = {
 			showSettingsTab: ctx.isGM || this.item.isOwned,
+			isEmbedded: this.item.isOwned,
 		};
 
 		return ctx;

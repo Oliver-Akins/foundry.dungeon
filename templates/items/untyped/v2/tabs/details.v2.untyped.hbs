@@ -1,3 +1,19 @@
 <div class="tab" data-group="page" data-tab="details">
-	Details Tab
+	<div class="cost panel">
+		Purchase Cost
+	</div>
+	<div class="usage-cost panel">
+		Usage Cost
+	</div>
+	<div class="tier panel">
+		Item Rarity
+	</div>
+	{{#if computed.isEmbedded}}
+		<div class="location panel">
+			Item Location
+		</div>
+		<div class="quantity panel">
+			Quantity
+		</div>
+	{{/if}}
 </div>

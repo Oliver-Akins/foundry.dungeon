@@ -2,6 +2,8 @@
 @use "../../../mixins/utils";
 
 .dotdungeon.style-v3 .item--untyped {
+	--gap: 8px;
+
 	.nav-bar {
 		@include material.elevate(8);
 		position: absolute;
@@ -12,15 +14,20 @@
 		nav {
 			display: flex;
 			flex-direction: row;
-			gap: 8px;
-			padding: 8px;
+			gap: var(--gap);
+			padding: var(--gap);
 		}
 	}
 
 	.page-content {
-		padding: 8px;
+		padding: calc(var(--gap) * 1);
 		padding-bottom: 60px;
 		height: 100%;
+
+		> .tab {
+			height: 100%;
+			gap: var(--gap);
+		}
 	}
 
 	@include utils.tab("general") {
@@ -28,11 +35,14 @@
 		--height: 50px;
 		grid-template-columns: var(--height) 1fr;
 		grid-template-rows: var(--height) 1fr;
-		gap: 8px;
-		height: 100%;
 
 		.description {
 			grid-column: 1 / -1;
 		}
+	}
+
+	@include utils.tab("details") {
+		display: flex;
+		flex-direction: column;
 	}
 }
