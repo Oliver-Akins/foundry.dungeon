@@ -31,7 +31,7 @@ export class CommonItemData extends foundry.abstract.TypeDataModel {
 			tier: new fields.StringField({
 				initial: DOTDUNGEON.defaultItemTier,
 				nullable: false,
-				choices: DOTDUNGEON.itemTiers,
+				choices: DOTDUNGEON.itemTiers.map(tier => tier.value),
 			}),
 			/*
 			If this property is set to true, the item will be shown in the combat tab

@@ -1,0 +1,25 @@
+@use "../mixins/material";
+
+.dotdungeon.style-v3 > .window-content {
+	select {
+		outline: none;
+		border: none;
+		@include material.elevate(3);
+		padding: 4px 8px;
+		color: white;
+		transition: all 200ms ease-in-out;
+
+		&:hover {
+			@include material.elevate(4);
+		}
+
+		&:focus-visible {
+			@include material.elevate(6);
+		}
+	}
+
+	option {
+		background: var(--surface);
+		color: var(--on-surface);
+	}
+}

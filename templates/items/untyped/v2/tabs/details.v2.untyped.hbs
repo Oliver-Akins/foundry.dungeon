@@ -37,8 +37,20 @@
 			{{dd-empty-state system.usage_cost}}
 		{{/if}}
 	</div>
-	<div class="tier panel">
-		Item Rarity
+	<div class="tier panel--row">
+		Rarity
+		<div class="grow"></div>
+		{{#if meta.isEditable}}
+			<select
+				class="text-center"
+				name="system.tier"
+				id="{{meta.idp}}-item-tier"
+			>
+				{{{ dd-options system.tier config.itemTiers localize=true }}}
+			</select>
+		{{else}}
+			{{dd-i18n (concat "dotdungeon.rarity." system.tier)}}
+		{{/if}}
 	</div>
 	{{#if meta.isEmbedded}}
 		<div class="location panel">

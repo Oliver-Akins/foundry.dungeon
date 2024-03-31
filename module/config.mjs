@@ -34,8 +34,10 @@ export const skills = {
 
 export const defaultItemTier = `simple`;
 export const itemTiers = [
-	`simple`, `greater`,
-	`rare`, `legendary`
+	{ value: `simple`, label: `dotdungeon.rarity.simple` },
+	{ value: `greater`, label: `dotdungeon.rarity.greater` },
+	{ value: `rare`, label: `dotdungeon.rarity.rare` },
+	{ value: `legendary`, label: `dotdungeon.rarity.legendary` },
 ];
 
 export const syncMilestones = [
