@@ -1,0 +1,24 @@
+@use "../mixins/material";
+
+.dotdungeon.style-v3 > .window-content input {
+	outline: none;
+	border: none;
+	@include material.elevate(3);
+	color: white;
+	transition: all 200ms ease-in-out;
+	width: auto;
+	height: auto;
+	font-size: inherit;
+
+	&:hover {
+		@include material.elevate(6);
+	}
+
+	&:focus-visible {
+		@include material.elevate(8);
+	}
+
+	&.h1 {
+		font-size: 1.5rem;
+	}
+}

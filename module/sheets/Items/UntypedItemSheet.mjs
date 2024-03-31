@@ -48,10 +48,9 @@ export class UntypedItemSheet extends GenericItemSheet {
 	async getData() {
 		const ctx = await super.getData();
 
-		ctx.computed = {
-			showSettingsTab: ctx.isGM || this.item.isOwned,
-			isEmbedded: this.item.isOwned,
-		};
+		ctx.meta.showSettingsTab = ctx.isGM || this.item.isOwned;
+		ctx.meta.isEmbedded = this.item.isOwned;
+		ctx.meta.isEditable = this.isEditable;
 
 		return ctx;
 	};

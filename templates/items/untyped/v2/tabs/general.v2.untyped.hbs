@@ -1,5 +1,11 @@
 <div class="tab" data-group="page" data-tab="general">
 	<div class="photo panel" style="background: yellowgreen"></div>
-	<div class="name panel"></div>
+	{{#if meta.isEditable}}
+		<input type="text" name="name" class="name panel h1" value="{{item.name}}">
+	{{else}}
+		<h1 class="name panel--row">
+			{{item.name}}
+		</h1>
+	{{/if}}
 	<div class="description panel"></div>
 </div>

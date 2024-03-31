@@ -2,7 +2,7 @@
 	<div class="page-content">
 		{{> dotdungeon.untyped.v2.general }}
 		{{> dotdungeon.untyped.v2.details }}
-		{{#if computed.showSettingsTab}}
+		{{#if meta.showSettingsTab}}
 			{{> dotdungeon.untyped.v2.settings }}
 		{{/if}}
 		{{> dotdungeon.untyped.v2.effects }}
@@ -13,7 +13,7 @@
 			<button type="button" data-group="page" data-tab="general">General</button>
 			<button type="button" data-group="page" data-tab="details">Details</button>
 			<button type="button" data-group="page" data-tab="effects">Effects</button>
-			{{#if computed.showSettingsTab}}
+			{{#if meta.showSettingsTab}}
 				<button type="button" data-group="page" data-tab="settings">Settings</button>
 			{{/if}}
 		</nav>
