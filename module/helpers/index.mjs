@@ -2,7 +2,7 @@ import { schemaOptions } from "./schemaOptions.mjs";
 import { createArray } from "./createArray.mjs";
 import { detailsExpanded } from "./detailsExpanded.mjs";
 import { objectValue } from "./objectValue.mjs";
-import { handlebarsLocalizer } from "../utils/localizer.mjs";
+import { handlebarsLocalizer, localizer } from "../utils/localizer.mjs";
 import { options } from "./options.mjs";
 
 export default {
@@ -19,7 +19,7 @@ export default {
 	"dd-stringify": v => JSON.stringify(v, null, `  `),
 	"dd-empty": v => v.length == 0,
 	"dd-set-has": (s, k) => s.has(k),
-	"dd-empty-state": (v) => v ?? `--`,
+	"dd-empty-state": (v) => v ?? localizer(`dotdungeon.common.empty`),
 
 	// Logic helpers
 	"eq": (a, b) => a == b,

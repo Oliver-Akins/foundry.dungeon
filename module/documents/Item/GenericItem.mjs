@@ -12,4 +12,13 @@ export class DotDungeonItem extends Item {
 		};
 		return this.system.quantity;
 	};
+
+	get availableLocations() {
+		return [
+			{ value: null, label: `dotdungeon.location.unknown` },
+			{ value: `inventory`, label: `dotdungeon.location.inventory` },
+			{ value: `equipped`, label: `dotdungeon.location.equipped` },
+			{ value: `storage`, label: `dotdungeon.location.storage` },
+		];
+	};
 };

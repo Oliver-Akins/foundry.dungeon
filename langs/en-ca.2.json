@@ -68,13 +68,20 @@
 			"rare": "Rare",
 			"legendary": "Legendary"
 		},
+		"location": {
+			"unknown": "@dotdungeon.common.empty",
+			"inventory": "Inventory",
+			"equipped": "Equipped",
+			"storage": "Storage"
+		},
 		"default": {
 			"name": "(Unnamed @TYPES.{document}.{type})"
 		},
 		"common": {
 			"send-to-chat": "Send to Chat",
 			"edit": "Edit",
-			"delete": "Delete"
+			"delete": "Delete",
+			"empty": "---"
 		},
 		"sheet-names": {
 			"UntypedDataSheet": "Data Sheet"

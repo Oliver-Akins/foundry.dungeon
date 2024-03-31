@@ -53,8 +53,20 @@
 		{{/if}}
 	</div>
 	{{#if meta.isEmbedded}}
-		<div class="location panel">
+		<div class="location panel--row">
 			Item Location
+			<div class="grow"></div>
+			{{#if meta.isEditable}}
+				<select
+					class="text-center"
+					name="system.location"
+					id="{{meta.idp}}-location"
+				>
+					{{{ dd-options system.location item.availableLocations localize=true }}}
+				</select>
+			{{else}}
+				{{dd-i18n (concat "dotdungeon.location." system.location)}}
+			{{/if}}
 		</div>
 		<div class="quantity panel">
 			Quantity
