@@ -1,10 +1,12 @@
 <div class="tab" data-group="page" data-tab="details">
-	<div class="cost panel--row">
+	<div class="number panel">
 		{{#if meta.isEditable}}
-			<label for="{{meta.idp}}-purchase-cost">
+			<label
+				for="{{meta.idp}}-purchase-cost"
+				class="justify-start"
+			>
 				Purchase Cost
 			</label>
-			<div class="grow"></div>
 			<input
 				type="number"
 				name="system.buy"
@@ -14,16 +16,17 @@
 			>
 		{{else}}
 			Purchase Cost
-			<div class="grow"></div>
 			{{dd-empty-state system.buy}}
 		{{/if}}
 	</div>
-	<div class="usage-cost panel--row">
+	<div class="number panel">
 		{{#if meta.isEditable}}
-			<label for="{{meta.idp}}-usage-cost">
+			<label
+				for="{{meta.idp}}-usage-cost"
+				class="justify-start"
+			>
 				Usage Cost
 			</label>
-			<div class="grow"></div>
 			<input
 				type="number"
 				name="system.usage_cost"
@@ -33,13 +36,11 @@
 			>
 		{{else}}
 			Usage Cost
-			<div class="grow"></div>
 			{{dd-empty-state system.usage_cost}}
 		{{/if}}
 	</div>
-	<div class="tier panel--row">
+	<div class="detail panel--row space-between">
 		Rarity
-		<div class="grow"></div>
 		{{#if meta.isEditable}}
 			<select
 				class="text-center"
@@ -53,9 +54,8 @@
 		{{/if}}
 	</div>
 	{{#if meta.isEmbedded}}
-		<div class="location panel--row">
+		<div class="detail panel--row space-between">
 			Item Location
-			<div class="grow"></div>
 			{{#if meta.isEditable}}
 				<select
 					class="text-center"
@@ -68,8 +68,22 @@
 				{{dd-i18n (concat "dotdungeon.location." system.location)}}
 			{{/if}}
 		</div>
-		<div class="quantity panel">
-			Quantity
+		<div class="number panel">
+			{{#if meta.isEditable}}
+				<label for="{{meta.idp}}-quantity">
+					Quantity
+				</label>
+				<input
+					type="number"
+					min="0"
+					name="system.quantity"
+					value="{{system.quantity}}"
+					id="{{meta.idp}}-quantity"
+				>
+			{{else}}
+				Quantity
+				{{system.quantity}}
+			{{/if}}
 		</div>
 	{{/if}}
 </div>

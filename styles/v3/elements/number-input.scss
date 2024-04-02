@@ -7,9 +7,8 @@
 	padding: 4px 8px;
 	color: white;
 	transition: all 200ms ease-in-out;
-	width: 50px;
-	height: auto;
 	text-align: center;
+	line-height: 1rem;
 
 	&:hover {
 		@include material.elevate(4);

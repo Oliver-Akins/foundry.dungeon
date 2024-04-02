@@ -2,4 +2,8 @@
 
 .dotdungeon.style-v3 > .window-content label {
 	cursor: pointer;
+
+	&.justify-start {
+		justify-self: start;
+	}
 }

@@ -48,6 +48,12 @@
 
 	@include utils.tab("details") {
 		@extend %flex-col;
+
+		.number {
+			display: grid;
+			grid-template-columns: 1fr 55px;
+			align-items: center;
+		}
 	}
 
 	@include utils.tab("settings") {
