@@ -1,0 +1,55 @@
+/*
+Disclaimer: This CSS is used by a custom web component and is scoped to JUST
+the corresponding web component. Importing this into other files is forbidden.
+*/
+
+$default-border-radius: 4px;
+
+:host {
+	min-width: max-content;
+}
+
+div {
+	display: grid;
+	grid-template-columns: auto 50px auto;
+	// I dunno why this is needed for the height to not be calculated as 17px,
+	// but it is for some arcane reason
+	grid-template-rows: 1fr;
+}
+
+input {
+	border: none;
+	outline: none;
+	font-family: inherit;
+	text-align: center;
+	padding: 0;
+	background: green;
+
+	&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		margin: 0
+	}
+}
+
+button {
+	border: none;
+	outline: none;
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	padding: 4px;
+	background: darkgreen;
+	max-width: 100%;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.increment {
+	border-radius: 0 var(--border-radius, $default-border-radius) var(--border-radius, 4px) 0;
+}
+.decrement {
+	border-radius: var(--border-radius, $default-border-radius) 0 0 var(--border-radius, $default-border-radius);
+}

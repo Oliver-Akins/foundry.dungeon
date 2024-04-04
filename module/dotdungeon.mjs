@@ -35,6 +35,7 @@ import "./hooks/hotReload.mjs";
 import loadSettings from "./settings/index.mjs";
 import { devInit } from "./hooks/devInit.mjs";
 import DOTDUNGEON from "./config.mjs";
+import "./components/index.mjs";
 
 
 Hooks.once(`init`, async () => {
