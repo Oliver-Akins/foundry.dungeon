@@ -12,6 +12,9 @@
 				<button
 					type="button"
 					class="e-2dp roll-stat"
+					{{disabled (not stat.value)}}
+					data-roll-formula="1{{stat.value}}"
+					data-roll-label="Stat Roll : {{stat.name}}"
 				>
 					Roll
 				</button>
@@ -41,6 +44,8 @@
 								type="button"
 								class="e-2dp skill__roll"
 								{{disabled skill.rollDisabled}}
+								data-roll-formula="{{skill.formula}}"
+								data-roll-label="Skill Roll : {{skill.name}}"
 							>
 								{{#if skill.rollDisabled}}
 									{{dd-i18n "dotdungeon.sheet.actor.v2.skill-roll-locked"}}
