@@ -4,6 +4,7 @@ the corresponding web component. Importing this into other files is forbidden.
 */
 
 $default-border-radius: 4px;
+$default-height: 1.25rem;
 
 :host {
 	min-width: max-content;
@@ -11,10 +12,10 @@ $default-border-radius: 4px;
 
 div {
 	display: grid;
-	grid-template-columns: auto 50px auto;
+	grid-template-columns: var(--height, $default-height) 50px var(--height, $default-height);
 	// I dunno why this is needed for the height to not be calculated as 17px,
 	// but it is for some arcane reason
-	grid-template-rows: 1fr;
+	grid-template-rows: var(--height, $default-height);
 }
 
 input {
@@ -23,7 +24,6 @@ input {
 	font-family: inherit;
 	text-align: center;
 	padding: 0;
-	background: green;
 
 	&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
 		-webkit-appearance: none;
@@ -36,11 +36,11 @@ input {
 button {
 	border: none;
 	outline: none;
-	height: 100%;
 	aspect-ratio: 1 / 1;
-	padding: 4px;
-	background: darkgreen;
-	max-width: 100%;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	&:hover {
 		cursor: pointer;

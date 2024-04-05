@@ -4,27 +4,42 @@ Attributes:
 @property {number} stepSize
 @property {number} largeStepSize
 */
-class DotDungeonIncrementer extends HTMLElement {
+export class DotDungeonIncrementer extends HTMLElement {
+	static elementName = `dd-incrementer`;
+
+	static styles = ``;
 
 	#input;
+	#publicInput;
+	#sr;
 
 	constructor() {
 		super();
 
+		const value = this.getAttribute(`value`);
+
+		/*
+		This input exists for the sole purpose of making it so that the form data
+		works with this input without needing to do jank work arounds (even though
+		this on it's own is already a sort of jank work around).
+		*/
+		const hiddenInput = document.createElement(`input`);
+		hiddenInput.type = `hidden`;
+		hiddenInput.name = this.getAttribute(`name`);
+		hiddenInput.value = value;
+		this.#publicInput = hiddenInput;
+		this.appendChild(hiddenInput);
+
 		const sr = this.attachShadow({ mode: `open` });
+		this.#sr = sr;
 		const container = document.createElement(`div`);
-
-		const style = document.createElement(`link`);
-		style.href = `./systems/dotdungeon/.styles/components/incrementer.css`;
-		style.rel = `stylesheet`;
-		container.appendChild(style);
-
+		if (DotDungeonIncrementer.styles) this.#embedStyles();
 
 		const input = document.createElement(`input`);
 		this.#input = input;
 		input.type = `number`;
-		input.value = this.getAttribute(`value`);
 		input.addEventListener(`change`, this.#updateValue.bind(this));
+		input.value = value;
 
 		const increment = document.createElement(`button`);
 		increment.innerHTML = `+`;
@@ -46,26 +61,46 @@ class DotDungeonIncrementer extends HTMLElement {
 		sr.appendChild(container);
 	};
 
+	connectedCallback() {
+		if (!DotDungeonIncrementer.styles) {
+			fetch(`./systems/dotdungeon/.styles/components/incrementer.css`)
+			.then(r => r.text())
+			.then(t => {
+				DotDungeonIncrementer.styles = t;
+				this.#embedStyles();
+			});
+		};
+	};
+
+	#embedStyles() {
+		const style = document.createElement(`style`);
+		style.innerHTML = DotDungeonIncrementer.styles;
+		this.#sr.appendChild(style);
+	};
+
 	#updateValue() {
-		// TODO: Emit a change event for the new value, and check for cancellation
-		const event = new Event(`change`);
-		this.dispatchEvent(event);
+		this.#publicInput.value = this.#input.value;
+		const event = new Event(`change`, { bubbles: true });
+		this.#publicInput.dispatchEvent(event);
 	};
 
 	#increment() {
-		console.log(`increment event`)
+		console.log(`increment event`);
 		this.#input.value++;
 		this.#updateValue();
 	};
 
 	#decrement() {
-		console.log(`decrement event`)
+		console.log(`decrement event`);
 		this.#input.value--;
 		this.#updateValue();
 	};
 };
 
 
-if (!window.customElements.get(`dd-incrementer`)) {
-	window.customElements.define(`dd-incrementer`, DotDungeonIncrementer);
+if (!window.customElements.get(DotDungeonIncrementer.elementName)) {
+	window.customElements.define(
+		DotDungeonIncrementer.elementName,
+		DotDungeonIncrementer
+	);
 };
