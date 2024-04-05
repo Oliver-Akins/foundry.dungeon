@@ -15,8 +15,8 @@
 				id="{{meta.idp}}-purchase-cost"
 			>
 		{{else}}
-			Purchase Cost
-			{{dd-empty-state system.buy}}
+			<span>Purchase Cost</span>
+			<span class="text-right">{{dd-empty-state system.buy}}</span>
 		{{/if}}
 	</div>
 	<div class="number panel">
@@ -35,12 +35,12 @@
 				id="{{meta.idp}}-usage-cost"
 			>
 		{{else}}
-			Usage Cost
-			{{dd-empty-state system.usage_cost}}
+			<span>Usage Cost</span>
+			<span class="text-right">{{dd-empty-state system.usage_cost}}</span>
 		{{/if}}
 	</div>
 	<div class="detail panel--row space-between">
-		Rarity
+		<span>Rarity</span>
 		{{#if meta.isEditable}}
 			<select
 				class="text-center"
@@ -50,7 +50,7 @@
 				{{{ dd-options system.tier config.itemTiers localize=true }}}
 			</select>
 		{{else}}
-			{{dd-i18n (concat "dotdungeon.rarity." system.tier)}}
+			<span>{{dd-i18n (concat "dotdungeon.rarity." system.tier)}}</span>
 		{{/if}}
 	</div>
 	{{#if meta.isEmbedded}}

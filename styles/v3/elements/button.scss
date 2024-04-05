@@ -1,43 +1,46 @@
 @use "../mixins/material" as material;
 
-.dotdungeon.style-v3 > .window-content button {
-	@include material.elevate(2);
-	align-items: center;
-	border-radius: 4px;
-	border: none;
-	box-sizing: border-box;
-	color: inherit;
-	cursor: pointer;
-	display: inline-flex;
-	font-family: sans-serif;
-	gap: 4px;
-	justify-content: center;
-	margin: 0;
-	outline: none;
-	padding: 4px 8px;
-	transition: all 200ms ease-in-out;
-	width: initial;
+.dotdungeon.style-v3 > .window-content {
+	button, a.button {
+		@include material.elevate(2);
+		align-items: center;
+		border-radius: 4px;
+		border: none;
+		box-sizing: border-box;
+		color: inherit;
+		cursor: pointer;
+		display: inline-flex;
+		font-family: sans-serif;
+		gap: 4px;
+		justify-content: center;
+		margin: 0;
+		outline: none;
+		padding: 4px 8px;
+		transition: all 200ms ease-in-out;
+		width: initial;
 
-	&:hover, &:focus-visible {
-		@include material.elevate(4);
-	}
-	&:active {
-		@include material.elevate(6);
-	}
+		&:hover, &:focus-visible {
+			@include material.elevate(4);
+			text-shadow: none;
+		}
+		&:active {
+			@include material.elevate(6);
+		}
 
-	&:disabled {
-		opacity: 50%;
-		cursor: default;
-	}
+		&:disabled {
+			opacity: 50%;
+			cursor: default;
+		}
 
-	/* Icon buttons don't use Material styling */
-	&.icon {
-		@include material.undo;
-		padding: 4px;
-
-		&:focus-visible {
+		/* Icon buttons don't use Material styling */
+		&.icon {
 			@include material.undo;
-			// TODO : Accessible focus state
+			padding: 4px;
+
+			&:focus-visible {
+				@include material.undo;
+				// TODO : Accessible focus state
+			}
 		}
 	}
 }
