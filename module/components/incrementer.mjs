@@ -1,8 +1,11 @@
 /**
 Attributes:
-@property {number} value
-@property {number} stepSize
-@property {number} largeStepSize
+@property {string} name - The path to the value to update
+@property {number} value - The actual value of the input
+
+Styling:
+- `--height`: Controls the height of the element + the width of the buttons (default: 1.25rem)
+- `--width`: Controls the width of the number input (default 50px)
 */
 export class DotDungeonIncrementer extends HTMLElement {
 	static elementName = `dd-incrementer`;

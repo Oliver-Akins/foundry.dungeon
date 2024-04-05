@@ -6,13 +6,9 @@ the corresponding web component. Importing this into other files is forbidden.
 $default-border-radius: 4px;
 $default-height: 1.25rem;
 
-:host {
-	min-width: max-content;
-}
-
 div {
 	display: grid;
-	grid-template-columns: var(--height, $default-height) 50px var(--height, $default-height);
+	grid-template-columns: var(--height, $default-height) var(--width, 50px) var(--height, $default-height);
 	// I dunno why this is needed for the height to not be calculated as 17px,
 	// but it is for some arcane reason
 	grid-template-rows: var(--height, $default-height);
@@ -41,6 +37,7 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: color-mix(in lab, white 5%, transparent);
 
 	&:hover {
 		cursor: pointer;
