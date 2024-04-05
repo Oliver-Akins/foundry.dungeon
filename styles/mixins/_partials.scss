@@ -18,9 +18,9 @@
 @mixin sub-nav($parent, $group, $display) {
 	nav.#{$group} {
 		@include material.elevate(1);
-		display: none;
+		display: none !important;
 	}
 	&:has(nav.#{$parent} .active[data-tab="#{$group}"]) nav.#{$group} {
-		display: #{$display};
+		display: #{$display} !important;
 	}
 }
