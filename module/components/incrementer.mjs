@@ -85,13 +85,11 @@ export class DotDungeonIncrementer extends HTMLElement {
 	};
 
 	#increment() {
-		console.log(`increment event`);
 		this.#input.value++;
 		this.#updateValue();
 	};
 
 	#decrement() {
-		console.log(`decrement event`);
 		this.#input.value--;
 		this.#updateValue();
 	};
