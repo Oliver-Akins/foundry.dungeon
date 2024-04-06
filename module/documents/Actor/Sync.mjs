@@ -1,4 +1,5 @@
 import { DotDungeonActor } from "./GenericActor.mjs";
+import { syncMilestones } from "../../config.mjs";
 
 export class Sync extends DotDungeonActor {
 	async useRestDie() {
