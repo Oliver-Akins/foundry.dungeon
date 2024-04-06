@@ -102,7 +102,7 @@ Hooks.once(`init`, async () => {
 		label: "dotdungeon.sheet-names.PetSheet"
 	});
 
-	if (game.settings.get(`dotdungeon`, `devMode`)) {
+	if (true || game.settings.get(`dotdungeon`, `devMode`)) {
 		devInit();
 	};
 
