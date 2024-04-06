@@ -84,7 +84,7 @@
 			"empty": "---"
 		},
 		"sheet-names": {
-			"UntypedDataSheet": "Data Sheet"
+			"*DataSheet": "Data Sheet"
 		}
 	},
 	"TYPES": {

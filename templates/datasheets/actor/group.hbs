@@ -1,0 +1,36 @@
+<form autocomplete="off" class="datasheet">
+	<div>
+		<label for="{{meta.idp}}-name" data-tooltip="name">Name</label>
+		<input
+			type="text"
+			name="name"
+			id="{{meta.idp}}-name"
+			value="{{actor.name}}"
+		>
+	</div>
+	<div>
+		<label for="{{meta.idp}}-sync" data-tooltip="system.value">Sync</label>
+		<input
+			type="number"
+			min="0"
+			name="system.value"
+			id="{{meta.idp}}-sync"
+			value="{{system.value}}"
+		>
+	</div>
+	<div>
+		<label for="{{meta.idp}}-restdice" data-tooltip="system.rest_dice">Rest Dice</label>
+		<input
+			type="number"
+			min="0"
+			name="system.rest_dice"
+			id="{{meta.idp}}-restdice"
+			value="{{system.rest_dice}}"
+		>
+	</div>
+	<div>
+		<span data-tooltip="system.milestones_hit">Milestones Hit</span>
+		<br>
+		{{ computed.milestones_hit_viewable }}
+	</div>
+</form>
