@@ -26,7 +26,7 @@ div {
 	}
 }
 
-button, input {
+span, input {
 	border: none;
 	outline: none;
 	background: none;
@@ -36,7 +36,7 @@ button, input {
 input {
 	font-family: inherit;
 	text-align: center;
-	padding: 0;
+	padding: 2px 4px;
 
 	&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
 		-webkit-appearance: none;
@@ -46,16 +46,13 @@ input {
 	}
 }
 
-button {
+span {
 	aspect-ratio: 1 / 1;
 	padding: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	&:hover {
-		cursor: pointer;
-	}
+	cursor: pointer;
 }
 
 .increment {

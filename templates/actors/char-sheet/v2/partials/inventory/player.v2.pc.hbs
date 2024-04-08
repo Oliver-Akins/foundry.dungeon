@@ -11,12 +11,16 @@
 	</div>
 	<div class="e-1dp panel bytes-panel">
 		<label
-			for="{{meta.idp}}-player-inventory-supplies-input"
+			for="{{meta.idp}}-player-inventory-supplies"
 		>
 			Supplies
 		</label>
-		<dd-incrementer name="system.supplies" value="{{system.supplies}}"></dd-incrementer>
-		{{!-- <input is="dd-incrementer"> --}}
+		<dd-incrementer
+			name="system.supplies"
+			value="{{system.supplies}}"
+			id="{{meta.idp}}-player-inventory-supplies"
+			min="0"
+		></dd-incrementer>
 		{{!-- <button
 			type="button"
 			class="icon"
@@ -29,7 +33,7 @@
 		</button>
 		<input
 			type="number"
-			id="{{meta.idp}}-player-inventory-supplies-input"
+
 			value="{{system.supplies}}"
 		>
 		<button
