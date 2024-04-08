@@ -3,6 +3,8 @@ Disclaimer: This CSS is used by a custom web component and is scoped to JUST
 the corresponding web component. Importing this into other files is forbidden.
 */
 
+@use "../mixins/material";
+
 $default-border-radius: 4px;
 $default-height: 1.25rem;
 
@@ -12,11 +14,26 @@ div {
 	// I dunno why this is needed for the height to not be calculated as 17px,
 	// but it is for some arcane reason
 	grid-template-rows: var(--height, $default-height);
+	border-radius: var(--border-radius, $default-border-radius);
+	@include material.elevate(2);
+
+	&:hover {
+		@include material.elevate(4);
+	}
+
+	&:focus-within {
+		@include material.elevate(6);
+	}
+}
+
+button, input {
+	border: none;
+	outline: none;
+	background: none;
+	color: inherit;
 }
 
 input {
-	border: none;
-	outline: none;
 	font-family: inherit;
 	text-align: center;
 	padding: 0;
@@ -30,14 +47,11 @@ input {
 }
 
 button {
-	border: none;
-	outline: none;
 	aspect-ratio: 1 / 1;
 	padding: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: color-mix(in lab, white 5%, transparent);
 
 	&:hover {
 		cursor: pointer;

@@ -66,7 +66,7 @@ export class DotDungeonIncrementer extends HTMLElement {
 
 	connectedCallback() {
 		if (!DotDungeonIncrementer.styles) {
-			fetch(`./systems/dotdungeon/.styles/components/incrementer.css`)
+			fetch(`./systems/dotdungeon/.styles/v3/components/incrementer.css`)
 			.then(r => r.text())
 			.then(t => {
 				DotDungeonIncrementer.styles = t;
