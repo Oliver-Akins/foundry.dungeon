@@ -12,5 +12,8 @@
 		"node_modules": true,
 		"packs": true,
 		".gitattributes": true,
-	}
+	},
+	"html.customData": [
+		"./.vscode/components.html-data.json"
+	]
 }

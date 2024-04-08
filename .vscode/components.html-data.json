@@ -1,0 +1,19 @@
+{
+	"version": 1.1,
+	"tags": [
+		{
+			"name": "dd-incrementer",
+			"description": "A number input that allows more flexible increase/decrease buttons",
+			"attributes": [
+				{ "name": "value", "description": "The initial value to put in the input" },
+				{ "name": "name", "description": "The form name to use when this input is used to submit data" },
+				{ "name": "min", "description": "The minimum value that this input can contain" },
+				{ "name": "max", "description": "The maximum value that this input can contain" },
+				{ "name": "smallStep", "description": "The value that the input is changed by when clicking a delta button or using the up/down arrow key" },
+				{ "name": "largeStep", "description": "The value that the input is changed by when clicking a delta button with control held or using the page up/ page down arrow key" }
+			]
+		}
+	],
+	"globalAttributes": [],
+	"valueSets": []
+}
