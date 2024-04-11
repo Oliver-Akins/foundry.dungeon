@@ -167,9 +167,4 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			max: this.actor.system.inventory_slots,
 		};
 	};
-
-	_updateObject(...args) {
-		console.log(args)
-		super._updateObject(...args);
-	};
 }
