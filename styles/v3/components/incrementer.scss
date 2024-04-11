@@ -11,9 +11,6 @@ $default-height: 1.25rem;
 div {
 	display: grid;
 	grid-template-columns: var(--height, $default-height) var(--width, 50px) var(--height, $default-height);
-	// I dunno why this is needed for the height to not be calculated as 17px,
-	// but it is for some arcane reason
-	grid-template-rows: var(--height, $default-height);
 	border-radius: var(--border-radius, $default-border-radius);
 	@include material.elevate(2);
 
@@ -34,8 +31,9 @@ span, input {
 }
 
 input {
-	font-family: inherit;
+	font-family: var(--font-family, inherit);
 	text-align: center;
+	font-size: var(--font-size, inherit);
 	padding: 2px 4px;
 
 	&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {

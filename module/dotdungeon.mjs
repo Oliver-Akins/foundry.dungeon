@@ -32,10 +32,10 @@ import * as hbs from "./handlebars.mjs";
 import "./hooks/hotReload.mjs";
 
 // Misc Imports
+import { registerCustomComponents } from "./components/index.mjs";
 import loadSettings from "./settings/index.mjs";
 import { devInit } from "./hooks/devInit.mjs";
 import DOTDUNGEON from "./config.mjs";
-import "./components/index.mjs";
 
 
 Hooks.once(`init`, async () => {
@@ -109,8 +109,9 @@ Hooks.once(`init`, async () => {
 
 	hbs.registerHandlebarsHelpers();
 	hbs.preloadHandlebarsTemplates();
+	registerCustomComponents();
 
-	CONFIG.CACHE = {};
+	CONFIG.CACHE ??= {};
 	CONFIG.CACHE.icons = await hbs.preloadIcons();
 });
 

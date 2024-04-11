@@ -15,150 +15,143 @@ export class DotDungeonIncrementer extends HTMLElement {
 	static elementName = `dd-incrementer`;
 	static formAssociated = true;
 
-	static styles = ``;
-
-	#min;
-	#max;
-	#smallStep;
-	#largeStep;
-
+	static #styles = ``;
+	_internals;
+	_shadow;
 	#input;
-	#publicInput;
-	#sr;
+
+	_min;
+	_max;
+	_smallStep;
+	_largeStep;
 
 	constructor() {
 		super();
-
+		this._shadow = this.attachShadow({ mode: `open`, delegatesFocus: true });
 		this._internals = this.attachInternals();
+		this._internals.role = `spinbutton`;
 
 		const value = this.getAttribute(`value`);
-		this.#min = parseInt(this.getAttribute(`min`) ?? 0);
-		this.#max = parseInt(this.getAttribute(`max`) ?? 0);
-		this.#smallStep = parseInt(this.getAttribute(`smallStep`) ?? 1);
-		this.#largeStep = parseInt(this.getAttribute(`largeStep`) ?? 5);
+		this._min = parseInt(this.getAttribute(`min`) ?? 0);
+		this._max = parseInt(this.getAttribute(`max`) ?? 0);
+		this._smallStep = parseInt(this.getAttribute(`smallStep`) ?? 1);
+		this._largeStep = parseInt(this.getAttribute(`largeStep`) ?? 5);
 
-		const sr = this.attachShadow({
-			mode: `open`,
-			delegatesFocus: true
-		});
-		this.#sr = sr;
+		this._internals.ariaValueMin = this._min;
+		this._internals.ariaValueMax = this._max;
+
 		const container = document.createElement(`div`);
-		if (DotDungeonIncrementer.styles) this.#embedStyles();
+		if (DotDungeonIncrementer.#styles) this.#embedStyles();
 
 		// The input that the user can see / modify
 		const input = document.createElement(`input`);
 		this.#input = input;
 		input.type = `number`;
+		input.ariaHidden = true;
 		input.min = this.getAttribute(`min`);
 		input.max = this.getAttribute(`max`);
 		input.addEventListener(`change`, this.#updateValue.bind(this));
 		input.value = value;
 
-		// input.id = this.id;
-		// this.removeAttribute(`id`);
-
 		// plus button
 		const increment = document.createElement(`span`);
 		increment.innerHTML = `+`;
-		// increment.type = `button`;
-		// increment.tabIndex = -1;
+		increment.ariaHidden = true;
 		increment.classList.value = `increment`;
-		increment.addEventListener(`click`, this.#increment.bind(this));
+		increment.addEventListener(`mousedown`, this.#increment.bind(this));
 
 		// minus button
 		const decrement = document.createElement(`span`);
 		decrement.innerHTML = `-`;
-		// decrement.type = `button`;
-		// decrement.tabIndex = -1;
+		decrement.ariaHidden = true;
 		decrement.classList.value = `decrement`;
-		decrement.addEventListener(`click`, this.#decrement.bind(this));
-
+		decrement.addEventListener(`mousedown`, this.#decrement.bind(this));
 
 		// Construct the DOM
 		container.appendChild(decrement);
 		container.appendChild(input);
 		container.appendChild(increment);
-		sr.appendChild(container);
+		this._shadow.appendChild(container);
 	};
 
-	connectedCallback() {
-		/*
-		This input exists for the sole purpose of making it so that the form data
-		works with this input without needing to do jank work arounds, as Foundry
-		only listens for change events from a small subset of elements which makes
-		this a bit a jank work around as it is.
-		*/
-		const hiddenInput = document.createElement(`input`);
-		this.#publicInput = hiddenInput;
-		hiddenInput.type = `hidden`;
-		hiddenInput.value = this.#input.value;
-		hiddenInput.name = this.getAttribute(`name`);
-		// this.removeAttribute(`name`);
-		// this.appendChild(hiddenInput);
+	get form() {
+		return this._internals.form;
+	}
 
-		if (!DotDungeonIncrementer.styles) {
+	get name() {
+		return this.getAttribute(`name`);
+	}
+	set name(value) {
+		this.setAttribute(`name`, value);
+	}
+
+	get value() {
+		return this.getAttribute(`value`);
+	};
+	set value(value) {
+		this.setAttribute(`value`, value);
+	};
+
+	get type() {
+		return `number`;
+	}
+
+	connectedCallback() {
+		this.replaceChildren();
+
+		/*
+		This converts all of the double-dash prefixed properties on the element to
+		CSS variables so that they don't all need to be provided by doing style=""
+		*/
+		for (const attrVar of this.attributes) {
+			if (attrVar.name?.startsWith(`--`)) {
+				this.style.setProperty(attrVar.name, attrVar.value);
+			};
+		};
+
+		if (!DotDungeonIncrementer.#styles) {
 			fetch(`./systems/dotdungeon/.styles/v3/components/incrementer.css`)
 			.then(r => r.text())
 			.then(t => {
-				DotDungeonIncrementer.styles = t;
+				DotDungeonIncrementer.#styles = t;
 				this.#embedStyles();
 			});
 		};
 	};
 
-	get value() {
-		return this.#input.value;
-	};
-	get form() {
-		return this._internals.form;
-	};
-	get type() {
-		return `number`;
-	};
-
 	#embedStyles() {
 		const style = document.createElement(`style`);
-		style.innerHTML = DotDungeonIncrementer.styles;
-		this.#sr.appendChild(style);
+		style.innerHTML = DotDungeonIncrementer.#styles;
+		this._shadow.appendChild(style);
 	};
 
 	#updateValue() {
 		let value = parseInt(this.#input.value);
-		if (this.getAttribute(`min`)) value = Math.max(this.#min, value);
-		if (this.getAttribute(`max`)) value = Math.min(this.#max, value);
+		if (this.getAttribute(`min`)) value = Math.max(this._min, value);
+		if (this.getAttribute(`max`)) value = Math.min(this._max, value);
 		this.#input.value = value;
-		if (this.#input.value === this.#publicInput.value) return;
-		this.#publicInput.value = value;
-		const event = new Event(`change`);
-		// this.#publicInput.dispatchEvent(event);
-		console.log(`#updateValue`)
-		this.dispatchEvent(event);
+		this.value = value;
+		this.dispatchEvent(new Event(`change`, { bubbles: true }));
+
+		// NOTE: This may be really annoying, in that case, remove it later
+		this.blur();
 	};
 
+	/** @param {Event} $e */
 	#increment($e) {
+		$e.preventDefault();
 		let value = parseInt(this.#input.value);
-		value += $e.ctrlKey ? this.#largeStep : this.#smallStep;
+		value += $e.ctrlKey ? this._largeStep : this._smallStep;
 		this.#input.value = value;
 		this.#updateValue();
 	};
 
+	/** @param {Event} $e */
 	#decrement($e) {
+		$e.preventDefault();
 		let value = parseInt(this.#input.value);
-		value -= $e.ctrlKey ? this.#largeStep : this.#smallStep;
+		value -= $e.ctrlKey ? this._largeStep : this._smallStep;
 		this.#input.value = value;
 		this.#updateValue();
 	};
-
-	focus() {
-		console.log(1)
-		super.focus();
-	}
-};
-
-
-if (!window.customElements.get(DotDungeonIncrementer.elementName)) {
-	window.customElements.define(
-		DotDungeonIncrementer.elementName,
-		DotDungeonIncrementer
-	);
 };
