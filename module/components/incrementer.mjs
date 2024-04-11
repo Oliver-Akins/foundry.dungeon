@@ -28,9 +28,13 @@ export class DotDungeonIncrementer extends HTMLElement {
 	constructor() {
 		super();
 		this._shadow = this.attachShadow({ mode: `open`, delegatesFocus: true });
+		if (DotDungeonIncrementer.#styles) this.#embedStyles();
+
+		// Form internals
 		this._internals = this.attachInternals();
 		this._internals.role = `spinbutton`;
 
+		// Attribute parsing / registration
 		const value = this.getAttribute(`value`);
 		this._min = parseInt(this.getAttribute(`min`) ?? 0);
 		this._max = parseInt(this.getAttribute(`max`) ?? 0);
@@ -41,7 +45,6 @@ export class DotDungeonIncrementer extends HTMLElement {
 		this._internals.ariaValueMax = this._max;
 
 		const container = document.createElement(`div`);
-		if (DotDungeonIncrementer.#styles) this.#embedStyles();
 
 		// The input that the user can see / modify
 		const input = document.createElement(`input`);
