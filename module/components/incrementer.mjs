@@ -1,3 +1,5 @@
+import { DotDungeonIcon } from "./icon.mjs";
+
 /**
 Attributes:
 @property {string} name - The path to the value to update
@@ -19,6 +21,7 @@ export class DotDungeonIncrementer extends HTMLElement {
 	_internals;
 	_shadow;
 	#input;
+	#style;
 
 	_min;
 	_max;
@@ -33,48 +36,6 @@ export class DotDungeonIncrementer extends HTMLElement {
 		// Form internals
 		this._internals = this.attachInternals();
 		this._internals.role = `spinbutton`;
-
-		// Attribute parsing / registration
-		const value = this.getAttribute(`value`);
-		this._min = parseInt(this.getAttribute(`min`) ?? 0);
-		this._max = parseInt(this.getAttribute(`max`) ?? 0);
-		this._smallStep = parseInt(this.getAttribute(`smallStep`) ?? 1);
-		this._largeStep = parseInt(this.getAttribute(`largeStep`) ?? 5);
-
-		this._internals.ariaValueMin = this._min;
-		this._internals.ariaValueMax = this._max;
-
-		const container = document.createElement(`div`);
-
-		// The input that the user can see / modify
-		const input = document.createElement(`input`);
-		this.#input = input;
-		input.type = `number`;
-		input.ariaHidden = true;
-		input.min = this.getAttribute(`min`);
-		input.max = this.getAttribute(`max`);
-		input.addEventListener(`change`, this.#updateValue.bind(this));
-		input.value = value;
-
-		// plus button
-		const increment = document.createElement(`span`);
-		increment.innerHTML = `+`;
-		increment.ariaHidden = true;
-		increment.classList.value = `increment`;
-		increment.addEventListener(`mousedown`, this.#increment.bind(this));
-
-		// minus button
-		const decrement = document.createElement(`span`);
-		decrement.innerHTML = `-`;
-		decrement.ariaHidden = true;
-		decrement.classList.value = `decrement`;
-		decrement.addEventListener(`mousedown`, this.#decrement.bind(this));
-
-		// Construct the DOM
-		container.appendChild(decrement);
-		container.appendChild(input);
-		container.appendChild(increment);
-		this._shadow.appendChild(container);
 	};
 
 	get form() {
@@ -102,13 +63,60 @@ export class DotDungeonIncrementer extends HTMLElement {
 	connectedCallback() {
 		this.replaceChildren();
 
+		// Attribute parsing / registration
+		const value = this.getAttribute(`value`);
+		this._min = parseInt(this.getAttribute(`min`) ?? 0);
+		this._max = parseInt(this.getAttribute(`max`) ?? 0);
+		this._smallStep = parseInt(this.getAttribute(`smallStep`) ?? 1);
+		this._largeStep = parseInt(this.getAttribute(`largeStep`) ?? 5);
+
+		this._internals.ariaValueMin = this._min;
+		this._internals.ariaValueMax = this._max;
+
+		const container = document.createElement(`div`);
+
+		// The input that the user can see / modify
+		const input = document.createElement(`input`);
+		this.#input = input;
+		input.type = `number`;
+		input.ariaHidden = true;
+		input.min = this.getAttribute(`min`);
+		input.max = this.getAttribute(`max`);
+		input.addEventListener(`change`, this.#updateValue.bind(this));
+		input.value = value;
+
+		// plus button
+		const increment = document.createElement("dd-icon");
+		increment.setAttribute(`name`, `create`);
+		increment.setAttribute(`var:size`, `0.75rem`);
+		increment.setAttribute(`var:fill`, `currentColor`);
+		increment.ariaHidden = true;
+		increment.classList.value = `increment`;
+		increment.addEventListener(`mousedown`, this.#increment.bind(this));
+
+		// minus button
+		const decrement = document.createElement(DotDungeonIcon.elementName);
+		decrement.setAttribute(`name`, `minus`);
+		decrement.setAttribute(`var:size`, `0.75rem`);
+		decrement.setAttribute(`var:fill`, `currentColor`);
+		decrement.ariaHidden = true;
+		decrement.classList.value = `decrement`;
+		decrement.addEventListener(`mousedown`, this.#decrement.bind(this));
+
+		// Construct the DOM
+		container.appendChild(decrement);
+		container.appendChild(input);
+		container.appendChild(increment);
+		this._shadow.appendChild(container);
+
 		/*
-		This converts all of the double-dash prefixed properties on the element to
+		This converts all of the namespace prefixed properties on the element to
 		CSS variables so that they don't all need to be provided by doing style=""
 		*/
 		for (const attrVar of this.attributes) {
-			if (attrVar.name?.startsWith(`--`)) {
-				this.style.setProperty(attrVar.name, attrVar.value);
+			if (attrVar.name?.startsWith(`var:`)) {
+				const prop = attrVar.name.replace(`var:`, ``);
+				this.style.setProperty(`--` + prop, attrVar.value);
 			};
 		};
 
@@ -123,9 +131,9 @@ export class DotDungeonIncrementer extends HTMLElement {
 	};
 
 	#embedStyles() {
-		const style = document.createElement(`style`);
-		style.innerHTML = DotDungeonIncrementer.#styles;
-		this._shadow.appendChild(style);
+		this.#style = document.createElement(`style`);
+		this.#style.innerHTML = DotDungeonIncrementer.#styles;
+		this._shadow.appendChild(this.#style);
 	};
 
 	#updateValue() {

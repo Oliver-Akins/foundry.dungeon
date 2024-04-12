@@ -6,11 +6,12 @@ the corresponding web component. Importing this into other files is forbidden.
 @use "../mixins/material";
 
 $default-border-radius: 4px;
-$default-height: 1.25rem;
+$default-height: 1.5rem;
 
 div {
 	display: grid;
 	grid-template-columns: var(--height, $default-height) var(--width, 50px) var(--height, $default-height);
+	grid-template-rows: var(--height, 1fr);
 	border-radius: var(--border-radius, $default-border-radius);
 	@include material.elevate(2);
 
@@ -44,7 +45,7 @@ input {
 	}
 }
 
-span {
+.increment, .decrement {
 	aspect-ratio: 1 / 1;
 	padding: 0;
 	display: flex;

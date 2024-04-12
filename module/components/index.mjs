@@ -1,6 +1,8 @@
 import { DotDungeonIncrementer } from "./incrementer.mjs";
+import { DotDungeonIcon } from "./icon.mjs";
 
 const components = [
+	DotDungeonIcon,
 	DotDungeonIncrementer,
 ];
 
