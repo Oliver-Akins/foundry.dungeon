@@ -57,8 +57,8 @@ export class GenericActorSheet extends ActorSheet {
 		default.
 		*/
 		html.find(
-			CONFIG.CACHE.componentListeners.join(`,`)
-		).on(`change`, this._onChangeInput.bind(this));
+			CONFIG.CACHE.componentListeners.map(n => `${n}[name]`).join(`,`)
+		).on(`change`, () => this._onChangeInput.bind(this));
 
 		/*
 		Utility event listeners that apply
