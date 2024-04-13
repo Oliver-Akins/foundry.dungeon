@@ -83,7 +83,6 @@ export class GenericActorSheet extends ActorSheet {
 				const id = $e.currentTarget.dataset.embeddedEdit;
 				this.openEmbeddedSheet.bind(this)(id);
 			})
-			.on(`click`, this.openEmbeddedSheet.bind(this));
 		html.find(`button[data-increment]`)
 			.on(`click`, this._incrementValue.bind(this));
 		html.find(`button[data-decrement]`)
