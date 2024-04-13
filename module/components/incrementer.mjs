@@ -127,9 +127,6 @@ export class DotDungeonIncrementer extends StyledShadowElement(HTMLElement) {
 		this.#input.value = value;
 		this.value = value;
 		this.dispatchEvent(new Event(`change`, { bubbles: true }));
-
-		// NOTE: This may be really annoying, in that case, remove it later
-		this.blur();
 	};
 
 	/** @param {Event} $e */
