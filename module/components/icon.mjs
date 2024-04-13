@@ -1,34 +1,39 @@
+import { StyledShadowElement } from "./mixins/Styles.mjs";
+
 /**
 Attributes:
 @property {string} name - The name of the icon, takes precedence over the path
 @property {string} path - The path of the icon file
 */
-export class DotDungeonIcon extends HTMLElement {
+export class DotDungeonIcon extends StyledShadowElement(HTMLElement) {
 	static elementName = `dd-icon`;
 	static formAssociated = false;
 
-	#shadow;
+	/* Stuff for the mixin to use */
+	static _stylePath = `v3/components/icon.css`;
 
-	static #styles = ``;
+
 	static _cache = new Map();
-	#style;
 	#container;
 	/** @type {null | string} */
 	_name;
 	/** @type {null | string} */
 	_path;
 
+	/* Stored IDs for all of the hooks that are in this component */
+	#svgHmr;
+
 	constructor() {
 		super();
-		this.#shadow = this.attachShadow({ mode: `open`, delegatesFocus: true });
-		if (DotDungeonIcon.#styles) this.#embedStyles();
+		// this._shadow = this.attachShadow({ mode: `open`, delegatesFocus: true });
 
 		this.#container = document.createElement(`div`);
-		this.#shadow.appendChild(this.#container);
+		this._shadow.appendChild(this.#container);
 	};
 
 	_mounted = false;
 	async connectedCallback() {
+		super.connectedCallback();
 		if (this._mounted) return;
 
 		this._name = this.getAttribute(`name`);
@@ -43,18 +48,6 @@ export class DotDungeonIcon extends HTMLElement {
 				const prop = attrVar.name.replace(`var:`, ``);
 				this.style.setProperty(`--` + prop, attrVar.value);
 			};
-		};
-
-		/*
-		Style fetching if we haven't gotten them yet
-		*/
-		if (!DotDungeonIcon.#styles) {
-			fetch(`./systems/dotdungeon/.styles/v3/components/icon.css`)
-			.then(r => r.text())
-			.then(t => {
-				DotDungeonIcon.#styles = t;
-				this.#embedStyles();
-			});
 		};
 
 		/*
@@ -78,28 +71,33 @@ export class DotDungeonIcon extends HTMLElement {
 		This is so that when we get an HMR event from Foundry we can appropriately
 		handle it using our logic to update the component and the icon cache.
 		*/
-		Hooks.on(`dd-hmr:svg`, (iconName, data) => {
-			if (this._name === iconName || this._path?.endsWith(data.path)) {
-				const svg = this.#parseSVG(data.content);
-				DotDungeonIcon._cache.set(iconName, svg);
-				this.#container.replaceChildren(svg.cloneNode(true));
-			};
-		});
+		if (game.settings.get(`dotdungeon`, `devMode`)) {
+			this.#svgHmr = Hooks.on(`dd-hmr:svg`, (iconName, data) => {
+				if (this._name === iconName || this._path?.endsWith(data.path)) {
+					const svg = this.#parseSVG(data.content);
+					this.constructor._cache.set(iconName, svg);
+					this.#container.replaceChildren(svg.cloneNode(true));
+				};
+			});
+		};
 
 		this._mounted = true;
 	};
 
-	#embedStyles() {
-		this.#style = document.createElement(`style`);
-		this.#style.innerHTML = DotDungeonIcon.#styles;
-		this.#shadow.appendChild(this.#style);
+	disconnectedCallback() {
+		super.disconnectedCallback();
+		if (!this._mounted) return;
+
+		Hooks.off(`dd-hmr:svg`, this.#svgHmr);
+
+		this._mounted = false;
 	};
 
 	async #getIcon(path) {
 		// Cache hit!
-		if (DotDungeonIcon._cache.has(path)) {
+		if (this.constructor._cache.has(path)) {
 			console.debug(`.dungeon | Icon ${path} cache hit`);
-			return DotDungeonIcon._cache.get(path);
+			return this.constructor._cache.get(path);
 		};
 
 		const r = await fetch(path);
@@ -114,7 +112,7 @@ export class DotDungeonIcon extends HTMLElement {
 
 		console.debug(`.dungeon | Adding icon ${path} to the cache`);
 		const svg = this.#parseSVG(await r.text());
-		DotDungeonIcon._cache.set(path, svg);
+		this.constructor._cache.set(path, svg);
 		return svg;
 	};
 
@@ -123,5 +121,5 @@ export class DotDungeonIcon extends HTMLElement {
 		const temp = document.createElement(`div`);
 		temp.innerHTML = content;
 		return temp.querySelector(`svg`);
-	}
+	};
 };

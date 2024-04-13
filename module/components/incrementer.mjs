@@ -1,4 +1,5 @@
 import { DotDungeonIcon } from "./icon.mjs";
+import { StyledShadowElement } from "./mixins/Styles.mjs";
 
 /**
 Attributes:
@@ -13,15 +14,14 @@ Styling:
 - `--height`: Controls the height of the element + the width of the buttons (default: 1.25rem)
 - `--width`: Controls the width of the number input (default 50px)
 */
-export class DotDungeonIncrementer extends HTMLElement {
+export class DotDungeonIncrementer extends StyledShadowElement(HTMLElement) {
 	static elementName = `dd-incrementer`;
 	static formAssociated = true;
 
-	static #styles = ``;
+	static _stylePath = `v3/components/incrementer.css`;
+
 	_internals;
-	_shadow;
 	#input;
-	#style;
 
 	_min;
 	_max;
@@ -30,8 +30,6 @@ export class DotDungeonIncrementer extends HTMLElement {
 
 	constructor() {
 		super();
-		this._shadow = this.attachShadow({ mode: `open`, delegatesFocus: true });
-		if (DotDungeonIncrementer.#styles) this.#embedStyles();
 
 		// Form internals
 		this._internals = this.attachInternals();
@@ -61,6 +59,7 @@ export class DotDungeonIncrementer extends HTMLElement {
 	}
 
 	connectedCallback() {
+		super.connectedCallback();
 		this.replaceChildren();
 
 		// Attribute parsing / registration
@@ -119,21 +118,6 @@ export class DotDungeonIncrementer extends HTMLElement {
 				this.style.setProperty(`--` + prop, attrVar.value);
 			};
 		};
-
-		if (!DotDungeonIncrementer.#styles) {
-			fetch(`./systems/dotdungeon/.styles/v3/components/incrementer.css`)
-			.then(r => r.text())
-			.then(t => {
-				DotDungeonIncrementer.#styles = t;
-				this.#embedStyles();
-			});
-		};
-	};
-
-	#embedStyles() {
-		this.#style = document.createElement(`style`);
-		this.#style.innerHTML = DotDungeonIncrementer.#styles;
-		this._shadow.appendChild(this.#style);
 	};
 
 	#updateValue() {

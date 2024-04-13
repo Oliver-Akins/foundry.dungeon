@@ -35,6 +35,10 @@ const loaders = {
 	},
 	js() {window.location.reload()},
 	mjs() {window.location.reload()},
+	css(data) {
+		console.debug(`.dungeon | Hot-reloading CSS: ${data.path}`);
+		Hooks.call(`dd-hmr:css`, data);
+	},
 };
 
 Hooks.on(`hotReload`, async (data) => {
