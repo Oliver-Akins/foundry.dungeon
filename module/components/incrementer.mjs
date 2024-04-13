@@ -85,8 +85,8 @@ export class DotDungeonIncrementer extends StyledShadowElement(HTMLElement) {
 		input.value = value;
 
 		// plus button
-		const increment = document.createElement("dd-icon");
-		increment.setAttribute(`name`, `create`);
+		const increment = document.createElement(DotDungeonIcon.elementName);
+		increment.setAttribute(`name`, `ui/plus`);
 		increment.setAttribute(`var:size`, `0.75rem`);
 		increment.setAttribute(`var:fill`, `currentColor`);
 		increment.ariaHidden = true;
@@ -95,7 +95,7 @@ export class DotDungeonIncrementer extends StyledShadowElement(HTMLElement) {
 
 		// minus button
 		const decrement = document.createElement(DotDungeonIcon.elementName);
-		decrement.setAttribute(`name`, `minus`);
+		decrement.setAttribute(`name`, `ui/minus`);
 		decrement.setAttribute(`var:size`, `0.75rem`);
 		decrement.setAttribute(`var:fill`, `currentColor`);
 		decrement.ariaHidden = true;

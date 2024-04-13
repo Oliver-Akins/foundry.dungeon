@@ -1,12 +1,15 @@
+Disclaimer:
+	All icons included in this repo have been scaled and optimized as needed.
+
 Amer Alamer
-	caret-right.svg (https://thenounproject.com/icon/arrow-caret-right-1143917/)
-	caret-down.svg (https://thenounproject.com/icon/arrow-caret-down-1143911/)
+	ui/caret/right.svg (https://thenounproject.com/icon/arrow-caret-right-1143917/)
+	ui/caret/down.svg (https://thenounproject.com/icon/arrow-caret-down-1143911/)
 
 Alice Design:
-	garbage-bin.svg (https://thenounproject.com/icon/garbage-2025492/)
+	ui/garbage-bin.svg (https://thenounproject.com/icon/garbage-2025492/)
 
 zapesicon:
-	chat-bubble.svg (https://thenounproject.com/icon/chat-6423186/)
+	ui/chat-bubble.svg (https://thenounproject.com/icon/chat-6423186/)
 
 Fritz Duggan:
 	dice/d4.svg (https://thenounproject.com/icon/d4-4570604/)
@@ -17,21 +20,19 @@ Fritz Duggan:
 	dice/d20.svg (https://thenounproject.com/icon/d20-4570607/)
 
 Landan Lloyd:
-	create.svg (https://thenounproject.com/icon/create-1447560/)
+	ui/plus.svg (https://thenounproject.com/icon/create-1447560/)
 
 Bismillah
-	minus.svg (https://thenounproject.com/icon/minus-1727966/)
+	ui/minus.svg (https://thenounproject.com/icon/minus-1727966/)
 
 Rokhman Kharis:
-	close.svg (https://thenounproject.com/icon/close-4996834/)
+	ui/close.svg (https://thenounproject.com/icon/close-4996834/)
 
 Athok:
-	sheet.svg (https://thenounproject.com/icon/sheet-5939348/)
+	ui/sheet.svg (https://thenounproject.com/icon/sheet-5939348/)
 
 Icon Depot:
-	edit.svg (https://thenounproject.com/icon/edit-1489252/)
+	ui/pencil.svg (https://thenounproject.com/icon/edit-1489252/)
 
-Oliver Akins:
-	chat-bubble.svg : Scaling
-	create.svg : Scaling, Optimization
-	sheet.svg : Scaling
+Muhammad Ahsanu Nadia:
+	ui/help.svg (https://thenounproject.com/icon/help-6778522/)
