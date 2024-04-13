@@ -1,12 +1,13 @@
 /*
 Disclaimer: This CSS is used by a custom web component and is scoped to JUST
-the corresponding web component. Importing this into other files is forbidden.
+the corresponding web component. Importing this into other files is forbidden
 */
-
-@use "../mixins/material";
 
 $default-border-radius: 4px;
 $default-height: 1.5rem;
+
+@use "../mixins/material";
+@use "./common.scss";
 
 div {
 	display: grid;
