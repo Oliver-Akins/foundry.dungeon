@@ -73,13 +73,14 @@
 				<label for="{{meta.idp}}-quantity">
 					Quantity
 				</label>
-				<input
+				<dd-incrementer value="{{system.supplies}}"></dd-incrementer>
+				{{!-- <input
 					type="number"
 					min="0"
 					name="system.quantity"
 					value="{{system.quantity}}"
 					id="{{meta.idp}}-quantity"
-				>
+				> --}}
 			{{else}}
 				Quantity
 				{{system.quantity}}

@@ -52,6 +52,17 @@ export class GenericActorSheet extends ActorSheet {
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Generic sheet adding listeners`);
 
+		/*
+		Custom element event listeners because Foundry doesn't listen to them by
+		default.
+		*/
+		html.find(
+			CONFIG.CACHE.componentListeners.join(`,`)
+		).on(`change`, this._onChangeInput.bind(this));
+
+		/*
+		Utility event listeners that apply
+		*/
 		html.find(`[data-collapse-id]`).on(`click`, this._handleSummaryToggle.bind(this));
 		html.find(`[data-roll-formula]`).on(`click`, this._handleRoll.bind(this));
 		html.find(`[data-embedded-update-on="change"]`)

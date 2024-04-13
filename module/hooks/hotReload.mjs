@@ -3,8 +3,8 @@ import * as hbs from "../handlebars.mjs";
 const loaders = {
 	svg(data) {
 		const iconName = data.path.split(`/`).slice(-1)[0].slice(0, -4);
-		console.log(`.dungeon | hot-reloading icon: ${iconName}`);
-		CONFIG.CACHE.icons[iconName] = data.content;
+		console.debug(`.dungeon | hot-reloading icon: ${iconName}`);
+		Hooks.call(`dd-hmr:svg`, iconName, data);
 	},
 	hbs(data) {
 		if (!hbs.partials.some(p => data.path.endsWith(p))) {
@@ -35,6 +35,10 @@ const loaders = {
 	},
 	js() {window.location.reload()},
 	mjs() {window.location.reload()},
+	css(data) {
+		console.debug(`.dungeon | Hot-reloading CSS: ${data.path}`);
+		Hooks.call(`dd-hmr:css`, data);
+	},
 };
 
 Hooks.on(`hotReload`, async (data) => {

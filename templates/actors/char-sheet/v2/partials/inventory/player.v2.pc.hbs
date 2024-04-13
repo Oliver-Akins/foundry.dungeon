@@ -11,35 +11,17 @@
 	</div>
 	<div class="e-1dp panel bytes-panel">
 		<label
-			for="{{meta.idp}}-player-inventory-supplies-input"
+			for="{{meta.idp}}-player-inventory-supplies"
 		>
 			Supplies
 		</label>
-		<button
-			type="button"
-			class="icon"
-			data-decrement="system.supplies"
-			aria-label="Decrease supply count by one"
-		>
-			<div aria-hidden="true" class="icon icon--14">
-				{{{ icons.minus }}}
-			</div>
-		</button>
-		<input
-			type="number"
-			id="{{meta.idp}}-player-inventory-supplies-input"
+		<dd-incrementer
+			var:height="1.5rem"
+			name="system.supplies"
 			value="{{system.supplies}}"
-		>
-		<button
-			type="button"
-			class="icon"
-			data-increment="system.supplies"
-			aria-label="Increase supply count by one"
-		>
-			<div aria-hidden="true" class="icon icon--14">
-				{{{ icons.create }}}
-			</div>
-		</button>
+			id="{{meta.idp}}-player-inventory-supplies"
+			min="0"
+		></dd-incrementer>
 	</div>
 	<div class="e-1dp panel bytes-panel">
 		<label
@@ -47,31 +29,13 @@
 		>
 			Bytes
 		</label>
-		<button
-			type="button"
-			class="equal-padding"
-			data-decrement="system.bytes"
-			aria-label="Decrease byte count by one"
-		>
-			<div aria-hidden="true" class="icon icon--14">
-				{{{ icons.minus }}}
-			</div>
-		</button>
-		<input
-			type="number"
-			id="{{meta.idp}}-player-inventory-bytes-input"
+		<dd-incrementer
+			var:height="1.5rem"
+			name="system.bytes"
 			value="{{system.bytes}}"
-		>
-		<button
-			type="button"
-			class="equal-padding"
-			data-increment="system.bytes"
-			aria-label="Increase byte count by one"
-		>
-			<div aria-hidden="true" class="icon icon--14">
-				{{{ icons.create }}}
-			</div>
-		</button>
+			id="{{meta.idp}}-player-inventory-bytes"
+			min="0"
+		></dd-incrementer>
 	</div>
 	<div class="e-1dp panel filter-panel">
 		<h2>Show</h2>
