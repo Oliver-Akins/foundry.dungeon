@@ -13,7 +13,9 @@ export class DotDungeonIcon extends HTMLElement {
 	static _cache = new Map();
 	#style;
 	#container;
+	/** @type {null | string} */
 	_name;
+	/** @type {null | string} */
 	_path;
 
 	constructor() {
@@ -25,7 +27,9 @@ export class DotDungeonIcon extends HTMLElement {
 		this.#shadow.appendChild(this.#container);
 	};
 
+	_mounted = false;
 	async connectedCallback() {
+		if (this._mounted) return;
 
 		this._name = this.getAttribute(`name`);
 		this._path = this.getAttribute(`path`);
@@ -58,20 +62,31 @@ export class DotDungeonIcon extends HTMLElement {
 		the slot content, as then we can have a default per-icon usage
 		*/
 		let content;
-		// TODO: Make name request
 		if (this._name) {
 			content = await this.#getIcon(`./systems/dotdungeon/assets/${this._name}.svg`);
 		};
 
-		// TODO: make path request
 		if (this._path && !content) {
 			content = await this.#getIcon(this._path);
 		};
 
-		// TODO: insert content into DOM
 		if (content) {
-			this.#container.appendChild(content);
+			this.#container.appendChild(content.cloneNode(true));
 		};
+
+		/*
+		This is so that when we get an HMR event from Foundry we can appropriately
+		handle it using our logic to update the component and the icon cache.
+		*/
+		Hooks.on(`dd-hmr:svg`, (iconName, data) => {
+			if (this._name === iconName || this._path?.endsWith(data.path)) {
+				const svg = this.#parseSVG(data.content);
+				DotDungeonIcon._cache.set(iconName, svg);
+				this.#container.replaceChildren(svg.cloneNode(true));
+			};
+		});
+
+		this._mounted = true;
 	};
 
 	#embedStyles() {
@@ -98,10 +113,15 @@ export class DotDungeonIcon extends HTMLElement {
 		};
 
 		console.debug(`.dungeon | Adding icon ${path} to the cache`);
-		const temp = document.createElement(`div`);
-		temp.innerHTML = await r.text();
-		const svg = temp.querySelector(`svg`);
+		const svg = this.#parseSVG(await r.text());
 		DotDungeonIcon._cache.set(path, svg);
 		return svg;
 	};
+
+	/** Takes an SVG string and returns it as a DOM node */
+	#parseSVG(content) {
+		const temp = document.createElement(`div`);
+		temp.innerHTML = content;
+		return temp.querySelector(`svg`);
+	}
 };
