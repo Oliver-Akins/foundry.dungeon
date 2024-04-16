@@ -81,5 +81,3 @@ export class DialogManager {
 		return DialogManager.#dialogs.size;
 	}
 };
-
-globalThis.DialogManager = DialogManager;
