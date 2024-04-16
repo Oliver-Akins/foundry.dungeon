@@ -1,3 +1,4 @@
+import { DialogManager } from "../../utils/DialogManager.mjs";
 import DOTDUNGEON from "../../config.mjs";
 
 export class GenericItemSheet extends ItemSheet {
@@ -45,6 +46,10 @@ export class GenericItemSheet extends ItemSheet {
 			.on(`click`, this._incrementValue.bind(this));
 		html.find(`button[data-decrement]`)
 			.on(`click`, this._decrementValue.bind(this));
+
+
+		html.find(`[data-help-id]`)
+			.on(`click`, this._helpPopup.bind(this));
 	};
 
 	async _incrementValue($e) {
@@ -65,5 +70,16 @@ export class GenericItemSheet extends ItemSheet {
 			return;
 		};
 		this.actor.update({ [data.decrement]: value - 1 });
+	};
+
+	async _helpPopup($e) {
+		const target = $e.currentTarget;
+		const data = target.dataset;
+		if (!data.helpId) return;
+		DialogManager.helpDialog(
+			data.helpId,
+			data.helpContent,
+			data.helpTitle
+		);
 	};
 };

@@ -16,7 +16,17 @@
 			(GM Only)
 		</div>
 	{{/if}}
-	<div class="calculated-capacity panel">
-		Total Capacity Used:
+	<div class="capacity--calculated panel">
+		<span>Capacity Used:</span>
+		<dd-icon
+			name="ui/help"
+			var:fill="red"
+			var:size="1.25rem"
+			data-help-id="calculated-capacity"
+			data-help-content="dotdungeon.help-tooltips.calculated-capacity.content"
+			data-help-title="dotdungeon.help-tooltips.calculated-capacity.title"
+		></dd-icon>
+		<div class="grow"></div>
+		<span>5</span>
 	</div>
 </div>
