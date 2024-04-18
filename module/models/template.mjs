@@ -3,7 +3,7 @@ import { DescribedItemData } from "./DescribedItemData.mjs";
 export class TemplateData extends DescribedItemData {
 	static defineSchema() {
 		const fields = foundry.data.fields;
-		return mergeObject(super.defineSchema(), {
+		return foundry.utils.mergeObject(super.defineSchema(), {
 		});
 	};
 };

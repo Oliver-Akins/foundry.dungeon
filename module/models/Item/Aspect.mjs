@@ -10,7 +10,7 @@ export class AspectItemData extends DescribedItemData {
 		delete parentSchema.quantity_affects_used_capacity;
 		delete parentSchema.usage_cost;
 
-		return mergeObject(parentSchema, {
+		return foundry.utils.mergeObject(parentSchema, {
 			used: new fields.BooleanField({ initial: false }),
 			/** The number of seconds that the effect of the aspect stays */
 			deactivateAfter: new fields.NumberField({ nullable: true }),

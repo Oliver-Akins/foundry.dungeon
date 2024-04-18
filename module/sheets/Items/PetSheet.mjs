@@ -2,7 +2,7 @@ import { GenericItemSheet } from "./GenericItemSheet.mjs";
 
 export class PetSheet extends GenericItemSheet {
 	static get defaultOptions() {
-		let opts = mergeObject(
+		let opts = foundry.utils.mergeObject(
 			super.defaultOptions,
 			{
 				template: `systems/dotdungeon/templates/items/pet.hbs`,

@@ -3,7 +3,7 @@ import { DiceList } from "../dialogs/DiceList.mjs";
 
 export class MobSheet extends GenericActorSheet {
 	static get defaultOptions() {
-		let opts = mergeObject(
+		let opts = foundry.utils.mergeObject(
 			super.defaultOptions,
 			{
 				template: `systems/dotdungeon/templates/actors/mobs/main.hbs`,

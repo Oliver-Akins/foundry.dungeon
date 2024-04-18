@@ -3,7 +3,7 @@ import DOTDUNGEON from "../config.mjs";
 
 export class GenericActorSheet extends ActorSheet {
 	static get defaultOptions() {
-		let opts = mergeObject(
+		let opts = foundry.utils.mergeObject(
 			super.defaultOptions,
 			{
 				scrollY: [`.scrollable`],

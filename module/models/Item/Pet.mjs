@@ -9,7 +9,7 @@ export class PetItemData extends DescribedItemData {
 		delete parentSchema.quantity_affects_used_capacity;
 		delete parentSchema.usage_cost;
 
-		return mergeObject(parentSchema, {
+		return foundry.utils.mergeObject(parentSchema, {
 			upkeep: new fields.NumberField({ initial: null, nullable: true }),
 			pokeballd: new fields.BooleanField({ initial: true }),
 		});

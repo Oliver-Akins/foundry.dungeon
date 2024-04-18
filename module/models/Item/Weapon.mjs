@@ -4,7 +4,7 @@ import DOTDUNGEON from "../../config.mjs";
 export class WeaponItemData extends DescribedItemData {
 	static defineSchema() {
 		const fields = foundry.data.fields;
-		return mergeObject(super.defineSchema(), {
+		return foundry.utils.mergeObject(super.defineSchema(), {
 			damage: new fields.StringField({
 				initial: null,
 				nullable: true,

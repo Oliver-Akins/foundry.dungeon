@@ -2,7 +2,7 @@ import { GenericActorSheet } from "../GenericActorSheet.mjs";
 
 export class AbstractSyncSheet extends GenericActorSheet {
 	static get defaultOptions() {
-		let opts = mergeObject(
+		let opts = foundry.utils.mergeObject(
 			super.defaultOptions,
 			{
 				width: 200,

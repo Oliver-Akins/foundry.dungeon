@@ -6,7 +6,7 @@ import { GenericContextMenu } from "../../../utils/GenericContextMenu.mjs";
 
 export class PlayerSheetv2 extends GenericActorSheet {
 	static get defaultOptions() {
-		let opts = mergeObject(
+		let opts = foundry.utils.mergeObject(
 			super.defaultOptions,
 			{
 				template: `systems/dotdungeon/templates/actors/char-sheet/v2/sheet.hbs`,

@@ -12,7 +12,7 @@ export class DiceList extends GenericDialog {
 	};
 
 	static get defaultOptions() {
-		const opts = mergeObject({
+		const opts = foundry.utils.mergeObject({
 			...super.defaultOptions,
 			template: `systems/dotdungeon/templates/dialogs/diceList.hbs`,
 			width: 275,

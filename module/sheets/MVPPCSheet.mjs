@@ -5,7 +5,7 @@ export class MVPPCSheet extends GenericActorSheet {
 	/** @override {ActorHandler} actor */
 
 	static get defaultOptions() {
-		let opts = mergeObject(
+		let opts = foundry.utils.mergeObject(
 			super.defaultOptions,
 			{
 				template: `systems/dotdungeon/templates/actors/char-sheet-mvp/sheet.hbs`
