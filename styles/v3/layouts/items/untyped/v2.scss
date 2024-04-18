@@ -59,12 +59,12 @@
 	@include utils.tab("settings") {
 		@extend %flex-col;
 
-		.capacity {
-			&--usage, &--quantity {
-				display: flex;
-				align-items: center;
-			}
+		.capacity-usage, .quantity-capacity, .combat-relevant {
+			display: flex;
+			align-items: center;
+		}
 
+		.capacity {
 			&--calculated {
 				display: flex;
 				flex-direction: row;

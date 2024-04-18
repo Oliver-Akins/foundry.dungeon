@@ -1,11 +1,20 @@
 <div class="tab" data-group="page" data-tab="settings">
 	{{#if meta.isEmbedded}}
 		<div class="combat-relevant panel">
-			Useful in Combat?
+			<label for="{{meta.idp}}-{{item.uuid}}-combat-relevant">
+				Useful in Combat?
+			</label>
+			<div class="grow"></div>
+			<input
+				type="checkbox"
+				id="{{meta.idp}}-{{item.uuid}}-combat-relevant"
+				name="system.combat_relevant"
+				{{checked system.combat_relevant}}
+			>
 		</div>
 	{{/if}}
 	{{#if isGM}}
-		<div class="capacity--usage panel">
+		<div class="capacity-usage panel">
 			<label
 				for="{{meta.idp}}-{{item.uuid}}-uses-inventory-slot"
 			>
@@ -21,7 +30,7 @@
 				{{checked system.uses_inventory_slot}}
 			>
 		</div>
-		<div class="capacity--quantity panel">
+		<div class="quantity-capacity panel">
 			<label for="{{meta.idp}}-{{item.uuid}}-quantity-adds-capacity">
 				Quantity Affects Capacity?
 				<br>
