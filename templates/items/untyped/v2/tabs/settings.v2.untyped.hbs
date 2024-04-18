@@ -21,10 +21,19 @@
 				{{checked system.uses_inventory_slot}}
 			>
 		</div>
-		<div class="quantity-capacity panel">
-			Quantity Affects Capacity?
-			<br>
-			(GM Only)
+		<div class="capacity--quantity panel">
+			<label for="{{meta.idp}}-{{item.uuid}}-quantity-adds-capacity">
+				Quantity Affects Capacity?
+				<br>
+				(GM Only)
+			</label>
+			<div class="grow"></div>
+			<input
+				type="checkbox"
+				id="{{meta.idp}}-{{item.uuid}}-quantity-adds-capacity"
+				name="system.quantity_affects_used_capacity"
+				{{checked system.quantity_affects_used_capacity}}
+			>
 		</div>
 	{{/if}}
 	<div class="capacity--calculated panel">
