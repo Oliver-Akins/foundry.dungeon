@@ -1,0 +1,24 @@
+.dotdungeon.style-v3 {
+	input[type="checkbox"] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border-radius: 2px;
+		margin: 0;
+		cursor: pointer;
+
+		background: var(--elevation-8dp-bg);
+		position: relative;
+		&:checked::before {
+			content: "";
+			background: var(--checkbox-checked);
+			border-radius: 3px;
+			$margin: 4px;
+			top: $margin;
+			bottom: $margin;
+			left: $margin;
+			right: $margin;
+			position: absolute;
+		}
+	}
+}

@@ -60,6 +60,11 @@
 		@extend %flex-col;
 
 		.capacity {
+			&--usage, &--quantity {
+				display: flex;
+				align-items: center;
+			}
+
 			&--calculated {
 				display: flex;
 				flex-direction: row;

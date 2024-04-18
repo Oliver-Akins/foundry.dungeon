@@ -5,10 +5,21 @@
 		</div>
 	{{/if}}
 	{{#if isGM}}
-		<div class="capacity-usage panel">
-			Uses Capacity?
-			<br>
-			(GM Only)
+		<div class="capacity--usage panel">
+			<label
+				for="{{meta.idp}}-{{item.uuid}}-uses-inventory-slot"
+			>
+				Uses Capacity?
+				<br>
+				(GM Only)
+			</label>
+			<div class="grow"></div>
+			<input
+				type="checkbox"
+				id="{{meta.idp}}-{{item.uuid}}-uses-inventory-slot"
+				name="system.uses_inventory_slot"
+				{{checked system.uses_inventory_slot}}
+			>
 		</div>
 		<div class="quantity-capacity panel">
 			Quantity Affects Capacity?
