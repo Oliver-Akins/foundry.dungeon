@@ -1,4 +1,5 @@
 import DOTDUNGEON from "../../config.mjs";
+import { DiceField } from "../fields/DiceField.mjs";
 
 function diceChoiceField() {
 	return new foundry.data.fields.StringField({
@@ -38,7 +39,7 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 				integer: true,
 			}),
 			stats: new fields.SchemaField({
-				build: diceChoiceField(),
+				build: new DiceField(),
 				meta: diceChoiceField(),
 				presence: diceChoiceField(),
 				hands: diceChoiceField(),
