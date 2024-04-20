@@ -4,7 +4,7 @@ import { statDice } from "../../config.mjs";
  * A subclass of StringField that allows ActiveEffects to integrate with dice
  * values and increase/decrease the value step-wise according to the dice ladder.
  */
-export class DiceField extends foundry.data.fields.DataField {
+export class DiceField extends foundry.data.fields.StringField {
 	static get _defaults() {
 		return foundry.utils.mergeObject(super._defaults, {
 			trim: true,
@@ -21,15 +21,6 @@ export class DiceField extends foundry.data.fields.DataField {
 		this.blank = true;
 		console.log(this.choices)
 	};
-
-	applyChange(...args) {
-		console.log(`DiceField.applyChange`, args);
-		return super.applyChange(...args)
-	}
-
-	_cast(value) {
-		return String(value);
-	}
 
 	_castChangeDelta(delta) {
 		console.log(`DiceField._castChangeDelta(${delta})`)
@@ -70,4 +61,9 @@ export class DiceField extends foundry.data.fields.DataField {
 		console.log(`.dungeon | Post: value=${value}; delta=${delta}`);
 		return value
 	};
+
+	_applyChangeCustom(...args) {
+		console.log(`.dungeon | Dicefield._applyChangeCustom`)
+		return super._applyChangeCustom(...args);
+	}
 };
