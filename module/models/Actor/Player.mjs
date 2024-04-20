@@ -39,7 +39,7 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 				integer: true,
 			}),
 			stats: new fields.SchemaField({
-				build: new DiceField(),
+				build: diceChoiceField(), //new DiceField(),
 				meta: diceChoiceField(),
 				presence: diceChoiceField(),
 				hands: diceChoiceField(),
