@@ -29,15 +29,20 @@ export class UntypedItemSheet extends GenericItemSheet {
 		new GenericContextMenu(html, `.photo.panel`, [
 			{
 				name: `View Larger`,
-				callback: (html) => {
-					console.log(`.dungeon | View Larger`);
+				callback: () => {
+					(new ImagePopout(this.item.img)).render(true);
 				},
 			},
 			{
 				name: `Change Photo`,
 				condition: () => this.isEditable,
-				callback: (html) => {
-					console.log(`.dungeon | Change Photo`);
+				callback: () => {
+					const fp = new FilePicker({
+						callback: (path) => {
+							this.item.update({"img": path});
+						},
+					});
+					fp.render(true);
 				},
 			},
 		]);
