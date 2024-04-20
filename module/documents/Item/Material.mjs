@@ -5,4 +5,11 @@ export class Material extends DotDungeonItem {
 		let affects = game.settings.get(`dotdungeon`, `materialsAffectCapacity`);
 		return affects ? super.usedCapacity : 0;
 	};
+
+	get availableLocations() {
+		return [
+			{ value: null, label: `dotdungeon.location.unknown` },
+			{ value: `inventory`, label: `dotdungeon.location.inventory` },
+		];
+	};
 };
