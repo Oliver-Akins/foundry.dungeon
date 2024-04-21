@@ -81,9 +81,11 @@
 			"send-to-chat": "Send to Chat",
 			"edit": "Edit",
 			"delete": "Delete",
+			"reset": "Reset",
 			"empty": "---",
 			"help": "Help",
-			"gm": "Server"
+			"gm": "Server",
+			"view-larger": "View Larger"
 		},
 		"sheet-names": {
 			"*DataSheet": "Data Sheet"

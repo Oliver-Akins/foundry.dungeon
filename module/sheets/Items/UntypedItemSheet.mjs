@@ -1,5 +1,6 @@
 import { GenericContextMenu } from "../../utils/GenericContextMenu.mjs";
 import { GenericItemSheet } from "./GenericItemSheet.mjs";
+import { localizer } from "../../utils/localizer.mjs";
 
 export class UntypedItemSheet extends GenericItemSheet {
 	static get defaultOptions() {
@@ -28,13 +29,13 @@ export class UntypedItemSheet extends GenericItemSheet {
 
 		new GenericContextMenu(html, `.photo.panel`, [
 			{
-				name: `View Larger`,
+				name: localizer(`dotdungeon.common.view-larger`),
 				callback: () => {
 					(new ImagePopout(this.item.img)).render(true);
 				},
 			},
 			{
-				name: `Change Photo`,
+				name: localizer(`dotdungeon.common.edit`),
 				condition: () => this.isEditable,
 				callback: () => {
 					const fp = new FilePicker({
@@ -45,6 +46,13 @@ export class UntypedItemSheet extends GenericItemSheet {
 					fp.render(true);
 				},
 			},
+			{
+				name: localizer(`dotdungeon.common.reset`),
+				condition: () => this.isEditable,
+				callback: () => {
+					console.log(`.dungeon | Reset Item Image`)
+				},
+			}
 		]);
 
 		if (!this.isEditable) return;
