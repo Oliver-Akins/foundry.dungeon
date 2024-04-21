@@ -74,6 +74,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 		/** @type {ActorHandler} */
 		const actor = this.actor;
 
+		ctx.original = actor.toObject().system;
 		ctx.system = actor.system;
 		ctx.flags = actor.flags;
 		ctx.items = this.actor.itemTypes;
@@ -92,11 +93,13 @@ export class PlayerSheetv2 extends GenericActorSheet {
 
 	get #statData() {
 		const stats = [];
-		const usedDice = new Set(Object.values(this.actor.system.stats));
-		for (const statName in this.actor.system.stats) {
+		const original = this.actor.toObject().system;
+		const usedDice = new Set(Object.values(original.stats));
+		for (const statName in original.stats) {
 			const stat = {
 				key: statName,
 				name: localizer(`dotdungeon.stat.${statName}`),
+				original: original.stats[statName],
 				value: this.actor.system.stats[statName],
 			};
 
@@ -111,7 +114,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 					return {
 						value: die,
 						label: localizer(`dotdungeon.die.${die}`, { stat: statName }),
-						disabled: usedDice.has(die) && this.actor.system.stats[statName] !== die,
+						disabled: usedDice.has(die) && original.stats[statName] !== die,
 					};
 				})
 			];
@@ -127,6 +130,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 					key: skill,
 					name: game.i18n.format(`dotdungeon.skills.${skill}`),
 					value,
+					original: original.skills[statName][skill],
 					formula: `1` + stat.value + modifierToString(value, { spaces: true }),
 					rollDisabled: value === -1,
 				});

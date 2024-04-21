@@ -1,7 +1,16 @@
 import { DotDungeonActor } from "./GenericActor.mjs";
-import { DotDungeonItem } from "../Item/GenericItem.mjs";
 
 export class Player extends DotDungeonActor {
+
+	applyActiveEffects() {
+		super.applyActiveEffects();
+
+		// These are the (groups of) fields that ActiveEffects may modify safely
+		// and remain editable in the sheet. This needs to be done because of default
+		// Foundry behaviour that otherwise prevents these fields from being edited
+		delete this.overrides.system.stats;
+		delete this.overrides.system.skills;
+	};
 
 	async createCustomPet() {
 		const body = new URLSearchParams({
