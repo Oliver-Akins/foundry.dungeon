@@ -40,7 +40,7 @@ export class GenericActorSheet extends ActorSheet {
 
 		ctx.actor = this.actor;
 		ctx.config = DOTDUNGEON;
-		ctx.icons = CONFIG.CACHE.icons;
+		ctx.icons = {};
 
 		return ctx;
 	};

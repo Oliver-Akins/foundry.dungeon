@@ -32,7 +32,7 @@ export class GenericItemSheet extends ItemSheet {
 		ctx.flags = this.item.flags;
 
 		ctx.config = DOTDUNGEON;
-		ctx.icons = CONFIG.CACHE.icons;
+		ctx.icons = {};
 
 		return ctx;
 	};

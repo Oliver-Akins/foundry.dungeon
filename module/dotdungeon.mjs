@@ -110,9 +110,6 @@ Hooks.once(`init`, async () => {
 	hbs.registerHandlebarsHelpers();
 	hbs.preloadHandlebarsTemplates();
 	registerCustomComponents();
-
-	CONFIG.CACHE ??= {};
-	CONFIG.CACHE.icons = await hbs.preloadIcons();
 });
 
 
