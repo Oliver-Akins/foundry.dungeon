@@ -1,7 +1,32 @@
 <div class="tab" data-group="page" data-tab="effects">
-	<div class="effect panel">
-		Am Effect, Hewwo
-	</div>
+	{{#each effects as | effect |}}
+		<div class="effect panel" data-embedded-id="{{effect.uuid}}">
+			<div class="effect__name">
+				{{effect.name}}
+			</div>
+			<div>
+				{{ifThen effect.disabled "Disabled" "Enabled"}}
+			</div>
+			{{!-- TODO: For some reason this embedded update logic was failing
+			<label
+				class="effect__name"
+				for="{{effect.uuid}}-toggle"
+			>
+				{{ effect.name }}
+			</label>
+			<div class="effect__active">
+				<input
+					type="checkbox"
+					{{checked effect.enabled}}
+					id="{{effect.uuid}}-toggle"
+					data-embedded-id="{{effect.uuid}}"
+					data-embedded-update="disabled"
+					data-embedded-update-on="change"
+				>
+			</div>
+			--}}
+		</div>
+	{{/each}}
 	<button>
 		<dd-icon name="ui/plus" var:fill="currentColor"></dd-icon>
 		Create Effect

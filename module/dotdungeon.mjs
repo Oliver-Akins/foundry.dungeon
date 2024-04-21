@@ -41,6 +41,7 @@ import DOTDUNGEON from "./config.mjs";
 
 Hooks.once(`init`, async () => {
 	console.debug(`.dungeon | Initializing`);
+	CONFIG.ActiveEffect.legacyTransferral = false;
 
 	loadSettings();
 
