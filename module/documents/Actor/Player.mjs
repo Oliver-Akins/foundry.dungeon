@@ -5,11 +5,16 @@ export class Player extends DotDungeonActor {
 	applyActiveEffects() {
 		super.applyActiveEffects();
 
-		// These are the (groups of) fields that ActiveEffects may modify safely
-		// and remain editable in the sheet. This needs to be done because of default
-		// Foundry behaviour that otherwise prevents these fields from being edited
-		delete this.overrides.system.stats;
-		delete this.overrides.system.skills;
+		/*
+		These are the (groups of) fields that ActiveEffects may modify safely and
+		remain editable in the sheet. This needs to be done because of default
+		Foundry behaviour that otherwise prevents these fields from being edited.
+		The deletes must use optional chaining otherwise they can cause issues
+		during the document preparation lifecycle as an actor with no AE's affecting
+		anything in one of these areas will result in these paths being undefined.
+		*/
+		delete this.overrides.system?.stats;
+		delete this.overrides.system?.skills;
 	};
 
 	async createCustomPet() {
