@@ -6,7 +6,7 @@ references/
 /.*/
 !/.vscode/
 !/.github/
-/foundry.js
+/*.ref.*
 *.lock
 *.zip
 
