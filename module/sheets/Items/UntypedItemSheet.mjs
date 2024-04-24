@@ -1,4 +1,5 @@
 import { GenericContextMenu } from "../../utils/GenericContextMenu.mjs";
+import { DialogManager } from "../../utils/DialogManager.mjs";
 import { GenericItemSheet } from "./GenericItemSheet.mjs";
 import { localizer } from "../../utils/localizer.mjs";
 
@@ -75,8 +76,29 @@ export class UntypedItemSheet extends GenericItemSheet {
 			},
 			{
 				name: localizer(`dotdungeon.common.delete`),
-				callback: async () => {
-					(await fromUuid(html.closest(`.effect`)[0].dataset.embeddedId))?.delete(true);
+				callback: async (html) => {
+					const target = html.closest(`.effect`)[0];
+					const data = target.dataset;
+					const id = data.embeddedId;
+					const doc = await fromUuid(id);
+					DialogManager.createOrFocus(
+						`${doc.uuid}-delete`,
+						{
+							title: localizer(`dotdungeon.delete.ActiveEffect.title`, doc),
+							content: localizer(`dotdungeon.delete.ActiveEffect.content`, doc),
+							buttons: {
+								yes: {
+									label: localizer(`Yes`),
+									callback() {
+										doc.delete();
+									},
+								},
+								no: {
+									label: localizer(`No`),
+								}
+							}
+						}
+					);
 				},
 			}
 		]);
