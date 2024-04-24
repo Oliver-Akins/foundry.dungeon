@@ -58,6 +58,14 @@ export class UntypedItemSheet extends GenericItemSheet {
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Untyped Item: ${this.item.id}`);
 
+		html.find(`.create-ae`).on(`click`, async () => {
+			await this.item.createEmbeddedDocuments(
+				`ActiveEffect`,
+				[{name: localizer(`dotdungeon.default.name`, { document: `ActiveEffect`, type: `base` })}],
+				{ renderSheet: true }
+			);
+		});
+
 		new GenericContextMenu(html, `.effect.panel`, [
 			{
 				name: localizer(`dotdungeon.common.edit`),

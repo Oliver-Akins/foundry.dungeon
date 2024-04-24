@@ -115,6 +115,9 @@
 			"legendaryItem": "Legendary Item",
 			"spell": "Spell",
 			"untyped": "Custom"
+		},
+		"ActiveEffect": {
+			"base": "Effect"
 		}
 	}
 }
