@@ -4,4 +4,18 @@ export class DotDungeonActiveEffect extends ActiveEffect {
 	// embedded controls
 	get enabled() { return !this.disabled };
 	set enabled(newValue) { this.disabled = !newValue };
+
+	apply(object, change) {
+		change.value = change.value.replace(
+			/@(?<key>[\w\.]+)/gi,
+			(...args) => {
+				const key = args[1];
+				if (foundry.utils.hasProperty(object, key)) {
+					return foundry.utils.getProperty(object, key)
+				};
+				return args[0];
+			}
+		)
+		return super.apply(object, change);
+	}
 };
