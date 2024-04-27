@@ -6,7 +6,7 @@ export class DotDungeonActor extends Actor {
 	provide all that data to AE's without needing to disable any inputs.
 	*/
 	prepareEmbeddedDocuments() {
-		this.preAE = foundry.utils.deepClone(this.system);
+		this.preAE = foundry.utils.duplicate(this.system);
 		super.prepareEmbeddedDocuments();
 	};
 

@@ -1,10 +1,10 @@
 import { statDice } from "../../config.mjs";
 
 /**
- * A subclass of StringField that allows ActiveEffects to integrate with dice
+ * A subclass of DataField that allows ActiveEffects to integrate with dice
  * values and increase/decrease the value step-wise according to the dice ladder.
  */
-export class DiceField extends foundry.data.fields.StringField {
+export class DiceField extends foundry.data.fields.DataField {
 	static get _defaults() {
 		return foundry.utils.mergeObject(super._defaults, {
 			trim: true,
@@ -19,51 +19,70 @@ export class DiceField extends foundry.data.fields.StringField {
 
 		// v- because for some reason Foundry doesn't respect the _defaults getter
 		this.blank = true;
-		console.log(this.choices)
 	};
 
-	_castChangeDelta(delta) {
-		console.log(`DiceField._castChangeDelta(${delta})`)
-		return parseInt(delta) ?? 0;
-	};
+	_cast(value) { return value };
+	_castChangeDelta(delta) { return delta };
 
-	/** @inheritdoc */
-	_applyChangeAdd(value, delta, model, change) {
-		console.warn(`Cannot apply Add ActiveEffects to DiceFields. Not changing value.`);
+	/**
+	 * @param {string} value The current value
+	 * @param {string} delta The AE value
+	 * @param {unknown} model
+	 * @param {unknown} changes
+	 */
+	_applyChangeAdd(value, delta, model, changes) {
+		if (value === "") return value;
+		delta = parseInt(delta);
+		const dieIndex = statDice.findIndex(die => die === value);
+		const newIndex = Math.min(Math.max(0, dieIndex + delta), statDice.length - 1);
+		value = statDice[newIndex];
 		return value;
 	};
 
-	_applyChangeMultiply(value, delta, model, change) {
-		console.warn(`Cannot apply Multiply ActiveEffects to DiceFields. Not changing value.`);
+	/**
+	 * @param {string} value The current value
+	 * @param {string} delta The AE value
+	 * @param {unknown} model
+	 * @param {unknown} changes
+	 */
+	_applyChangeMultiply(value, delta, model, changes) {
+		console.warn(`.dungeon | Cannot apply Multiply ActiveEffects to DiceFields. Not changing value.`);
 		return value;
 	};
 
-	_applyChangeOverride(value, delta, model, change) {
+	/**
+	 * @param {string} value The current value
+	 * @param {string} delta The AE value
+	 * @param {unknown} model
+	 * @param {unknown} changes
+	 */
+	_applyChangeOverride(value, delta, model, changes) {
 		return delta;
 	};
 
-	_applyChangeUpgrade(value, delta, model, change) {
-		console.log(`.dungeon | Pre: value=${value}; delta=${delta}`);
+	/**
+	 * @param {string} value The current value
+	 * @param {string} delta The AE value
+	 * @param {unknown} model
+	 * @param {unknown} changes
+	 */
+	_applyChangeUpgrade(value, delta, model, changes) {
 		if (value === "") return value;
-		const dieIndex = statDice.findIndex(value);
-		const newIndex = Math.min(Math.max(0, dieIndex - delta), statDice.length - 1);
-		value = statDice[newIndex];
-		console.log(`.dungeon | Post: value=${value}; delta=${delta}`);
-		return value;
+		const currentIndex = statDice.findIndex(die => die === value);
+		const upgradedIndex = statDice.findIndex(die => die === delta);
+		return statDice[Math.max(currentIndex, upgradedIndex)];
 	};
 
-	_applyChangeDowngrade(value, delta, model, change) {
-		console.log(`.dungeon | Pre: value=${value}; delta=${delta}`);
+	/**
+	 * @param {string} value The current value
+	 * @param {string} delta The AE value
+	 * @param {unknown} model
+	 * @param {unknown} changes
+	 */
+	_applyChangeDowngrade(value, delta, model, changes) {
 		if (value === "") return value;
-		const dieIndex = statDice.findIndex(value);
-		const newIndex = Math.min(Math.max(0, dieIndex + delta), statDice.length - 1);
-		value = statDice[newIndex];
-		console.log(`.dungeon | Post: value=${value}; delta=${delta}`);
-		return value
+		const currentIndex = statDice.findIndex(die => die === value);
+		const upgradedIndex = statDice.findIndex(die => die === delta);
+		return statDice[Math.min(currentIndex, upgradedIndex)];
 	};
-
-	_applyChangeCustom(...args) {
-		console.log(`.dungeon | Dicefield._applyChangeCustom`)
-		return super._applyChangeCustom(...args);
-	}
 };

@@ -17,6 +17,9 @@
 					data-roll-label="Stat Roll : {{stat.name}}"
 				>
 					Roll
+					{{#if stat.value}}
+						1{{stat.value}}
+					{{/if}}
 				</button>
 			</div>
 			{{#if stat.skills}}

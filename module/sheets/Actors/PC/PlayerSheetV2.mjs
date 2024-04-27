@@ -92,7 +92,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 
 	get #statData() {
 		const stats = [];
-		const usedDice = new Set(Object.values(this.actor.system.stats));
+		const usedDice = new Set(Object.values(this.actor.preAE.stats));
 		for (const statName in this.actor.system.stats) {
 			const stat = {
 				key: statName,

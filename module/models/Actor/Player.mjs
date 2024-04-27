@@ -39,12 +39,12 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 				integer: true,
 			}),
 			stats: new fields.SchemaField({
-				build: diceChoiceField(), //new DiceField(),
-				meta: diceChoiceField(),
-				presence: diceChoiceField(),
-				hands: diceChoiceField(),
-				tilt: diceChoiceField(),
-				rng: diceChoiceField(),
+				build: new DiceField(),
+				meta: new DiceField(),
+				presence: new DiceField(),
+				hands: new DiceField(),
+				tilt: new DiceField(),
+				rng: new DiceField(),
 			}),
 			skills: new fields.SchemaField({
 				build: new fields.SchemaField({
