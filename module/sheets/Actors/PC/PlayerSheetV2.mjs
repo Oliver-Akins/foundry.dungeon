@@ -39,9 +39,8 @@ export class PlayerSheetv2 extends GenericActorSheet {
 
 		html.find(`.create-ae`).on(`click`, async ($e) => {
 			console.debug(`Creating an ActiveEffect?`);
-			ActiveEffect.implementation.create({
-				name: "Default AE",
-			}, { parent: this.actor, renderSheet: true });
+			const ae = this.actor.createEmbeddedDocuments(`ActiveEffect`, [{name: "Default AE"}]);
+			ae.sheet.render(true);
 		});
 		html.find(`[data-filter-toggle]`).on(`change`, ($e) => {
 			const target = $e.delegateTarget;
@@ -74,6 +73,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 		/** @type {ActorHandler} */
 		const actor = this.actor;
 
+		ctx.preAE = actor.preAE;
 		ctx.system = actor.system;
 		ctx.flags = actor.flags;
 		ctx.items = this.actor.itemTypes;
@@ -97,6 +97,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 			const stat = {
 				key: statName,
 				name: localizer(`dotdungeon.stat.${statName}`),
+				original: this.actor.preAE.stats[statName],
 				value: this.actor.system.stats[statName],
 			};
 
@@ -111,7 +112,7 @@ export class PlayerSheetv2 extends GenericActorSheet {
 					return {
 						value: die,
 						label: localizer(`dotdungeon.die.${die}`, { stat: statName }),
-						disabled: usedDice.has(die) && this.actor.system.stats[statName] !== die,
+						disabled: usedDice.has(die) && this.actor.preAE.stats[statName] !== die,
 					};
 				})
 			];
@@ -127,8 +128,9 @@ export class PlayerSheetv2 extends GenericActorSheet {
 					key: skill,
 					name: game.i18n.format(`dotdungeon.skills.${skill}`),
 					value,
+					original: this.actor.preAE.skills[statName][skill],
 					formula: `1` + stat.value + modifierToString(value, { spaces: true }),
-					rollDisabled: value === -1,
+					rollDisabled: this.actor.preAE.skills[statName][skill] === -1,
 				});
 			};
 

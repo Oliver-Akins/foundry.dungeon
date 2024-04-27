@@ -81,9 +81,11 @@
 			"send-to-chat": "Send to Chat",
 			"edit": "Edit",
 			"delete": "Delete",
+			"reset": "Reset",
 			"empty": "---",
 			"help": "Help",
-			"gm": "Server"
+			"gm": "Server",
+			"view-larger": "View Larger"
 		},
 		"sheet-names": {
 			"*DataSheet": "Data Sheet"
@@ -92,6 +94,12 @@
 			"calculated-capacity": {
 				"title": "What is Calculated Capacity?",
 				"content": "<p>The calculated capacity is how much space in your inventory that the item will take up, the way it is calculated is determined by the item. Usually the main thing that affects the capacity is the item's quantity, but this can be turned off by the @dotdungeon.common.gm, which means that no matter the quantity it will only use up one capacity. The @dotdungeon.common.gm can also entirely disable capacity usage which will make the used capacity always be zero.</p>"
+			}
+		},
+		"delete": {
+			"ActiveEffect": {
+				"title": "Delete Effect",
+				"content": "<p>Are you sure you would like to delete the active effect: {name}</p>"
 			}
 		}
 	},
@@ -113,6 +121,9 @@
 			"legendaryItem": "Legendary Item",
 			"spell": "Spell",
 			"untyped": "Custom"
+		},
+		"ActiveEffect": {
+			"base": "Effect"
 		}
 	}
 }

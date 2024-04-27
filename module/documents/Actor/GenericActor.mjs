@@ -1,4 +1,15 @@
 export class DotDungeonActor extends Actor {
+
+	/*
+	Using this to take a "snapshot" of the system data prior to applying AE's so
+	that the inputs can still have the non-modified value in them, while we still
+	provide all that data to AE's without needing to disable any inputs.
+	*/
+	prepareEmbeddedDocuments() {
+		this.preAE = foundry.utils.deepClone(this.system);
+		super.prepareEmbeddedDocuments();
+	};
+
 	async createEmbeddedItem(defaults, opts = {}) {
 		let items = await this.createEmbeddedDocuments(`Item`, defaults);
 		if (!Array.isArray(items)) items = items ? [items] : [];

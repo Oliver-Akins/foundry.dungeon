@@ -18,12 +18,20 @@ export function localizer(key, args = {}, depth = 0) {
 		return localized;
 	};
 
+	/*
+	Helps prevent recursion on the same key so that we aren't doing excess work.
+	*/
+	const localizedSubkeys = new Map();
 	for (const match of subkeys) {
 		const subkey = match.groups.key;
-		localized =
-			localized.slice(0, match.index)
-			+ localizer(subkey, args, depth + 1)
-			+ localized.slice(match.index + subkey.length + 1)
+		if (localizedSubkeys.has(subkey)) continue;
+		localizedSubkeys.set(subkey, localizer(subkey, args, depth + 1));
 	};
-	return localized;
+
+	return localized.replace(
+		localizerConfig.subKeyPattern,
+		(_fullMatch, subkey) => {
+			return localizedSubkeys.get(subkey);
+		}
+	);
 };

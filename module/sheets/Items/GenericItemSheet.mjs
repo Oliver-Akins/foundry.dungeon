@@ -30,9 +30,10 @@ export class GenericItemSheet extends ItemSheet {
 		ctx.item = this.item;
 		ctx.system = this.item.system;
 		ctx.flags = this.item.flags;
+		ctx.effects = this.item.effects;
 
 		ctx.config = DOTDUNGEON;
-		ctx.icons = CONFIG.CACHE.icons;
+		ctx.icons = {};
 
 		return ctx;
 	};

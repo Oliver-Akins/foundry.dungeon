@@ -10,6 +10,7 @@ import { SyncData } from "./models/Actor/Sync.mjs";
 import { MobData } from "./models/Actor/Mob.mjs";
 
 // Main Documents
+import { ActiveEffectProxy } from "./documents/ActiveEffect/_proxy.mjs";
 import { ActorProxy } from "./documents/Actor/_proxy.mjs";
 import { ItemProxy } from "./documents/Item/_proxy.mjs";
 
@@ -56,6 +57,7 @@ Hooks.once(`init`, async () => {
 	CONFIG.Item.dataModels.pet = PetItemData;
 	CONFIG.Actor.documentClass = ActorProxy;
 	CONFIG.Item.documentClass = ItemProxy;
+	CONFIG.ActiveEffect.documentClass = ActiveEffectProxy;
 
 	CONFIG.DOTDUNGEON = DOTDUNGEON;
 
@@ -111,9 +113,6 @@ Hooks.once(`init`, async () => {
 	hbs.registerHandlebarsHelpers();
 	hbs.preloadHandlebarsTemplates();
 	registerCustomComponents();
-
-	CONFIG.CACHE ??= {};
-	CONFIG.CACHE.icons = await hbs.preloadIcons();
 });
 
 
