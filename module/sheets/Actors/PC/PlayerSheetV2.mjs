@@ -39,9 +39,8 @@ export class PlayerSheetv2 extends GenericActorSheet {
 
 		html.find(`.create-ae`).on(`click`, async ($e) => {
 			console.debug(`Creating an ActiveEffect?`);
-			ActiveEffect.implementation.create({
-				name: "Default AE",
-			}, { parent: this.actor, renderSheet: true });
+			const ae = this.actor.createEmbeddedDocuments(`ActiveEffect`, [{name: "Default AE"}]);
+			ae.sheet.render(true);
 		});
 		html.find(`[data-filter-toggle]`).on(`change`, ($e) => {
 			const target = $e.delegateTarget;
