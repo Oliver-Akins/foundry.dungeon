@@ -5,7 +5,7 @@
 	--gap: 8px;
 
 	.nav-bar {
-		@include material.elevate(8);
+		@include material.elevate(8, $base: var(--surface));
 		position: absolute;
 		bottom: 0;
 		left: 0;
