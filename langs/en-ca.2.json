@@ -101,6 +101,32 @@
 				"title": "Delete Effect",
 				"content": "<p>Are you sure you would like to delete the active effect: {name}</p>"
 			}
+		},
+		"settings": {
+			"showAvatarOnSheet": {
+				"name": "Show Avatar On Player Sheet",
+				"description": "Determines whether or not to show the avatar to you on the Player Character sheets, turning this off will replace the image with a file picker so that you can still change the image from the character sheet."
+			},
+			"playersCanChangeGroup": {
+				"name": "Allow Players to Change Group",
+				"description": "Setting this to true allows non-GM players to modify the group that the Actor belongs to. While this is disabled the GM will still be able to modify each player's group by editing the character sheet."
+			},
+			"resourcesOrSupplies": {
+				"name": "Use Resources or Supplies",
+				"description": "Determines which term to use for the objects that allow travelling into the next hex tile. This is because of the",
+				"option": {
+					"supplies": "Supplies",
+					"resources": "Resources"
+				}
+			},
+			"openEmbeddedOnCreate": {
+				"name": "Edit Custom Items Immediately When Created",
+				"description": "Tells the character sheets that have \"Add\" buttons to open the Item's sheet when you create the new item so that you can immediately edit it without needing to click more buttons."
+			},
+			"aspectLimit": {
+				"name": "Character Aspect Limit",
+				"description": "Limit how many Aspects a single character can have."
+			}
 		}
 	},
 	"TYPES": {
