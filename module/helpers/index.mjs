@@ -7,7 +7,7 @@ import { options } from "./options.mjs";
 
 export default {
 
-	// Complex helpers
+	// MARK: Complex helpers
 	"dd-schemaOptions": schemaOptions,
 	"dd-array": createArray,
 	"dd-objectValue": objectValue,
@@ -15,13 +15,13 @@ export default {
 	"dd-i18n": handlebarsLocalizer,
 	"dd-options": options,
 
-	// Simple helpers
+	// MARK: Simple helpers
 	"dd-stringify": v => JSON.stringify(v, null, `  `),
 	"dd-empty": v => v.length == 0,
 	"dd-set-has": (s, k) => s.has(k),
 	"dd-empty-state": (v) => v ?? localizer(`dotdungeon.common.empty`),
 
-	// Logic helpers
+	// MARK: Logic helpers
 	"eq": (a, b) => a == b,
 	"neq": (a, b) => a != b,
 	"not": v => !v,
