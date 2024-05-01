@@ -1,0 +1,71 @@
+@use "../../mixins/material";
+@use "../../mixins/utils";
+
+.dotdungeon.style-v3 .item {
+	--gap: 8px;
+
+	.nav-bar {
+		@include material.elevate(8, $base: var(--surface));
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 6px;
+
+		nav {
+			display: flex;
+			flex-direction: row;
+			gap: var(--gap);
+			padding: var(--gap);
+		}
+	}
+
+	.page-content {
+		padding: calc(var(--gap) * 1);
+		padding-bottom: 60px;
+		height: 100%;
+
+		> .tab {
+			height: 100%;
+			gap: var(--gap);
+		}
+	}
+
+	@include utils.tab("general") {
+		display: grid;
+		--height: 50px;
+		grid-template-columns: var(--height) 1fr;
+		grid-template-rows: var(--height) 1fr;
+
+		.description {
+			grid-column: 1 / -1;
+		}
+	}
+
+	%flex-col {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	@include utils.tab("effects") {
+		@extend %flex-col;
+	}
+
+	@include utils.tab("settings") {
+		@extend %flex-col;
+
+		.capacity-usage, .quantity-capacity, .combat-relevant {
+			display: flex;
+			align-items: center;
+		}
+
+		.capacity {
+			&--calculated {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 8px;
+			}
+		}
+	}
+}
