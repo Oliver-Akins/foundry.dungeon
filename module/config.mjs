@@ -68,6 +68,11 @@ export const itemFilters = [
 	`service`,
 ];
 
+export const invalidActiveEffectTargets = new Set([
+	`system.uses_inventory_slot`,
+	`system.quantity_affects_used_capacity`,
+]);
+
 export default {
 	stats,
 	statDice,
@@ -86,4 +91,5 @@ export default {
 	syncDice,
 	localizerConfig,
 	itemFilters,
+	invalidActiveEffectTargets,
 };

@@ -1,3 +1,5 @@
+import { invalidActiveEffectTargets } from "../../config.mjs";
+
 export class DotDungeonActiveEffect extends ActiveEffect {
 
 	// Invert the logic of the disabled property so it's easier to modify via
@@ -6,6 +8,8 @@ export class DotDungeonActiveEffect extends ActiveEffect {
 	set enabled(newValue) { this.disabled = !newValue };
 
 	apply(object, change) {
+		if (invalidActiveEffectTargets.has(change.key)) return;
+
 		change.value = change.value.replace(
 			/@(?<key>[\w\.]+)/gi,
 			(...args) => {
