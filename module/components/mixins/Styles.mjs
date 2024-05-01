@@ -1,7 +1,7 @@
 /**
  * @param {HTMLElement} Base
  */
-export function StyledShadowElement(Base) {
+export function StyledShadowElement(Base, shadowOptions = { mode: `open` }) {
 	return class extends Base {
 		/**
 		 * The path to the CSS that is loaded
@@ -33,7 +33,7 @@ export function StyledShadowElement(Base) {
 		constructor() {
 			super();
 
-			this._shadow = this.attachShadow({ mode: `open` });
+			this._shadow = this.attachShadow(shadowOptions);
 			this._style = document.createElement(`style`);
 			this._shadow.appendChild(this._style);
 		};

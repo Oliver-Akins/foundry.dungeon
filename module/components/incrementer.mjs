@@ -14,7 +14,11 @@ Styling:
 - `--height`: Controls the height of the element + the width of the buttons (default: 1.25rem)
 - `--width`: Controls the width of the number input (default 50px)
 */
-export class DotDungeonIncrementer extends StyledShadowElement(HTMLElement) {
+export class DotDungeonIncrementer
+extends StyledShadowElement(
+	HTMLElement,
+	{ mode: `open`, delegatesFocus: true }
+) {
 	static elementName = `dd-incrementer`;
 	static formAssociated = true;
 
