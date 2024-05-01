@@ -1,17 +1,6 @@
 import DOTDUNGEON from "../../config.mjs";
 import { DiceField } from "../fields/DiceField.mjs";
 
-function diceChoiceField() {
-	return new foundry.data.fields.StringField({
-		initial: ``,
-		blank: true,
-		trim: true,
-		options() {
-			return DOTDUNGEON.statDice;
-		},
-	});
-};
-
 function trainingLevelField() {
 	return new foundry.data.fields.NumberField({
 		initial: 0,
