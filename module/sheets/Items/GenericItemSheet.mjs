@@ -43,6 +43,15 @@ export class GenericItemSheet extends ItemSheet {
 
 		if (!this.isEditable) return;
 		console.debug(`.dungeon | Adding event listeners for Generic Item: ${this.id}`);
+
+		/*
+		Custom element event listeners because Foundry doesn't listen to them by
+		default.
+		*/
+		html.find(
+			CONFIG.CACHE.componentListeners.map(n => `${n}[name]`).join(`,`)
+		).on(`change`, () => this._onChangeInput.bind(this));
+
 		html.find(`button[data-increment]`)
 			.on(`click`, this._incrementValue.bind(this));
 		html.find(`button[data-decrement]`)
