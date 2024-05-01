@@ -1,0 +1,21 @@
+<form class="item item--weapon-v1 theme-dark">
+	<div class="page-content">
+		{{> dotdungeon.untyped.v2.general }}
+		{{> dotdungeon.weapon.v1.details }}
+		{{#if meta.showSettingsTab}}
+			{{> dotdungeon.untyped.v2.settings }}
+		{{/if}}
+		{{> dotdungeon.untyped.v2.effects }}
+	</div>
+
+	<div class="nav-bar">
+		<nav data-group="page" class="page" aria-label="">
+			<a class="button" data-group="page" data-tab="general">General</a>
+			<a class="button" data-group="page" data-tab="details">Details</a>
+			<a class="button" data-group="page" data-tab="effects">Effects</a>
+			{{#if meta.showSettingsTab}}
+				<a class="button" data-group="page" data-tab="settings">Settings</a>
+			{{/if}}
+		</nav>
+	</div>
+</form>

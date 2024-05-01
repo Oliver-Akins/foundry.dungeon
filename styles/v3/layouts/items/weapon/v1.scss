@@ -1,0 +1,13 @@
+@use "../../../mixins/material";
+@use "../../../mixins/utils";
+
+.dotdungeon.style-v3 .item--weapon-v1 {
+	@include utils.tab("details") {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		.full-width {
+			grid-column: 1 / -1;
+		}
+	}
+}

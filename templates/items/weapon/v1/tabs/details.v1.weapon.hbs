@@ -1,0 +1,83 @@
+<div class="tab" data-group="page" data-tab="details">
+	<div class="full-width panel--row space-between">
+		{{#if meta.isEditable}}
+			<label
+				for="{{meta.idp}}-purchase-cost"
+				class="justify-start"
+			>
+				Purchase Cost
+			</label>
+			<dd-incrementer
+				var:height="1.5rem"
+				name="system.buy"
+				value="{{system.buy}}"
+				id="{{meta.idp}}-purchase-cost"
+				min="0"
+			></dd-incrementer>
+		{{else}}
+			<span>Purchase Cost</span>
+			<span class="text-right">{{dd-empty-state system.buy}}</span>
+		{{/if}}
+	</div>
+	<div class="full-width panel--row space-between">
+		{{#if meta.isEditable}}
+			<label
+				for="{{meta.idp}}-usage-cost"
+				class="justify-start"
+			>
+				Usage Cost
+			</label>
+			<dd-incrementer
+				var:height="1.5rem"
+				name="system.usage_cost"
+				value="{{system.usage_cost}}"
+				id="{{meta.idp}}-usage-cost"
+				min="0"
+			></dd-incrementer>
+		{{else}}
+			<span>Usage Cost</span>
+			<span class="text-right">{{dd-empty-state system.usage_cost}}</span>
+		{{/if}}
+	</div>
+	<div class="detail panel--column">
+		<span>Rarity</span>
+		{{#if meta.isEditable}}
+			<select
+				class="text-center"
+				name="system.tier"
+				id="{{meta.idp}}-item-tier"
+			>
+				{{{ dd-options system.tier config.itemTiers localize=true }}}
+			</select>
+		{{else}}
+			<span>{{dd-i18n (concat "dotdungeon.rarity." system.tier)}}</span>
+		{{/if}}
+	</div>
+	{{#if meta.isEmbedded}}
+		<div class="detail panel--column">
+			Item Location
+			{{#if meta.isEditable}}
+				<select
+					class="text-center"
+					name="system.location"
+					id="{{meta.idp}}-location"
+				>
+					{{{ dd-options system.location item.availableLocations localize=true }}}
+				</select>
+			{{else}}
+				{{dd-i18n (concat "dotdungeon.location." system.location)}}
+			{{/if}}
+		</div>
+		<div class="number full-width panel--row space-between">
+			{{#if meta.isEditable}}
+				<label for="{{meta.idp}}-quantity">
+					Quantity
+				</label>
+				<dd-incrementer value="{{system.supplies}}"></dd-incrementer>
+			{{else}}
+				Quantity
+				{{system.quantity}}
+			{{/if}}
+		</div>
+	{{/if}}
+</div>

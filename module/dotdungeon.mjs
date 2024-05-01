@@ -15,6 +15,7 @@ import { ItemProxy } from "./documents/Item/_proxy.mjs";
 
 // Item Sheets
 import { UntypedItemSheet } from "./sheets/Items/UntypedItemSheet.mjs";
+import { WeaponSheet } from "./sheets/Items/WeaponSheet.mjs";
 import { AspectSheet } from "./sheets/Items/AspectSheet.mjs";
 import { SpellSheet } from "./sheets/Items/SpellSheet.mjs";
 import { PetSheet } from "./sheets/Items/PetSheet.mjs";
@@ -94,6 +95,11 @@ Hooks.once(`init`, async () => {
 		makeDefault: true,
 		types: ["aspect"],
 		label: "dotdungeon.sheet-names.AspectSheet"
+	});
+	Items.registerSheet("dotdungeon", WeaponSheet, {
+		makeDefault: true,
+		types: ["weapon"],
+		label: "dotdungeon.sheet-names.WeaponSheet"
 	});
 	Items.registerSheet("dotdungeon", SpellSheet, {
 		makeDefault: true,

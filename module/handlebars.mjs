@@ -32,11 +32,15 @@ export const partials = [
 	`actors/char-sheet/v2/partials/inventory/items/weapon.v2.pc.hbs`,
 	`actors/char-sheet/v2/partials/inventory/items/pet.v2.pc.hbs`,
 
-	// The v2 Untyped sheet partials
+	// The partials used for Untyped v2 and other item sheets that don't have a
+	// unique design for the other tabs
 	`items/untyped/v2/tabs/general.v2.untyped.hbs`,
 	`items/untyped/v2/tabs/details.v2.untyped.hbs`,
 	`items/untyped/v2/tabs/effects.v2.untyped.hbs`,
 	`items/untyped/v2/tabs/settings.v2.untyped.hbs`,
+
+	// The weapon sheet partials
+	`items/weapon/v1/tabs/details.v1.weapon.hbs`,
 ];
 
 export const preAliasedPartials = {
