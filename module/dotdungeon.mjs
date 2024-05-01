@@ -1,6 +1,5 @@
 // Data Models
 import { DescribedItemData } from "./models/Item/DescribedItemData.mjs";
-import { CommonItemData } from "./models/Item/CommonItemData.mjs";
 import { WeaponItemData } from "./models/Item/Weapon.mjs";
 import { AspectItemData } from "./models/Item/Aspect.mjs";
 import { SpellItemData } from "./models/Item/Spell.mjs";
@@ -39,6 +38,7 @@ import { devInit } from "./hooks/devInit.mjs";
 import DOTDUNGEON from "./config.mjs";
 
 
+// MARK: init hook
 Hooks.once(`init`, async () => {
 	console.debug(`.dungeon | Initializing`);
 	CONFIG.ActiveEffect.legacyTransferral = false;
@@ -49,7 +49,7 @@ Hooks.once(`init`, async () => {
 	CONFIG.Actor.dataModels.sync = SyncData;
 	CONFIG.Actor.dataModels.mob = MobData;
 	CONFIG.Item.dataModels.untyped = DescribedItemData;
-	CONFIG.Item.dataModels.material = CommonItemData;
+	CONFIG.Item.dataModels.material = DescribedItemData;
 	CONFIG.Item.dataModels.foil = DescribedItemData;
 	CONFIG.Item.dataModels.weapon = WeaponItemData;
 	CONFIG.Item.dataModels.aspect = AspectItemData;
@@ -116,6 +116,7 @@ Hooks.once(`init`, async () => {
 });
 
 
+// MARK: ready hook
 Hooks.once(`ready`, () => {
 	console.debug(".dungeon | Ready");
 
