@@ -50,7 +50,7 @@ export class GenericItemSheet extends ItemSheet {
 		*/
 		html.find(
 			CONFIG.CACHE.componentListeners.map(n => `${n}[name]`).join(`,`)
-		).on(`change`, () => this._onChangeInput.bind(this));
+		).on(`change`, this._onChangeInput.bind(this));
 
 		html.find(`button[data-increment]`)
 			.on(`click`, this._incrementValue.bind(this));
