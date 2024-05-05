@@ -1,9 +1,11 @@
 import { DotDungeonIncrementer } from "./incrementer.mjs";
 import { DotDungeonIcon } from "./icon.mjs";
+import { DotDungeonRange } from "./range.mjs";
 
 const components = [
 	DotDungeonIcon,
 	DotDungeonIncrementer,
+	DotDungeonRange,
 ];
 
 export function registerCustomComponents() {
