@@ -13,6 +13,8 @@ Attributes:
 Styling:
 - `--height`: Controls the height of the element + the width of the buttons (default: 1.25rem)
 - `--width`: Controls the width of the number input (default 50px)
+
+@extends {HTMLElement}
 */
 export class DotDungeonIncrementer
 extends StyledShadowElement(
@@ -42,14 +44,14 @@ extends StyledShadowElement(
 
 	get form() {
 		return this._internals.form;
-	}
+	};
 
 	get name() {
 		return this.getAttribute(`name`);
-	}
+	};
 	set name(value) {
 		this.setAttribute(`name`, value);
-	}
+	};
 
 	get value() {
 		return this.getAttribute(`value`);
@@ -60,7 +62,7 @@ extends StyledShadowElement(
 
 	get type() {
 		return `number`;
-	}
+	};
 
 	connectedCallback() {
 		super.connectedCallback();

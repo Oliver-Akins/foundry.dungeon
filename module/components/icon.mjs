@@ -4,6 +4,8 @@ import { StyledShadowElement } from "./mixins/Styles.mjs";
 Attributes:
 @property {string} name - The name of the icon, takes precedence over the path
 @property {string} path - The path of the icon file
+
+@extends {HTMLElement}
 */
 export class DotDungeonIcon extends StyledShadowElement(HTMLElement) {
 	static elementName = `dd-icon`;
