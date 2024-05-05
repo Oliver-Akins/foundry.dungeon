@@ -2,6 +2,17 @@ import { DotDungeonActor } from "./GenericActor.mjs";
 
 export class Player extends DotDungeonActor {
 
+	/*
+	These are special data properties that will be used by ActiveEffects to modify
+	certain limits within the actor, allowing for neat hacks that change these and
+	possible configuration of them.
+	*/
+	prepareBaseData() {
+		this.system.weapon_slots = 2;
+		this.system.inventory_slots = 0;
+		this.system.respawn_limit = 3;
+	};
+
 	applyActiveEffects() {
 		super.applyActiveEffects();
 

@@ -14,14 +14,6 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 	static defineSchema() {
 		const fields = foundry.data.fields;
 		return {
-			/*
-			These are special data properties that will be used by ActiveEffects
-			to modify certain limits within the actor, allowing for neat hacks
-			that change these
-			*/
-			weapon_slots: new fields.NumberField({ initial: 2 }),
-			inventory_slots: new fields.NumberField({ initial: 0 }),
-
 			bytes: new fields.NumberField({
 				initial: 0,
 				min: 0,
@@ -77,11 +69,7 @@ export class PlayerData extends foundry.abstract.TypeDataModel {
 				min: 0,
 				integer: true
 			}),
-			respawns: new fields.SchemaField({
-				r1: new fields.BooleanField(),
-				r2: new fields.BooleanField(),
-				r3: new fields.BooleanField(),
-			}),
+			respawns: new fields.NumberField({ initial: 0, }),
 			syncDelta: new fields.NumberField({
 				required: true,
 				integer: true,
